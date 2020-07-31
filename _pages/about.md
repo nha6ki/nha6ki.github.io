@@ -12,6 +12,12 @@ I am a graduate student at the Aichi Prefectural University, Department of Infor
 
 <!--
 # Research Interest
+- Machine Learning
+- Deep Learning
+- Robotics
+- Hand Gesture Recognition
+- Designing Technology for Older Adults
+- Ambient Assisted Living
 
 # Publications
 ## Journals
