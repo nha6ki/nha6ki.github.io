@@ -18,8 +18,11 @@ main:
   - title: "Blog"
     url: https://nha6ki.hatenablog.com/
 
-  - title: "Surveys"
-    url: https://github.com/nha6ki/Surveys/issues
-
   - title: "Docs"
     url: https://amazing-agnesi-e55d09.netlify.app/
+
+  - title: "Slides"
+    url: https://www.slideshare.net/ssuserd86b3e/presentations/
+
+  - title: "Surveys"
+    url: https://github.com/nha6ki/Surveys/issues/
