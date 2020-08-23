@@ -23,9 +23,15 @@ I am a graduate student at the Aichi Prefectural University, Department of Infor
 -->
 
 ## Publications
+<!--
+### Preprints
 
+### Journal Articles
 
-## Meetings
+### Conference Proceedings
+-->
+
+### Others
 - 近添 淳一, Quang Trung Pham, 吉本 隆明, <u>丹羽 開紀</u>, 定藤 規弘.  
 深層学習と機能的MRIの融合により明らかにされた視覚価値変換処理の神経基盤.  
 [次世代脳プロジェクト冬のシンポジウム2018](https://www.nips.ac.jp/brain-commu/2018/report2018.html), 東京都, December 2018.
