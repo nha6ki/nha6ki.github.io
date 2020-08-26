@@ -6,6 +6,6 @@ collection: portfolio
 
 I developed this web application with Flask.
 
-URL : <https://predict-art-price.herokuapp.com/>
+URL : <a href="https://predict-art-price.herokuapp.com/" target="_blank" rel="noopener">https://predict-art-price.herokuapp.com/</a>
 
 May 27th, 2020
