@@ -21,5 +21,5 @@ main:
   - title: "Docs"
     url: https://niwa-docs.netlify.app/
 
-  - title: "Slides"
-    url: https://www.slideshare.net/ssuserd86b3e/presentations/
+#  - title: "Slides"
+#    url: https://www.slideshare.net/ssuserd86b3e/presentations/
