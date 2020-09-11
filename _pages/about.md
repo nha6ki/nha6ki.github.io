@@ -18,7 +18,6 @@ I am a graduate student at the Aichi Prefectural University, Department of Infor
 - Technology for Older People
 
 <!--
-- Designing Technology for Older Adults
 - Ambient Assisted Living
 -->
 
@@ -80,11 +79,12 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ## Likes
 ### Programming Language
 <a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="30" border="0"></a> &nbsp; <a href="https://www.mathworks.com/products/matlab.html"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" width="35" border="0"></a> &nbsp; <a href="https://isocpp.org/"><img src="https://isocpp.org/assets/images/cpp_logo.png" width="30" border="0"></a>
+<!--
+&nbsp; <a href="https://www.rust-lang.org/"><img src="https://www.rust-lang.org/logos/rust-logo-128x128-blk.png" width="37" border="0"></a>
+-->
 
 ### Library
 <a href="https://scikit-learn.org/stable/"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="45" border="0"></a> <a href="https://pytorch.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" width="90" border="0"></a> <a href="https://keras.io/"><img src="https://keras.io/img/logo.png" width="70" border="0"></a> <a href="https://www.tensorflow.org/"><img src="https://www.gstatic.com/devrel-devsite/prod/v1241c04ebcb2127897d6c18221acbd64e7ed5c46e5217fd83dd808e592c47bf6/tensorflow/images/lockup.svg" width="95" border="0"></a> &thinsp; <a href="https://p5js.org/"><img src="https://p5js.org/assets/img/p5js.svg" width="40" border="0"></a> &thinsp; <a href="https://www.pixijs.com/"><img src="https://camo.githubusercontent.com/f56c56298a82f8326ed5e59ef82b1b601a5780a7/687474703a2f2f706978696a732e646f776e6c6f61642f706978696a732d746578742e737667" width="40" border="0"></a>
-
-
 
 ### Tool
 <a href="https://www.ros.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" width="60" border="0"></a> &thinsp; <a href="https://jupyter.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="27" border="0"></a> &thinsp; <a href="https://git-scm.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" width="50" border="0"></a> <a href="https://github.co.jp/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="33" border="0"></a> <a href="https://www.docker.com/"><img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" width="33" border="0"></a> <a href="https://www.latex-project.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg" width="45" border="0"></a>
