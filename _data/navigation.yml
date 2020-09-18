@@ -15,8 +15,8 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  - title: "Blog"
-    url: https://nha6ki.hatenablog.com/
+  # - title: "Blog"
+    # url: https://nha6ki.hatenablog.com/
 
   - title: "Docs"
     url: https://niwa-docs.netlify.app/
