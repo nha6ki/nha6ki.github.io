@@ -15,14 +15,20 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  # - title: "Blog"
+  # - title: "Blog (jp)"
     # url: https://nha6ki.hatenablog.com/
 
-  - title: "Docs"
-    url: https://niwa-docs.netlify.app/
+  # - title: "Blog (en)"
+    # url: https://dev.to/nha6ki
+
+  # - title: "Docs"
+    # url: https://niwa-docs.netlify.app/
 
 #  - title: "Slides"
 #    url: https://www.slideshare.net/ssuserd86b3e/presentations/
 
   - title: "Surveys"
     url: https://github.com/nha6ki/OpenSurveys/issues
+
+  - title: "Summaries"
+    url: https://github.com/nha6ki/Summaries/issues
