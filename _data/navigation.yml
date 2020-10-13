@@ -30,5 +30,5 @@ main:
   - title: "Surveys"
     url: https://github.com/nha6ki/OpenSurveys/issues
 
-  - title: "Summaries"
-    url: https://github.com/nha6ki/Summaries/issues
+  # - title: "Summaries"
+    # url: https://github.com/nha6ki/Summaries/issues
