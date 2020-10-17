@@ -74,7 +74,7 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ### Member
 - IEEE, Student Member.
 - IEEE Robotics and Automation Society, Student Member.
-
+- IEEE Nagoya Young Professionals, Volunteer.
 
 ## Likes
 ### Programming Language
