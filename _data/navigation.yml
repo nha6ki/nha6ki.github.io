@@ -21,8 +21,8 @@ main:
   # - title: "Blog (en)"
     # url: https://dev.to/nha6ki
 
-  # - title: "Docs"
-    # url: https://niwa-docs.netlify.app/
+  - title: "Docs"
+    url: https://nha6ki.github.io/niwa-docs/
 
 #  - title: "Slides"
 #    url: https://www.slideshare.net/ssuserd86b3e/presentations/
