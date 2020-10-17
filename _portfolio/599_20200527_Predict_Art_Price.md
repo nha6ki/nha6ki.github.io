@@ -1,6 +1,6 @@
 ---
 title: "Predict Art Price"
-excerpt: "Predict the price of paintings by machine learning.<br/><img src='/images/portfolio/20200527_Predict_Art_Price.png'>"
+excerpt: "Predict the price of paintings by machine learning<br/><img src='/images/portfolio/20200527_Predict_Art_Price.png'>"
 collection: portfolio
 ---
 
