@@ -12,7 +12,7 @@ collection: portfolio
 - [DeviantART](https://www.deviantart.com/nha6ki/)
 
 ## Music
-- [SoundCloud](https://soundcloud.com/haruki-niwa-854203193/)
+- [SoundCloud](https://soundcloud.com/nha6ki/)
 
 ## Photograph
 - [Instagram - Flower](https://www.instagram.com/suns._.n/)
