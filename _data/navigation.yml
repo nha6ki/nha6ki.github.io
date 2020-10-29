@@ -15,8 +15,8 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  # - title: "Blog (jp)"
-    # url: https://nha6ki.hatenablog.com/
+  - title: "Blog (jp)"
+    url: https://nha6ki.hatenablog.com/
 
   # - title: "Blog (en)"
     # url: https://dev.to/nha6ki
