@@ -48,16 +48,16 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 
 
 ## Education
-- Master of Information Science and Technology, 2020 – present.
+- Master of Information Science and Technology, 2020–present.
     - [Graduate School of Information Science and Technology, Aichi Prefectural University](https://www.ist.aichi-pu.ac.jp/en/index.html)
     - Supervisor: [Takuo Suzuki](https://researchmap.jp/takuo-suzuki?lang=en)
-- Bachelor of Information Science and Technology, 2016 – 2020.
+- Bachelor of Information Science and Technology, 2016–2020.
     - [Undergraduate School of Information Science and Technology, Aichi Prefectural University](https://www.ist.aichi-pu.ac.jp/)
     - Supervisor: [Kunikazu Kobayashi](http://www.ist.aichi-pu.ac.jp/~koba/), [Takuo Suzuki](https://researchmap.jp/takuo-suzuki?lang=en)
 
 
 ## Work Experience
-- [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff, June 2017 – present.
+- [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff, June 2017–present.
 
 <!--
 ### Teaching Assistant
