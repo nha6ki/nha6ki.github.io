@@ -27,8 +27,8 @@ main:
 #  - title: "Slides"
 #    url: https://www.slideshare.net/ssuserd86b3e/presentations/
 
-  - title: "Summaries"
-    url: https://github.com/nha6ki/Summaries/issues
+  # - title: "Summaries"
+    # url: https://github.com/nha6ki/Summaries/issues
 
   - title: "Surveys"
     url: https://github.com/nha6ki/OpenSurveys/issues
