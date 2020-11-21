@@ -22,13 +22,11 @@ I am a graduate student at the Aichi Prefectural University, Department of Infor
 -->
 
 ## Publications
-<!--
-### Preprints
-
 ### Journal Articles
 
 ### Conference Proceedings
--->
+
+### Preprints
 
 ### Others
 - 近添 淳一, Quang Trung Pham, 吉本 隆明, <u>丹羽 開紀</u>, 定藤 規弘.  
