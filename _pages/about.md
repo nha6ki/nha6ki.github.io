@@ -95,3 +95,6 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 
 ### Text Editor
 <a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Visual_Studio_Code_1.18_icon.svg" width="25" border="0"></a> &thinsp; <a href="https://atom.io/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Atom_icon.svg" width="80" border="0"></a> &nbsp; <a href="https://www.vim.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" width="25" border="0"></a>
+
+### Artist
+<a href="https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ/">Nujabes</a> &thinsp; <a href="https://artsandculture.google.com/entity/yoshitoshi/m01rtn7">Yoshitoshi</a>
