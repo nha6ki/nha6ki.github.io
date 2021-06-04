@@ -15,13 +15,16 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  - title: "Blog (jp)"
+  - title: "Blog (en)"
+    url: https://nha6ki.blogspot.com/
+
+  - title: "Blog (zh)"
+    url: https://nha6ki-zh.blogspot.com/
+
+  - title: "Blog (ja)"
     url: https://nha6ki.hatenablog.com/
 
-  # - title: "Blog (en)"
-    # url: https://dev.to/nha6ki
-
-  - title: "Docs"
+  - title: "Docs (ja)"
     url: https://nha6ki.github.io/niwa-docs/
 
 #  - title: "Slides"
@@ -30,5 +33,5 @@ main:
   # - title: "Summaries"
     # url: https://github.com/nha6ki/Summaries/issues
 
-  - title: "Surveys"
+  - title: "Surveys (ja)"
     url: https://github.com/nha6ki/OpenSurveys/issues
