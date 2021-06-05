@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a graduate student at the Aichi Prefectural University, Graduate School of Information Science and Technology, advised by [Koji Oguri](https://researchmap.jp/oguri) and [Haruki Kawanaka](https://researchmap.jp/kawanaka) in [OKLab](http://www.ist.aichi-pu.ac.jp/lab/oguri/). I am working as an employee at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ) in [Section of Brain Function Information](https://www.zoelabo.com/english-home).
+I am a graduate student at the Aichi Prefectural University, Graduate School of Information Science and Technology, advised by [Koji Oguri](https://researchmap.jp/oguri) and [Haruki Kawanaka](https://researchmap.jp/kawanaka) in [OKLab](http://www.ist.aichi-pu.ac.jp/lab/oguri/). I am working as an intern at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
 ## Interest
 - Machine Learning
-- Biomedical Engineering
+- Biomedical Signal Processing
 - (Hand Pose Estimation)
 - (Robot for Older People)
 
@@ -53,25 +53,42 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 
 
 ## Work Experience
-- [Araya Inc.](https://www.araya.org/en/), Employee (part-time), April 2021–present.
+- [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–present.
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
 
 ## Likes
 ### Programming Language
-<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="30" border="0"></a> &nbsp; <a href="https://www.mathworks.com/products/matlab.html"><img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" width="35" border="0"></a> &nbsp; <a href="https://isocpp.org/"><img src="https://isocpp.org/assets/images/cpp_logo.png" width="30" border="0"></a>
+![Python](https://img.shields.io/badge/-Python-grey?style=flat-square&logo=python)&nbsp;
+![MATLAB](https://img.shields.io/badge/-MATLAB-grey?style=flat-square&logo=mathworks)&nbsp;
+![C++](https://img.shields.io/badge/-C++-grey?style=flat-square&logo=C%2B%2B)&nbsp;
 
 ### Library
-<a href="https://scikit-learn.org/stable/"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="45" border="0"></a> <a href="https://pytorch.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" width="90" border="0"></a> <a href="https://keras.io/"><img src="https://keras.io/img/logo.png" width="70" border="0"></a> <a href="https://www.tensorflow.org/"><img src="https://www.gstatic.com/devrel-devsite/prod/v1241c04ebcb2127897d6c18221acbd64e7ed5c46e5217fd83dd808e592c47bf6/tensorflow/images/lockup.svg" width="95" border="0"></a> &thinsp; <a href="https://p5js.org/"><img src="https://p5js.org/assets/img/p5js.svg" width="40" border="0"></a>
+![scikit-learn](https://img.shields.io/badge/scikit--learn-grey?style=flat-square&logo=scikit-learn)&nbsp;
+![PyTorch](https://img.shields.io/badge/PyTorch-grey?style=flat-square&logo=pytorch)&nbsp;
+![Keras](https://img.shields.io/badge/Keras-grey?style=flat-square&logo=keras)&nbsp;
+![TensorFlow](https://img.shields.io/badge/TensorFlow-grey?style=flat-square&logo=tensorflow)&nbsp;
+![p5.js](https://img.shields.io/badge/p5.js-grey?style=flat-square&logo=p5.js)&nbsp;
 
 ### Framework
-<a href="https://flask.palletsprojects.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" width="60" border="0"></a> &thinsp; <a href="https://scrapy.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Scrapy_logo.jpg" width="70" border="0"></a>
+![Flask](https://img.shields.io/badge/Flask-grey?style=flat-square&logo=flask)&nbsp;
+![Scrapy](https://img.shields.io/badge/Scrapy-grey?style=flat-square&logo=scrapy)&nbsp;
 
 ### Tool
-<a href="https://www.ros.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Ros_logo.svg" width="60" border="0"></a> &thinsp; <a href="https://jupyter.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="27" border="0"></a> &thinsp; <a href="https://git-scm.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" width="50" border="0"></a> <a href="https://github.co.jp/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="33" border="0"></a> <a href="https://www.docker.com/"><img src="https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/vertical-logo-monochromatic.png?itok=erja9lKc" width="33" border="0"></a> &thinsp; <a href="https://www.heroku.com/"><img src="https://brand.heroku.com/static/media/heroku-logotype-horizontal.81c49462.svg" width="75" border="0"></a> &thinsp; <a href="https://www.netlify.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Netlify_logo.svg" width="70" border="0"></a> &thinsp; <a href="https://www.latex-project.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg" width="50" border="0"></a>
+![Jupyter](https://img.shields.io/badge/Jupyter-grey?style=flat-square&logo=jupyter)&nbsp;
+![Git](https://img.shields.io/badge/Git-grey?style=flat-square&logo=git)&nbsp;
+![GitHub](https://img.shields.io/badge/GitHub-grey?style=flat-square&logo=github)&nbsp;
+![ROS](https://img.shields.io/badge/ROS-grey?style=flat-square&logo=ros)&nbsp;
+![Docker](https://img.shields.io/badge/Docker-grey?style=flat-square&logo=docker)&nbsp;
+![Heroku](https://img.shields.io/badge/Heroku-grey?style=flat-square&logo=heroku)&nbsp;
+![netlify](https://img.shields.io/badge/netlify-grey?style=flat-square&logo=netlify)&nbsp;
+![LaTeX](https://img.shields.io/badge/LaTeX-grey?style=flat-square&logo=latex)&nbsp;
 
-### Text Editor
-<a href="https://code.visualstudio.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Visual_Studio_Code_1.18_icon.svg" width="25" border="0"></a> &thinsp; <a href="https://atom.io/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Atom_icon.svg" width="80" border="0"></a> &nbsp; <a href="https://www.vim.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg" width="25" border="0"></a>
+### Tool
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-grey?style=flat-square&logo=visual-studio-code)&nbsp;
+![Atom](https://img.shields.io/badge/Atom-grey?style=flat-square&logo=atom)&nbsp;
+![Vim](https://img.shields.io/badge/Vim-grey?style=flat-square&logo=vim)&nbsp;
 
 ### Artist
-<a href="https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ/">Nujabes</a> &thinsp; <a href="https://artsandculture.google.com/entity/yoshitoshi/m01rtn7">Yoshitoshi</a>
+[Nujabes](https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ/)&nbsp;
+[Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
