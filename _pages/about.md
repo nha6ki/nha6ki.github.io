@@ -84,11 +84,17 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ![netlify](https://img.shields.io/badge/netlify-grey?style=flat-square&logo=netlify)&nbsp;
 ![LaTeX](https://img.shields.io/badge/LaTeX-grey?style=flat-square&logo=latex)&nbsp;
 
-### Tool
+### Editor
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-grey?style=flat-square&logo=visual-studio-code)&nbsp;
 ![Atom](https://img.shields.io/badge/Atom-grey?style=flat-square&logo=atom)&nbsp;
 ![Vim](https://img.shields.io/badge/Vim-grey?style=flat-square&logo=vim)&nbsp;
 
-### Artist
-[Nujabes](https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ/)&nbsp;
-[Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
+### Music
+[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles)
+
+### Movie
+[Letterboxd - Favorite Films](https://letterboxd.com/nha6ki/)
+
+### Painting
+- Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
+- (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh), [Marianne von Werefkin](https://www.wikiart.org/en/marianne-von-werefkin)
