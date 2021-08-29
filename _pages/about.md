@@ -13,8 +13,15 @@ I am a graduate student at the Aichi Prefectural University, Graduate School of 
 ## Interest
 - Machine Learning
 - Biomedical Signal Processing
+- Visualizing Emotion with Color
+- Bipolar Disorder
+- Japanese Language Learning Support
+
+<!--
+- Bayesian Statistics
 - (Hand Pose Estimation)
 - (Robot for Older People)
+-->
 
 ## Publications
 ### Journal Articles
@@ -83,6 +90,7 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ![Heroku](https://img.shields.io/badge/Heroku-grey?style=flat-square&logo=heroku)&nbsp;
 ![netlify](https://img.shields.io/badge/netlify-grey?style=flat-square&logo=netlify)&nbsp;
 ![LaTeX](https://img.shields.io/badge/LaTeX-grey?style=flat-square&logo=latex)&nbsp;
+![Sphinx](https://img.shields.io/badge/Sphinx-grey?style=flat-square&logo=sphinx)&nbsp;
 
 ### Editor
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-grey?style=flat-square&logo=visual-studio-code)&nbsp;
