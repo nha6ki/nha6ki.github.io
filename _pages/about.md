@@ -12,10 +12,15 @@ I am a graduate student at the Aichi Prefectural University, Graduate School of 
 
 ## Interest
 - Machine Learning
+  - I became interested in this because of artificial intelligence.
 - Biomedical Signal Processing
-- Visualizing Emotion with Color
+  - I would like to better understand the human condition.
+- Visualize emotions with color gradations
+  - I wish to make it in the future as a way of conveying emotions.
 - Bipolar Disorder
+  - This is a serious problem.
 - Japanese Language Learning Support
+  - I can do this as a Japanese.
 
 <!--
 - Bayesian Statistics
