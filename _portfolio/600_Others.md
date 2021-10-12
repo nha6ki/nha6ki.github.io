@@ -10,8 +10,5 @@ collection: portfolio
 ## Music
 - [SoundCloud](https://soundcloud.com/nha6ki/)
 
-## Painting
-- [DevianArt](https://www.deviantart.com/nha6ki/)
-
 ## Photograph
 - [Instagram - Flower](https://www.instagram.com/suns._.n/)

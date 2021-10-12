@@ -13,20 +13,18 @@ I am a graduate student at the Aichi Prefectural University, Graduate School of 
 ## Interest
 - Machine Learning
   - I became interested in this because of artificial intelligence.
-- Biomedical Signal Processing
+- Mental Health
+  - This is a serious problem.
+- Biomedical Engineering
   - I would like to better understand the human condition.
 - Visualize emotions with color gradations
   - I wish to make it in the future as a way of conveying emotions.
-- Bipolar Disorder
-  - This is a serious problem.
 - Japanese Language Learning Support
   - I can do this as a Japanese.
 
-<!--
 - Bayesian Statistics
 - (Hand Pose Estimation)
 - (Robot for Older People)
--->
 
 ## Publications
 ### Journal Articles
@@ -102,11 +100,14 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ![Atom](https://img.shields.io/badge/Atom-grey?style=flat-square&logo=atom)&nbsp;
 ![Vim](https://img.shields.io/badge/Vim-grey?style=flat-square&logo=vim)&nbsp;
 
-### Music
-[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles)
+### Book
+[BookLog - Favorite Books](https://booklog.jp/users/nha6ki/all?category_id=all&status=all&rank=5)
 
 ### Movie
 [Letterboxd - Favorite Films](https://letterboxd.com/nha6ki/)
+
+### Music
+[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles)
 
 ### Painting
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
