@@ -14,7 +14,7 @@ I am a graduate student at the Aichi Prefectural University, Graduate School of 
 - Machine Learning
   - I became interested in this because of artificial intelligence.
 - Mental Health
-  - This is a serious problem.
+  - Preventing Mental Illness.
 - Biomedical Engineering
   - I would like to better understand the human condition.
 - Visualize emotions with color gradations
@@ -71,8 +71,9 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ### Programming Language
 ![Python](https://img.shields.io/badge/-Python-grey?style=flat-square&logo=python)&nbsp;
 ![MATLAB](https://img.shields.io/badge/-MATLAB-grey?style=flat-square&logo=mathworks)&nbsp;
+<!--
 ![C++](https://img.shields.io/badge/-C++-grey?style=flat-square&logo=C%2B%2B)&nbsp;
-
+-->
 ### Library
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-grey?style=flat-square&logo=scikit-learn)&nbsp;
 ![PyTorch](https://img.shields.io/badge/PyTorch-grey?style=flat-square&logo=pytorch)&nbsp;
@@ -107,8 +108,9 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 [Letterboxd - Favorite Films](https://letterboxd.com/nha6ki/)
 
 ### Music
-[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles)
+[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles), [SPYAIR](https://www.youtube.com/channel/UCvkOJJ9uFi9hto95bD3XO7Q)
 
 ### Painting
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
 - (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh), [Marianne von Werefkin](https://www.wikiart.org/en/marianne-von-werefkin)
+- Outsider Art
