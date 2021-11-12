@@ -15,8 +15,6 @@ I am a graduate student at the Aichi Prefectural University, Graduate School of 
   - I became interested in this because of artificial intelligence.
 - Mental Health
   - Preventing Mental Illness.
-- Biomedical Engineering
-  - I would like to better understand the human condition.
 - Visualize emotions with color gradations
   - I wish to make it in the future as a way of conveying emotions.
 - Japanese Language Learning Support
@@ -108,7 +106,7 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 [Letterboxd - Favorite Films](https://letterboxd.com/nha6ki/)
 
 ### Music
-[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [Korn](https://www.youtube.com/user/kornchannel), [Cise Star](https://www.youtube.com/user/SleepyNoodles), [SPYAIR](https://www.youtube.com/channel/UCvkOJJ9uFi9hto95bD3XO7Q)
+[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [SPYAIR](https://www.youtube.com/channel/UCvkOJJ9uFi9hto95bD3XO7Q)
 
 ### Painting
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
