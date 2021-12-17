@@ -10,19 +10,9 @@ redirect_from:
 
 I am a graduate student at the Aichi Prefectural University, Graduate School of Information Science and Technology, advised by [Koji Oguri](https://researchmap.jp/oguri) and [Haruki Kawanaka](https://researchmap.jp/kawanaka) in [OKLab](http://www.ist.aichi-pu.ac.jp/lab/oguri/). I am working as an intern at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
-## Interest
+## Research Interest
 - Machine Learning
-  - I became interested in this because of artificial intelligence.
-- Mental Health
-  - Preventing Mental Illness.
-- Visualize emotions with color gradations
-  - I wish to make it in the future as a way of conveying emotions.
-- Japanese Language Learning Support
-  - I can do this as a Japanese.
-
-- Bayesian Statistics
-- (Hand Pose Estimation)
-- (Robot for Older People)
+- Mental Disorders (Mood Disorders, ASD)
 
 ## Publications
 ### Journal Articles
