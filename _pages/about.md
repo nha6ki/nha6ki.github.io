@@ -8,11 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a graduate student at the Aichi Prefectural University, Graduate School of Information Science and Technology, advised by [Koji Oguri](https://researchmap.jp/oguri) and [Haruki Kawanaka](https://researchmap.jp/kawanaka) in [OKLab](http://www.ist.aichi-pu.ac.jp/lab/oguri/). I am working as an intern at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
+I am working as an intern at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
 ## Research Interest
 - Machine Learning
-- Mental Disorders (Mood Disorders, ASD)
+- Mental Disorders
 
 ## Publications
 ### Journal Articles
@@ -34,20 +34,6 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 - 近添 淳一, Quang Trung Pham, 吉本 隆明, <u>丹羽 開紀</u>, 定藤 規弘.  
 深層学習と機能的MRIの融合により明らかにされた視覚価値変換処理の神経基盤.  
 [第8回生理研・名大医合同シンポジウム](https://www.med.nagoya-u.ac.jp/anatomy2/8thsympo.htm), 名古屋市, September 2018.
-
-
-## Awards
-- [The second place for Standard Platform League](http://www.ist.aichi-pu.ac.jp/~koba/images/citationSPL17.jpg) ([RoboCup Japan Open 2017](https://robocup-japanopen.org/2017/)).  
-[Camellia Dragons](http://www.ist.aichi-pu.ac.jp/lab/robocup-spl/index.html), [RoboCup Japanese National Committee](http://www.robocup.or.jp/), May 2017.
-
-
-## Education
-- Master of Information Science and Technology, 2020–2023.
-    - [Graduate School of Information Science and Technology, Aichi Prefectural University](https://www.ist.aichi-pu.ac.jp/en/index.html)
-    - Supervisor: [Koji Oguri](https://researchmap.jp/oguri) (2021–2023), [Haruki Kawanaka](https://researchmap.jp/kawanaka) (2021–2023), [Takuo Suzuki](https://researchmap.jp/takuo-suzuki) (2020)
-- Bachelor of Information Science and Technology, 2016–2020.
-    - [Undergraduate School of Information Science and Technology, Aichi Prefectural University](https://www.ist.aichi-pu.ac.jp/)
-    - Supervisor: [Kunikazu Kobayashi](https://researchmap.jp/read0185135), [Takuo Suzuki](https://researchmap.jp/takuo-suzuki)
 
 
 ## Work Experience

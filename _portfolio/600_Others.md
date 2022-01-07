@@ -9,6 +9,7 @@ collection: portfolio
 
 ## Music
 - [SoundCloud](https://soundcloud.com/nha6ki/)
+- [YouTube](https://www.youtube.com/channel/UCziACJpCinuqWltWEQr54dg/)
 
 ## Photograph
 - [Instagram - Flower](https://www.instagram.com/suns._.n/)
