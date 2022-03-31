@@ -8,46 +8,22 @@ redirect_from:
   - /about.html
 ---
 
-I am working as an intern at Araya Inc., advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
+I am working as an junior researcher at [Araya Inc.](https://www.araya.org/en/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
 ## Research Interest
 - Machine Learning
 - Mental Disorders
 
-## Publications
-### Journal Articles
-
-### Conference Proceedings
-
-### Preprints
-- Quang Trung Pham, Takaaki Yoshimoto, <u>Haruki Niwa</u>, Haruka K Takahashi, Ryutaro Uchiyama, Teppei Matsui, Adam K Anderson, Norihiro Sadato, Junichi Chikazoe.  
-Vision-to-value transformations in artificial network and human brains.  
-[[bioRxiv](https://doi.org/10.1101/2021.03.18.435929)]
-
-### Others
-- 近添 淳一, Quang Trung Pham, 吉本 隆明, <u>丹羽 開紀</u>, 定藤 規弘.  
-深層学習と機能的MRIの融合により明らかにされた視覚価値変換処理の神経基盤.  
-[次世代脳プロジェクト冬のシンポジウム2018](https://www.nips.ac.jp/brain-commu/2018/report2018.html), 東京都, December 2018.
-- Junichi Chikazoe, Quang Trung Pham, Takaaki Yoshimoto, <u>Haruki Niwa</u>, Norihiro Sadato.  
-How and where is vision transformed to value?: A combinatory study of fMRI and deep learning.  
-[CIN-NIPS Symposium 2018](https://www.cin.uni-tuebingen.de/news-events/browse-all-events/detail/view/340/page/1/8th-nips-cin-joint-symposium.html), Germany, October 2018.
-- 近添 淳一, Quang Trung Pham, 吉本 隆明, <u>丹羽 開紀</u>, 定藤 規弘.  
-深層学習と機能的MRIの融合により明らかにされた視覚価値変換処理の神経基盤.  
-[第8回生理研・名大医合同シンポジウム](https://www.med.nagoya-u.ac.jp/anatomy2/8thsympo.htm), 名古屋市, September 2018.
-
-
 ## Work Experience
-- [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–present.
+- [Araya Inc.](https://www.araya.org/en/), Junior Researcher (fixed-term employee), March 2022–present.
+- [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
-
-## Likes
+## Likes & Skills
 ### Programming Language
 ![Python](https://img.shields.io/badge/-Python-grey?style=flat-square&logo=python)&nbsp;
 ![MATLAB](https://img.shields.io/badge/-MATLAB-grey?style=flat-square&logo=mathworks)&nbsp;
-<!--
-![C++](https://img.shields.io/badge/-C++-grey?style=flat-square&logo=C%2B%2B)&nbsp;
--->
+
 ### Library
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-grey?style=flat-square&logo=scikit-learn)&nbsp;
 ![PyTorch](https://img.shields.io/badge/PyTorch-grey?style=flat-square&logo=pytorch)&nbsp;
@@ -70,11 +46,6 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 ![LaTeX](https://img.shields.io/badge/LaTeX-grey?style=flat-square&logo=latex)&nbsp;
 ![Sphinx](https://img.shields.io/badge/Sphinx-grey?style=flat-square&logo=sphinx)&nbsp;
 
-### Editor
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-grey?style=flat-square&logo=visual-studio-code)&nbsp;
-![Atom](https://img.shields.io/badge/Atom-grey?style=flat-square&logo=atom)&nbsp;
-![Vim](https://img.shields.io/badge/Vim-grey?style=flat-square&logo=vim)&nbsp;
-
 ### Book
 [BookLog - Favorite Books](https://booklog.jp/users/nha6ki/all?category_id=all&status=all&rank=5)
 
@@ -82,9 +53,9 @@ How and where is vision transformed to value?: A combinatory study of fMRI and d
 [Letterboxd - Favorite Films](https://letterboxd.com/nha6ki/)
 
 ### Music
-[Nujabes](https://www.youtube.com/channel/UCO5XcuQe_fLJVI3sZ0LmGCA), [Linkin Park](https://www.youtube.com/channel/UCZU9T1ceaOgwfLRq7OKFU4Q), [SPYAIR](https://www.youtube.com/channel/UCvkOJJ9uFi9hto95bD3XO7Q)
+[Spotify - Favorite Songs](https://open.spotify.com/user/31v3cahrob7oechwpa6bqhuwh47i)
 
 ### Painting
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
-- (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh), [Marianne von Werefkin](https://www.wikiart.org/en/marianne-von-werefkin)
+- (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh)
 - Outsider Art

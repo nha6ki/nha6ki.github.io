@@ -15,7 +15,7 @@ main:
   - title: "Portfolio"
     url: /portfolio/
 
-  - title: "Motivation (ja)"
+  - title: "Motivation"
     url: https://nha6ki.notion.site/Motivation-f748c87c73474f26bb50826bc7760d0d/
 
 #  - title: "Blog (en)"
@@ -24,10 +24,10 @@ main:
 #  - title: "Blog (zh)"
 #    url: https://nha6ki-zh.blogspot.com/
 
-  - title: "Blog (ja)"
+  - title: "Blog"
     url: https://nha6ki.hatenablog.com/
 
-  - title: "Docs (ja)"
+  - title: "Docs"
     url: https://nha6ki.github.io/niwa-docs/
 
 #  - title: "Slides"
