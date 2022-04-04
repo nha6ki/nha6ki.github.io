@@ -19,6 +19,11 @@ I am working as an junior researcher at [Araya Inc.](https://www.araya.org/en/),
 - [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
+## Education
+- Graduate School of Information Science and Technology, Aichi Prefectural University, 2020–2022.
+- Undergraduate School of Information Science and Technology, Aichi Prefectural University, 2016–2020.
+  - Bachelor of Information Science and Technology
+
 ## Likes & Skills
 ### Programming Language
 ![Python](https://img.shields.io/badge/-Python-grey?style=flat-square&logo=python)&nbsp;
