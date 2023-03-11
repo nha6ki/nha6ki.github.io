@@ -12,11 +12,11 @@ I am working as an junior researcher at [Araya Inc.](https://www.araya.org/en/),
 
 ## Research Interest
 - Machine Learning
-- Mental Disorders
+- Mood Disorders
 
 ## Work Experience
-- [Araya Inc.](https://www.araya.org/en/), Junior Researcher (fixed-term employee), March 2022–present.
-- [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022
+- [Araya Inc.](https://www.araya.org/en/), Researcher (fixed-term employee), March 2022–present.
+- [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022.
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
 ## Education
@@ -63,4 +63,5 @@ I am working as an junior researcher at [Araya Inc.](https://www.araya.org/en/),
 ### Painting
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
 - (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh)
+- Nihonga: [Nakamura Masayoshi](http://nakamuramasayoshi.com/)
 - Outsider Art

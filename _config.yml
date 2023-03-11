@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Haruki Niwa"
 title_separator          : "-"
 name                     : &name "Haruki Niwa"
-description              : &description "Human"
+description              : &description " "
 url                      : https://nha6ki.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "nha6ki.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Haruki Niwa"
   avatar           : "me.jpg"
-  bio              : "Human"
+  bio              : " "
   location         : "Japan"
   employer         :
   pubmed           :
