@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am working as an junior researcher at [Araya Inc.](https://www.araya.org/en/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
+I am working as a researcher at [Araya Inc.](https://www.araya.org/en/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
 ## Research Interest
 - Machine Learning
