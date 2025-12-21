@@ -25,7 +25,6 @@ I am working as a Education and Research Support Staff at [Center for Brain, Min
 ## Education
 - Graduate School of Information Science and Technology, Aichi Prefectural University, 2020–2022.
 - Undergraduate School of Information Science and Technology, Aichi Prefectural University, 2016–2020.
-  - Bachelor of Information Science and Technology
 
 ## Likes & Skills
 ### Programming Language
