@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am an Education and Research Support Staff member at the [Center for Brain, Mind and KANSEI Sciences Research (BMK Center)]((https://bmk.hiroshima-u.ac.jp/)), Hiroshima University.
+I am an Education and Research Support Staff member at the [Center for Brain, Mind and KANSEI Sciences Research (BMK Center)](https://bmk.hiroshima-u.ac.jp/), Hiroshima University.
 
 <!--
 ## Research Interests
