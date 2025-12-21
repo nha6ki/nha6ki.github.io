@@ -17,8 +17,8 @@ I am working as a Education and Research Support Staff at [Center for Brain, Min
 -->
 
 ## Work Experience
-- [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), Education and Research Support Staff (fixed-term employee), April 2025–present.
-- [Araya Inc.](https://www.araya.org/en/), Researcher (fixed-term employee), March 2022–March 2025.
+- [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), Education and Research Support Staff, April 2025–present.
+- [Araya Inc.](https://www.araya.org/en/), Researcher, March 2022–March 2025.
 - [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022.
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
