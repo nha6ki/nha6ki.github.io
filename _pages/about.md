@@ -8,14 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-I am working as a researcher at [Araya Inc.](https://www.araya.org/en/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
+I am working as a Education and Research Support Staff at [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
 ## Research Interest
 - Machine Learning
 - Mood Disorders
 
 ## Work Experience
-- [Araya Inc.](https://www.araya.org/en/), Researcher (fixed-term employee), March 2022–present.
+- [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), Researcher (fixed-term employee), April 2025–present.
+- [Araya Inc.](https://www.araya.org/en/), Researcher (fixed-term employee), March 2022–March 2025.
 - [Araya Inc.](https://www.araya.org/en/), Intern, April 2021–March 2022.
 - [National Institute for Physiological Sciences](https://www.nips.ac.jp/eng/), Technical Support Staff (part-time), June 2017–March 2021.
 
@@ -35,6 +36,8 @@ I am working as a researcher at [Araya Inc.](https://www.araya.org/en/), advised
 ![Keras](https://img.shields.io/badge/Keras-grey?style=flat-square&logo=keras)&nbsp;
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-grey?style=flat-square&logo=tensorflow)&nbsp;
 ![p5.js](https://img.shields.io/badge/p5.js-grey?style=flat-square&logo=p5.js)&nbsp;
+![Optuna](https://img.shields.io/badge/Optuna-grey?style=flat-square&logo=optuna)&nbsp;
+
 
 ### Framework
 ![Flask](https://img.shields.io/badge/Flask-grey?style=flat-square&logo=flask)&nbsp;
@@ -50,6 +53,10 @@ I am working as a researcher at [Araya Inc.](https://www.araya.org/en/), advised
 ![netlify](https://img.shields.io/badge/netlify-grey?style=flat-square&logo=netlify)&nbsp;
 ![LaTeX](https://img.shields.io/badge/LaTeX-grey?style=flat-square&logo=latex)&nbsp;
 ![Sphinx](https://img.shields.io/badge/Sphinx-grey?style=flat-square&logo=sphinx)&nbsp;
+![FSL](https://img.shields.io/badge/FSL-grey?style=flat-square&logo=fsl)&nbsp;
+![ANTs](https://img.shields.io/badge/ANTs-grey?style=flat-square&logo=ants)&nbsp;
+![Ollama](https://img.shields.io/badge/Ollama-grey?style=flat-square&logo=ollama)&nbsp;
+![HTCondor](https://img.shields.io/badge/HTCondor-grey?style=flat-square&logo=HTCondora)&nbsp;
 
 ### Book
 [BookLog - Favorite Books](https://booklog.jp/users/nha6ki/all?category_id=all&status=all&rank=5)
@@ -64,4 +71,3 @@ I am working as a researcher at [Araya Inc.](https://www.araya.org/en/), advised
 - Ukiyo-e (Musha-e, Muzan-e) : [Tsukioka Yoshitoshi](https://artsandculture.google.com/entity/yoshitoshi/m01rtn7)
 - (In a broader sense) Expressionism : [Francis Bacon](https://www.wikiart.org/en/francis-bacon), [Edvard Munch](https://www.wikiart.org/en/edvard-munch/), [Vincent van Gogh](https://www.wikiart.org/en/vincent-van-gogh)
 - Nihonga: [Nakamura Masayoshi](http://nakamuramasayoshi.com/)
-- Outsider Art
