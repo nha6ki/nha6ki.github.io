@@ -10,9 +10,11 @@ redirect_from:
 
 I am working as a Education and Research Support Staff at [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), advised by [Junichi Chikazoe](https://scholar.google.co.jp/citations?user=jlB0TpIAAAAJ).
 
+<!--
 ## Research Interest
 - Machine Learning
 - Mood Disorders
+-->
 
 ## Work Experience
 - [Center for Brain, Mind and KANSEI Sciences Research (BMK Center), Hiroshima University](https://bmk.hiroshima-u.ac.jp/), Researcher (fixed-term employee), April 2025–present.
