@@ -1,0 +1,449 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrandIcon from '../components/BrandIcon.astro';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import * as icons from 'simple-icons';
+
+const linkedinIcon = {
+  viewBox: `0 0 ${faLinkedin.icon[0]} ${faLinkedin.icon[1]}`,
+  path: Array.isArray(faLinkedin.icon[4])
+    ? faLinkedin.icon[4][0]
+    : faLinkedin.icon[4],
+};
+
+const experiences = [
+  {
+    period: 'Apr 2025 – Present',
+    role: 'Education and Research Support Staff',
+    organization: 'BMK Center, Hiroshima University',
+    url: 'https://zoelabo.com/',
+  },
+  {
+    period: 'Mar 2022 – Mar 2025',
+    role: 'Researcher',
+    organization: 'Araya Inc.',
+    url: 'https://www.araya.org/en/',
+  },
+  {
+    period: 'Apr 2021 – Mar 2022',
+    role: 'Research Intern',
+    organization: 'Araya Inc.',
+    url: 'https://www.araya.org/en/',
+  },
+  {
+    period: 'Jun 2017 – Mar 2021',
+    role: 'Part-time Technical Support Staff',
+    organization: 'National Institute for Physiological Sciences',
+    url: 'https://www.nips.ac.jp/eng/',
+  },
+];
+
+const iconFor = (key: string) =>
+  (icons as unknown as Record<string, { svg: string } | undefined>)[key] ?? null;
+
+const skillGroups = [
+  {
+    category: 'Machine Learning & Programming',
+    items: [
+      { name: 'Python', icon: iconFor('siPython') },
+      { name: 'MATLAB', icon: iconFor('siMathworks') },
+      { name: 'PyTorch', icon: iconFor('siPytorch') },
+      { name: 'scikit-learn', icon: iconFor('siScikitlearn') },
+      { name: 'Keras', icon: iconFor('siKeras') },
+      { name: 'TensorFlow', icon: iconFor('siTensorflow') },
+      { name: 'Optuna', icon: iconFor('siOptuna') },
+      { name: 'Jupyter', icon: iconFor('siJupyter') },
+    ],
+  },
+  {
+    category: 'Neuroimaging & Robotics',
+    items: [
+      { name: 'EEG', icon: null },
+      { name: 'fMRI', icon: null },
+      { name: 'FSL', icon: null },
+      { name: 'ANTs', icon: null },
+      { name: 'ROS', icon: iconFor('siRos') },
+    ],
+  },
+  {
+    category: 'Infrastructure & Cloud',
+    items: [
+      { name: 'Linux', icon: iconFor('siLinux') },
+      { name: 'Docker', icon: iconFor('siDocker') },
+      { name: 'HTCondor', icon: null },
+      { name: 'Grafana', icon: iconFor('siGrafana') },
+      { name: 'Google Cloud', icon: iconFor('siGooglecloud') },
+      { name: 'Heroku', icon: iconFor('siHeroku') },
+      { name: 'Netlify', icon: iconFor('siNetlify') },
+      { name: 'Ollama', icon: iconFor('siOllama') },
+    ],
+  },
+  {
+    category: 'Development & Documentation',
+    items: [
+      { name: 'Git', icon: iconFor('siGit') },
+      { name: 'GitHub', icon: iconFor('siGithub') },
+      { name: 'FastAPI', icon: iconFor('siFastapi') },
+      { name: 'Flask', icon: iconFor('siFlask') },
+      { name: 'Scrapy', icon: iconFor('siScrapy') },
+      { name: 'p5.js', icon: iconFor('siP5Dotjs') },
+      { name: 'LaTeX', icon: iconFor('siLatex') },
+      { name: 'Sphinx', icon: iconFor('siSphinx') },
+    ],
+  },
+];
+
+const interests = [
+  {
+    name: 'Books',
+    links: [
+      {
+        name: 'Booklog',
+        url: 'https://booklog.jp/users/nha6ki/all?category_id=all&status=all&rank=5',
+      },
+    ],
+  },
+  {
+    name: 'Movies',
+    links: [
+      { name: 'Letterboxd', url: 'https://letterboxd.com/nha6ki/' },
+    ],
+  },
+  {
+    name: 'Music',
+    links: [
+      {
+        name: 'Spotify',
+        url: 'https://open.spotify.com/user/31v3cahrob7oechwpa6bqhuwh47i',
+      },
+    ],
+  },
+  {
+    name: 'Painting',
+    links: [
+      {
+        name: 'Tsukioka Yoshitoshi',
+        url: 'https://artsandculture.google.com/entity/yoshitoshi/m01rtn7',
+      },
+      {
+        name: 'Francis Bacon',
+        url: 'https://www.wikiart.org/en/francis-bacon',
+      },
+      {
+        name: 'Vincent van Gogh',
+        url: 'https://www.wikiart.org/en/vincent-van-gogh',
+      },
+      {
+        name: 'Nakamura Masayoshi',
+        url: 'http://nakamuramasayoshi.com/',
+      },
+    ],
+  },
+  {
+    name: 'Games',
+    links: [
+      {
+        name: 'Backloggd',
+        url: 'https://backloggd.com/u/nha6ki/likes/',
+      },
+    ],
+  },
+];
+
+const socials = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/nha6ki',
+    icon: icons.siGithub,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/harukiniwa',
+    icon: null,
+  },
+  {
+    name: 'DEV.to',
+    url: 'https://dev.to/nha6ki',
+    icon: icons.siDevdotto,
+  },
+  {
+    name: 'Twitter',
+    url: 'https://x.com/nha6ki',
+    icon: icons.siX ?? null,
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/channel/UCziACJpCinuqWltWEQr54dg',
+    icon: icons.siYoutube ?? null,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/suns._.n/',
+    icon: icons.siInstagram,
+  },
+];
+---
+
+<BaseLayout title="About | Haruki Niwa">
+  <div class="content-page about-page">
+    <h1>About Me</h1>
+
+    <p class="lead">
+      I'm Haruki Niwa. My interests span machine learning,
+      neuroscience, scientific computing, and software engineering.
+    </p>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="experience-list">
+        {experiences.map((item) => (
+          <div class="experience-item">
+            <div class="experience-period">{item.period}</div>
+            <div class="experience-content">
+              <h3>{item.role}</h3>
+              <a href={item.url} target="_blank" rel="noopener noreferrer">
+                {item.organization}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+
+      <div class="education-item">
+        <strong>Aichi Prefectural University</strong>
+        <p>Graduate School of Information Science and Technology · 2020–2022</p>
+        <p>Undergraduate School of Information Science and Technology · 2016–2020</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+
+      <div class="skill-groups">
+        {skillGroups.map((group) => (
+          <div class="skill-group">
+            <h3>{group.category}</h3>
+
+            <div class="skill-items">
+              {group.items.map((skill) => (
+                <span class="skill-item">
+                  {skill.icon && <BrandIcon icon={skill.icon} />}
+                  <span>{skill.name}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>Interests</h2>
+
+      <ul class="interests-list">
+        {interests.map((item) => (
+          <li>
+            <strong>{item.name}</strong>
+            <div class="interest-links">
+              {item.links.map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Find Me Online</h2>
+
+      <div class="social-grid">
+        {socials.map((item) => (
+          <a
+            class="social-chip"
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.name === 'LinkedIn' ? (
+              <svg
+                class="brand-icon linkedin-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox={linkedinIcon.viewBox}
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d={linkedinIcon.path} />
+              </svg>
+            ) : item.icon ? (
+              <BrandIcon icon={item.icon} />
+            ) : null}
+            <span>{item.name}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .experience-list {
+    display: grid;
+    gap: 24px;
+  }
+
+  .experience-item {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .experience-period {
+    color: #64748b;
+    font-size: .85rem;
+    padding-top: 3px;
+  }
+
+  .experience-content h3 {
+    font-size: 1rem;
+    font-weight: 650;
+    margin: 0 0 5px;
+  }
+
+  .experience-content a,
+  .interest-links a {
+    color: #526070;
+    transition: color 160ms ease;
+  }
+
+  .experience-content a:hover,
+  .interest-links a:hover {
+    color: #1d4ed8;
+  }
+
+  .education-item p {
+    margin: 7px 0;
+    color: #526070;
+    font-size: .94rem;
+  }
+
+  .skill-details {
+    margin-top: 22px;
+  }
+
+  .skill-details p {
+    margin: 10px 0;
+  }
+
+  .interests-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .interests-list li {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e8ebef;
+  }
+
+  .interest-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 15px;
+    overflow-wrap: anywhere;
+  }
+
+  .brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    flex: none;
+  }
+
+  @media (max-width: 640px) {
+    .experience-item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .interests-list li {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  }
+
+  .skill-groups {
+    display: grid;
+  }
+
+  .skill-group {
+    display: grid;
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e8ebef;
+  }
+
+  .skill-group h3 {
+    margin: 7px 0 0;
+    font-size: .94rem;
+    font-weight: 600;
+  }
+
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 11px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    font-size: .86rem;
+  }
+
+  .skill-item :global(.brand-icon) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .linkedin-icon {
+    fill: currentColor;
+  }
+
+  .experience-content a,
+  .interest-links a {
+    text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .skill-group {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+
+</style>
