@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Personal website of Haruki Niwa.'
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navigation = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Projects', href: '/projects/' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">Haruki Niwa</a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            {navigation.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={(item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href)) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© {new Date().getFullYear()} Haruki Niwa</span>
+      </div>
+    </footer>
+  </body>
+</html>

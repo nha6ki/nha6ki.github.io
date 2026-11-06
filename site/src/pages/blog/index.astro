@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DevArticles from '../../components/DevArticles.astro';
+import { siDevdotto } from 'simple-icons';
+---
+
+<BaseLayout
+  title="Blog | Haruki Niwa"
+  description="Technical articles by Haruki Niwa, published on DEV.to."
+>
+  <div class="content-page">
+    <div class="blog-heading">
+      <h1>Blog</h1>
+
+      <a
+        class="dev-profile-link"
+        href="https://dev.to/nha6ki"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Haruki Niwa's DEV.to profile"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d={siDevdotto.path} />
+        </svg>
+        <span>DEV.to Profile</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <p class="lead">
+      Technical articles on machine learning, neuroscience,
+      infrastructure, and software development.
+    </p>
+
+    <DevArticles limit={6} paginate={true} />
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .blog-heading h1 {
+    margin-bottom: 0;
+  }
+
+  .dev-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid #e2e6eb;
+    border-radius: 8px;
+    font-size: .88rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #334155;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .dev-profile-link:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+  }
+
+  .dev-profile-link svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+</style>

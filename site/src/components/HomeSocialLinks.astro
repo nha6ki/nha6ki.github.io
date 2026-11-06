@@ -1,0 +1,104 @@
+---
+import { faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { siInstagram } from 'simple-icons';
+
+const faPath = (icon: typeof faLinkedin) => {
+  const data = icon.icon[4];
+  return Array.isArray(data) ? data[0] : data;
+};
+
+const socials = [
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/harukiniwa',
+    viewBox: `0 0 ${faLinkedin.icon[0]} ${faLinkedin.icon[1]}`,
+    path: faPath(faLinkedin),
+  },
+  {
+    name: 'Twitter',
+    url: 'https://x.com/nha6ki',
+    viewBox: `0 0 ${faXTwitter.icon[0]} ${faXTwitter.icon[1]}`,
+    path: faPath(faXTwitter),
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/suns._.n/',
+    viewBox: '0 0 24 24',
+    path: siInstagram.path,
+  },
+];
+---
+
+<nav class="home-social-icons" aria-label="Social profiles">
+  {socials.map((social) => (
+    <a
+      href={social.url}
+      aria-label={social.name}
+      title={social.name}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox={social.viewBox}
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d={social.path} />
+      </svg>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .home-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .home-social-icons a {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e6eb;
+    border-radius: 9px;
+    color: #334155;
+    transition:
+      color 160ms ease,
+      background 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .home-social-icons a:hover {
+    color: #1d4ed8;
+    background: #f8fafc;
+    border-color: #a7b8cf;
+    transform: translateY(-2px);
+  }
+
+  .home-social-icons a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+  }
+
+  .home-social-icons svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-social-icons a {
+      transition: none;
+    }
+
+    .home-social-icons a:hover {
+      transform: none;
+    }
+  }
+</style>

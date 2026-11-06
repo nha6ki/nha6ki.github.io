@@ -1,0 +1,385 @@
+---
+interface Props {
+  limit?: number;
+  paginate?: boolean;
+}
+
+const { limit = 3, paginate = false } = Astro.props;
+---
+
+<div
+  class="dev-articles"
+  data-dev-articles
+  data-page-size={limit}
+  data-paginate={String(paginate)}
+>
+  {paginate && (
+    <div
+      class="article-categories"
+      role="group"
+      aria-label="Filter articles by category"
+      hidden
+    ></div>
+  )}
+
+  <p class="dev-status" role="status">Loading articles...</p>
+  <div class="article-grid"></div>
+
+  {paginate && (
+    <button class="dev-load-more" type="button" hidden>
+      Load more articles
+    </button>
+  )}
+
+  <noscript>
+    <p>
+      JavaScript is required to display articles.
+      <a href="https://dev.to/nha6ki">Read on DEV.to</a>.
+    </p>
+  </noscript>
+</div>
+
+<script>
+  interface Article {
+    id?: number;
+    title: string;
+    description?: string;
+    url: string;
+    cover_image?: string | null;
+    social_image?: string | null;
+    published_at?: string;
+    reading_time_minutes?: number;
+    tag_list?: string[] | string;
+    tags?: string;
+  }
+
+  const categories = [
+    {
+      id: 'ml',
+      label: 'Machine Learning',
+      tags: [
+        'machinelearning', 'deeplearning', 'ai',
+        'llm', 'pytorch', 'datascience', 'ml',
+      ],
+    },
+    {
+      id: 'neuro',
+      label: 'Neuroscience',
+      tags: [
+        'neuroscience', 'fmri', 'eeg',
+        'neuroimaging', 'computationalneuroscience',
+      ],
+    },
+    {
+      id: 'infra',
+      label: 'Infrastructure',
+      tags: [
+        'linux', 'docker', 'devops', 'cloud',
+        'hpc', 'htcondor', 'gpu', 'gcp',
+        'kubernetes', 'grafana',
+      ],
+    },
+    {
+      id: 'web',
+      label: 'Web Development',
+      tags: [
+        'webdev', 'astro', 'fastapi', 'javascript',
+        'typescript', 'frontend', 'backend',
+        'api', 'html', 'css',
+      ],
+    },
+  ];
+
+  function normalizeTag(tag: string): string {
+    return tag.toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
+  function getTags(article: Article): string[] {
+    const source = Array.isArray(article.tag_list)
+      ? article.tag_list
+      : typeof article.tag_list === 'string'
+        ? article.tag_list.split(',')
+        : typeof article.tags === 'string'
+          ? article.tags.split(',')
+          : [];
+
+    return source
+      .filter((tag): tag is string => typeof tag === 'string')
+      .map(normalizeTag);
+  }
+
+  function matchesCategory(article: Article, id: string): boolean {
+    if (id === 'all') return true;
+
+    const tags = getTags(article);
+
+    const matches = (category: typeof categories[number]) =>
+      category.tags.some(tag => tags.includes(tag));
+
+    if (id === 'other') {
+      return !categories.some(matches);
+    }
+
+    const category = categories.find(c => c.id === id);
+    return category ? matches(category) : false;
+  }
+
+  function validUrl(value: unknown): string | null {
+    if (typeof value !== 'string') return null;
+
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' ? url.href : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function isArticle(value: unknown): value is Article {
+    if (!value || typeof value !== 'object') return false;
+
+    const item = value as Record<string, unknown>;
+    const url = validUrl(item.url);
+
+    return (
+      typeof item.title === 'string' &&
+      url !== null &&
+      new URL(url).hostname === 'dev.to'
+    );
+  }
+
+  function makeCard(article: Article): HTMLAnchorElement {
+    const card = document.createElement('a');
+    card.className = 'article-card';
+    card.href = article.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+
+    const imageBox = document.createElement('div');
+    imageBox.className = 'article-image';
+
+    const imageUrl =
+      validUrl(article.cover_image) ||
+      validUrl(article.social_image);
+
+    if (imageUrl) {
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+
+      img.addEventListener('error', () => {
+        img.remove();
+        imageBox.textContent = 'DEV.to';
+      });
+
+      imageBox.appendChild(img);
+    } else {
+      imageBox.textContent = 'DEV.to';
+    }
+
+    const content = document.createElement('div');
+    content.className = 'article-content';
+
+    const meta = document.createElement('div');
+    meta.className = 'article-meta';
+
+    if (article.published_at) {
+      const date = new Date(article.published_at);
+
+      if (!Number.isNaN(date.getTime())) {
+        const time = document.createElement('time');
+        time.dateTime = article.published_at;
+        time.textContent = date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        });
+        meta.appendChild(time);
+      }
+    }
+
+    if (
+      typeof article.reading_time_minutes === 'number' &&
+      article.reading_time_minutes > 0
+    ) {
+      const reading = document.createElement('span');
+      reading.textContent =
+        `${article.reading_time_minutes} min read`;
+      meta.appendChild(reading);
+    }
+
+    const title = document.createElement('h3');
+    title.className = 'article-card-title';
+    title.textContent = article.title;
+
+    content.append(meta, title);
+
+    if (article.description) {
+      const description = document.createElement('p');
+      description.className = 'article-description';
+      description.textContent = article.description;
+      content.appendChild(description);
+    }
+
+    const tags = getTags(article);
+
+    if (tags.length) {
+      const tagRow = document.createElement('div');
+      tagRow.className = 'article-tags';
+
+      for (const tag of tags.slice(0, 3)) {
+        const chip = document.createElement('span');
+        chip.textContent = `#${tag}`;
+        tagRow.appendChild(chip);
+      }
+
+      content.appendChild(tagRow);
+    }
+
+    card.append(imageBox, content);
+    return card;
+  }
+
+  async function fetchArticles(all: boolean, pageSize: number): Promise<Article[]> {
+    const results: Article[] = [];
+    const perPage = all ? 100 : pageSize;
+    let page = 1;
+
+    while (true) {
+      const url = new URL('https://dev.to/api/articles');
+      url.searchParams.set('username', 'nha6ki');
+      url.searchParams.set('per_page', String(perPage));
+      url.searchParams.set('page', String(page));
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`DEV.to API returned ${response.status}`);
+      }
+
+      const data: unknown = await response.json();
+
+      if (!Array.isArray(data)) {
+        throw new Error('Invalid DEV.to API response');
+      }
+
+      results.push(...data.filter(isArticle));
+
+      if (!all || data.length < perPage) break;
+
+      page += 1;
+    }
+
+    return results.sort(
+      (a, b) =>
+        Date.parse(b.published_at || '') -
+        Date.parse(a.published_at || '')
+    );
+  }
+
+  async function initialize(container: HTMLElement) {
+    const pageSize = Math.max(
+      1,
+      Number(container.dataset.pageSize) || 3
+    );
+
+    const paginate = container.dataset.paginate === 'true';
+
+    const grid = container.querySelector<HTMLElement>('.article-grid');
+    const status = container.querySelector<HTMLElement>('.dev-status');
+    const filters = container.querySelector<HTMLElement>('.article-categories');
+    const loadMore = container.querySelector<HTMLButtonElement>('.dev-load-more');
+
+    if (!grid || !status) return;
+
+    try {
+      const articles = await fetchArticles(paginate, pageSize);
+
+      if (articles.length === 0) {
+        status.className = 'dev-empty';
+        status.textContent = 'No published articles yet.';
+        return;
+      }
+
+      status.hidden = true;
+
+      let selected = 'all';
+      let visible = pageSize;
+
+      function render() {
+        const matching = articles.filter(article =>
+          matchesCategory(article, selected)
+        );
+
+        grid!.replaceChildren(
+          ...matching.slice(0, visible).map(makeCard)
+        );
+
+        if (loadMore) {
+          loadMore.hidden = visible >= matching.length;
+        }
+
+        filters?.querySelectorAll<HTMLButtonElement>('button')
+          .forEach(button => {
+            button.setAttribute(
+              'aria-pressed',
+              String(button.dataset.category === selected)
+            );
+          });
+      }
+
+      if (paginate && filters) {
+        const options = [
+          { id: 'all', label: 'All' },
+          ...categories.map(({ id, label }) => ({ id, label })),
+          { id: 'other', label: 'Other' },
+        ];
+
+        for (const option of options) {
+          const count = articles.filter(article =>
+            matchesCategory(article, option.id)
+          ).length;
+
+          if (count === 0) continue;
+
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'category-button';
+          button.dataset.category = option.id;
+          button.textContent = `${option.label} (${count})`;
+
+          button.addEventListener('click', () => {
+            selected = option.id;
+            visible = pageSize;
+            render();
+          });
+
+          filters.appendChild(button);
+        }
+
+        filters.hidden = false;
+      }
+
+      loadMore?.addEventListener('click', () => {
+        visible += pageSize;
+        render();
+      });
+
+      render();
+    } catch (error) {
+      console.error('Failed to load DEV.to articles:', error);
+
+      status.className = 'dev-empty';
+      status.textContent =
+        'Articles are temporarily unavailable. Please try again later.';
+    }
+  }
+
+  document
+    .querySelectorAll<HTMLElement>('[data-dev-articles]')
+    .forEach(container => {
+      void initialize(container);
+    });
+</script>

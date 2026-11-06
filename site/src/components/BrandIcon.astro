@@ -1,0 +1,9 @@
+---
+interface Props {
+  icon: { svg: string };
+}
+
+const { icon } = Astro.props;
+---
+
+<span class="brand-icon" aria-hidden="true" set:html={icon.svg} />

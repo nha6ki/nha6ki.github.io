@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+
+<BaseLayout title="Projects | Haruki Niwa">
+  <div class="content-page">
+    <h1>Projects</h1>
+    <p class="lead">
+      A selection of my work in machine learning,
+      neuroscience, software development, and computing.
+    </p>
+  </div>
+
+  <div class="project-grid">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</BaseLayout>

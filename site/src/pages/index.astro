@@ -1,16 +1,49 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeSocialLinks from '../components/HomeSocialLinks.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import DevArticles from '../components/DevArticles.astro';
+import { projects } from '../data/projects';
+
+const featured = projects.slice(0, 4);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Haruki Niwa | Research & Engineering">
+  <section class="hero">
+
+    <h1>Haruki Niwa</h1>
+
+    <p class="lead">
+      I work on machine learning, neuroscience,
+      scientific computing, and software development
+      at Hiroshima University, Japan.
+    </p>
+
+    <HomeSocialLinks />
+  </section>
+
+  <section class="section" aria-labelledby="articles-heading">
+    <div class="section-heading">
+      <h2 id="articles-heading">Latest Articles</h2>
+      <a class="text-link" href="/blog/">View all →</a>
+    </div>
+
+    <div class="home-articles">
+      <DevArticles limit={6} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="projects-heading">
+    <div class="section-heading">
+      <h2 id="projects-heading">Selected Projects</h2>
+      <a class="text-link" href="/projects/">View all →</a>
+    </div>
+
+    <div class="project-grid">
+      {featured.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </section>
+
+</BaseLayout>
