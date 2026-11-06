@@ -1,36 +1,34 @@
 ---
 title: "Niwa Docs"
-summary: "A Sphinx-based knowledge base of research notes and curated resources across machine learning, programming, and neuroscience."
+summary: "A searchable collection of research notes and technical references, built with Sphinx."
+date: "2022-03"
 technologies:
   - Sphinx
+  - reStructuredText
+  - Read the Docs Theme
+  - GitHub Pages
 order: 5
 featured: false
 image: "/images/projects/niwa-docs.png"
 links:
-  - label: "Visit Niwa Docs"
+  - label: "View Documentation"
     url: "https://nha6ki.github.io/niwa-docs/"
+  - label: "GitHub Repository"
+    url: "https://github.com/nha6ki/niwa-docs"
 ---
 
 ## Overview
 
-Niwa Docs is a personal knowledge base built with Sphinx to organize research notes, technical concepts, and useful learning resources.
-
-The website brings together notes and curated references from academic papers, books, technical documentation, tutorials, and GitHub repositories. Its purpose is to make information collected across different research and engineering topics easier to organize, revisit, and explore.
+Niwa Docs brings together notes and external resources collected while studying research and engineering topics. The material is organized by subject to make it easy to browse and revisit.
 
 ## Topics Covered
 
-The documentation spans several areas of research and technology:
+- **Research:** Literature reviews, research planning, academic writing, and presentations.
+- **Machine Learning & AI:** Deep learning, reinforcement learning, computer vision, natural language processing, and anomaly detection.
+- **Programming & Computing:** Python, C++, Git, Docker, and cloud computing.
+- **Neuroscience & Biomedical Engineering:** Computational neuroscience, neuroaesthetics, and physiological signals.
+- **Mathematics & Robotics:** Mathematical analysis, Bayesian statistics, and probabilistic robotics.
 
-- **Research Practices:** Literature surveys, research planning, academic writing, paper submission, and scientific presentations.
-- **Machine Learning & AI:** Machine learning, deep learning, reinforcement learning, computer vision, natural language processing, anomaly detection, and datasets.
-- **Programming & Software Engineering:** Python, C++, Git, Docker, code review, and development tools.
-- **Neuroscience & Biomedical Engineering:** Computational neuroscience, neuroaesthetics, physiological signals, and related references.
-- **Other Topics:** Mathematics, statistics, robotics, cloud computing, and interdisciplinary subjects.
+## Development
 
-## Design & Implementation
-
-The site uses Sphinx to organize a broad collection of notes and references into a hierarchical documentation structure.
-
-Its topic-based navigation and built-in search make it possible to browse resources by subject or find information directly.
-
-Rather than serving as a comprehensive tutorial, Niwa Docs functions as a personal research reference, combining informal learning notes with links to external resources.
+I wrote the documentation in **reStructuredText** and used **Sphinx** with `toctree` directives to organize the content hierarchically. The **Read the Docs theme** provides navigation, while Sphinx generates static HTML with search functionality. The site is published on **GitHub Pages**.
