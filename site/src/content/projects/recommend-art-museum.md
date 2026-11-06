@@ -9,7 +9,7 @@ technologies:
   - Heroku
 order: 6
 featured: false
-image: "/images/projects/recommend-art-museum.png"
+image: "/images/projects/recommend-art-museum.webp"
 ---
 
 ## Overview
