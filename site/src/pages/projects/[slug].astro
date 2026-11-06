@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { siGithub } from 'simple-icons';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -17,6 +18,34 @@ const { project } = Astro.props as {
 };
 
 const { Content } = await render(project);
+
+const formattedDate = project.data.date
+  ? new Intl.DateTimeFormat('en-US', {
+      month: 'long',
+      year: 'numeric',
+      timeZone: 'UTC',
+    }).format(new Date(`${project.data.date}-01T00:00:00Z`))
+  : null;
+
+function linkInfo(url: string) {
+  const hostname = new URL(url).hostname.toLowerCase();
+
+  if (hostname === 'github.com' &&
+      new URL(url).pathname.includes('/blob/')) {
+    return { github: true, detail: 'GitHub File' };
+  }
+
+  if (hostname === 'github.com' ||
+      hostname.endsWith('.github.com')) {
+    return { github: true, detail: 'GitHub Repository' };
+  }
+
+  if (hostname.endsWith('.github.io')) {
+    return { github: true, detail: 'GitHub Pages' };
+  }
+
+  return { github: false, detail: hostname };
+}
 ---
 
 <BaseLayout
@@ -29,7 +58,71 @@ const { Content } = await render(project);
     </a>
 
     <h1>{project.data.title}</h1>
+
     <p class="lead">{project.data.summary}</p>
+
+    {formattedDate && (
+      <time class="project-date" datetime={project.data.date}>
+        {formattedDate}
+      </time>
+    )}
+
+    {project.data.links.length > 0 && (
+      <nav
+        class="project-resources"
+        aria-label="Project resources"
+      >
+        {project.data.links.map((link) => (
+          <a
+            class="project-resource"
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="resource-icon">
+              {linkInfo(link.url).github ? (
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d={siGithub.path} />
+                </svg>
+              ) : (
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18" />
+                  <path d="M12 3a15 15 0 0 1 0 18" />
+                  <path d="M12 3a15 15 0 0 0 0 18" />
+                </svg>
+              )}
+            </span>
+
+            <span class="resource-text">
+              <span class="resource-title">
+                {link.label}
+              </span>
+              <span class="resource-detail">
+                {linkInfo(link.url).detail}
+              </span>
+            </span>
+
+            <span class="resource-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        ))}
+      </nav>
+    )}
 
     {project.data.image && (
       <a
@@ -49,29 +142,119 @@ const { Content } = await render(project);
       </a>
     )}
 
-    {project.data.links.length > 0 && (
-      <nav class="project-links" aria-label="Project links">
-        {project.data.links.map((link) => (
-          <a
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link.label} ↗
-          </a>
-        ))}
-      </nav>
-    )}
-
     <div class="project-body">
       <Content />
     </div>
 
     <section>
-      <h2>Technologies</h2>
+      <h2>Tools & Technologies</h2>
       <p class="technologies">
         {project.data.technologies.join(' · ')}
       </p>
     </section>
   </article>
 </BaseLayout>
+
+<style>
+  .project-date {
+    display: block;
+    margin: 12px 0 24px;
+    color: #64748b;
+    font-size: .9rem;
+  }
+
+  .project-resources {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 26px 0 32px;
+  }
+
+  .project-resource {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid #e2e6eb;
+    border-radius: 10px;
+    background: #fff;
+    transition:
+      border-color 160ms ease,
+      background-color 160ms ease;
+  }
+
+  .project-resource:hover {
+    border-color: #a7b8cf;
+    background: #f8fafc;
+  }
+
+  .resource-icon {
+    display: flex;
+    flex: none;
+    color: #334155;
+  }
+
+  .resource-icon svg {
+    width: 23px;
+    height: 23px;
+    fill: currentColor;
+  }
+
+  .resource-icon svg[fill="none"] {
+    fill: none;
+  }
+
+  .resource-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    gap: 3px;
+  }
+
+  .resource-title {
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .resource-detail {
+    font-size: .77rem;
+    color: #64748b;
+  }
+
+  .resource-arrow {
+    flex: none;
+    align-self: flex-start;
+    color: #64748b;
+    font-size: .9rem;
+  }
+
+  .project-cover-link {
+    display: block;
+    width: min(100%, 520px);
+    margin: 30px auto 16px;
+  }
+
+  .project-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border: 1px solid #e2e6eb;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 640px) {
+    .project-resources {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-resource {
+      transition: none;
+    }
+  }
+</style>
