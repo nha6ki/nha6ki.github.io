@@ -32,13 +32,21 @@ const { Content } = await render(project);
     <p class="lead">{project.data.summary}</p>
 
     {project.data.image && (
-      <img
-        class="project-cover"
-        src={project.data.image}
-        alt={`Screenshot of ${project.data.title}`}
-        loading="lazy"
-        decoding="async"
-      />
+      <a
+        class="project-cover-link"
+        href={project.data.image}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View full-size screenshot of ${project.data.title}`}
+      >
+        <img
+          class="project-cover"
+          src={project.data.image}
+          alt={`Screenshot of ${project.data.title}`}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
     )}
 
     {project.data.links.length > 0 && (

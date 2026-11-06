@@ -614,3 +614,48 @@ h2 {
     scroll-snap-type: none;
   }
 }
+
+
+/* Project detail: compact screenshots and readable Markdown */
+.project-cover-link {
+  display: block;
+  width: min(100%, 520px);
+  margin: 30px auto 16px;
+  border-radius: 10px;
+}
+
+.project-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e2e6eb;
+  border-radius: 10px;
+}
+
+.project-cover-link:hover .project-cover {
+  border-color: #94a3b8;
+}
+
+.project-body {
+  margin-top: 36px;
+}
+
+.project-body h2 {
+  margin: 32px 0 14px;
+}
+
+.project-body p,
+.project-body ul,
+.project-body ol {
+  margin: 0 0 18px;
+}
+
+.project-body li + li {
+  margin-top: 6px;
+}
+
+.project-body a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
