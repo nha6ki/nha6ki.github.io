@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nha6ki.github.io/sitemap-index.xml

@@ -7,7 +7,10 @@ const projects = (await getCollection('projects'))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title="Projects | Haruki Niwa">
+<BaseLayout
+  title="Projects | Haruki Niwa"
+  description="Explore research and software development projects by Haruki Niwa, including machine learning applications, recommendation systems, and scientific computing."
+>
   <div class="content-page">
     <h1>Projects</h1>
 
