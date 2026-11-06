@@ -1,0 +1,49 @@
+name: Deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches:
+      - redesign-astro
+    paths:
+      - 'site/**'
+      - '.github/workflows/deploy-astro.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-deployment
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Check and build Astro
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check, build and upload Astro
+        uses: withastro/action@v6
+        with:
+          path: site
+          node-version: '22.23.4'
+          package-manager: npm
+          build-cmd: npm run check && npm run build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
