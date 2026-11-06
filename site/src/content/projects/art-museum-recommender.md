@@ -40,6 +40,25 @@ The combined model scores approximately 10,000 candidate artworks and presents t
 
 To select the paintings used for preference assessment, leave-one-participant-out cross-validation (LOPO-CV) estimates how informative each artwork is for predicting unseen participants' preferences. On each visit, six paintings are randomly selected without replacement from the top 200 candidates.
 
+<figure class="project-result-figure">
+  <a
+    href="/images/projects/art-museum-results.png"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View full-size recommendation results"
+  >
+    <img
+      src="/images/projects/art-museum-results.png"
+      alt="Recommendation results displaying ten predicted matches and ten contrasting paintings, with artwork details and museum links."
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+  <figcaption>
+    Example recommendation results showing predicted matches and contrasting artworks.
+  </figcaption>
+</figure>
+
 ## Development & Implementation
 
 I implemented the recommendation pipeline and developed a bilingual web application using Python, NumPy, FastAPI, Jinja2, and JavaScript.
