@@ -3,14 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeSocialLinks from '../components/HomeSocialLinks.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import DevArticles from '../components/DevArticles.astro';
-import { projects } from '../data/projects';
+import { getCollection } from 'astro:content';
 
-const featured = projects.slice(0, 4);
+const featured = (await getCollection('projects'))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
 ---
 
 <BaseLayout title="Haruki Niwa | Research & Engineering">
   <section class="hero">
-
     <h1>Haruki Niwa</h1>
 
     <p class="lead">
@@ -45,5 +47,4 @@ const featured = projects.slice(0, 4);
       ))}
     </div>
   </section>
-
 </BaseLayout>

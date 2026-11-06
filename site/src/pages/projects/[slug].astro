@@ -1,34 +1,68 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { projects } from '../../data/projects';
-import type { Project } from '../../data/projects';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: { project },
   }));
 }
 
-const { project } = Astro.props as { project: Project };
+const { project } = Astro.props as {
+  project: CollectionEntry<'projects'>;
+};
+
+const { Content } = await render(project);
 ---
 
-<BaseLayout title={`${project.title} | Haruki Niwa`} description={project.summary}>
+<BaseLayout
+  title={`${project.data.title} | Haruki Niwa`}
+  description={project.data.summary}
+>
   <article class="content-page">
-    <a class="text-link" href="/projects/">← All Projects</a>
+    <a class="text-link" href="/projects/">
+      ← All Projects
+    </a>
 
-    <h1>{project.title}</h1>
-    <p class="lead">{project.summary}</p>
+    <h1>{project.data.title}</h1>
+    <p class="lead">{project.data.summary}</p>
 
-    <section>
-      <h2>Overview</h2>
-      <p>{project.summary}</p>
-    </section>
+    {project.data.image && (
+      <img
+        class="project-cover"
+        src={project.data.image}
+        alt={`Screenshot of ${project.data.title}`}
+        loading="lazy"
+        decoding="async"
+      />
+    )}
+
+    {project.data.links.length > 0 && (
+      <nav class="project-links" aria-label="Project links">
+        {project.data.links.map((link) => (
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label} ↗
+          </a>
+        ))}
+      </nav>
+    )}
+
+    <div class="project-body">
+      <Content />
+    </div>
 
     <section>
       <h2>Technologies</h2>
       <p class="technologies">
-        {project.technologies.join(' · ')}
+        {project.data.technologies.join(' · ')}
       </p>
     </section>
   </article>

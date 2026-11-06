@@ -1,12 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
-import { projects } from '../../data/projects';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="Projects | Haruki Niwa">
   <div class="content-page">
     <h1>Projects</h1>
+
     <p class="lead">
       A selection of my work in machine learning,
       neuroscience, software development, and computing.
