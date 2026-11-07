@@ -175,14 +175,35 @@ const socials = [
     icon: icons.siInstagram,
   },
 ];
+
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://nha6ki.github.io/about/#profile',
+  mainEntity: {
+    '@type': 'Person',
+    '@id': 'https://nha6ki.github.io/about/#person',
+    name: 'Haruki Niwa',
+    alternateName: ['丹羽開紀', '丹羽 開紀'],
+    url: 'https://nha6ki.github.io/',
+    sameAs: [
+      'https://github.com/nha6ki',
+      'https://www.linkedin.com/in/harukiniwa',
+      'https://dev.to/nha6ki',
+      'https://x.com/nha6ki',
+    ],
+  },
+};
 ---
 
 <BaseLayout
-  title="About | Haruki Niwa"
-  description="Learn about Haruki Niwa's background, professional experience, and technical skills in machine learning, neuroscience, and software engineering."
+  title="About | Haruki Niwa (丹羽開紀)"
+  description="Learn about Haruki Niwa (丹羽開紀), his professional experience, and technical skills in machine learning, neuroscience, and software engineering."
+  structuredData={profileSchema}
 >
   <div class="content-page about-page">
     <h1>About Me</h1>
+    <p class="about-person-name">Haruki Niwa <span class="name-ja-group"><span class="name-divider" aria-hidden="true">/</span> <span lang="ja">丹羽開紀</span></span></p>
 
     <p class="lead">
       My background is in information science, with experience spanning
@@ -302,6 +323,23 @@ const socials = [
 </BaseLayout>
 
 <style>
+  .about-person-name {
+    margin: 10px 0 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .name-ja-group {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .name-divider {
+    color: #94a3b8;
+    font-weight: 400;
+  }
+
   .about-intro {
     color: #526070;
     font-size: 1rem;

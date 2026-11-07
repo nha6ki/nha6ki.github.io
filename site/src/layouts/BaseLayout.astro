@@ -5,12 +5,14 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
   title,
   description = 'Personal website of Haruki Niwa.',
   noindex = false,
+  structuredData,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -53,6 +55,10 @@ const navigation = [
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL.href} />
+
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
