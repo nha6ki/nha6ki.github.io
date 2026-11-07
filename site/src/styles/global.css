@@ -993,3 +993,18 @@ h2 {
   margin-top: 0 !important;
 }
 /* END: precise 60px gap below site header */
+
+
+/* Home section spacing: 50px */
+#main-content > .hero {
+  padding-bottom: 50px;
+}
+
+#main-content > .section {
+  padding-top: 0;
+  padding-bottom: 50px;
+}
+
+#main-content > .section .section-heading h2 {
+  margin-top: 0;
+}
