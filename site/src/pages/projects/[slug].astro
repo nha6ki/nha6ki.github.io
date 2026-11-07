@@ -235,6 +235,7 @@ function linkInfo(url: string) {
     display: block;
     width: min(100%, 520px);
     margin: 30px auto 16px;
+    border-radius: 10px;
   }
 
   .project-cover {
@@ -244,6 +245,10 @@ function linkInfo(url: string) {
     margin: 0;
     border: 1px solid #e2e6eb;
     border-radius: 10px;
+  }
+
+  .project-cover-link:hover .project-cover {
+    border-color: #94a3b8;
   }
 
   @media (max-width: 640px) {
