@@ -131,10 +131,6 @@ h2 {
   gap: 20px;
 }
 
-.muted {
-  color: #606a79;
-}
-
 .technologies {
   font-size: .85rem;
   color: #64748b;
@@ -360,20 +356,6 @@ h2 {
   text-align: center;
 }
 
-.dev-profile-link {
-  margin-top: 22px;
-  font-size: .9rem;
-}
-
-.dev-profile-link a {
-  color: #1d4ed8;
-}
-
-.dev-profile-link a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
 @media (max-width: 640px) {
   .article-grid {
     grid-template-columns: 1fr;
@@ -512,10 +494,6 @@ h2 {
 .home-articles .article-description {
   font-size: .84rem;
   -webkit-line-clamp: 2;
-}
-
-.home-articles .article-image {
-  aspect-ratio: 16 / 9;
 }
 
 .home-articles .article-tags span {
