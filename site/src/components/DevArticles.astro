@@ -55,38 +55,33 @@ const { limit = 3, paginate = false } = Astro.props;
 
   const categories = [
     {
-      id: 'ml',
-      label: 'Machine Learning',
-      tags: [
-        'machinelearning', 'deeplearning', 'ai',
-        'llm', 'pytorch', 'datascience', 'ml',
-      ],
+      id: 'ai',
+      label: 'AI & Data Science',
+      tags: ['machinelearning', 'deeplearning', 'ai', 'llm',
+        'pytorch', 'tensorflow', 'datascience', 'ml', 'scikitlearn'],
     },
     {
       id: 'neuro',
       label: 'Neuroscience',
-      tags: [
-        'neuroscience', 'fmri', 'eeg',
-        'neuroimaging', 'computationalneuroscience',
-      ],
+      tags: ['neuroscience', 'fmri', 'eeg',
+        'neuroimaging', 'computationalneuroscience'],
     },
     {
       id: 'infra',
-      label: 'Infrastructure',
-      tags: [
-        'linux', 'docker', 'devops', 'cloud',
-        'hpc', 'htcondor', 'gpu', 'gcp',
-        'kubernetes', 'grafana',
-      ],
+      label: 'Infrastructure & Cloud',
+      tags: ['linux', 'docker', 'devops', 'cloud', 'hpc',
+        'htcondor', 'gpu', 'gcp', 'kubernetes', 'grafana', 'prometheus'],
+    },
+    {
+      id: 'robotics',
+      label: 'Robotics',
+      tags: ['ros', 'ros2', 'robotics', 'robot'],
     },
     {
       id: 'web',
-      label: 'Web Development',
-      tags: [
-        'webdev', 'astro', 'fastapi', 'javascript',
-        'typescript', 'frontend', 'backend',
-        'api', 'html', 'css',
-      ],
+      label: 'Web & Software',
+      tags: ['webdev', 'astro', 'fastapi', 'javascript',
+        'typescript', 'frontend', 'backend', 'api', 'html', 'css'],
     },
   ];
 
@@ -108,20 +103,23 @@ const { limit = 3, paginate = false } = Astro.props;
       .map(normalizeTag);
   }
 
-  function matchesCategory(article: Article, id: string): boolean {
-    if (id === 'all') return true;
-
+  function getCategoryId(article: Article): string {
     const tags = getTags(article);
-
-    const matches = (category: typeof categories[number]) =>
-      category.tags.some(tag => tags.includes(tag));
-
-    if (id === 'other') {
-      return !categories.some(matches);
+    // Use one primary category. Specific topics take precedence over tools.
+    const priority = ['robotics', 'neuro', 'ai', 'infra', 'web'];
+    for (const id of priority) {
+      const category = categories.find(item => item.id === id);
+      if (category?.tags.some(tag => tags.includes(tag))) return id;
     }
+    return 'other';
+  }
 
-    const category = categories.find(c => c.id === id);
-    return category ? matches(category) : false;
+  function getCategoryLabel(id: string): string {
+    return categories.find(item => item.id === id)?.label ?? 'Other';
+  }
+
+  function matchesCategory(article: Article, id: string): boolean {
+    return id === 'all' || getCategoryId(article) === id;
   }
 
   function validUrl(value: unknown): string | null {
@@ -149,18 +147,27 @@ const { limit = 3, paginate = false } = Astro.props;
   }
 
   function makeCard(article: Article): HTMLAnchorElement {
+    const categoryId = getCategoryId(article);
     const card = document.createElement('a');
-    card.className = 'article-card';
+    card.className = `article-card article-card--categorized article-card--category-${categoryId}`;
     card.href = article.url;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
 
     const imageBox = document.createElement('div');
-    imageBox.className = 'article-image';
+    imageBox.className = 'article-image article-image--categorized';
 
-    const imageUrl =
-      validUrl(article.cover_image) ||
-      validUrl(article.social_image);
+    // Restore the old behavior: use a DEV.to cover, then its social image.
+    // The social image is available for posts without a custom cover.
+    const imageUrl = validUrl(article.cover_image) || validUrl(article.social_image);
+    const showFallback = () => {
+      imageBox.classList.add('article-image--missing');
+      const label = document.createElement('span');
+      label.className = 'article-image-topic';
+      const topic = getTags(article)[0] || categoryId;
+      label.textContent = topic.toUpperCase().slice(0, 18);
+      imageBox.prepend(label);
+    };
 
     if (imageUrl) {
       const img = document.createElement('img');
@@ -168,52 +175,49 @@ const { limit = 3, paginate = false } = Astro.props;
       img.alt = '';
       img.loading = 'lazy';
       img.decoding = 'async';
-
       img.addEventListener('error', () => {
         img.remove();
-        imageBox.textContent = 'DEV.to';
+        showFallback();
       });
-
       imageBox.appendChild(img);
     } else {
-      imageBox.textContent = 'DEV.to';
+      showFallback();
     }
+
+    // A small category chip and card accent distinguish topics while
+    // preserving each DEV.to image and the original card information.
+    const category = document.createElement('span');
+    category.className = 'article-cover-category';
+    category.textContent = getCategoryLabel(categoryId);
+    imageBox.appendChild(category);
 
     const content = document.createElement('div');
     content.className = 'article-content';
-
     const meta = document.createElement('div');
     meta.className = 'article-meta';
 
     if (article.published_at) {
       const date = new Date(article.published_at);
-
       if (!Number.isNaN(date.getTime())) {
         const time = document.createElement('time');
         time.dateTime = article.published_at;
         time.textContent = date.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
+          year: 'numeric', month: 'short', day: 'numeric',
         });
         meta.appendChild(time);
       }
     }
 
-    if (
-      typeof article.reading_time_minutes === 'number' &&
-      article.reading_time_minutes > 0
-    ) {
+    if (typeof article.reading_time_minutes === 'number'
+        && article.reading_time_minutes > 0) {
       const reading = document.createElement('span');
-      reading.textContent =
-        `${article.reading_time_minutes} min read`;
+      reading.textContent = `${article.reading_time_minutes} min read`;
       meta.appendChild(reading);
     }
 
     const title = document.createElement('h3');
     title.className = 'article-card-title';
     title.textContent = article.title;
-
     content.append(meta, title);
 
     if (article.description) {
@@ -224,17 +228,14 @@ const { limit = 3, paginate = false } = Astro.props;
     }
 
     const tags = getTags(article);
-
     if (tags.length) {
       const tagRow = document.createElement('div');
       tagRow.className = 'article-tags';
-
       for (const tag of tags.slice(0, 3)) {
         const chip = document.createElement('span');
         chip.textContent = `#${tag}`;
         tagRow.appendChild(chip);
       }
-
       content.appendChild(tagRow);
     }
 
