@@ -366,12 +366,49 @@ const { limit = 3, paginate = false } = Astro.props;
       } : article);
     }
 
-    return Array.from(combined.values())
+    const articles = Array.from(combined.values())
       .sort((a, b) =>
         (Date.parse(b.published_at ?? '') || 0) -
         (Date.parse(a.published_at ?? '') || 0)
       )
       .slice(0, all ? undefined : pageSize);
+
+    // Refresh the latest six articles and fill missing images.
+    // Individual article responses may be fresher than the list API.
+    return Promise.all(articles.map(async (article, index) => {
+      const hasImage =
+        validUrl(article.cover_image) || validUrl(article.social_image);
+      if (index >= 6 && hasImage) return article;
+
+      const parts = new URL(article.url).pathname.split('/').filter(Boolean);
+      if (parts.length !== 2) return article;
+
+      const detailUrl =
+        `https://dev.to/api/articles/${encodeURIComponent(parts[0])}/${encodeURIComponent(parts[1])}`;
+
+      try {
+        const response = await fetch(detailUrl, { cache: 'no-store' });
+        if (!response.ok) return article;
+
+        const detail: unknown = await response.json();
+        if (!isArticle(detail)) return article;
+
+        if (new URL(detail.url).pathname !== new URL(article.url).pathname) {
+          return article;
+        }
+
+        return {
+          ...article,
+          cover_image: detail.cover_image === undefined
+            ? article.cover_image : detail.cover_image,
+          social_image: detail.social_image === undefined
+            ? article.social_image : detail.social_image,
+        };
+      } catch (error) {
+        console.warn('DEV.to article detail unavailable:', article.url, error);
+        return article;
+      }
+    }));
   }
 
   async function initialize(container: HTMLElement) {
