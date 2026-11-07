@@ -971,3 +971,25 @@ h2 {
     max-width: none;
   }
 }
+
+/* BEGIN: precise 60px gap below site header */
+/* Keep the site's existing horizontal padding and section bottom spacing. */
+#main-content {
+  margin-top: 0 !important;
+  padding-top: 30px !important;
+}
+
+/* Remove old hero/content-page top spacing, which otherwise gets added. */
+#main-content > :first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Prevent the first title wrapper/heading from adding a second top gap. */
+#main-content > :first-child > :first-child {
+  margin-top: 0 !important;
+}
+#main-content > :first-child > .blog-heading:first-child h1 {
+  margin-top: 0 !important;
+}
+/* END: precise 60px gap below site header */
