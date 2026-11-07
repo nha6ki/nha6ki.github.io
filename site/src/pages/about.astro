@@ -1,15 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BrandIcon from '../components/BrandIcon.astro';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { socials, linkedinIcon } from '../data/socials';
 import * as icons from 'simple-icons';
-
-const linkedinIcon = {
-  viewBox: `0 0 ${faLinkedin.icon[0]} ${faLinkedin.icon[1]}`,
-  path: Array.isArray(faLinkedin.icon[4])
-    ? faLinkedin.icon[4][0]
-    : faLinkedin.icon[4],
-};
 
 const experiences = [
   {
@@ -140,39 +133,6 @@ const interests = [
         url: 'https://backloggd.com/u/nha6ki/likes/',
       },
     ],
-  },
-];
-
-const socials = [
-  {
-    name: 'GitHub',
-    url: 'https://github.com/nha6ki',
-    icon: icons.siGithub,
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/harukiniwa',
-    icon: null,
-  },
-  {
-    name: 'DEV.to',
-    url: 'https://dev.to/nha6ki',
-    icon: icons.siDevdotto,
-  },
-  {
-    name: 'Twitter',
-    url: 'https://x.com/nha6ki',
-    icon: icons.siX ?? null,
-  },
-  {
-    name: 'YouTube',
-    url: 'https://www.youtube.com/channel/UCziACJpCinuqWltWEQr54dg',
-    icon: icons.siYoutube ?? null,
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/suns._.n/',
-    icon: icons.siInstagram,
   },
 ];
 

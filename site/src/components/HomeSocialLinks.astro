@@ -1,36 +1,9 @@
 ---
-import { faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { siInstagram } from 'simple-icons';
-
-const faPath = (icon: typeof faLinkedin) => {
-  const data = icon.icon[4];
-  return Array.isArray(data) ? data[0] : data;
-};
-
-const socials = [
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/harukiniwa',
-    viewBox: `0 0 ${faLinkedin.icon[0]} ${faLinkedin.icon[1]}`,
-    path: faPath(faLinkedin),
-  },
-  {
-    name: 'Twitter',
-    url: 'https://x.com/nha6ki',
-    viewBox: `0 0 ${faXTwitter.icon[0]} ${faXTwitter.icon[1]}`,
-    path: faPath(faXTwitter),
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/suns._.n/',
-    viewBox: '0 0 24 24',
-    path: siInstagram.path,
-  },
-];
+import { homeSocials } from '../data/socials';
 ---
 
 <nav class="home-social-icons" aria-label="Social profiles">
-  {socials.map((social) => (
+  {homeSocials.map((social) => (
     <a
       href={social.url}
       aria-label={social.name}
