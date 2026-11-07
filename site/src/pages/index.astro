@@ -12,11 +12,12 @@ const featured = (await getCollection('projects'))
 ---
 
 <BaseLayout
-  title="Haruki Niwa | Research & Engineering"
-  description="Haruki Niwa works in research and engineering at Hiroshima University, specializing in machine learning, neuroscience, scientific computing, and research software."
+  title="Haruki Niwa (丹羽開紀) | Research & Engineering"
+  description="Haruki Niwa (丹羽開紀) works in research and engineering at Hiroshima University, specializing in machine learning, neuroscience, scientific computing, and research software."
 >
   <section class="hero">
     <h1>Haruki Niwa</h1>
+    <p class="japanese-name" lang="ja">丹羽開紀</p>
 
     <p class="lead">
         I work in research and engineering at Hiroshima University,
@@ -53,3 +54,17 @@ const featured = (await getCollection('projects'))
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .hero h1 { margin-bottom: 6px; }
+  .japanese-name {
+    margin: 0 0 22px;
+    color: #64748b;
+    font-size: 0.97rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+
+
+</style>
