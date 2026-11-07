@@ -123,35 +123,8 @@ h2 {
   gap: 20px;
 }
 
-.project-card {
-  display: block;
-  height: 100%;
-  border: 1px solid #e2e6eb;
-  border-radius: 10px;
-  padding: 25px;
-  transition: border-color 180ms ease,
-              box-shadow 180ms ease,
-              transform 180ms ease;
-}
-
-.project-card:hover {
-  border-color: #a7b8cf;
-  box-shadow: 0 6px 18px rgb(20 40 60 / 6%);
-  transform: translateY(-2px);
-}
-
-.project-title {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 650;
-}
-
-.project-summary, .muted {
+.muted {
   color: #606a79;
-}
-
-.project-summary {
-  margin: 12px 0;
 }
 
 .technologies {
@@ -200,7 +173,6 @@ h2 {
     animation: none !important;
     transition: none !important;
   }
-  .project-card:hover { transform: none; }
 }
 
 /* About logos and social links */
