@@ -95,6 +95,8 @@ async function fetchFeedArticles(): Promise<Article[]> {
 async function fetchApiArticles(all: boolean, pageSize: number): Promise<Article[]> {
   const results: Article[] = [];
   const perPage = all ? 100 : pageSize;
+  const maxPages = 20;
+  const seenUrls = new Set<string>();
   let page = 1;
 
   while (true) {
@@ -117,8 +119,24 @@ async function fetchApiArticles(all: boolean, pageSize: number): Promise<Article
       throw new Error('Invalid DEV.to API response');
     }
 
-    results.push(...data.filter(isArticle));
+    const freshArticles = data.filter(isArticle).filter((article) => {
+      const key = article.url.replace(/\/$/, '');
+      if (seenUrls.has(key)) return false;
+      seenUrls.add(key);
+      return true;
+    });
+
+    if (page > 1 && freshArticles.length === 0) {
+      console.warn('DEV.to API returned no new articles; stopping pagination.');
+      break;
+    }
+
+    results.push(...freshArticles);
     if (!all || data.length < perPage) break;
+    if (page >= maxPages) {
+      console.warn(`DEV.to API pagination stopped at ${maxPages} pages.`);
+      break;
+    }
     page += 1;
   }
 
