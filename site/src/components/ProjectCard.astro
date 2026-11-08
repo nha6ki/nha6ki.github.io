@@ -18,7 +18,7 @@ const { project } = Astro.props;
     {project.data.image ? (
       <img
         src={project.data.image}
-        alt={`Preview of ${project.data.title}`}
+        alt={project.data.imageAlt ?? `Preview of ${project.data.title}`}
         loading="lazy"
         decoding="async"
       />

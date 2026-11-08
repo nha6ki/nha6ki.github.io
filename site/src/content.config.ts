@@ -17,6 +17,7 @@ const projects = defineCollection({
 
     date: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/).optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
 
     links: z.array(
       z.object({

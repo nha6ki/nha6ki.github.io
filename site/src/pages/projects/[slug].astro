@@ -136,12 +136,12 @@ const resourceLinks = project.data.links.map((link) => ({
         href={project.data.image}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`View full-size screenshot of ${project.data.title}`}
+        aria-label={`View full-size image of ${project.data.title}`}
       >
         <img
           class="project-cover"
           src={project.data.image}
-          alt={`Screenshot of ${project.data.title}`}
+          alt={project.data.imageAlt ?? `Screenshot of ${project.data.title}`}
           loading="lazy"
           decoding="async"
         />
