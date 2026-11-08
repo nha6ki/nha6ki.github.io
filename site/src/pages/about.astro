@@ -79,6 +79,27 @@ const skillGroups = [
   },
 ];
 
+const certifications = [
+  {
+    name: 'Medical Information Basic Knowledge Examination',
+    organization: 'Japan Association for Medical Informatics',
+    issued: 'Jun 2023',
+    url: 'https://www.hcit.or.jp/en/basic/about/',
+  },
+  {
+    name: 'Pet Care Adviser — Level 2',
+    organization: 'Japan Pet Care Association',
+    issued: 'Jan 2025',
+    url: 'https://www.jpc.or.jp/kanrishi/',
+  },
+  {
+    name: 'Neko Kentei (Cat Knowledge Examination) — Intermediate Level',
+    organization: 'Neko Kentei Organizing Committee',
+    issued: 'May 2025',
+    url: 'https://www.kentei-uketsuke.com/neko/',
+  },
+];
+
 const interests = [
   {
     name: 'Books',
@@ -227,6 +248,22 @@ const profileSchema = {
     </section>
 
     <section>
+      <h2>Certifications</h2>
+
+      <div class="certification-list">
+        {certifications.map((item) => (
+          <div class="certification-item">
+            <h3>{item.name}</h3>
+            <p>{item.organization} · {item.issued}</p>
+            <a href={item.url} target="_blank" rel="noopener noreferrer">
+              Certification Details
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
       <h2>Interests</h2>
 
       <ul class="interests-list">
@@ -344,6 +381,37 @@ const profileSchema = {
     margin: 7px 0;
     color: #526070;
     font-size: .94rem;
+  }
+
+  .certification-list {
+    display: grid;
+    gap: 22px;
+  }
+
+  .certification-item h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 650;
+  }
+
+  .certification-item p {
+    margin: 0;
+    color: #64748b;
+    font-size: .9rem;
+  }
+
+  .certification-item a {
+    display: inline-block;
+    margin-top: 3px;
+    color: #526070;
+    font-size: .88rem;
+    text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 3px;
+  }
+
+  .certification-item a:hover {
+    color: #1d4ed8;
   }
 
   .interests-list {
