@@ -146,12 +146,11 @@ const profileSchema = {
     name: 'Haruki Niwa',
     alternateName: ['丹羽開紀', '丹羽 開紀'],
     url: 'https://nha6ki.github.io/',
-    sameAs: [
-      'https://github.com/nha6ki',
-      'https://www.linkedin.com/in/harukiniwa',
-      'https://dev.to/nha6ki',
-      'https://x.com/nha6ki',
-    ],
+    sameAs: socials
+      .filter((social) =>
+        ['GitHub', 'LinkedIn', 'DEV.to', 'Twitter'].includes(social.name)
+      )
+      .map((social) => social.url),
   },
 };
 ---
