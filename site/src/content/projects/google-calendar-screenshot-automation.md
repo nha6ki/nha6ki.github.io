@@ -10,7 +10,7 @@ technologies:
   - Google Drive API
   - systemd
   - Ubuntu
-image: "/images/projects/google-calendar-screenshot.png"
+image: "/images/projects/google-calendar-screenshot.webp"
 imageAlt: "Seven-day Google Calendar view showing fictional sample events."
 order: 99
 featured: false
