@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="788" viewBox="0 0 1400 788" role="img" aria-labelledby="title desc">
+  <title id="title">Google Arts &amp; Culture Image Collection Pipeline</title>
+  <desc id="desc">An original four-stage diagram: partner discovery using Selenium, artwork page and image collection using Scrapy and Python, dataset preparation using Pillow and pandas, and similarity screening with metadata reindexing using NumPy and Jupyter.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1A2C"/>
+      <stop offset="1" stop-color="#172A43"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#68C4CC"/>
+      <stop offset="1" stop-color="#8F9BEB"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#050C17" flood-opacity=".22"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity=".028" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="788" rx="0" fill="url(#bg)"/>
+  <rect width="1400" height="788" fill="url(#grid)"/>
+  <rect x="74" y="66" width="9" height="49" rx="4.5" fill="url(#accent)"/>
+  <text x="106" y="87" fill="#96ABBF" font-size="21" letter-spacing="3.5" font-family="Arial, Helvetica, sans-serif" font-weight="700">AUGUST 2020  /  PROJECT ARCHIVE</text>
+  <text x="74" y="168" fill="#F5F9FF" font-size="49" font-weight="700" font-family="Arial, Helvetica, sans-serif">Artwork Data Collection Pipeline</text>
+  <text x="77" y="219" fill="#AFC1D3" font-size="24" font-family="Arial, Helvetica, sans-serif">From partner-page discovery to organized image data</text>
+  <path d="M 74 262 H 1326" stroke="#3D5875" stroke-width="1" opacity=".7"/>
+
+  <!-- Cards -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="315" width="278" height="318" rx="20" fill="#192D45" stroke="#3F5D77"/>
+    <rect x="395" y="315" width="278" height="318" rx="20" fill="#192D45" stroke="#3F5D77"/>
+    <rect x="720" y="315" width="278" height="318" rx="20" fill="#192D45" stroke="#3F5D77"/>
+    <rect x="1045" y="315" width="278" height="318" rx="20" fill="#192D45" stroke="#3F5D77"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- card 1 -->
+    <rect x="91" y="339" width="57" height="42" rx="12" fill="#234F5C"/>
+    <text x="119.5" y="368" fill="#9CE4E9" font-size="24" text-anchor="middle" font-weight="700">01</text>
+    <circle cx="208" cy="404" r="32" fill="#234556" stroke="#69C9D0" stroke-width="2"/>
+    <circle cx="192" cy="400" r="5" fill="#9CE4E9"/>
+    <circle cx="223" cy="390" r="5" fill="#9CE4E9"/>
+    <circle cx="220" cy="417" r="5" fill="#9CE4E9"/>
+    <path d="M196 399L219 391M196 404L216 416M224 396L221 411" stroke="#9CE4E9" stroke-width="2.5" fill="none"/>
+    <text x="92" y="485" fill="#F2F7FF" font-size="26" font-weight="700">Partner</text>
+    <text x="92" y="516" fill="#F2F7FF" font-size="26" font-weight="700">Discovery</text>
+    <text x="92" y="560" fill="#B7C9DA" font-size="18">Find partner pages</text>
+    <rect x="91" y="578" width="124" height="34" rx="17" fill="#284758"/>
+    <text x="153" y="600" fill="#A7E5E6" font-size="17" text-anchor="middle">Selenium</text>
+
+    <!-- card 2 -->
+    <rect x="416" y="339" width="57" height="42" rx="12" fill="#234F5C"/>
+    <text x="444.5" y="368" fill="#9CE4E9" font-size="24" text-anchor="middle" font-weight="700">02</text>
+    <rect x="507" y="375" width="72" height="59" rx="9" fill="#234556" stroke="#69C9D0" stroke-width="2"/>
+    <circle cx="522" cy="390" r="5" fill="#9CE4E9"/>
+    <path d="M518 420l16-17 13 12 10-9 14 14" fill="none" stroke="#9CE4E9" stroke-width="3" stroke-linecap="round"/>
+    <text x="417" y="485" fill="#F2F7FF" font-size="26" font-weight="700">Artwork</text>
+    <text x="417" y="516" fill="#F2F7FF" font-size="26" font-weight="700">Collection</text>
+    <text x="417" y="560" fill="#B7C9DA" font-size="18">URLs, images, text</text>
+    <rect x="416" y="578" width="152" height="34" rx="17" fill="#284758"/>
+    <text x="492" y="600" fill="#A7E5E6" font-size="17" text-anchor="middle">Scrapy · Python</text>
+
+    <!-- card 3 -->
+    <rect x="741" y="339" width="57" height="42" rx="12" fill="#3D4069"/>
+    <text x="769.5" y="368" fill="#C2C4FA" font-size="24" text-anchor="middle" font-weight="700">03</text>
+    <rect x="829" y="381" width="60" height="54" rx="7" fill="#353F64" stroke="#A1AAED" stroke-width="2"/>
+    <rect x="818" y="370" width="60" height="54" rx="7" fill="#353F64" stroke="#A1AAED" stroke-width="2"/>
+    <path d="M825 413L841 394L852 406L861 397L871 413" stroke="#C2C4FA" stroke-width="3" fill="none"/>
+    <text x="742" y="485" fill="#F2F7FF" font-size="26" font-weight="700">Dataset</text>
+    <text x="742" y="516" fill="#F2F7FF" font-size="26" font-weight="700">Preparation</text>
+    <text x="742" y="560" fill="#B7C9DA" font-size="18">Convert, crop, resize</text>
+    <rect x="741" y="578" width="139" height="34" rx="17" fill="#393F65"/>
+    <text x="810" y="600" fill="#D3D4FF" font-size="17" text-anchor="middle">Pillow · pandas</text>
+
+    <!-- card 4 -->
+    <rect x="1066" y="339" width="57" height="42" rx="12" fill="#3D4069"/>
+    <text x="1094.5" y="368" fill="#C2C4FA" font-size="24" text-anchor="middle" font-weight="700">04</text>
+    <path d="M1142 417l20-20 21 11 20-29" fill="none" stroke="#C2C4FA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="1142" cy="417" r="5" fill="#C2C4FA"/>
+    <circle cx="1162" cy="397" r="5" fill="#C2C4FA"/>
+    <circle cx="1183" cy="408" r="5" fill="#C2C4FA"/>
+    <circle cx="1203" cy="379" r="5" fill="#C2C4FA"/>
+    <text x="1067" y="485" fill="#F2F7FF" font-size="26" font-weight="700">Similarity &amp;</text>
+    <text x="1067" y="516" fill="#F2F7FF" font-size="26" font-weight="700">Reindexing</text>
+    <text x="1067" y="560" fill="#B7C9DA" font-size="18">Screen and align files</text>
+    <rect x="1066" y="578" width="164" height="34" rx="17" fill="#393F65"/>
+    <text x="1148" y="600" fill="#D3D4FF" font-size="17" text-anchor="middle">NumPy · Jupyter</text>
+  </g>
+  <!-- connectors -->
+  <g fill="none" stroke="#88BACA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M355 474 H382"/><path d="M375 467L382 474L375 481"/>
+    <path d="M680 474 H707"/><path d="M700 467L707 474L700 481"/>
+    <path d="M1005 474 H1032"/><path d="M1025 467L1032 474L1025 481"/>
+  </g>
+  <text x="76" y="702" fill="#8EA4B9" font-size="18" font-family="Arial, Helvetica, sans-serif">Technical workflow illustration · No third-party artwork images or logos</text>
+  <rect x="74" y="727" width="1252" height="2" fill="url(#accent)" opacity=".6"/>
+</svg>
