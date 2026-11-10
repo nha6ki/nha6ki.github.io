@@ -41,37 +41,64 @@ const { limit = 3, paginate = false } = Astro.props;
 
 <script>
   import { fetchArticles, validUrl, type Article } from '../lib/devto';
+
+  // BLOG_CATEGORY_V3 — categories for the personal site's primary topics.
   const categories = [
-    {
-      id: 'ai',
-      label: 'AI & Data Science',
-      tags: ['machinelearning', 'deeplearning', 'ai', 'llm',
-        'pytorch', 'tensorflow', 'datascience', 'ml', 'scikitlearn'],
-    },
-    {
-      id: 'neuro',
-      label: 'Neuroscience',
-      tags: ['neuroscience', 'fmri', 'eeg',
-        'neuroimaging', 'computationalneuroscience'],
-    },
-    {
-      id: 'infra',
-      label: 'Infrastructure & Cloud',
-      tags: ['linux', 'docker', 'devops', 'cloud', 'hpc',
-        'htcondor', 'gpu', 'gcp', 'kubernetes', 'grafana', 'prometheus'],
-    },
-    {
-      id: 'robotics',
-      label: 'Robotics',
-      tags: ['ros', 'ros2', 'robotics', 'robot'],
-    },
-    {
-      id: 'web',
-      label: 'Web & Software',
-      tags: ['webdev', 'astro', 'fastapi', 'javascript',
-        'typescript', 'frontend', 'backend', 'api', 'html', 'css'],
-    },
+    { id: 'ai', label: 'AI & Machine Learning',
+      tags: ['llm', 'ollama', 'openwebui', 'gemma', 'machinelearning',
+        'deeplearning', 'optuna', 'pytorch', 'tensorflow', 'datascience',
+        'scikitlearn', 'ai', 'ml'] },
+    { id: 'neuro', label: 'Neuroscience',
+      tags: ['neuroscience', 'neuroimaging', 'fmri', 'eeg', 'fsl', 'ants',
+        'fmriprep', 'nifti', 'bids', 'computationalneuroscience'] },
+    { id: 'infra', label: 'Systems & Infrastructure',
+      tags: ['htcondor', 'hpc', 'networking', 'nas', 'raid', 'devops',
+        'kubernetes', 'gcp', 'grafana', 'prometheus', 'cloud', 'dualboot'] },
+    { id: 'data', label: 'Data Engineering & Automation',
+      tags: ['automation', 'dataengineering', 'etl', 'datapipeline',
+        'webscraping', 'datamigration', 'database', 'scrapy', 'rclone'] },
+    { id: 'robotics', label: 'Robotics',
+      tags: ['robotics', 'ros', 'ros2', 'robot'] },
+    { id: 'web', label: 'Web & Applications',
+      tags: ['webdev', 'astro', 'fastapi', 'javascript', 'typescript',
+        'frontend', 'backend', 'html', 'css', 'webapp', 'softwaretesting'] },
   ];
+  // Prefer these explicit assignments for published, cross-disciplinary posts.
+  const explicitCategories: Record<string, string> = {
+    'running-ollama-on-amd-ryzen-ai-max-395-with-rocm-and-docker-1a3g': 'ai',
+    'configuring-gemma-4-31b-and-open-webui-for-a-research-laboratory-183d': 'ai',
+    'troubleshooting-ollama-gpu-inference-failures-on-amd-ryzen-ai-max-2gp': 'ai',
+    'tracking-optuna-experiments-with-journalstorage-and-optuna-dashboard-3b7b': 'ai',
+    'installing-fsl-and-fix-on-linux-legacy-rmatlab-setup-and-modern-python-fix-381j': 'neuro',
+    'benchmarking-10gbe-nas-to-nas-transfers-iperf-nfs-cp-and-rsync-4p1j': 'infra',
+    'writing-htcondor-dag-files-job-dependencies-variables-and-concurrency-limits-15ng': 'infra',
+    'dual-booting-windows-and-ubuntu-a-step-by-step-uefi-installation-guide-h0l': 'infra',
+    'automating-google-calendar-screenshots-with-playwright-rclone-and-systemd-4j6l': 'data',
+    'running-ros-1-gui-applications-on-macos-with-docker-and-xquartz-3931': 'robotics',
+  };
+  // Paths are fixed UI icons, not data from DEV.to.
+  const categoryIcons: Record<string, string> = {
+    all: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+    ai: '<circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M8 6h8M7 8l4 8m6-8-4 8"/>',
+    neuro: '<path d="M2 12h5l3-7 4 14 3-7h5"/>',
+    infra: '<rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 7h.01M7 18h.01M11 7h7M11 18h7"/>',
+    data: '<rect x="2" y="3" width="7" height="7" rx="1"/><rect x="15" y="14" width="7" height="7" rx="1"/><path d="M9 6h5a4 4 0 0 1 4 4v4M6 10v5a4 4 0 0 0 4 4h5"/>',
+    robotics: '<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4m-3 0h6M8 13h.01M16 13h.01M9 17h6"/>',
+    web: '<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 20"/>',
+    other: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a3 3 0 1 1 5 2c-1.5 1-2.5 2-2.5 3m0 3h.01"/>',
+  };
+  function makeCategoryIcon(id: string): SVGSVGElement {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '1.8');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = categoryIcons[id] ?? categoryIcons.other;
+    return svg;
+  }
 
   function normalizeTag(tag: string): string {
     return tag.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -92,12 +119,20 @@ const { limit = 3, paginate = false } = Astro.props;
   }
 
   function getCategoryId(article: Article): string {
-    const tags = getTags(article);
-    // Use one primary category. Specific topics take precedence over tools.
-    const priority = ['robotics', 'neuro', 'ai', 'infra', 'web'];
-    for (const id of priority) {
+    let slug = '';
+    try {
+      slug = new URL(article.url).pathname.split('/').filter(Boolean).pop() ?? '';
+    } catch {
+      // A malformed article URL should not prevent the Blog from rendering.
+    }
+    if (Object.prototype.hasOwnProperty.call(explicitCategories, slug)) {
+      return explicitCategories[slug];
+    }
+    const tags = new Set(getTags(article));
+    // Specific topic tags matter more than general-purpose tools or OS tags.
+    for (const id of ['robotics', 'neuro', 'ai', 'data', 'infra', 'web']) {
       const category = categories.find(item => item.id === id);
-      if (category?.tags.some(tag => tags.includes(tag))) return id;
+      if (category?.tags.some(tag => tags.has(tag))) return id;
     }
     return 'other';
   }
@@ -148,13 +183,6 @@ const { limit = 3, paginate = false } = Astro.props;
       showFallback();
     }
 
-    // A small category chip and card accent distinguish topics while
-    // preserving each DEV.to image and the original card information.
-    const category = document.createElement('span');
-    category.className = 'article-cover-category';
-    category.textContent = getCategoryLabel(categoryId);
-    imageBox.appendChild(category);
-
     const content = document.createElement('div');
     content.className = 'article-content';
     const meta = document.createElement('div');
@@ -182,7 +210,10 @@ const { limit = 3, paginate = false } = Astro.props;
     const title = document.createElement('h3');
     title.className = 'article-card-title';
     title.textContent = article.title;
-    content.append(meta, title);
+    const category = document.createElement('span');
+    category.className = 'article-category-badge';
+    category.append(makeCategoryIcon(categoryId), document.createTextNode(getCategoryLabel(categoryId)));
+    content.append(category, meta, title);
 
     if (article.description) {
       const description = document.createElement('p');
@@ -276,7 +307,7 @@ const { limit = 3, paginate = false } = Astro.props;
           button.type = 'button';
           button.className = 'category-button';
           button.dataset.category = option.id;
-          button.textContent = `${option.label} (${count})`;
+          button.append(makeCategoryIcon(option.id), `${option.label} (${count})`);
 
           button.addEventListener('click', () => {
             selected = option.id;

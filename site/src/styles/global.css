@@ -671,3 +671,70 @@ h2 {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* BLOG_CATEGORY_V3_START */
+.dev-articles :is(.article-card--category-ai, .category-button[data-category="ai"]) {
+  --article-accent: #7956b4; --article-accent-ink: #563782; --article-accent-bg: #f0e9fa;
+}
+.dev-articles :is(.article-card--category-neuro, .category-button[data-category="neuro"]) {
+  --article-accent: #b43f68; --article-accent-ink: #872c4e; --article-accent-bg: #fbeaf0;
+}
+.dev-articles :is(.article-card--category-infra, .category-button[data-category="infra"]) {
+  --article-accent: #2563b8; --article-accent-ink: #214b85; --article-accent-bg: #e7f0fd;
+}
+.dev-articles :is(.article-card--category-data, .category-button[data-category="data"]) {
+  --article-accent: #a56713; --article-accent-ink: #754908; --article-accent-bg: #fff3db;
+}
+.dev-articles :is(.article-card--category-robotics, .category-button[data-category="robotics"]) {
+  --article-accent: #137a67; --article-accent-ink: #0d5b4d; --article-accent-bg: #dff4ee;
+}
+.dev-articles :is(.article-card--category-web, .category-button[data-category="web"]) {
+  --article-accent: #475569; --article-accent-ink: #334155; --article-accent-bg: #eef2f7;
+}
+.dev-articles :is(.article-card--category-other, .category-button[data-category="other"]) {
+  --article-accent: #64748b; --article-accent-ink: #455569; --article-accent-bg: #edf1f6;
+}
+.dev-articles .article-card--categorized { border-top-width: 4px; }
+.dev-articles .article-category-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 7px;
+  max-width: 100%;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: var(--article-accent-bg, #edf1f6);
+  color: var(--article-accent-ink, #455569);
+  font-size: .76rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.dev-articles .article-category-badge svg,
+.dev-articles .category-button svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  flex: none;
+}
+.dev-articles .category-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-color: var(--article-accent, #cbd5e1);
+  background: var(--article-accent-bg, #f1f5f9);
+  color: var(--article-accent-ink, #334155);
+}
+.dev-articles .category-button[aria-pressed="true"] {
+  border-color: var(--article-accent, #334155);
+  background: var(--article-accent, #334155);
+  color: #fff;
+}
+.dev-articles .category-button:hover:not([aria-pressed="true"]) {
+  border-color: var(--article-accent, #94a3b8);
+  filter: brightness(.97);
+}
+.home-articles .article-category-badge {
+  font-size: .7rem;
+  padding: 4px 7px;
+}
+/* BLOG_CATEGORY_V3_END */
