@@ -648,3 +648,26 @@ h2 {
     max-width: none;
   }
 }
+
+
+/* Blog 3x3 layout */
+.content-page.blog-page {
+  max-width: 960px;
+}
+
+.blog-page .dev-articles[data-paginate="true"] .article-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 850px) {
+  .blog-page .dev-articles[data-paginate="true"] .article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-page .dev-articles[data-paginate="true"] .article-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
