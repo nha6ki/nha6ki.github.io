@@ -23,9 +23,29 @@ const projects = (await getCollection('projects'))
       </p>
   </div>
 
-  <div class="project-grid">
+  <div class="project-grid projects-page-grid">
     {projects.map((project) => (
       <ProjectCard project={project} />
     ))}
   </div>
 </BaseLayout>
+
+
+<style is:global>
+  /* PROJECTS_THREE_COLUMN_LAYOUT */
+  .project-grid.projects-page-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 850px) {
+    .project-grid.projects-page-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .project-grid.projects-page-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
