@@ -25,38 +25,32 @@ links:
 
 ## Overview
 
-StoryChroma is an interactive audiobook that combines Japanese literary text, synthesized narration, and dynamic color visualization based on estimated emotions.
+StoryChroma is an interactive Japanese audiobook that synchronizes literary text, synthesized narration, and a continuously changing color visualization based on estimated emotions.
 
-The current implementation features *Gongitsune* (ごん狐) by Nankichi Niimi, with 168 text segments and approximately 15 minutes and 33 seconds of synthesized narration.
+The current application features *Gongitsune* (ごん狐) by Nankichi Niimi, using 168 text segments and approximately 15 minutes and 33 seconds of narration. It is available as a browser-based demonstration.
 
 ## Emotion Visualization
 
-I used a Japanese BERT model fine-tuned on the WRIME dataset to estimate eight emotion dimensions for each sentence: joy, sadness, anticipation, surprise, anger, fear, disgust, and trust.
+I used a Japanese BERT model fine-tuned on WRIME to estimate eight emotion dimensions for each sentence: joy, sadness, anticipation, surprise, anger, fear, disgust, and trust.
 
-The visualization uses the model's Reader-side predictions, which estimate the writer's emotions from the text rather than measuring the emotions experienced by readers.
+StoryChroma visualizes the model's **Reader-side predictions**: estimates of emotions a reader might attribute to the writer, not emotions experienced by readers themselves. These outputs are not ground-truth labels for the literary work.
 
-Instead of displaying only the highest-scoring emotion, StoryChroma combines all eight dimensions into a spatial color field. The visualization uses a fixed arrangement of emotion colors, Gaussian spatial weighting, and OKLab color mixing.
-
-Emotion scores are interpolated between sentence midpoints to produce continuous color transitions synchronized with the narration timeline.
+The visualization combines all eight dimensions rather than displaying only the highest-scoring emotion. Emotion colors are arranged at fixed spatial positions, combined using Gaussian spatial weighting and OKLab color mixing, and interpolated between sentence midpoints to produce continuous transitions synchronized with narration.
 
 ## Interactive Experience
 
-The application provides two complementary interfaces:
+The application offers two complementary views:
 
-- **Experience:** A full-screen animated color gradient with synchronized text highlighting and audiobook playback controls.
-- **Analysis:** Eight-dimensional emotion scores, a full-story emotion heatmap, a dominant-emotion timeline, and sentence-level navigation.
+- **Experience:** A reading and listening interface with a full-screen animated color field, synchronized text highlighting, and audio controls.
+- **Analysis:** Sentence-level emotion scores, a full-story emotion heatmap, a dominant-emotion timeline, a color visualization, and the complete text with sentence navigation.
 
-Both interfaces share the same playback state. Users can seek between sentences, adjust playback speed, and switch views without restarting the narration.
+Users can seek to a sentence, change playback speed, and switch views without restarting narration. Both views share the same playback state.
 
 ## Implementation
 
-I developed the web application using React, TypeScript, Vite, HTML Audio, and Canvas 2D.
+I built the interface with React, TypeScript, Vite, HTML Audio, and Canvas 2D. The offline preparation pipeline uses Python, PyTorch, and Hugging Face Transformers for emotion inference and VOICEVOX ENGINE for speech synthesis. Sentence timestamps are derived from accumulated audio sample counts.
 
-The data preparation pipeline uses Python, PyTorch, and Hugging Face Transformers for emotion inference, while VOICEVOX ENGINE generates sentence-level narration. Sentence timestamps are derived from the accumulated audio sample counts during synthesis.
-
-The published application uses precomputed emotion predictions and narration audio, allowing it to run as a static website on GitHub Pages without a dedicated inference server.
-
-The repository also includes technical documentation, artifact validation tests, and instructions for reproducing the processing pipeline.
+The deployed application uses precomputed emotion data and MP3 narration, so it runs as a static website on GitHub Pages without an inference server. The GitHub repository provides the source code, technical documentation, reproduction instructions, and artifact validation tests.
 
 ## Screenshots and Demo
 
@@ -84,6 +78,6 @@ A short demonstration of synchronized narration, dynamic emotion visualization, 
 
 ## Limitations
 
-The emotion scores are model estimates, not ground-truth representations of the story's emotions. The model was trained on Japanese social media text, and its accuracy for literary text has not been independently validated.
+The emotion estimates are model outputs, not measurements of the author's actual emotions or readers' emotional experiences. The model was trained on Japanese social media text, and its performance on literary prose has not been independently validated for this project.
 
-The color assignments and their interpretation have not been evaluated through a user study. StoryChroma is presented as a working visualization prototype rather than a validated method for improving literary comprehension or emotional engagement.
+The color mapping and its effects on reading comprehension or emotional engagement have not been evaluated in a user study. StoryChroma is presented as a working visualization prototype, not a validated method for interpreting literary emotion.
