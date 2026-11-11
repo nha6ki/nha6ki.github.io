@@ -12,7 +12,7 @@ technologies:
   - Bootstrap
   - Docker
   - Google Cloud Run
-order: 2
+order: 3
 featured: true
 image: "/images/projects/scene-to-art.webp"
 links:
