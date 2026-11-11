@@ -64,3 +64,10 @@ To select the paintings used for preference assessment, leave-one-participant-ou
 I implemented the recommendation pipeline and developed a bilingual web application using Python, NumPy, FastAPI, Jinja2, and JavaScript.
 
 The application includes input validation, personalized recommendation results, and museum information. It is deployed on Google Cloud Run.
+
+
+## Technical Evaluation
+
+A detailed [technical evaluation report](/projects/art-museum-recommender/technical-evaluation/) describes the model selection, leave-one-participant-out evaluation, and implementation verification of this recommender.
+
+The deployed PCA-based Ridge–Cosine Similarity Hybrid achieved a mean Spearman correlation of **0.4696**, compared with **0.4406** for the reference-participant mean, under the Utility Top200 input-selection protocol.

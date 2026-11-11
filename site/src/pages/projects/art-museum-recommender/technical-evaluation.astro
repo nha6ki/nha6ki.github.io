@@ -1,0 +1,71 @@
+---
+// New page only. Uses existing BaseLayout and global site classes.
+// No global CSS, layout, navigation, or existing project page is modified.
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { Content as ReportContent } from '../../../reports/art-museum-recommender-technical-evaluation.md';
+---
+
+<BaseLayout
+  title="Art & Museum Recommender — Technical Evaluation | Haruki Niwa"
+  description="Technical evaluation of the Art-to-Art preference prediction model: nested participant-held-out validation, model comparison, and implementation verification."
+>
+  <article class="content-page art2art-technical-evaluation">
+    <nav aria-label="Report navigation">
+      <a class="text-link" href="/projects/art-museum-recommender/">
+        ← Back to Art & Museum Recommender
+      </a>
+    </nav>
+
+    <header class="report-heading">
+      <p class="muted">Art &amp; Museum Recommender · Technical Report</p>
+      <h1>Model Selection and Validation</h1>
+      <p class="lead">An evaluation of the deployed Art-to-Art preference prediction method.</p>
+    </header>
+
+    <div class="project-body">
+      <ReportContent />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Page-local exceptions only: all typography, widths, colors, layout,
+     navigation and header/footer are inherited from the existing site. */
+  .art2art-technical-evaluation { min-width: 0; }
+  .report-heading { margin-top: 18px; }
+  .report-heading .muted { margin: 0; font-size: 0.9rem; }
+  .report-heading .lead { margin-bottom: 0; }
+  :global(.art2art-technical-evaluation .project-body img) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 22px auto;
+  }
+  :global(.art2art-technical-evaluation .project-body table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 0.9rem;
+  }
+  :global(.art2art-technical-evaluation .project-body th),
+  :global(.art2art-technical-evaluation .project-body td) {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e2e6eb;
+    text-align: left;
+    vertical-align: top;
+  }
+  :global(.art2art-technical-evaluation .project-body pre) {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 12px;
+    border-radius: 6px;
+    background: #f8fafc;
+    font-size: 0.84rem;
+  }
+  :global(.art2art-technical-evaluation .project-body p),
+  :global(.art2art-technical-evaluation .project-body li) {
+    overflow-wrap: anywhere;
+  }
+</style>
