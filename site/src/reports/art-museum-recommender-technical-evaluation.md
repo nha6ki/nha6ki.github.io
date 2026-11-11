@@ -26,10 +26,14 @@ The application also uses a separate collection of artworks for display, with re
 
 Let `Y` be an `n × 400` training-participant rating matrix. For the deployed model, `n = 37`; for each outer test fold, `n = 36`. Subtract each painting's **training-participant** mean, giving residual matrix `R`, and compute a singular value decomposition:
 
-```text
-R = U Σ Vᵀ
-Z = U[:, 1:12] Σ[1:12, 1:12]       shape: n × 12
-```
+<div class="art2art-math-equation" style="max-width:100%;overflow-x:auto;overflow-y:hidden;text-align:center;margin:1.25em 0;padding:0.2em 0;">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><mi>R</mi></mtd><mtd columnalign="left"><mo>=</mo><mi>Y</mi><mo>−</mo><msub><mn>𝟏</mn><mi>n</mi></msub><msup><mi>𝛍</mi><mi>𝖳</mi></msup><mo>=</mo><mi>U</mi><mi>Σ</mi><msup><mi>V</mi><mi>𝖳</mi></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>Z</mi></mtd><mtd columnalign="left"><mo>=</mo><msub><mi>U</mi><mn>12</mn></msub><msub><mi>Σ</mi><mn>12</mn></msub><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>×</mo><mn>12</mn></mrow></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+R &amp;= Y-\mathbf{1}_{n}\boldsymbol{\mu}^{\mathsf T}=U\Sigma V^{\mathsf T}, \\
+Z &amp;= U_{12}\Sigma_{12}\in\mathbb{R}^{n\times12}.
+\end{aligned}
+</annotation></semantics></math>
+</div>
 
 `Z` represents reference participants' relative preferences in a twelve-dimensional space. PCA is computed from the full reference cohort **only when preparing the production assets**. During cross-validation, PCA is refitted using the corresponding training participants so that no outer-test participant enters the fitted representation.
 
@@ -39,10 +43,15 @@ For a selected set of six paintings, let `X` contain their six evaluations by ea
 
 Let `x_bar` denote the column-wise mean of the normalized reference inputs, and `Xc = X − x_bar`. The online Ridge calculation is:
 
-```text
-B     = (Xcᵀ Xc + αI)⁻¹ Xcᵀ Z       α = 100
-z_hat = (q − x_bar) B               shape: 1 × 12
-```
+<div class="art2art-math-equation" style="max-width:100%;overflow-x:auto;overflow-y:hidden;text-align:center;margin:1.25em 0;padding:0.2em 0;">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msub><mi>X</mi><mi>c</mi></msub></mtd><mtd columnalign="left"><mo>=</mo><mi>X</mi><mo>−</mo><msub><mn>𝟏</mn><mi>n</mi></msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>B</mi></mtd><mtd columnalign="left"><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>X</mi><mi>c</mi><mi>𝖳</mi></msubsup><msub><mi>X</mi><mi>c</mi></msub><mo>+</mo><mi>α</mi><msub><mi>I</mi><mn>6</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>−</mi><mn>1</mn></mrow></msup><msubsup><mi>X</mi><mi>c</mi><mi>𝖳</mi></msubsup><mi>Z</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>α</mi><mo>=</mo><mn>100</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mover><mi>z</mi><mo accent="true">̂</mo></mover></mtd><mtd columnalign="left"><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo>−</mo><mover><mi>x</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow><mi>B</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mn>1</mn><mo>×</mo><mn>12</mn></mrow></msup><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+X_{c} &amp;= X-\mathbf{1}_{n}\bar{x},\\
+B &amp;= (X_{c}^{\mathsf T}X_{c}+\alpha I_{6})^{-1}X_{c}^{\mathsf T}Z,\qquad\alpha=100,\\
+\hat{z} &amp;= (q-\bar{x})B\in\mathbb{R}^{1\times12}.
+\end{aligned}
+</annotation></semantics></math>
+</div>
 
 This small Ridge fit is recalculated for each selected six-painting set. It does **not** refit the offline PCA representation.
 
@@ -50,17 +59,25 @@ This small Ridge fit is recalculated for each selected six-painting set. It does
 
 The model compares `z_hat` to reference participant `i`'s latent vector `Z_i` using cosine similarity `s_i`. Similarities are converted to nonnegative weights:
 
-```text
-s_i = cosine(z_hat, Z_i)
-w_i = exp(2γ s_i) / Σ_k exp(2γ s_k)    γ = 1
-```
+<div class="art2art-math-equation" style="max-width:100%;overflow-x:auto;overflow-y:hidden;text-align:center;margin:1.25em 0;padding:0.2em 0;">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msub><mi>s</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mo>=</mo><mfrac><mrow><mover><mi>z</mi><mo accent="true">̂</mo></mover><msubsup><mi>Z</mi><mrow><mi>i</mi><mo>,</mo><mo>:</mo></mrow><mi>𝖳</mi></msubsup></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mover><mi>z</mi><mo accent="true">̂</mo></mover><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mspace width="0.167em"></mspace><mo stretchy="false" form="postfix">∥</mo><msub><mi>Z</mi><mrow><mi>i</mi><mo>,</mo><mo>:</mo></mrow></msub><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub></mrow></mfrac><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><msub><mi>w</mi><mi>i</mi></msub></mtd><mtd columnalign="left"><mo>=</mo><mfrac><mrow><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>γ</mi><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo>exp</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>γ</mi><msub><mi>s</mi><mi>k</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mi>γ</mi><mo>=</mo><mn>1</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+s_{i} &amp;= \frac{\hat{z}Z_{i,:}^{\mathsf T}}{\|\hat{z}\|_{2}\,\|Z_{i,:}\|_{2}},\\
+w_{i} &amp;= \frac{\exp(2\gamma s_{i})}{\sum_{k=1}^{n}\exp(2\gamma s_{k})},\qquad\gamma=1.
+\end{aligned}
+</annotation></semantics></math>
+</div>
 
 A separate vector of reference-participant coefficients is obtained from the pseudoinverse of `Z`:
 
-```text
-a = z_hat Z⁺
-c = βa + (1 − β)w                    β = 0.5
-```
+<div class="art2art-math-equation" style="max-width:100%;overflow-x:auto;overflow-y:hidden;text-align:center;margin:1.25em 0;padding:0.2em 0;">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><mi>a</mi></mtd><mtd columnalign="left"><mo>=</mo><mover><mi>z</mi><mo accent="true">̂</mo></mover><msup><mi>Z</mi><mo>+</mo></msup><mo>∈</mo><msup><mi>ℝ</mi><mrow><mn>1</mn><mo>×</mo><mi>n</mi></mrow></msup><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>c</mi></mtd><mtd columnalign="left"><mo>=</mo><mi>β</mi><mi>a</mi><mo>+</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>β</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>w</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>β</mi><mo>=</mo><mn>0.5</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+a &amp;= \hat{z}Z^{+}\in\mathbb{R}^{1\times n},\\
+c &amp;= \beta a+(1-\beta)w,\qquad\beta=0.5.
+\end{aligned}
+</annotation></semantics></math>
+</div>
 
 Because `a` may contain negative coefficients, the resulting `c` is **not necessarily a convex combination of participant ratings**. The displayed configuration combines the Ridge-derived coefficients and the similarity-derived weights equally.
 
@@ -68,9 +85,11 @@ Because `a` may contain negative coefficients, the resulting `c` is **not necess
 
 For an artwork `j`, let `μ_j` denote its mean response across the available reference participants and `r_j` its vector of participant-specific deviations. The estimated score is:
 
-```text
-score_j = μ_j + λ (r_j · c)           λ = 1
-```
+<div class="art2art-math-equation" style="max-width:100%;overflow-x:auto;overflow-y:hidden;text-align:center;margin:1.25em 0;padding:0.2em 0;">
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>y</mi><mo accent="true">̂</mo></mover><mi>j</mi></msub><mo>=</mo><msub><mi>μ</mi><mi>j</mi></msub><mo>+</mo><mi>λ</mi><mspace width="0.167em"></mspace><msub><mi>r</mi><mi>j</mi></msub><msup><mi>c</mi><mi>𝖳</mi></msup><mo>,</mo><mspace width="2.0em"></mspace><mi>λ</mi><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\hat{y}_{j}=\mu_{j}+\lambda\,r_{j}c^{\mathsf T},\qquad\lambda=1.
+</annotation></semantics></math>
+</div>
 
 **In cross-validation**, `μ_j` and `r_j` are derived from the **36 training participants' observed valuations** for the original paintings. Performance is evaluated against the held-out participant's valuations on the other 394 paintings. **In deployment**, the same prediction rule is applied to a separate candidate collection using upstream *predicted* reference-participant responses. No ground-truth accuracy on that separate collection is reported here. The final web display is also controlled by a distinct result selector and is not itself evaluated by the ranking metrics.
 
