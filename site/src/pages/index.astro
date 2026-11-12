@@ -5,10 +5,29 @@ import ProjectCard from '../components/ProjectCard.astro';
 import DevArticles from '../components/DevArticles.astro';
 import { getCollection } from 'astro:content';
 
-const featured = (await getCollection('projects'))
-  .filter((project) => project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 4);
+const allProjects = await getCollection('projects');
+
+const dgxTitle = 'Distributed LLM Inference on NVIDIA DGX Spark';
+
+const dgxProject = allProjects.find(
+  (project) => project.data.title === dgxTitle
+);
+
+if (!dgxProject) {
+  throw new Error('DGX Spark project was not found');
+}
+
+const otherFeatured = allProjects
+  .filter((project) =>
+    project.data.featured && project.data.title !== dgxTitle
+  )
+  .sort((a, b) => a.data.order - b.data.order);
+
+const featured = [
+  ...otherFeatured.slice(0, 3),
+  dgxProject,
+  ...otherFeatured.slice(3, 4),
+];
 ---
 
 <BaseLayout
