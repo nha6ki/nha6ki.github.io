@@ -12,7 +12,7 @@ technologies:
   - Grafana
   - Slack
 order: 22
-featured: false
+featured: true
 image: "/images/projects/htcondor-workstation-pool.webp"
 imageAlt: "The HTCondor logo above a submit workstation connected to three lab workstations, one equipped with a GPU."
 ---
