@@ -32,6 +32,10 @@ One clip can illustrate several features. I attached representative status to th
 
 The Japanese and English interfaces share catalogue records and audio assets while keeping display text separate from stable search keys and card IDs. Switching languages preserves the current filter or guide section. The site runs as static HTML, CSS and JavaScript on GitHub Pages. Python checks and GitHub Actions check counts, links between the two languages, and whether key attribution statements are present before release.
 
+## How the catalogue was built
+
+I started with definitions and passages documented in music-theory sources, then looked across score collections, MIDI, recordings with annotations, and reference catalogues. I kept edition, recording and passage separate when selecting examples. Where the source, excerpt and reuse terms supported on-site audio, I included a short clip. Other entries lead to sources or external recordings rather than hosting the audio. The [collection and selection methodology](https://github.com/nha6ki/notable-musical-patterns/blob/main/METHODOLOGY.md) documents these decisions; the [architecture notes](https://github.com/nha6ki/notable-musical-patterns/blob/main/ARCHITECTURE.md) explain how records and excerpts are joined in the browser.
+
 ## Evidence and limits
 
 The site distinguishes what a score or MIDI excerpt shows from what a source annotator or uploader reports. For example, a time signature supplied by an uploader is not presented as an independent analysis of the recording. Each example identifies the relevant source and, where applicable, the edition, excerpt and usage terms. External recordings can be different performances.
