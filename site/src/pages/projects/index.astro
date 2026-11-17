@@ -11,10 +11,11 @@ const projects = (await getCollection('projects'))
       a.data.order - b.data.order
   );
 
+// Projects in "other" are available through All only.
 const filters = [
   { id: 'all', label: 'All' },
-  ...categories,
-  { id: 'other', label: 'Other' },
+  ...categories.filter(({ id }) => id === 'web'),
+  ...categories.filter(({ id }) => id !== 'web'),
 ].map(({ id, label }) => ({
   id,
   label,
