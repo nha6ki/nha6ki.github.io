@@ -13,7 +13,7 @@ technologies:
   - HTML Audio
   - GitHub Pages
 order: 6
-featured: false
+featured: true
 image: "/images/projects/lyrimelotrace-trajectories.svg"
 imageAlt: "Data illustration of LyriMeloTrace: blue lyric and amber recording trajectories for Schubert’s Frühlingstraum on shared Valence–Arousal axes."
 links:
