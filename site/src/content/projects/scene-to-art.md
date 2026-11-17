@@ -1,5 +1,6 @@
 ---
 title: "Scene → Art Recommender"
+category: "ai"
 summary: "Predicting individual artwork preferences from photographic aesthetic judgments."
 date: "2026-10"
 technologies:

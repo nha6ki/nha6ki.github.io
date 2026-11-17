@@ -1,5 +1,6 @@
 ---
 title: "Niwa Docs"
+category: "web"
 summary: "A searchable collection of research notes and technical references, built with Sphinx."
 date: "2022-03"
 technologies:

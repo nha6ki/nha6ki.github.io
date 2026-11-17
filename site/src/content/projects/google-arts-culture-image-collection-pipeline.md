@@ -1,5 +1,6 @@
 ---
 title: "Google Arts & Culture Image Collection Pipeline"
+category: "data"
 summary: "A Python workflow developed in 2020 to collect artwork images and prepare a dataset for an art and museum recommendation application."
 date: "2020-08"
 technologies:

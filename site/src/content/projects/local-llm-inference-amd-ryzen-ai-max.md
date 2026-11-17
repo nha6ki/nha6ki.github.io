@@ -1,5 +1,6 @@
 ---
 title: "Local LLM Inference on AMD Ryzen AI Max"
+category: "ai"
 summary: "A self-hosted LLM environment built on AMD Ryzen AI Max+ 395 for research use, with similar systems deployed to two laboratories."
 date: "2026-05"
 technologies:

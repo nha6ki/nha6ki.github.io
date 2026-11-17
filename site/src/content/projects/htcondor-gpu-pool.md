@@ -1,5 +1,6 @@
 ---
 title: "An HTCondor Pool for Lab Research Computing"
+category: "infra"
 summary: "I operate an HTCondor pool that lets researchers share the lab’s CPU and GPU workstations. I built the Grafana dashboard they can use to track jobs across the pool."
 date: "2026-11"
 technologies:

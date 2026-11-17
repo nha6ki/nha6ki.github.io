@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
+import { categories, categoryIcons } from '../../lib/categories';
 
 const projects = (await getCollection('projects'))
   .sort(
@@ -9,29 +10,102 @@ const projects = (await getCollection('projects'))
       (b.data.date ?? '').localeCompare(a.data.date ?? '') ||
       a.data.order - b.data.order
   );
+
+const filters = [
+  { id: 'all', label: 'All' },
+  ...categories,
+  { id: 'other', label: 'Other' },
+].map(({ id, label }) => ({
+  id,
+  label,
+  count: projects.filter(project => id === 'all' || project.data.category === id).length,
+})).filter(({ count }) => count > 0);
 ---
 
 <BaseLayout
   title="Projects | Haruki Niwa"
   description="Explore research and software development projects by Haruki Niwa, including machine learning applications, recommendation systems, and scientific computing."
 >
-  <div class="content-page" style="padding-bottom: 10px;">
+  <div class="content-page" style="padding-bottom: 0;">
     <h1>Projects</h1>
 
     <p class="lead">
-        A selection of my research and development projects.
-      </p>
+      A selection of my research and development projects.
+    </p>
   </div>
 
-  <div class="project-grid projects-page-grid">
+  <div class="project-categories" role="group" aria-label="Filter projects by category" hidden>
+    {filters.map(({ id, label, count }) => (
+      <button
+        type="button"
+        class="category-button"
+        data-category={id}
+        data-label={label}
+        aria-pressed={id === 'all'}
+        aria-controls="projects-grid"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          set:html={categoryIcons[id]}
+        />
+        {label} ({count})
+      </button>
+    ))}
+  </div>
+  <p class="project-filter-status" role="status" aria-atomic="true"></p>
+
+  <div id="projects-grid" class="project-grid projects-page-grid">
     {projects.map((project) => (
       <ProjectCard project={project} />
     ))}
   </div>
 </BaseLayout>
 
+<script>
+  const filters = document.querySelector<HTMLElement>('.project-categories');
+  const cards = document.querySelectorAll<HTMLAnchorElement>('#projects-grid .project-card');
+  const status = document.querySelector<HTMLElement>('.project-filter-status');
+
+  if (filters && status) {
+    const buttons = filters.querySelectorAll<HTMLButtonElement>('button[data-category]');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selected = button.dataset.category;
+        let count = 0;
+        cards.forEach(card => {
+          card.hidden = selected !== 'all' && card.dataset.category !== selected;
+          if (!card.hidden) count += 1;
+        });
+        buttons.forEach(option => {
+          option.setAttribute('aria-pressed', String(option === button));
+        });
+        status.textContent = selected === 'all'
+          ? `Showing all ${count} projects.`
+          : `Showing ${count} ${count === 1 ? 'project' : 'projects'} in ${button.dataset.label}.`;
+      });
+    });
+    filters.hidden = false;
+  }
+</script>
 
 <style is:global>
+  .project-filter-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
   /* PROJECTS_THREE_COLUMN_LAYOUT */
   .project-grid.projects-page-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

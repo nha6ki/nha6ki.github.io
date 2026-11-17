@@ -1,5 +1,6 @@
 ---
 title: "Distributed LLM Inference on NVIDIA DGX Spark"
+category: "ai"
 summary: "Deployed DeepSeek-V4.1-Flash-1017 across two NVIDIA DGX Spark systems, with a local API, browser access, and documented PDF evaluation."
 date: "2026-11"
 technologies:

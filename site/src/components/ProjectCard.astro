@@ -8,7 +8,7 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<a class="project-card" href={`/projects/${project.id}/`}>
+<a class="project-card" data-category={project.data.category} href={`/projects/${project.id}/`}>
   <div
     class:list={[
       'project-card-media',
@@ -43,6 +43,10 @@ const { project } = Astro.props;
 </a>
 
 <style>
+  .project-card[hidden] {
+    display: none;
+  }
+
   .project-card {
     display: flex;
     flex-direction: column;

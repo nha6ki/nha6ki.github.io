@@ -1,5 +1,6 @@
 ---
 title: "Notable Musical Patterns"
+category: "web"
 summary: "A bilingual listening catalogue for exploring musical patterns, comparing excerpts, and tracing the evidence behind each example."
 date: "2026-11"
 technologies:

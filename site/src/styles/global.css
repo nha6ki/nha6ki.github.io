@@ -408,15 +408,17 @@ h2 {
   display: none;
 }
 
-/* Blog category filters */
-.article-categories {
+/* Shared Blog and Projects category filters */
+.article-categories,
+.project-categories {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
   margin: 32px 0 24px;
 }
 
-.article-categories[hidden] {
+.article-categories[hidden],
+.project-categories[hidden] {
   display: none;
 }
 
@@ -673,25 +675,25 @@ h2 {
 }
 
 /* BLOG_CATEGORY_V3_START */
-.dev-articles :is(.article-card--category-ai, .category-button[data-category="ai"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-ai, .category-button[data-category="ai"]) {
   --article-accent: #7956b4; --article-accent-ink: #563782; --article-accent-bg: #f0e9fa;
 }
-.dev-articles :is(.article-card--category-neuro, .category-button[data-category="neuro"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-neuro, .category-button[data-category="neuro"]) {
   --article-accent: #b43f68; --article-accent-ink: #872c4e; --article-accent-bg: #fbeaf0;
 }
-.dev-articles :is(.article-card--category-infra, .category-button[data-category="infra"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-infra, .category-button[data-category="infra"]) {
   --article-accent: #2563b8; --article-accent-ink: #214b85; --article-accent-bg: #e7f0fd;
 }
-.dev-articles :is(.article-card--category-data, .category-button[data-category="data"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-data, .category-button[data-category="data"]) {
   --article-accent: #a56713; --article-accent-ink: #754908; --article-accent-bg: #fff3db;
 }
-.dev-articles :is(.article-card--category-robotics, .category-button[data-category="robotics"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-robotics, .category-button[data-category="robotics"]) {
   --article-accent: #137a67; --article-accent-ink: #0d5b4d; --article-accent-bg: #dff4ee;
 }
-.dev-articles :is(.article-card--category-web, .category-button[data-category="web"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-web, .category-button[data-category="web"]) {
   --article-accent: #475569; --article-accent-ink: #334155; --article-accent-bg: #eef2f7;
 }
-.dev-articles :is(.article-card--category-other, .category-button[data-category="other"]) {
+:is(.dev-articles, .project-categories) :is(.article-card--category-other, .category-button[data-category="other"]) {
   --article-accent: #64748b; --article-accent-ink: #455569; --article-accent-bg: #edf1f6;
 }
 .dev-articles .article-card--categorized { border-top-width: 4px; }
@@ -710,13 +712,13 @@ h2 {
   line-height: 1.3;
 }
 .dev-articles .article-category-badge svg,
-.dev-articles .category-button svg {
+:is(.dev-articles, .project-categories) .category-button svg {
   display: block;
   width: 17px;
   height: 17px;
   flex: none;
 }
-.dev-articles .category-button {
+:is(.dev-articles, .project-categories) .category-button {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -724,12 +726,12 @@ h2 {
   background: var(--article-accent-bg, #f1f5f9);
   color: var(--article-accent-ink, #334155);
 }
-.dev-articles .category-button[aria-pressed="true"] {
+:is(.dev-articles, .project-categories) .category-button[aria-pressed="true"] {
   border-color: var(--article-accent, #334155);
   background: var(--article-accent, #334155);
   color: #fff;
 }
-.dev-articles .category-button:hover:not([aria-pressed="true"]) {
+:is(.dev-articles, .project-categories) .category-button:hover:not([aria-pressed="true"]) {
   border-color: var(--article-accent, #94a3b8);
   filter: brightness(.97);
 }
