@@ -14,8 +14,9 @@ const projects = (await getCollection('projects'))
 // Projects in "other" are available through All only.
 const filters = [
   { id: 'all', label: 'All' },
+  ...categories.filter(({ id }) => id === 'ai'),
   ...categories.filter(({ id }) => id === 'web'),
-  ...categories.filter(({ id }) => id !== 'web'),
+  ...categories.filter(({ id }) => id !== 'ai' && id !== 'web'),
 ].map(({ id, label }) => ({
   id,
   label,
