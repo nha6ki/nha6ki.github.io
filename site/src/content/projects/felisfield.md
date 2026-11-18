@@ -1,7 +1,7 @@
 ---
 title: "FelisField"
 category: "ai"
-summary: "Explore 17,303 cat photographs from six sources on a 3D map. Hover over a point or tap it to see the photo, then compare its coat with those of nearby cats."
+summary: "A 3D map of 17,303 cat photographs from six sources. Explore how coat color and other visual features vary from one point to the next."
 date: "2026-11"
 technologies:
   - Python
@@ -12,7 +12,7 @@ technologies:
   - Canvas API
 order: 1
 image: "/images/projects/felisfield.webp"
-imageAlt: "A projection of the FelisField map, with 17,303 points colored by their six visual-feature clusters."
+imageAlt: "A cloud of points in six colors, each point representing one cat photograph."
 links:
   - label: "Live Demo"
     url: "https://felisfield.pages.dev/"
@@ -20,18 +20,20 @@ links:
     url: "https://github.com/nha6ki/FelisField"
 ---
 
-## Finding neighbors by appearance
+## Explore the map
 
-I built FelisField around a question: if you start with one cat photograph, what will you find a few points away? Drag to rotate the map, or pinch to zoom on a phone. Selecting a point opens the original composition beside it, so you can compare cats without losing your place. Each photo has a separate credit panel with its source and license. The interface is in Japanese.
+Hover over a point or tap it to see the full photograph beside it. Try a neighboring point to compare the cats’ coats, or drag to rotate the map and explore another group. On a phone, pinch to zoom. The demo is in Japanese, and a separate panel lists the source and license for the selected photo.
 
-## How a photograph gets its position
+## How the map is built
 
-I used Mask2Former to isolate cats in 29,046 candidate photos. When several cats appeared, I used the largest detected cat. For the 17,303 photos that passed the score and size thresholds, I measured the color distribution inside the mask and extracted DINOv2 features from a crop with a uniform background. This keeps a bright sofa or a patch of grass from directly contributing to the coat-color histogram.
+I ran Mask2Former on 29,046 candidate photos and kept the 17,303 that met the detection score and minimum area thresholds. For photos with multiple detected cats, I used the largest predicted cat region. I measured the distribution of colors inside that region and used DINOv2 to extract visual features from a crop with the surrounding background masked out.
 
-The map gives equal weight to the color and DINOv2 features. UMAP places each photograph in three dimensions, and K-means assigns one of six display colors. A point’s color identifies its feature cluster. Coat names such as *tabby* and *calico* are not assigned to these groups.
+I gave the two sets of features equal weight. UMAP uses the combined features to position each photo in three dimensions. K-means uses the same features to group the photos into six clusters. The six point colors identify these clusters without assigning coat-pattern names.
 
-## What distance tells you
+The models run offline. The browser loads the precomputed map and fetches each preview as you explore.
 
-To check whether nearby points have similar colors even across collections, I restricted each photo’s comparison set to other sources. Its 15 closest neighbors on the map had a mean coat-color distance of 0.462, compared with 0.689 for 15 randomly chosen photos, a 33% reduction. The metric measures the same color distribution used to build the map. It describes similarity in color rather than the accuracy of a coat-pattern classifier.
+## How similar are neighboring coats?
 
-The models run offline. The public site serves precomputed coordinates and loads a JPEG when a visitor selects a point, so exploring the map requires no inference server.
+For each photo, I compared its 15 nearest neighbors on the map with 15 randomly chosen photos. Both sets came from sources other than the photo’s own. I measured the difference between coat-color distributions using Hellinger distance, where smaller values indicate more similar colors.
+
+The average distance was **0.462 for map neighbors** and **0.689 for random selections**, about 33% lower for neighbors. This checks how well the 3D layout preserves one of its inputs, coat color. Recognizing patterns such as tabby or calico is a separate question.
