@@ -11,6 +11,7 @@ technologies:
   - UMAP
   - Canvas API
 order: 1
+featured: true
 image: "/images/projects/felisfield.webp"
 imageAlt: "A cloud of points in six colors, each point representing one cat photograph."
 links:
