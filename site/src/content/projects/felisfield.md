@@ -23,18 +23,18 @@ links:
 
 ## Explore the map
 
-Hover over a point or tap it to see the full photograph beside it. Try a neighboring point to compare the cats’ coats, or drag to rotate the map and explore another group. On a phone, pinch to zoom. The demo is in Japanese, and a separate panel lists the source and license for the selected photo.
+I built FelisField so you can start with one cat photograph and find others with a similar appearance, even when the photos have no coat-pattern labels. Hover over a point or tap it to see the full photograph beside it. Move to a nearby point to compare coats, drag to rotate the map, or pinch to zoom on a phone. In the Japanese-language demo, **出典・クレジット** opens the selected photo’s source and license.
 
-## How the map is built
+## From a photograph to a point
 
-I ran Mask2Former on 29,046 candidate photos and kept the 17,303 that met the detection score and minimum area thresholds. For photos with multiple detected cats, I used the largest predicted cat region. I measured the distribution of colors inside that region and used DINOv2 to extract visual features from a crop with the surrounding background masked out.
+To keep the focus on the cat, I used Mask2Former to estimate its outline in each of 29,046 candidate photos. I kept 17,303 photos that met the detection and size thresholds, using the largest detected cat when a photo contained several. I used these automatically generated masks without reviewing them individually.
 
-I gave the two sets of features equal weight. UMAP uses the combined features to position each photo in three dimensions. K-means uses the same features to group the photos into six clusters. The six point colors identify these clusters without assigning coat-pattern names.
+For each cat region, I measured the proportion of pixels in each of 64 color bins. This captures how much of each color appears in the region. Two cats with different markings can have similar proportions. To capture other aspects of appearance, I also extracted DINOv2 features from a crop with the background masked out.
 
-The models run offline. The browser loads the precomputed map and fetches each preview as you explore.
+I gave the color distribution and the DINOv2 features equal weight. UMAP uses the combined features to position each photograph in 3D. K-means groups the same features into six clusters, shown by the six point colors. The models run offline, so the browser only needs the precomputed map and the photo previews.
 
-## How similar are neighboring coats?
+## How much coat-color similarity survives the 3D projection?
 
-For each photo, I compared its 15 nearest neighbors on the map with 15 randomly chosen photos. Both sets came from sources other than the photo’s own. I measured the difference between coat-color distributions using Hellinger distance, where smaller values indicate more similar colors.
+For each photo, I limited the comparison to photos from other sources. From that pool I took the 15 nearest in 3D and drew another 15 at random. For each pair, I compared the proportions in the 64 color bins using Hellinger distance. A distance of zero means the two color distributions are identical.
 
-The average distance was **0.462 for map neighbors** and **0.689 for random selections**, about 33% lower for neighbors. This checks how well the 3D layout preserves one of its inputs, coat color. Recognizing patterns such as tabby or calico is a separate question.
+Mean color distance was **0.462 for map neighbors** and **0.689 for randomly selected photos**. Because color helped determine the layout, some similarity was expected. The roughly 33% lower mean distance measures how much closer neighbors were in color than the random baseline. This comparison measures color proportions only. It does not test whether stripes or patches occupy similar positions.
