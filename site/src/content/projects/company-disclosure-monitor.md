@@ -12,7 +12,7 @@ technologies:
   - XlsxWriter
   - WSL 2
   - GitHub Actions
-order: 99
+order: 0
 featured: true
 image: "/images/projects/company-disclosure-monitor.webp"
 imageAlt: "English dashboard showing filing checks across the Magnificent Seven and the latest earnings for each company."
@@ -39,7 +39,7 @@ A colleague preparing a briefing can use the company workbook to see which figur
 
 NVIDIA reported **$44.299 billion in GAAP operating income for FY2026 Q4**. Its annual report (Form 10-K) gives the full-year figure. The monitor takes **$130.387 billion** for the fiscal year, subtracts **$86.088 billion** for the first nine months from the preceding Form 10-Q, and obtains **$44.299 billion**. The register labels the result *Matches derived quarter*. Both inputs remain visible alongside the result. [Earnings release](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm) · [Annual Form 10-K](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm) · [Nine-month Form 10-Q](https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm)
 
-![NVIDIA FY2026 operating income in billions of dollars. Subtracting the first nine months ($86.088 billion) from the full year ($130.387 billion) gives $44.299 billion for Q4, matching the earnings release.](/images/projects/disclosure-monitor-nvidia-q4.webp)
+<a href="/images/projects/disclosure-monitor-nvidia-q4.webp"><img class="nvidia-q4-chart" src="/images/projects/disclosure-monitor-nvidia-q4.webp" alt="NVIDIA FY2026 operating income in billions of dollars. Subtracting the first nine months ($86.088 billion) from the full year ($130.387 billion) gives $44.299 billion for Q4, matching the earnings release." /></a>
 
 To reproduce the check, open the quarter and choose **Operating income** under **Source table comparison**. Then select **Diluted EPS**. The company reported **diluted earnings per share (EPS) of $1.76**, but the monitor found no comparable three-month consolidated EPS fact in the periodic report. Each period has its own weighted-average share count, so subtracting nine-month EPS from annual EPS would give an unreliable comparison. The register therefore shows *No quarterly comparison value* for diluted EPS. [Explore NVIDIA FY2026 Q4](https://nha6ki.github.io/CompanyDisclosureMonitor/?lang=en&company=NVDA&period=FY2026Q4#focus)
 

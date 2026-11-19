@@ -740,3 +740,11 @@ h2 {
   padding: 4px 7px;
 }
 /* BLOG_CATEGORY_V3_END */
+
+.project-body img.nvidia-q4-chart {
+  display: block;
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  margin-inline: auto;
+}

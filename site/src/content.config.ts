@@ -14,7 +14,7 @@ const projects = defineCollection({
     category: z.enum([...categories.map(({ id }) => id), 'other']),
     summary: z.string(),
     technologies: z.array(z.string()),
-    order: z.number().int().min(1),
+    order: z.number().int().nonnegative(),
     featured: z.boolean().default(false),
 
     date: z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/).optional(),
