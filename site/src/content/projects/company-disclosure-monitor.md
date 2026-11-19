@@ -13,7 +13,7 @@ technologies:
   - WSL 2
   - GitHub Actions
 order: 99
-featured: false
+featured: true
 image: "/images/projects/company-disclosure-monitor.webp"
 imageAlt: "English dashboard showing filing checks across the Magnificent Seven and the latest earnings for each company."
 links:

@@ -8,13 +8,15 @@ import { getCollection } from 'astro:content';
 const featuredProjects = (await getCollection('projects', ({ data }) => data.featured))
   .sort((a, b) => a.data.order - b.data.order);
 
+const leadId = 'company-disclosure-monitor';
+const lead = featuredProjects.filter((project) => project.id === leadId);
 const pinnedIds = ['meowatlas', 'felisfield', 'lyrimelotrace', 'notable-musical-patterns', 'htcondor-gpu-pool', 'distributed-llm-inference-nvidia-dgx-spark'];
 const pinned = pinnedIds.flatMap((id) =>
   featuredProjects.filter((project) => project.id === id)
 );
-const others = featuredProjects.filter((project) => !pinnedIds.includes(project.id));
+const others = featuredProjects.filter((project) => project.id !== leadId && !pinnedIds.includes(project.id));
 
-const featured = [...others.slice(0, 2), ...pinned, ...others.slice(2, 4)];
+const featured = [...lead, ...others.slice(0, 2), ...pinned, ...others.slice(2, 4)];
 ---
 
 <BaseLayout
