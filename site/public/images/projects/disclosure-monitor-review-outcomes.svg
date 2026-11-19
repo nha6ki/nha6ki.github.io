@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 390" width="730" height="390" role="img" aria-labelledby="title desc"><title id="title">How to read the first extraction run</title><desc id="desc">Of 70 filings whose extraction finished without a manual flag, 11 had published highlights and 59 had none. Of eight filings flagged for source review, three had highlights from other sections and five had none.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#47645e"/></marker></defs><g font-family="system-ui, sans-serif"><rect width="100%" height="100%" rx="16" fill="#f5f8f6"/>
+<text x="25" y="42" font-size="27" font-weight="680" fill="#233f39" text-anchor="start">One filing can have two review outcomes</text>
+<text x="25" y="76" font-size="18" font-weight="450" fill="#233f39" text-anchor="start">Initial backfill  ·  78 filings  ·  counts below are filings</text>
+<text x="36" y="140" font-size="17" font-weight="650" fill="#233f39" text-anchor="start">Extraction outcome</text>
+<text x="506" y="116" font-size="17" font-weight="600" fill="#233f39" text-anchor="middle">Has published</text>
+<text x="506" y="140" font-size="17" font-weight="600" fill="#233f39" text-anchor="middle">highlights</text>
+<text x="644" y="116" font-size="17" font-weight="600" fill="#233f39" text-anchor="middle">No published</text>
+<text x="644" y="140" font-size="17" font-weight="600" fill="#233f39" text-anchor="middle">highlights</text>
+<rect x="24" y="157" width="682" height="62" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="37" y="196" font-size="20" font-weight="550" fill="#233f39" text-anchor="start">Completed (70)</text>
+<text x="506" y="197" font-size="26" font-weight="650" fill="#19634f" text-anchor="middle">11</text>
+<text x="644" y="197" font-size="26" font-weight="650" fill="#233f39" text-anchor="middle">59</text>
+<rect x="24" y="226" width="682" height="62" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="37" y="265" font-size="20" font-weight="550" fill="#233f39" text-anchor="start">Source review needed (8)</text>
+<text x="506" y="266" font-size="26" font-weight="650" fill="#19634f" text-anchor="middle">3</text>
+<text x="644" y="266" font-size="26" font-weight="650" fill="#233f39" text-anchor="middle">5</text>
+<text x="30" y="334" font-size="22" font-weight="650" fill="#233f39" text-anchor="start">14 filings contained 18 published highlights.</text>
+<text x="30" y="365" font-size="17" font-weight="450" fill="#233f39" text-anchor="start">Three of those filings also had sections that still needed a source check.</text>
+</g></svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 790" width="760" height="790" role="img" aria-labelledby="title desc"><title id="title">From SEC filings to GitHub Pages</title><desc id="desc">Windows schedules a WSL Python job to fetch SEC filings. Financial figures are reconciled in Python. Qwen on Windows extracts candidate events, which require validation and human approval. Public inputs are built and deployed using GitHub Actions.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#47645e"/></marker></defs><g font-family="system-ui, sans-serif"><rect width="100%" height="100%" rx="16" fill="#f5f8f6"/>
+<text x="28" y="42" font-size="30" font-weight="680" fill="#233f39" text-anchor="start">From filing to published evidence</text>
+<rect x="27" y="65" width="706" height="77" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="48" y="96" font-size="23" font-weight="660" fill="#233f39" text-anchor="start">SEC EDGAR</text>
+<text x="48" y="123" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">8-K and earnings exhibits  ·  10-Q and 10-K reports</text>
+<path d="M380 142 V165" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="27" y="166" width="706" height="389" rx="9" fill="#e7efea" stroke="#c7d5cd"/>
+<text x="48" y="200" font-size="16" font-weight="700" fill="#233f39" text-anchor="start">WINDOWS 11 PC</text>
+<rect x="53" y="220" width="654" height="66" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="74" y="248" font-size="22" font-weight="650" fill="#233f39" text-anchor="start">Task Scheduler starts Python in WSL 2</text>
+<text x="74" y="272" font-size="17" font-weight="450" fill="#233f39" text-anchor="start">09:00 local time · index filings and cache the source documents</text>
+<path d="M380 286 V304 H210 V327" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M380 304 H552 V327" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="52" y="329" width="316" height="135" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="70" y="360" font-size="23" font-weight="660" fill="#233f39" text-anchor="start">Financial records</text>
+<text x="70" y="391" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">Python compares source rows</text>
+<text x="70" y="416" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">and reporting periods, then</text>
+<text x="70" y="441" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">writes registers and Excel files.</text>
+<rect x="391" y="329" width="316" height="135" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="411" y="360" font-size="23" font-weight="660" fill="#233f39" text-anchor="start">Filing highlights</text>
+<text x="411" y="391" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">WSL sends numbered sections</text>
+<text x="411" y="416" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">to Qwen via Windows Ollama.</text>
+<text x="411" y="441" font-size="19" font-weight="450" fill="#233f39" text-anchor="start">Python validates each response.</text>
+<path d="M210 464 V551" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M550 464 V481" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="392" y="482" width="314" height="55" rx="9" fill="#fcf5e7" stroke="#d7cba8"/>
+<text x="550" y="516" font-size="18" font-weight="640" fill="#675023" text-anchor="middle">Reviewer approves event text</text>
+<path d="M550 537 V561 H380 V582" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M210 551 V561 H380" fill="none" stroke="#47645e" stroke-width="2.4"/>
+<rect x="27" y="585" width="706" height="79" rx="9" fill="#fff" stroke="#c7d5cd"/>
+<text x="48" y="617" font-size="23" font-weight="660" fill="#233f39" text-anchor="start">Public data on GitHub</text>
+<text x="48" y="646" font-size="17" font-weight="450" fill="#233f39" text-anchor="start">Changed registers, reports, extraction states and approved highlights</text>
+<path d="M380 664 V695" fill="none" stroke="#47645e" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="27" y="698" width="706" height="66" rx="9" fill="#204d42" stroke="#204d42"/>
+<text x="48" y="727" font-size="22" font-weight="650" fill="white" text-anchor="start">GitHub Actions builds and deploys to Pages</text>
+<text x="48" y="750" font-size="17" font-weight="450" fill="white" text-anchor="start">Visitors read static pages and download reports in their browser.</text>
+</g></svg>
