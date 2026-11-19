@@ -744,7 +744,6 @@ h2 {
 .project-body img.nvidia-q4-chart {
   display: block;
   width: 100%;
-  max-width: 26rem;
   height: auto;
   margin-inline: auto;
 }
