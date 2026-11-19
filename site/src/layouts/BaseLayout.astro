@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  lang?: "en" | "ja";
   structuredData?: Record<string, unknown>;
 }
 
@@ -12,6 +13,7 @@ const {
   title,
   description = 'Personal website of Haruki Niwa.',
   noindex = false,
+  lang = "en",
   structuredData,
 } = Astro.props;
 
@@ -28,7 +30,7 @@ const navigation = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,7 +40,7 @@ const navigation = [
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={lang === "ja" ? "ja_JP" : "en_US"} />
     <meta property="og:site_name" content="Haruki Niwa" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
