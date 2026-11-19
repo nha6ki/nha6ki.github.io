@@ -748,3 +748,27 @@ h2 {
   height: auto;
   margin-inline: auto;
 }
+
+[data-project="company-disclosure-monitor"] .project-body table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 1rem 1.5rem;
+}
+
+[data-project="company-disclosure-monitor"] .project-body :is(th, td) {
+  border: 1px solid #cbd5e1;
+  padding: .5rem clamp(.5rem, 1.4vw, .875rem);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+[data-project="company-disclosure-monitor"] .project-body th {
+  background-color: #f1f5f9;
+  color: #243449;
+}
+
+[data-project="company-disclosure-monitor"] .project-body th:first-child {
+  width: 33%;
+}
