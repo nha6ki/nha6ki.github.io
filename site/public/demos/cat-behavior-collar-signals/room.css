@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light;
+  font-family: "DM Sans", "Noto Sans JP", system-ui, sans-serif;
+  color: #193931;
+  background: #ecf2ea;
+  --edge: #c8d4c9;
+  --paper: #fffcf6;
+  --forest: #245e50;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+header {
+  position: relative; z-index: 2; display: flex; align-items: center; flex-wrap: wrap;
+  gap: 8px 20px; padding: 9px clamp(10px, 1.7vw, 28px);
+  background: var(--paper); border-bottom: 1px solid var(--edge);
+}
+.brand, .actions, .rate { display: flex; align-items: center; }
+.brand { gap: 10px; flex-wrap: wrap; }
+h1 { margin: 0; font: 600 clamp(21px, 2vw, 28px)/1.12 Georgia, serif; letter-spacing: -.045em; }
+.actions { margin-inline-start: auto; gap: 6px; flex-wrap: wrap; }
+button, select, summary { font: inherit; color: inherit; cursor: pointer; }
+.actions button, select, summary, #close {
+  min-height: 34px; padding: 5px 10px; border: 1px solid var(--edge);
+  border-radius: 7px; background-color: transparent; font-size: 14px; line-height: 22px;
+}
+select { padding-inline-end: 4px; }
+.rate { gap: 5px; margin-inline-end: 2px; }
+.rate label { font-size: 13px; color: #476355; }
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+.actions button:hover, select:hover, summary:hover, #close:hover { background-color: #edf3ea; }
+:focus-visible { outline: 2px solid #16776b; outline-offset: 2px; }
+#field {
+  position: relative; flex: 1; min-height: 350px; overflow: hidden;
+  background: radial-gradient(circle, #708e772a .8px, transparent 1px) 5px 7px/22px 22px,
+    radial-gradient(ellipse at 80% 8%, #faf8ed, transparent 65%),
+    linear-gradient(135deg, #e6efe5, #f1f5eb 50%, #e2ece3);
+}
+.pet {
+  padding: 2px; position: absolute; display: grid; justify-items: center; align-content: center;
+  gap: 2px; line-height: 1.1; background: transparent; border: 1px solid transparent; border-radius: 10px;
+}
+.pet:hover, .pet:focus-visible { background: #fffdf590; border-color: #b7cab9; }
+.wave { width: 100%; height: 25px; background: #152539; border: 1px solid #233c53; border-radius: 6px; box-shadow: 0 2px 4px #203f301a; }
+.sprite { width: min(90px,100%); height: 48px; object-fit: contain; }
+.pet strong { font-size: 15px; font-weight: 650; }
+.pet small { font-size: 12px; color: #456351; }
+details { position: relative; }
+.help, #panel { background: var(--paper); padding: 16px; border: 1px solid var(--edge); border-radius: 12px; box-shadow: 0 8px 28px #233e3126; }
+.help { position: absolute; right: 0; top: calc(100% + 8px); width: min(380px, 90vw); max-height: 68dvh; overflow-y: auto; overscroll-behavior: contain; line-height: 1.65; font-size: 14px; }
+.help a { color: var(--forest); text-underline-offset: 2px; }
+#panel { position: fixed; z-index: 3; right: 14px; bottom: 14px; min-width: min(235px,90vw); max-width: calc(100vw - 28px); }
+#name { font: bold 21px Georgia, serif; }
+#close { float: right; margin-left: 12px; }
+#info { margin-top: 8px; white-space: pre-line; line-height: 1.65; font-size: 14px; font-variant-numeric: tabular-nums; }
+@media (max-width: 680px) {
+  header { padding: 7px 9px; gap: 6px; }
+  .actions { width: 100%; gap: 4px; margin: 0; }
+  .actions button, select, summary { padding-inline: 6px; }
+  #field { min-height: 458px; }
+  .help { position: fixed; top: auto; margin-top: 7px; right: 8px; }
+}
+
+.help p { margin: 0; }
+.help h2 { margin: 12px 0 2px; font-size: 14px; }
