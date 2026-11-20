@@ -1,22 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeSocialLinks from '../components/HomeSocialLinks.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import DevArticles from '../components/DevArticles.astro';
 import { getCollection } from 'astro:content';
 
-const featuredProjects = (await getCollection('projects', ({ data }) => data.featured))
-  .sort((a, b) => a.data.order - b.data.order);
+const projects = new Map((await getCollection('projects', ({ data }) => data.featured))
+  .map(project => [project.id, project]));
 
-const leadId = 'company-disclosure-monitor';
-const lead = featuredProjects.filter((project) => project.id === leadId);
-const pinnedIds = ['meowatlas', 'felisfield', 'lyrimelotrace', 'notable-musical-patterns', 'scene-to-art', 'lab-document-rag', 'htcondor-gpu-pool'];
-const pinned = pinnedIds.flatMap((id) =>
-  featuredProjects.filter((project) => project.id === id)
-);
-const others = featuredProjects.filter((project) => project.id !== leadId && !pinnedIds.includes(project.id));
-
-const featured = [...lead, ...others.slice(0, 2), ...pinned];
+const groups = [
+  { title: 'Art', ids: ['art-museum-recommender', 'scene-to-art'] },
+  { title: 'Cats', ids: ['meowatlas', 'felisfield'] },
+  { title: 'Music', ids: ['lyrimelotrace', 'notable-musical-patterns'] },
+  { title: 'Literature', ids: ['storychroma'] },
+  { title: 'Finance', ids: ['company-disclosure-monitor'] },
+  { title: 'Research Computing', ids: ['lab-document-rag', 'htcondor-gpu-pool'] },
+].map(({ title, ids }) => ({
+  title,
+  cards: ids.map(id => {
+    const project = projects.get(id);
+    if (!project) throw new Error(`Missing featured project: ${id}`);
+    return project;
+  }),
+}));
 ---
 
 <BaseLayout
@@ -56,17 +61,69 @@ const featured = [...lead, ...others.slice(0, 2), ...pinned];
       <a class="text-link" href="/projects/">View all →</a>
     </div>
 
-    <div class="project-grid">
-      {featured.map((project) => (
-        <ProjectCard project={project} />
-      ))}
-    </div>
+    {groups.map(({ title, cards }) => (
+      <section class="project-group">
+        <h3>{title}</h3>
+        <ul class="project-row">
+          {cards.map(({ id, data }) => (
+            <li>
+              <a class="project-preview" href={`/projects/${id}/`}>
+                {data.image && <img src={data.image} alt="" loading="lazy" />}
+                <span class="preview-copy">
+                  <strong>{data.title}</strong>
+                  <span class="summary">{data.summary}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
   </section>
 </BaseLayout>
 
 <style>
   .hero h1 { margin-bottom: 6px; }
 
-
-
+  .project-group { margin-top: 22px; }
+  .project-group h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .project-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(84%, 450px);
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+  }
+  .project-row li { min-width: 0; scroll-snap-align: start; }
+  .project-preview {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #e2e6eb;
+    border-radius: 10px;
+  }
+  .project-preview:hover { border-color: #a7b8cf; }
+  .project-preview:focus-visible { outline-offset: 1px; }
+  .project-preview img {
+    width: 22%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    background: #f5f7fa;
+    border-radius: 4px;
+  }
+  .preview-copy { display: grid; gap: 4px; min-width: 0; line-height: 1.4; }
+  .summary {
+    color: #526070;
+    font-size: .85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 </style>
