@@ -85,13 +85,13 @@ const groups = [
 <style>
   .hero h1 { margin-bottom: 6px; }
 
-  .project-group { margin-top: 22px; }
-  .project-group h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .project-group { margin-top: 30px; }
+  .project-group h3 { margin: 0 0 8px; font-size: 1.18rem; }
   .project-row {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: min(84%, 450px);
-    gap: 12px;
+    grid-auto-columns: min(88%, 460px);
+    gap: 16px;
     overflow-x: auto;
     scroll-snap-type: x proximity;
     scroll-padding-inline: 4px;
@@ -102,28 +102,32 @@ const groups = [
   .project-row li { min-width: 0; scroll-snap-align: start; }
   .project-preview {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     height: 100%;
-    gap: 12px;
-    padding: 10px;
+    overflow: hidden;
     border: 1px solid #e2e6eb;
     border-radius: 10px;
   }
   .project-preview:hover { border-color: #a7b8cf; }
   .project-preview:focus-visible { outline-offset: 1px; }
   .project-preview img {
-    width: 22%;
-    aspect-ratio: 4 / 3;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     object-fit: contain;
     background: #f5f7fa;
-    border-radius: 4px;
+    border-bottom: 1px solid #e2e6eb;
   }
-  .preview-copy { display: grid; gap: 4px; min-width: 0; line-height: 1.4; }
+  .preview-copy {
+    display: grid;
+    gap: 8px;
+    padding: clamp(14px, 2vw, 20px);
+    line-height: 1.4;
+  }
+  .preview-copy strong { font-size: 1.15rem; }
   .summary {
     color: #526070;
-    font-size: .85rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 1rem;
+    line-height: 1.55;
   }
 </style>
