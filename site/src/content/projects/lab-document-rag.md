@@ -13,7 +13,7 @@ technologies:
   - DeepSeek-V4.1-Flash-1017
   - NVIDIA DGX Spark
   - Open WebUI
-featured: false
+featured: true
 order: 40
 image: "/images/projects/lab-document-rag.webp"
 imageAlt: "On AMD, Gemma 4 31B describes slides and Qwen3-Embedding-4B embeds documents and queries. DeepSeek-V4.1-Flash-1017 uses retrieved passages to answer on two DGX Sparks."

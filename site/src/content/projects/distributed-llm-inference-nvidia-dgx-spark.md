@@ -12,7 +12,7 @@ technologies:
   - Docker
   - Open WebUI
 order: 21
-featured: true
+featured: false
 image: "/images/projects/distributed-llm-inference-nvidia-dgx-spark.webp"
 imageAlt: "Flat illustration of two DGX Spark systems connected for distributed DeepSeek inference, with Open WebUI on the worker and an API server on the head."
 links:

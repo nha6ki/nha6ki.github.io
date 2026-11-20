@@ -10,13 +10,13 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.fea
 
 const leadId = 'company-disclosure-monitor';
 const lead = featuredProjects.filter((project) => project.id === leadId);
-const pinnedIds = ['meowatlas', 'felisfield', 'lyrimelotrace', 'notable-musical-patterns', 'htcondor-gpu-pool', 'distributed-llm-inference-nvidia-dgx-spark'];
+const pinnedIds = ['meowatlas', 'felisfield', 'lyrimelotrace', 'notable-musical-patterns', 'scene-to-art', 'lab-document-rag', 'htcondor-gpu-pool'];
 const pinned = pinnedIds.flatMap((id) =>
   featuredProjects.filter((project) => project.id === id)
 );
 const others = featuredProjects.filter((project) => project.id !== leadId && !pinnedIds.includes(project.id));
 
-const featured = [...lead, ...others.slice(0, 2), ...pinned, ...others.slice(2, 4)];
+const featured = [...lead, ...others.slice(0, 2), ...pinned];
 ---
 
 <BaseLayout

@@ -13,7 +13,7 @@ technologies:
   - Open WebUI
   - Gemma 4 31B
 order: 4
-featured: true
+featured: false
 image: "/images/projects/local-llm-inference-architecture.webp"
 imageAlt: "System architecture showing researchers accessing Open WebUI and Ollama running Gemma 4 31B on a GMKtec EVO-X2 with AMD ROCm GPU acceleration."
 links:
