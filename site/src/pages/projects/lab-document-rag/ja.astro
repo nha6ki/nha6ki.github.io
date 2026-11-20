@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const title = 'AMDとNVIDIA DGX Sparkで構築した研究室資料のローカルRAG';
+const diagram = '/images/projects/lab-rag-workflow-ja.webp';
+---
+<BaseLayout lang="ja" title={title + ' | Haruki Niwa'} description="研究室のノートやスライドをローカルで検索し、日本語や英語の回答から原資料の該当箇所をたどれる仕組みを構築しました。">
+<article class="content-page">
+<a class="text-link" href="/projects/">← Projects一覧</a>
+<h1>{title}</h1>
+<a class="text-link" href="/projects/lab-document-rag/" lang="en" hreflang="en">Read in English</a>
+<p class="lead">AMD機上のGemmaとQwenで研究室のノートやスライドの図を検索できるようにし、DGX Spark 2台で動くDeepSeekが、質問に出典付きで答える仕組みを構築しました。</p>
+<time datetime="2026-11">2026年11月</time>
+<img src="/images/projects/lab-document-rag.webp" width="1280" height="720" style="display:block;width:100%;height:auto;margin:1.5rem 0" alt="AMD機のGemma 4 31Bが図を説明し、Qwen3-Embedding-4Bが資料と質問をベクトル化。検索した抜粋を使い、DGX Spark 2台のDeepSeek-V4.1-Flash-1017が回答する。" />
+<div class="project-body">
+<h2>二つの推論基盤を、一つの研究室アシスタントに</h2>
+<p>実験手順を説明した図は覚えていても、どの発表資料に載っていたか思い出せないことがあります。そこで、研究室向けに構築した二つの推論基盤をつなぎ、Open WebUIからMarkdownノートやPowerPoint資料を検索できるようにしました。AMD機が資料を索引化して関連箇所を取り出し、分散推論で動くDeepSeekがその抜粋をもとに日本語や英語で回答します。出典欄にはファイルパスと行番号またはスライド番号が表示され、研究者自身が原資料を確認できます。</p>
+<h2>スライドの図が回答の根拠になるまで</h2>
+<p><strong>AMD Ryzen AI Max+ 395</strong>搭載機では、Ollamaで二つのモデルを動かしています。<strong>Gemma 4 31B</strong>は、スライドを画像として読み取り、図の内容を文章にします。これにより、文字をほとんど抽出できないグラフも検索対象になります。<strong>Qwen3-Embedding-4B</strong>は、この説明文と資料から直接抽出したテキストをベクトル化します。Qdrantにはベクトル、抜粋、出典の位置をまとめて保存します。生成した説明文にはラベルを付け、スライドの著者が書いた文章と区別できるようにしました。</p>
+<p>研究者が質問すると、Qwenが質問をベクトル化し、Qdrantが最大4件の抜粋を返します。AMD機は質問と抜粋を<strong>DeepSeek-V4.1-Flash-1017</strong>のローカルAPIに渡します。TensorFoldを使い、一つのモデルを<strong>NVIDIA DGX Spark 2台</strong>に分散して実行しています。サービスは回答中の引用番号を照合し、出典の位置を添えてOpen WebUIに表示します。</p>
+<figure class="project-result-figure"><a href={diagram}><img src={diagram} width="1120" height="1524" loading="lazy" alt="索引更新時はGemmaがスライドの画像説明を作り、Qwenが本文と説明文をベクトル化する。質問時はQwenが質問をベクトル化し、AMD機が検索した抜粋をDGX SparkのDeepSeekに渡す。" /></a><figcaption>Gemmaは索引更新時にスライドを読み取ります。Qwenは索引に登録する資料と、検索時に入力する質問の両方をベクトル化します。</figcaption></figure>
+<h2>関連記事</h2>
+<p><a href="https://dev.to/nha6ki/building-a-local-rag-system-for-lab-notes-and-slides-with-amd-and-dgx-spark-42a8">AMDとDGX Sparkで研究室のノートとスライドのためのローカルRAGを構築する（DEV.to・英語）</a></p>
+<h2>関連プロジェクト</h2>
+<ul><li><a href="https://nha6ki.github.io/projects/local-llm-inference-amd-ryzen-ai-max/">AMD Ryzen AI MaxでのローカルLLM推論（英語）</a></li><li><a href="https://nha6ki.github.io/projects/distributed-llm-inference-nvidia-dgx-spark/">NVIDIA DGX Sparkでの分散LLM推論（英語）</a></li></ul>
+<h2>使用技術</h2><p>Python · Qdrant · Qwen3-Embedding-4B · Gemma 4 31B · Ollama · AMD Ryzen AI Max+ 395 · DeepSeek-V4.1-Flash-1017 · NVIDIA DGX Spark · Open WebUI</p>
+</div></article>
+</BaseLayout>
