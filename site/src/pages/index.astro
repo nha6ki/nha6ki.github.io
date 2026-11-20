@@ -64,7 +64,7 @@ const groups = [
     {groups.map(({ title, cards }) => (
       <section class="project-group">
         <h3>{title}</h3>
-        <ul class:list={['project-row', { 'long-row': cards.length > 2 }]}>
+        <ul class="project-row">
           {cards.map(({ id, data }) => (
             <li>
               <a class="project-preview" href={`/projects/${id}/`}>
@@ -101,7 +101,7 @@ const groups = [
   }
   @container (min-width: 720px) {
     /* Leave the leading edge of the third card in view. */
-    .project-row.long-row { grid-auto-columns: calc((100% - 112px) / 2); }
+    .project-row { grid-auto-columns: calc((100% - 112px) / 2); }
   }
   .project-row li { min-width: 0; scroll-snap-align: start; }
   .project-preview {
