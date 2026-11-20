@@ -19,6 +19,9 @@ const { project } = Astro.props as {
 
 const { Content } = await render(project);
 
+// This project introduces its two systems before showing their cover illustration.
+const hasInlineIntroduction = project.id === 'lab-document-rag';
+
 const formattedDate = project.data.date
   ? new Intl.DateTimeFormat('en-US', {
       month: 'long',
@@ -68,7 +71,7 @@ const resourceLinks = project.data.links.map((link) => ({
       <a class="text-link" href="/projects/company-disclosure-monitor/ja/" lang="ja" hreflang="ja">日本語で読む</a>
     )}
 
-    <p class="lead">{project.data.summary}</p>
+    {!hasInlineIntroduction && <p class="lead">{project.data.summary}</p>}
 
     {formattedDate && (
       <time class="project-date" datetime={project.data.date}>
@@ -133,7 +136,7 @@ const resourceLinks = project.data.links.map((link) => ({
       </nav>
     )}
 
-    {project.data.image && (
+    {!hasInlineIntroduction && project.data.image && (
       <a
         class="project-cover-link"
         href={project.data.image}
