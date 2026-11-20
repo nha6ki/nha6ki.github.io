@@ -1,7 +1,7 @@
 ---
-title: "Lab Document RAG on AMD and NVIDIA DGX Spark"
+title: "Local RAG for Lab Notes and Slides on AMD and NVIDIA DGX Spark"
 category: "ai"
-summary: "Gemma and Qwen make lab notes and slide figures searchable on AMD. DeepSeek on two DGX Sparks answers questions with references to the original files."
+summary: "Search lab notes and slide figures in Japanese or English, then follow a citation to the original line or slide."
 date: "2026-11"
 technologies:
   - Python
@@ -19,31 +19,28 @@ image: "/images/projects/lab-document-rag.webp"
 imageAlt: "On AMD, Gemma 4 31B describes slides and Qwen3-Embedding-4B embeds documents and queries. DeepSeek-V4.1-Flash-1017 uses retrieved passages to answer on two DGX Sparks."
 ---
 
-I sometimes remember a figure from a lab meeting but can’t recall which slide it was on. I built a system that lets us search the lab’s Markdown notes and PowerPoint slides in Japanese or English and trace an answer back to a specific line or slide.
+I sometimes remember a figure from a lab meeting but forget which slide deck it came from. I built a local retrieval-augmented generation (RAG) system so we can ask questions about our Markdown notes and PowerPoint slides in Japanese or English and find the source of an answer.
 
-The system connects two inference environments we run in the lab. An **AMD Ryzen AI Max+ 395 workstation** indexes the documents and retrieves passages relevant to a question. DeepSeek runs across **two NVIDIA DGX Spark systems** and uses those passages to answer. Researchers can ask a question in Open WebUI and see the answer and its sources together.
+The **AMD Ryzen AI Max+ 395 workstation** indexes the documents and retrieves relevant passages. DeepSeek runs across **two NVIDIA DGX Spark systems** and uses those passages to answer. Open WebUI shows the answer and its sources together.
 
-![Gemma and Qwen run on the AMD workstation. Retrieved passages go to DeepSeek on two DGX Spark systems.](/images/projects/lab-document-rag.webp)
+<a href="/images/projects/lab-document-rag.webp" style="display:block;max-width:44rem;margin:1.5rem auto"><img src="/images/projects/lab-document-rag.webp" width="1280" height="720" style="display:block;width:100%;height:auto" alt="Gemma and Qwen run on the AMD workstation, which sends retrieved passages to DeepSeek on two DGX Spark systems." /></a>
 
 ## Making slide figures searchable
 
-The AMD workstation runs two models through Ollama.
+A text extractor may capture a chart’s title but miss the figure itself. Two models running through Ollama on the AMD workstation make that content searchable:
 
-- **Gemma 4 31B** reads slides as images when the index is updated and writes descriptions of their figures. This makes even plots with little extractable text searchable. Each generated description is labeled so readers can distinguish it from the slide author’s own words.
-- **Qwen3-Embedding-4B** converts the text extracted from notes and slides, along with Gemma’s descriptions, into vectors. It also embeds each incoming question, so a search can find passages with a similar meaning even when the wording differs.
+- **Gemma 4 31B** describes figures from rendered slides during indexing. The index labels each description as AI-generated so readers can distinguish it from the slide author’s text.
+- **Qwen3-Embedding-4B** embeds both the document text and Gemma’s descriptions. It embeds questions in the same vector space, so a question and a relevant passage can use different words.
 
-Qdrant stores each vector alongside its source passage, file path, and line or slide number.
+Qdrant stores each vector with the passage it represents, the file path, and the starting line or slide number.
+
+<figure class="project-result-figure" style="width:min(100%,38rem);margin:1.5rem auto"><a href="/images/projects/lab-rag-workflow.webp"><img src="/images/projects/lab-rag-workflow.webp" width="1120" height="680" loading="lazy" alt="Extracted text and Gemma’s figure descriptions both feed into Qwen. Qdrant stores the resulting vectors with their passages and source locations." /></a><figcaption>Both paths preserve the location of the original line or slide.</figcaption></figure>
 
 ## Answering questions with retrieved passages
 
-When a researcher asks a question in Open WebUI, the AMD workstation retrieves up to four passages from Qdrant and sends them with the question to the local API for **DeepSeek-V4.1-Flash-1017**. TensorFold distributes this single model across the two DGX Spark systems.
+For each question in Open WebUI, the AMD workstation retrieves up to four passages from Qdrant and sends them with the question to the local API for **DeepSeek-V4.1-Flash-1017**. TensorFold runs that single model across both DGX Spark systems.
 
-Before displaying the answer, the service checks its citation numbers against the retrieved passages. Each source entry points to a line in a Markdown note or a slide in a PowerPoint deck, so researchers can check the passage behind a citation in the original document.
-
-<figure class="project-result-figure" style="max-width: 36rem; margin-inline: auto">
-  <a href="/images/projects/lab-rag-workflow.webp" aria-label="Open the full-size indexing and retrieval diagram"><img src="/images/projects/lab-rag-workflow.webp" width="1120" height="1524" loading="lazy" style="display: block; width: 100%; height: auto" alt="During indexing, Qwen embeds native text and Gemma’s slide descriptions in Qdrant. At question time, Qwen embeds the question and the AMD service sends up to four matching excerpts to DeepSeek on two DGX Sparks." /></a>
-  <figcaption>Gemma runs during indexing. Qwen embeds both the indexed material and the incoming question.</figcaption>
-</figure>
+The service checks the citation IDs it recognizes in the answer against the IDs it sent to DeepSeek. The source list includes every passage supplied to the model, even if the answer doesn’t cite it. Researchers can open a note at the listed line or return to the original slide to check a chart’s legend or values.
 
 ## Related article
 
