@@ -9,6 +9,7 @@ technologies:
   - R
   - GitHub Pages
 order: 10
+featured: true
 image: "/images/projects/cat-behavior-collar-signals.webp"
 imageAlt: "Three illustrated cats in different poses, each beneath a trace from its collar accelerometer."
 links:
