@@ -21,3 +21,5 @@ links:
 What could an analyst have known when Japan’s initial budget was enacted? Japan Fiscal Atlas uses that question to guide its annual budget studies. It reconstructs forecasts from the information available at the time and compares them with the original budget or plan.
 
 On the Japanese-language site, each study explains what is being forecast, which data the methods use, and how the forecasts are evaluated. Readers can explore errors year by year and follow the source notes to see which historical figures could be verified.
+
+[![Japan Fiscal Atlas homepage showing the forecast targets, evaluation periods, and results for all eight fiscal domains.](/images/projects/japan-fiscal-atlas-home.jpg)](https://japan-fiscal-atlas.knitessay512.chatgpt.site/)
