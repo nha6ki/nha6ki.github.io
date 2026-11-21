@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title description">
+  <title id="title">Japan Fiscal Atlas</title>
+  <desc id="description">In selected historical tests, correcting for past budget deviations reduced forecast error in 12 of 12 years for public debt interest and 2 of 13 years for foreign exchange fund income.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#102b28"/>
+      <stop offset="1" stop-color="#1a4038"/>
+    </linearGradient>
+    <pattern id="ledger" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#d9eadb" stroke-opacity=".07"/>
+    </pattern>
+  </defs>
+  <path fill="url(#paper)" d="M0 0h1280v720H0z"/>
+  <path fill="url(#ledger)" d="M0 0h1280v720H0z"/>
+  <path d="M64 69h1152M64 650h1152" stroke="#a5c7b4" stroke-opacity=".36"/>
+  <path d="M64 69h68" stroke="#dcb571" stroke-width="4"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="136" font-size="24" font-weight="700" letter-spacing="5" fill="#e7c58a">ANNUAL FISCAL FORECASTS</text>
+    <text x="61" y="279" font-size="105" font-weight="700" letter-spacing="-5" fill="#f4f4e8">Japan</text>
+    <text x="61" y="385" font-size="105" font-weight="700" letter-spacing="-5" fill="#f4f4e8">Fiscal Atlas</text>
+    <text x="66" y="492" font-size="34" fill="#c8dfd2">Eight indicators.</text>
+    <text x="66" y="538" font-size="34" fill="#c8dfd2">Forecasts tested against outcomes.</text>
+    <rect x="706" y="115" width="510" height="484" rx="14" fill="#eef1e6"/>
+    <text x="742" y="174" fill="#285149" font-size="23" font-weight="700" letter-spacing="2.1">YEARS WITH LOWER ERROR</text>
+    <text x="742" y="212" fill="#38534c" font-size="22">After correcting for past budget deviations</text>
+    <path d="M742 243h438M742 408h438" stroke="#b7c5b9"/>
+    <text x="742" y="288" fill="#152e29" font-size="26" font-weight="700">Public debt interest</text>
+    <text x="1180" y="351" fill="#184c41" font-size="46" font-weight="700" text-anchor="end">12 / 12</text>
+    <rect x="742" y="341" width="274" height="13" rx="6.5" fill="#246657"/>
+    <text x="742" y="453" fill="#152e29" font-size="26" font-weight="700">Foreign exchange fund income</text>
+    <text x="1180" y="516" fill="#765019" font-size="46" font-weight="700" text-anchor="end">2 / 13</text>
+    <rect x="742" y="506" width="274" height="13" rx="6.5" fill="#d6ded3"/>
+    <rect x="742" y="506" width="42.15" height="13" rx="6.5" fill="#95641e"/>
+    <text x="742" y="564" fill="#38534c" font-size="21">Two examples from historical tests</text>
+  </g>
+</svg>
