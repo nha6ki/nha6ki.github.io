@@ -9,8 +9,8 @@ technologies:
   - GitHub Pages
 order: 11
 featured: false
-image: "/images/projects/japan-fiscal-atlas-cover.svg"
-imageAlt: "In two historical tests, correcting for past budget deviations lowered error in 12 of 12 years for public debt interest and 2 of 13 for foreign exchange fund income."
+image: "/images/projects/japan-fiscal-atlas-home.jpg"
+imageAlt: "Japan Fiscal Atlas homepage with a comparison table of forecast results for eight fiscal indicators."
 links:
   - label: "Open Japan Fiscal Atlas (Japanese)"
     url: "https://nha6ki.github.io/japan-fiscal-atlas/"
