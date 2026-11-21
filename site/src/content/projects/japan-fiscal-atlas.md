@@ -1,7 +1,7 @@
 ---
 title: "Japan Fiscal Atlas"
 category: "ai"
-summary: "Explore when a statistical adjustment brought Japan’s budget estimates closer to the year-end result across eight fiscal indicators."
+summary: "Explore forecasts of Japan’s public finances and see how they are tested against fiscal outcomes."
 date: "2026-11"
 technologies:
   - Linear regression
@@ -10,7 +10,7 @@ technologies:
 order: 11
 featured: false
 image: "/images/projects/japan-fiscal-atlas.webp"
-imageAlt: "In historical tests, correcting for past budget deviations reduced the error in 12 of 12 years for public debt interest payments and 2 of 13 years for foreign exchange fund investment income."
+imageAlt: "Forecast evaluation timeline: public information at the forecast date, a forecast and its benchmark, and the subsequent fiscal outcome."
 links:
   - label: "Explore the forecasts (Japanese)"
     url: "https://nha6ki.github.io/japan-fiscal-atlas/"
@@ -18,8 +18,6 @@ links:
     url: "https://github.com/nha6ki/japan-fiscal-atlas"
 ---
 
-When Japan’s initial budget passes, is the official estimate already a good forecast of the fiscal year’s outcome? This Japanese-language site compares that estimate with two adjustments: the average historical percentage deviation and a regression using one indicator specific to the task. The corporate tax study also includes a nominal GDP benchmark.
+What could an analyst have known when Japan’s initial budget was enacted? Japan Fiscal Atlas uses that question to guide its annual budget studies. It reconstructs forecasts from the information available at the time and compares them with the original budget or plan.
 
-Each study reconstructs annual forecasts using the budget enactment date as the information cutoff. Its charts show how much each adjustment reduced or increased the absolute error in each test year. Source notes document which historical inputs could be verified.
-
-The same adjustment produced contrasting results. Correcting for the historical average deviation reduced the error in public debt interest payments in all 12 test years, but improved the forecast of foreign exchange fund investment income in only two of 13 years. These counts describe historical comparisons. Readers can inspect the size of the errors and the evidence for each year in the individual studies.
+On the Japanese-language site, each study explains what is being forecast, which data the methods use, and how the forecasts are evaluated. Readers can explore errors year by year and follow the source notes to see which historical figures could be verified.
