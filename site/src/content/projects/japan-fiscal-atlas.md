@@ -21,5 +21,3 @@ links:
 What could an analyst have forecast when Japan’s initial budget was enacted? Japan Fiscal Atlas reconstructs annual forecasts for eight indicators, including corporate tax revenue, pension contributions, and public debt interest payments. It compares each forecast with the original budget or plan and, where available, the reported fiscal outcome.
 
 The studies test two alternatives: adjusting the official estimate by past percentage deviations and fitting a regression using an indicator suited to each forecast. The corporate tax study also includes a nominal GDP benchmark. The Japanese-language site shows errors by year, explains which information was available at the forecast date, and links to the underlying sources.
-
-[![Japan Fiscal Atlas homepage comparing the number of years each method improved on the official estimate, across eight indicators.](/images/projects/japan-fiscal-atlas-home.jpg)](https://nha6ki.github.io/japan-fiscal-atlas/)
