@@ -8,7 +8,7 @@ technologies:
   - JavaScript
   - GitHub Pages
 order: 11
-featured: false
+featured: true
 image: "/images/projects/japan-fiscal-atlas-home.jpg"
 imageAlt: "Japan Fiscal Atlas homepage with a comparison table of forecast results for eight fiscal indicators."
 links:

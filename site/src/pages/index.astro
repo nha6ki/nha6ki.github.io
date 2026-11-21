@@ -12,7 +12,7 @@ const groups = [
   { title: 'Cats', ids: ['meowatlas', 'felisfield', 'cat-behavior-collar-signals'] },
   { title: 'Music', ids: ['lyrimelotrace', 'notable-musical-patterns'] },
   { title: 'Literature', ids: ['storychroma'] },
-  { title: 'Finance', ids: ['company-disclosure-monitor'] },
+  { title: 'Finance', ids: ['company-disclosure-monitor', 'japan-fiscal-atlas'] },
   { title: 'Research Computing', ids: ['lab-document-rag', 'htcondor-gpu-pool'] },
 ].map(({ title, ids }) => ({
   title,
@@ -68,7 +68,7 @@ const groups = [
           {cards.map(({ id, data }) => (
             <li>
               <a class="project-preview" href={`/projects/${id}/`}>
-                {data.image && <img src={data.image} alt="" loading="lazy" />}
+                {data.image && <img class:list={{ 'cover-top': id === 'japan-fiscal-atlas' }} src={data.image} alt="" loading="lazy" />}
                 <span class="preview-copy">
                   <strong>{data.title}</strong>
                   <span class="summary">{data.summary}</span>
@@ -122,6 +122,7 @@ const groups = [
     background: #f5f7fa;
     border-bottom: 1px solid #e2e6eb;
   }
+  .project-preview img.cover-top { object-fit: cover; object-position: center top; }
   .preview-copy {
     display: grid;
     gap: 8px;
