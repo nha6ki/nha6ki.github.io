@@ -1,5 +1,5 @@
 ---
-title: "Japan Fiscal Forecasts"
+title: "Japan Fiscal Atlas"
 category: "ai"
 summary: "Explore when a statistical adjustment brought Japan’s budget estimates closer to the year-end result across eight fiscal indicators."
 date: "2026-11"
@@ -14,6 +14,8 @@ imageAlt: "In historical tests, correcting for past budget deviations reduced th
 links:
   - label: "Explore the forecasts (Japanese)"
     url: "https://nha6ki.github.io/japan-fiscal-atlas/"
+  - label: "GitHub repository"
+    url: "https://github.com/nha6ki/japan-fiscal-atlas"
 ---
 
 When Japan’s initial budget passes, is the official estimate already a good forecast of the fiscal year’s outcome? This Japanese-language site compares that estimate with two adjustments: the average historical percentage deviation and a regression using one indicator specific to the task. The corporate tax study also includes a nominal GDP benchmark.
