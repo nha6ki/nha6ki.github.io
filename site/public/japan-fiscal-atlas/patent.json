@@ -1,0 +1,1232 @@
+{
+  "inputUnit": "百万円",
+  "forecastUnit": "億円",
+  "history": [
+    {
+      "year": 2002,
+      "budget": 104418.481,
+      "actual": 102641.288988,
+      "budgetUrl": "https://web.archive.org/web/20240612042245id_/https://www.bb.mof.go.jp/server/2002/dlpdf/DL200212001.pdf#page=689",
+      "actualUrl": "https://web.archive.org/web/20240615232543id_/https://www.bb.mof.go.jp/server/2002/dlpdf/DL200275001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2002-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/154/1540000.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "available": "2004-01-19",
+      "calendarYear": 2000,
+      "applications": 436865,
+      "countUrl": "https://www.jpo.go.jp/e/resources/report/nenji/2001/document/index/02-chapter1_1.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490195",
+      "publicationLabel": "2001年",
+      "availableBy": "2001-12-31",
+      "countEvidence": {
+        "calendarYear": 2000,
+        "count": 436865,
+        "url": "https://www.jpo.go.jp/e/resources/report/nenji/2001/document/index/02-chapter1_1.pdf",
+        "publishedMonth": null,
+        "publishedYear": 2001,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490195",
+        "availableBy": "2001-12-31",
+        "originalUrl": "https://www.jpo.go.jp/e/resources/report/nenji/2001/document/index/02-chapter1_1.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/e/resources/report/nenji/2001/document/index/02-chapter1_1.pdf"
+      }
+    },
+    {
+      "year": 2003,
+      "budget": 111954.49,
+      "actual": 103413.383165,
+      "budgetUrl": "https://web.archive.org/web/20240812112956id_/https://www.bb.mof.go.jp/server/2003/dlpdf/DL200312001.pdf#page=625",
+      "actualUrl": "https://web.archive.org/web/20240908041410id_/https://www.bb.mof.go.jp/server/2003/dlpdf/DL200375001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2003-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/156/keika/h20030328.htm",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "available": "2004-11-19",
+      "calendarYear": 2001,
+      "applications": 439175,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532498&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I01111009810489845",
+      "publicationLabel": "2002-09",
+      "availableBy": "2002-09-30",
+      "countEvidence": {
+        "calendarYear": 2001,
+        "count": 439175,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532498&fileKind=2",
+        "publishedMonth": "2002-09",
+        "publishedYear": 2002,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I01111009810489845",
+        "availableBy": "2002-09-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532498&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002532498"
+      }
+    },
+    {
+      "year": 2004,
+      "budget": 108168.089,
+      "actual": 119448.054,
+      "budgetUrl": "https://web.archive.org/web/20250504054925id_/https://www.bb.mof.go.jp/server/2004/dlpdf/DL200412001.pdf#page=579",
+      "actualUrl": "https://www.mof.go.jp/policy/budget/reference/statistics/09.xlsx",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算は財政統計第9表（続き3）の2項の千円表示値の合計。",
+      "date": "2004-03-26",
+      "dateSource": "https://www.mlit.go.jp/pri/houkoku/gaiyou/pdf/kkk54.pdf",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/F96.htm",
+      "available": "2006-01-20",
+      "calendarYear": 2002,
+      "applications": 421044,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532348&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I11141197300674",
+      "publicationLabel": "2003-10",
+      "availableBy": "2003-10-31",
+      "countEvidence": {
+        "calendarYear": 2002,
+        "count": 421044,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532348&fileKind=2",
+        "publishedMonth": "2003-10",
+        "publishedYear": 2003,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I11141197300674",
+        "availableBy": "2003-10-31",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532348&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002532348"
+      }
+    },
+    {
+      "year": 2005,
+      "budget": 117897.14,
+      "actual": 126535.837916,
+      "budgetUrl": "https://web.archive.org/web/20240715031302id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200512001.pdf#page=609",
+      "actualUrl": "https://web.archive.org/web/20220805232857id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200575001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2005-03-23",
+      "dateSource": "https://dl.ndl.go.jp/view/download/digidepo_11043053_po_1620001.pdf?alternativeNo=&contentNo=1",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2007pdf/20070202076.pdf",
+      "available": "2006-11-21",
+      "calendarYear": 2003,
+      "applications": 413092,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532205&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I7152355",
+      "publicationLabel": "2004-10",
+      "availableBy": "2004-10-31",
+      "countEvidence": {
+        "calendarYear": 2003,
+        "count": 413092,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532205&fileKind=2",
+        "publishedMonth": "2004-10",
+        "publishedYear": 2004,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I7152355",
+        "availableBy": "2004-10-31",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002532205&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002532205"
+      }
+    },
+    {
+      "year": 2006,
+      "budget": 124079.935,
+      "actual": 135467.392571,
+      "budgetUrl": "https://web.archive.org/web/20240808172841id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200612001.pdf#page=603",
+      "actualUrl": "https://web.archive.org/web/20240714125624id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200675001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2006-03-27",
+      "dateSource": "https://www.gov-online.go.jp/prg/prg435.html",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/169_168_kessan_6.htm",
+      "available": "2007-11-20",
+      "calendarYear": 2004,
+      "applications": 423081,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002475290&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I7400796",
+      "publicationLabel": "2005-08",
+      "availableBy": "2005-08-31",
+      "countEvidence": {
+        "calendarYear": 2004,
+        "count": 423081,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002475290&fileKind=2",
+        "publishedMonth": "2005-08",
+        "publishedYear": 2005,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I7400796",
+        "availableBy": "2005-08-31",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002475290&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002475290"
+      }
+    },
+    {
+      "year": 2007,
+      "budget": 134006.943,
+      "actual": 153553.748424,
+      "budgetUrl": "https://web.archive.org/web/20250505134006id_/https://www.bb.mof.go.jp/server/2007/dlpdf/DL200712001.pdf#page=662",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2007/dlpdf/DL200775001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2007-03-26",
+      "dateSource": "https://www.jfm.go.jp/ir/bond/nongov/n3hfqk0000000fhp-att/191005hakkousha.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/171/1710001.pdf",
+      "available": "2008-11-21",
+      "calendarYear": 2005,
+      "applications": 427078,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002450759&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I8070426",
+      "publicationLabel": "2006-09",
+      "availableBy": "2006-09-30",
+      "countEvidence": {
+        "calendarYear": 2005,
+        "count": 427078,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002450759&fileKind=2",
+        "publishedMonth": "2006-09",
+        "publishedYear": 2006,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I8070426",
+        "availableBy": "2006-09-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002450759&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002450759"
+      }
+    },
+    {
+      "year": 2008,
+      "budget": 115399.844,
+      "actual": 125471.191094,
+      "budgetUrl": "https://web.archive.org/web/20240812102031id_/https://www.bb.mof.go.jp/server/2008/dlpdf/DL200812001.pdf#page=687",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2008/dlpdf/DL200875001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2008-03-28",
+      "dateSource": "https://www.thr.mlit.go.jp/bumon/kisya/kisyah/17509_kisya_preview.html",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/251E.htm",
+      "available": "2009-11-24",
+      "calendarYear": 2006,
+      "applications": 408674,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002436052&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I8790082",
+      "publicationLabel": "2007-06",
+      "availableBy": "2007-06-30",
+      "countEvidence": {
+        "calendarYear": 2006,
+        "count": 408674,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002436052&fileKind=2",
+        "publishedMonth": "2007-06",
+        "publishedYear": 2007,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I8790082",
+        "availableBy": "2007-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000002436052&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000002436052"
+      }
+    },
+    {
+      "year": 2009,
+      "budget": 113374.549,
+      "actual": 108366.71344,
+      "budgetUrl": "https://web.archive.org/web/20240612050000id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200912001.pdf#page=637",
+      "actualUrl": "https://web.archive.org/web/20240423015043id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200975001.pdf",
+      "notes": "款0100「特許料等収入」。項「特許印紙収入」と項「特許料等収入」を含む。決算収納済歳入額（円）を百万円に換算。",
+      "date": "2009-03-27",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/214E.htm",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/183_176_kessan_10.htm",
+      "available": "2010-11-19",
+      "calendarYear": 2007,
+      "applications": 396291,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012456088&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490208",
+      "publicationLabel": "2008-06",
+      "availableBy": "2008-06-30",
+      "countEvidence": {
+        "calendarYear": 2007,
+        "count": 396291,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012456088&fileKind=2",
+        "publishedMonth": "2008-06",
+        "publishedYear": 2008,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490208",
+        "availableBy": "2008-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012456088&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000012456088"
+      }
+    },
+    {
+      "year": 2010,
+      "budget": 112341.45,
+      "actual": 113723.593323,
+      "budgetUrl": "https://web.archive.org/web/20240626042645id_/https://www.bb.mof.go.jp/server/2010/dlpdf/DL201012001.pdf#page=546",
+      "actualUrl": "https://web.archive.org/web/20240615225305id_/https://www.bb.mof.go.jp/server/2010/dlpdf/DL201075001.pdf#page=62",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2010-03-24",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/25DE.htm",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/184_179_kessan_11.htm",
+      "available": "2011-11-22",
+      "calendarYear": 2008,
+      "applications": 391002,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012579620&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490210",
+      "publicationLabel": "2009-06",
+      "availableBy": "2009-06-30",
+      "countEvidence": {
+        "calendarYear": 2008,
+        "count": 391002,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012579620&fileKind=2",
+        "publishedMonth": "2009-06",
+        "publishedYear": 2009,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I3490210",
+        "availableBy": "2009-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012579620&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000012579620"
+      }
+    },
+    {
+      "year": 2011,
+      "budget": 104497.5,
+      "actual": 107199.0418,
+      "budgetUrl": "https://web.archive.org/web/20230502021907id_/https://www.bb.mof.go.jp/server/2011/dlpdf/DL201112001.pdf#page=544",
+      "actualUrl": "https://web.archive.org/web/20240517210408id_/https://www.bb.mof.go.jp/server/2011/dlpdf/DL201175001.pdf#page=64",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2011-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/177/keika/h20110329.htm",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_iinkai.nsf/html/gianrireki/184_181_kessan_12.htm",
+      "available": "2012-11-16",
+      "calendarYear": 2009,
+      "applications": 348596,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012656399&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I8736990",
+      "publicationLabel": "2010-07",
+      "availableBy": "2010-07-31",
+      "countEvidence": {
+        "calendarYear": 2009,
+        "count": 348596,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012656399&fileKind=2",
+        "publishedMonth": "2010-07",
+        "publishedYear": 2010,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I8736990",
+        "availableBy": "2010-07-31",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012656399&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000012656399"
+      }
+    },
+    {
+      "year": 2012,
+      "budget": 102954.915,
+      "actual": 105067.956052,
+      "budgetUrl": "https://web.archive.org/web/20211203001752id_/https://www.bb.mof.go.jp/server/2012/dlpdf/DL201212001.pdf#page=607",
+      "actualUrl": "https://web.archive.org/web/20240423004135id_/https://www.bb.mof.go.jp/server/2012/dlpdf/DL201275001.pdf#page=67",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2012-04-05",
+      "dateSource": "https://www.reconstruction.go.jp/files/user/topics/main-cat1/sub-cat1-1/20131129_gennjoutotorikumi.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2014pdf/20140203155.pdf",
+      "available": "2013-11-19",
+      "calendarYear": 2010,
+      "applications": 344598,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012658656&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I14211112002382",
+      "publicationLabel": "2011-06",
+      "availableBy": "2011-06-30",
+      "countEvidence": {
+        "calendarYear": 2010,
+        "count": 344598,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012658656&fileKind=2",
+        "publishedMonth": "2011-06",
+        "publishedYear": 2011,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I14211112002382",
+        "availableBy": "2011-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000012658656&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000012658656"
+      }
+    },
+    {
+      "year": 2013,
+      "budget": 105803.806,
+      "actual": 106116.980702,
+      "budgetUrl": "https://web.archive.org/web/20220106002217id_/https://www.bb.mof.go.jp/server/2013/dlpdf/DL201312001.pdf#page=577",
+      "actualUrl": "https://web.archive.org/web/20240422162011id_/https://www.bb.mof.go.jp/server/2013/dlpdf/DL201375001.pdf#page=64",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2013-05-15",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g766/all_766.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2015pdf/20150202003.pdf",
+      "available": "2014-11-18",
+      "calendarYear": 2011,
+      "applications": 342610,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000013348681&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I8736994",
+      "publicationLabel": "2012-06",
+      "availableBy": "2012-06-30",
+      "countEvidence": {
+        "calendarYear": 2011,
+        "count": 342610,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000013348681&fileKind=2",
+        "publishedMonth": "2012-06",
+        "publishedYear": 2012,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I8736994",
+        "availableBy": "2012-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000013348681&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000013348681"
+      }
+    },
+    {
+      "year": 2014,
+      "budget": 106900.362,
+      "actual": 106155.622183,
+      "budgetUrl": "https://web.archive.org/web/20211104164131id_/https://www.bb.mof.go.jp/server/2014/dlpdf/DL201412001.pdf#page=596",
+      "actualUrl": "https://web.archive.org/web/20240614035944id_/https://www.bb.mof.go.jp/server/2014/dlpdf/DL201475001.pdf#page=52",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2014-03-20",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/186/keika/h20140320.htm",
+      "dateUrl": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11018709",
+      "available": "2016-01-04",
+      "calendarYear": 2012,
+      "applications": 342796,
+      "countUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000021385555&fileKind=2",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I28111103350358",
+      "publicationLabel": "2013-06",
+      "availableBy": "2013-06-30",
+      "countEvidence": {
+        "calendarYear": 2012,
+        "count": 342796,
+        "url": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000021385555&fileKind=2",
+        "publishedMonth": "2013-06",
+        "publishedYear": 2013,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I28111103350358",
+        "availableBy": "2013-06-30",
+        "originalUrl": "https://www.e-stat.go.jp/stat-search/file-download?statInfId=000021385555&fileKind=2",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000021385555"
+      }
+    },
+    {
+      "year": 2015,
+      "budget": 113147.518,
+      "actual": 112167.0396,
+      "budgetUrl": "https://web.archive.org/web/20240706222408id_/https://www.bb.mof.go.jp/server/2015/dlpdf/DL201512001.pdf#page=458",
+      "actualUrl": "https://web.archive.org/web/20240526070121id_/https://www.bb.mof.go.jp/server/2015/dlpdf/DL201575001.pdf#page=50",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2015-04-09",
+      "dateSource": "https://www.hrr.mlit.go.jp/shinano/press/pdf/h270409.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2017pdf/20170201143.pdf",
+      "available": "2016-11-18",
+      "calendarYear": 2013,
+      "applications": 328436,
+      "countUrl": "https://www.jpo.go.jp/resources/statistics/syutugan_toukei_sokuho/document/index/201404_gaiyo.pdf",
+      "publicationUrl": "https://www.jpo.go.jp/resources/statistics/syutugan_toukei_sokuho/document/index/201404_gaiyo.pdf",
+      "publicationLabel": "2014-06",
+      "availableBy": "2014-06-19",
+      "countEvidence": {
+        "calendarYear": 2013,
+        "count": 328436,
+        "url": "https://www.jpo.go.jp/resources/statistics/syutugan_toukei_sokuho/document/index/201404_gaiyo.pdf",
+        "publishedMonth": "2014-06",
+        "publishedYear": 2014,
+        "evidenceUrl": "https://www.jpo.go.jp/resources/statistics/syutugan_toukei_sokuho/document/index/201404_gaiyo.pdf",
+        "availableBy": "2014-06-19",
+        "originalUrl": "https://www.jpo.go.jp/resources/statistics/syutugan_toukei_sokuho/document/index/201404_gaiyo.pdf",
+        "crossCheckUrl": "https://www.e-stat.go.jp/stat-search/file-download?fileKind=2&statInfId=000024977469"
+      }
+    },
+    {
+      "year": 2016,
+      "budget": 112535.666,
+      "actual": 113189.471037,
+      "budgetUrl": "https://web.archive.org/web/20160706053539id_/http://www.bb.mof.go.jp/server/2016/dlpdf/DL201612001.pdf#page=440",
+      "actualUrl": "https://web.archive.org/web/20240614034747id_/https://www.bb.mof.go.jp/server/2016/dlpdf/DL201675001.pdf#page=50",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2016-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/190/190-0329-v001.htm",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2018pdf/20180801052.pdf",
+      "available": "2017-11-21",
+      "calendarYear": 2014,
+      "applications": 325989,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2015/document/index/dai-1.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I12111000100514305",
+      "publicationLabel": "2015-06",
+      "availableBy": "2015-06-30",
+      "countEvidence": {
+        "calendarYear": 2014,
+        "count": 325989,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2015/document/index/dai-1.pdf",
+        "publishedMonth": "2015-06",
+        "publishedYear": 2015,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I12111000100514305",
+        "availableBy": "2015-06-30",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2015/document/index/dai-1.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2015/document/index/dai-1.pdf"
+      }
+    },
+    {
+      "year": 2017,
+      "budget": 120554.618,
+      "actual": 113793.893328,
+      "budgetUrl": "https://web.archive.org/web/20240612045917id_/https://www.bb.mof.go.jp/server/2017/dlpdf/DL201712001.pdf#page=431",
+      "actualUrl": "https://web.archive.org/web/20240612061339id_/https://www.bb.mof.go.jp/server/2017/dlpdf/DL201775001.pdf#page=50",
+      "notes": "経済産業省所管・特許特別会計、款0100特許料等収入（項0101特許印紙収入と項0102特許料等収入の合計）。決算は款計の収納済歳入額。",
+      "date": "2017-03-27",
+      "dateSource": "https://www.mext.go.jp/b_menu/shingi/chousa/shisetu/046/shiryo/__icsFiles/afieldfile/2017/06/27/1386976_01.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2019pdf/20190206123.pdf",
+      "available": "2018-11-20",
+      "calendarYear": 2015,
+      "applications": 318721,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2016/document/index/0101.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000136-I1970304959893803315",
+      "publicationLabel": "2016-06",
+      "availableBy": "2016-06-30",
+      "countEvidence": {
+        "calendarYear": 2015,
+        "count": 318721,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2016/document/index/0101.pdf",
+        "publishedMonth": "2016-06",
+        "publishedYear": 2016,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000136-I1970304959893803315",
+        "availableBy": "2016-06-30",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2016/document/index/0101.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2016/document/index/0101.pdf"
+      }
+    },
+    {
+      "year": 2018,
+      "budget": 123665.342,
+      "budgetUrl": "https://web.archive.org/web/20251004073852id_/https://www.bb.mof.go.jp/server/2018/dlpdf/DL201812001.pdf#page=414",
+      "actual": 117441.868721,
+      "actualUrl": "https://web.archive.org/web/20240715114452id_/https://www.bb.mof.go.jp/server/2018/dlpdf/DL201875001.pdf#page=49",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2018-03-28",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g829/829_g.pdf",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2020pdf/20200207179.pdf",
+      "available": "2019-11-19",
+      "calendarYear": 2016,
+      "applications": 318381,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2017/index.html",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I028501477",
+      "publicationLabel": "2017-08",
+      "availableBy": "2017-08-31",
+      "countEvidence": {
+        "calendarYear": 2016,
+        "count": 318381,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2017/index.html",
+        "publishedMonth": "2017-08",
+        "publishedYear": 2017,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R000000004-I028501477",
+        "availableBy": "2017-08-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2017/index.html",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2017/index.html"
+      }
+    },
+    {
+      "year": 2019,
+      "budget": 129349.63,
+      "budgetUrl": "https://www.jpo.go.jp/resources/report/nenji/2020/document/index/all.pdf",
+      "actual": 122271.590767,
+      "actualUrl": "https://web.archive.org/web/20240517214004id_/https://www.bb.mof.go.jp/server/2019/dlpdf/DL201975001.pdf#page=49",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2019-03-27",
+      "dateSource": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00090.html",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/206/meisai/m206450203001.htm",
+      "available": "2020-11-20",
+      "calendarYear": 2017,
+      "applications": 318481,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2018/document/index/0101.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I01111100001461319",
+      "publicationLabel": "2018-06",
+      "availableBy": "2018-06-30",
+      "countEvidence": {
+        "calendarYear": 2017,
+        "count": 318481,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2018/document/index/0101.pdf",
+        "publishedMonth": "2018-06",
+        "publishedYear": 2018,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000001-I01111100001461319",
+        "availableBy": "2018-06-30",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2018/document/index/0101.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2018/document/index/0101.pdf"
+      }
+    },
+    {
+      "year": 2020,
+      "budget": 125367.149,
+      "budgetUrl": "https://web.archive.org/web/20251104100144id_/https://www.bb.mof.go.jp/server/2020/dlpdf/DL202012001.pdf#page=389",
+      "actual": 124122.834807,
+      "actualUrl": "https://web.archive.org/web/20240805225732id_/https://www.bb.mof.go.jp/server/2020/dlpdf/DL202075001.pdf#page=50",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2020-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/201/201-0327-v001.htm",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_rchome.nsf/html/rchome/Shiryo/doukou212kessan.pdf/$File/doukou212kessan.pdf",
+      "available": "2021-12-06",
+      "calendarYear": 2018,
+      "applications": 313567,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2019/document/index/0200.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933141",
+      "publicationLabel": "2019-07",
+      "availableBy": "2019-07-31",
+      "countEvidence": {
+        "calendarYear": 2018,
+        "count": 313567,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2019/document/index/0200.pdf",
+        "publishedMonth": "2019-07",
+        "publishedYear": 2019,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933141",
+        "availableBy": "2019-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2019/document/index/0200.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2019/document/index/0200.pdf"
+      }
+    },
+    {
+      "year": 2021,
+      "budget": 129883.528,
+      "budgetUrl": "https://www.jpo.go.jp/resources/report/nenji/2025/document/index/0402.pdf",
+      "actual": 147503.909436,
+      "actualUrl": "https://web.archive.org/web/20250322093341id_/https://www.bb.mof.go.jp/server/2021/dlpdf/DL202175001.pdf#page=50",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2021-03-26",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/204/204-0326-v001.htm",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2023pdf/20230208196.pdf",
+      "available": "2022-11-18",
+      "calendarYear": 2019,
+      "applications": 307969,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2020/document/index/all.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933143",
+      "publicationLabel": "2020-07",
+      "availableBy": "2020-07-31",
+      "countEvidence": {
+        "calendarYear": 2019,
+        "count": 307969,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2020/document/index/all.pdf",
+        "publishedMonth": "2020-07",
+        "publishedYear": 2020,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933143",
+        "availableBy": "2020-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2020/document/index/all.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2020/document/index/all.pdf"
+      }
+    },
+    {
+      "year": 2022,
+      "budget": 148629.656,
+      "budgetUrl": "https://web.archive.org/web/20260418002246id_/https://www.bb.mof.go.jp/server/2022/dlpdf/DL202212001.pdf#page=376",
+      "actual": 144157.24913,
+      "actualUrl": "https://web.archive.org/web/20241222123409id_/https://www.bb.mof.go.jp/server/2022/dlpdf/DL202275001.pdf#page=50",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2022-03-22",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/208/208-0322-v001.htm",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DDA94E.htm",
+      "available": "2023-11-20",
+      "calendarYear": 2020,
+      "applications": 288472,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2021/document/index/0200.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933145",
+      "publicationLabel": "2021-07",
+      "availableBy": "2021-07-31",
+      "countEvidence": {
+        "calendarYear": 2020,
+        "count": 288472,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2021/document/index/0200.pdf",
+        "publishedMonth": "2021-07",
+        "publishedYear": 2021,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933145",
+        "availableBy": "2021-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2021/document/index/0200.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2021/document/index/0200.pdf"
+      }
+    },
+    {
+      "year": 2023,
+      "budget": 151443.955,
+      "budgetUrl": "https://web.archive.org/web/20250207122904id_/https://www.bb.mof.go.jp/server/2023/dlpdf/DL202312001.pdf#page=383",
+      "actual": 158831.656482,
+      "actualUrl": "https://web.archive.org/web/20241220044353id_/https://www.bb.mof.go.jp/server/2023/dlpdf/DL202375001.pdf#page=50",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2023-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/211/211-0328-v001.htm",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2023/ke0611.html",
+      "available": "2024-11-29",
+      "calendarYear": 2021,
+      "applications": 289200,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2022/document/index/0201.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933146",
+      "publicationLabel": "2022-07",
+      "availableBy": "2022-07-31",
+      "countEvidence": {
+        "calendarYear": 2021,
+        "count": 289200,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2022/document/index/0201.pdf",
+        "publishedMonth": "2022-07",
+        "publishedYear": 2022,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I12933146",
+        "availableBy": "2022-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2022/document/index/0201.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2022/document/index/0201.pdf"
+      }
+    },
+    {
+      "year": 2024,
+      "budget": 153758.45,
+      "budgetUrl": "https://web.archive.org/web/20251008135905id_/https://www.bb.mof.go.jp/server/2024/dlpdf/DL202412001.pdf#page=391",
+      "actual": 162366.4439,
+      "actualUrl": "https://web.archive.org/web/20260510205222id_/https://www.bb.mof.go.jp/server/2024/dlpdf/DL202475001.pdf#page=50",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2024-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/213/213-0328-v012.htm",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2024/ke0711.html",
+      "available": "2025-11-18",
+      "calendarYear": 2022,
+      "applications": 289530,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2023/document/index/0201.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I13989562",
+      "publicationLabel": "2023-07",
+      "availableBy": "2023-07-31",
+      "countEvidence": {
+        "calendarYear": 2022,
+        "count": 289530,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2023/document/index/0201.pdf",
+        "publishedMonth": "2023-07",
+        "publishedYear": 2023,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I13989562",
+        "availableBy": "2023-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2023/document/index/0201.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2023/document/index/0201.pdf"
+      }
+    },
+    {
+      "year": 2025,
+      "budget": 160460.616,
+      "budgetUrl": "https://web.archive.org/web/20250919113143id_/https://www.bb.mof.go.jp/server/2025/dlpdf/DL202512001.pdf#page=412",
+      "actual": 163465.238,
+      "actualUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2025/kessan_07_tokkai.pdf",
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。歳入決算額は各項の千円表示額の合計。",
+      "date": "2025-03-31",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2025/index.html",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2025/ke0811.html",
+      "available": "2026-11-20",
+      "calendarYear": 2023,
+      "applications": 300133,
+      "countUrl": "https://www.jpo.go.jp/resources/report/nenji/2024/document/index/0201.pdf",
+      "publicationUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I13989563",
+      "publicationLabel": "2024-07",
+      "availableBy": "2024-07-31",
+      "countEvidence": {
+        "calendarYear": 2023,
+        "count": 300133,
+        "url": "https://www.jpo.go.jp/resources/report/nenji/2024/document/index/0201.pdf",
+        "publishedMonth": "2024-07",
+        "publishedYear": 2024,
+        "evidenceUrl": "https://ndlsearch.ndl.go.jp/books/R100000039-I13989563",
+        "availableBy": "2024-07-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/nenji/2024/document/index/0201.pdf",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/nenji/2024/document/index/0201.pdf"
+      }
+    },
+    {
+      "year": 2026,
+      "budget": 162429.721,
+      "budgetUrl": "https://web.archive.org/web/20260422161324id_/https://www.bb.mof.go.jp/server/2026/dlpdf/DL202612001.pdf#page=423",
+      "actual": null,
+      "actualUrl": null,
+      "notes": "特許特別会計 歳入・款「特許料等収入」（特許印紙収入と項「特許料等収入」を含む）。",
+      "date": "2026-04-07",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2026/index.html",
+      "dateUrl": null,
+      "available": null,
+      "calendarYear": 2024,
+      "applications": 306855,
+      "countUrl": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html",
+      "publicationUrl": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html",
+      "publicationLabel": "2025-03",
+      "availableBy": "2025-03-31",
+      "countEvidence": {
+        "calendarYear": 2024,
+        "count": 306855,
+        "url": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html",
+        "publishedMonth": "2025-03",
+        "publishedYear": 2025,
+        "evidenceUrl": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html",
+        "availableBy": "2025-03-31",
+        "originalUrl": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html",
+        "crossCheckUrl": "https://www.jpo.go.jp/resources/report/statusreport/2025/matome.html"
+      }
+    }
+  ],
+  "results": [
+    {
+      "year": 2013,
+      "date": "2013-05-15",
+      "train": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011
+      ],
+      "forecasts": [
+        1058.0380599999999,
+        1100.6920211870931,
+        1091.1916415076998
+      ],
+      "actual": 1061.16980702,
+      "errors": [
+        3.131747020000148,
+        39.522214167093125,
+        30.021834487699834
+      ],
+      "gains": [
+        0.0,
+        -36.39046714709298,
+        -26.890087467699686
+      ],
+      "slope": 0.013228150199746927,
+      "intercept": -0.013986004247104854,
+      "meanBias": 0.040314203051535914
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "train": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "forecasts": [
+        1069.00362,
+        1116.1130995664591,
+        1089.036023761143
+      ],
+      "actual": 1061.55622183,
+      "errors": [
+        7.447398170000042,
+        54.55687773645923,
+        27.47980193114313
+      ],
+      "gains": [
+        0.0,
+        -47.109479566459186,
+        -20.032403761143087
+      ],
+      "slope": 0.043322252753180704,
+      "intercept": -0.1297676268866193,
+      "meanBias": 0.044068587500628933
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "train": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "forecasts": [
+        1131.47518,
+        1190.3047287412683,
+        1109.0990635040753
+      ],
+      "actual": 1121.670396,
+      "errors": [
+        9.804783999999927,
+        68.63433274126828,
+        12.571332495924707
+      ],
+      "gains": [
+        0.0,
+        -58.829548741268354,
+        -2.7665484959247806
+      ],
+      "slope": 0.11361254667157335,
+      "intercept": -0.3929205597629468,
+      "meanBias": 0.05199367143101467
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "train": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "forecasts": [
+        1125.35666,
+        1171.3486614170783,
+        1100.6851941909447
+      ],
+      "actual": 1131.89471037,
+      "errors": [
+        6.5380503700000645,
+        39.45395104707836,
+        31.2095161790553
+      ],
+      "gains": [
+        0.0,
+        -32.9159006770783,
+        -24.671465809055235
+      ],
+      "slope": 0.10865032292934315,
+      "intercept": -0.376111342694802,
+      "meanBias": 0.040868822349243904
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "train": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "forecasts": [
+        1205.54618,
+        1244.9373483621414,
+        1173.5808905626961
+      ],
+      "actual": 1137.9389332800001,
+      "errors": [
+        67.60724671999992,
+        106.99841508214126,
+        35.64195728269601
+      ],
+      "gains": [
+        0.0,
+        -39.39116836214134,
+        31.96528943730391
+      ],
+      "slope": 0.10458510406636598,
+      "intercept": -0.3598498823689389,
+      "meanBias": 0.03267495597899132
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "train": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "forecasts": [
+        1236.65342,
+        1266.4300735995437,
+        1212.7052674765237
+      ],
+      "actual": 1174.4186872100001,
+      "errors": [
+        62.23473278999995,
+        92.01138638954353,
+        38.286580266523515
+      ],
+      "gains": [
+        0.0,
+        -29.77665359954358,
+        23.948152523476438
+      ],
+      "slope": 0.09199107441609193,
+      "intercept": -0.3122473929728343,
+      "meanBias": 0.02407841446760691
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "train": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "forecasts": [
+        1293.4963,
+        1298.5202189555278,
+        1272.6022404249582
+      ],
+      "actual": 1222.71590767,
+      "errors": [
+        70.78039233000004,
+        75.80431128552777,
+        49.886332754958175
+      ],
+      "gains": [
+        0.0,
+        -5.0239189555277335,
+        20.894059575041865
+      ],
+      "slope": 0.05521351252944623,
+      "intercept": -0.1919977121591635,
+      "meanBias": 0.0038839840172157913
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "train": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "forecasts": [
+        1253.67149,
+        1241.29038452407,
+        1233.5012644063147
+      ],
+      "actual": 1241.22834807,
+      "errors": [
+        12.44314192999991,
+        0.062036454070039326,
+        7.727083663685335
+      ],
+      "gains": [
+        0.0,
+        12.381105475929871,
+        4.716058266314576
+      ],
+      "slope": 0.019310169950975484,
+      "intercept": -0.07663924482562919,
+      "meanBias": -0.009875877033727531
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "train": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "forecasts": [
+        1298.83528,
+        1284.6379373062714,
+        1247.4208292375347
+      ],
+      "actual": 1475.0390943599998,
+      "errors": [
+        176.2038143599998,
+        190.4011570537284,
+        227.61826512246512
+      ],
+      "gains": [
+        0.0,
+        -14.197342693728615,
+        -51.41445076246532
+      ],
+      "slope": 0.09553953415387151,
+      "intercept": -0.33381719121069453,
+      "meanBias": -0.010930826188928822
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "train": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "forecasts": [
+        1486.2965599999998,
+        1466.7463084588176,
+        1357.3759437119168
+      ],
+      "actual": 1441.5724913000001,
+      "errors": [
+        44.724068699999634,
+        25.173817158817428,
+        84.19654758808338
+      ],
+      "gains": [
+        0.0,
+        19.550251541182206,
+        -39.47247888808374
+      ],
+      "slope": 0.17627248244986155,
+      "intercept": -0.5952362527617261,
+      "meanBias": -0.013153668027854582
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "train": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "forecasts": [
+        1514.4395499999998,
+        1511.1492131952346,
+        1540.7566899761416
+      ],
+      "actual": 1588.31656482,
+      "errors": [
+        73.87701482000011,
+        77.16735162476539,
+        47.559874843858324
+      ],
+      "gains": [
+        0.0,
+        -3.290336804765275,
+        26.31713997614179
+      ],
+      "slope": -0.05290279265131711,
+      "intercept": 0.17037235435664663,
+      "meanBias": -0.0021726432096713655
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "train": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "forecasts": [
+        1537.5845000000002,
+        1526.4614103169138,
+        1536.2018875357974
+      ],
+      "actual": 1623.6644390000001,
+      "errors": [
+        86.07993899999997,
+        97.20302868308636,
+        87.46255146420276
+      ],
+      "gains": [
+        0.0,
+        -11.123089683086391,
+        -1.3826124642027935
+      ],
+      "slope": -0.020427191791262934,
+      "intercept": 0.05824363767396101,
+      "meanBias": -0.007234132291972606
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "train": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "forecasts": [
+        1604.60616,
+        1600.3508202644173,
+        1621.4578958118955
+      ],
+      "actual": 1634.6523800000002,
+      "errors": [
+        30.046220000000176,
+        34.30155973558294,
+        13.194484188104752
+      ],
+      "gains": [
+        0.0,
+        -4.255339735582766,
+        16.851735811895423
+      ],
+      "slope": -0.08729678176402358,
+      "intercept": 0.272508550921049,
+      "meanBias": -0.0026519527605345593
+    },
+    {
+      "year": 2026,
+      "date": "2026-04-07",
+      "train": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "forecasts": [
+        1624.29721,
+        1630.214690462658,
+        1637.6693205121378
+      ],
+      "actual": null,
+      "errors": [],
+      "gains": [],
+      "slope": -0.1519886580740725,
+      "intercept": 0.47461734828214347,
+      "meanBias": 0.0036431020297436724
+    }
+  ],
+  "summary": [
+    {
+      "median": 44.724068699999634,
+      "mean": 50.07065770846152,
+      "wins": 0
+    },
+    {
+      "median": 68.63433274126828,
+      "mean": 69.33003378147401,
+      "wins": 2
+    },
+    {
+      "median": 35.64195728269601,
+      "mean": 53.29662786680002,
+      "wins": 6
+    }
+  ]
+}

@@ -1,0 +1,763 @@
+{
+  "history": [
+    {
+      "year": 2002,
+      "date": "2002-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/154/1540000.pdf",
+      "plan": 235721,
+      "planSource": "https://web.archive.org/web/20031006000054id_/http://www.mof.go.jp:80/zaito/zaito2003/pdfs/H29-2.pdf",
+      "source": "https://web.archive.org/web/20031006000054id_/http://www.mof.go.jp:80/zaito/zaito2003/pdfs/H29-2.pdf",
+      "actual": 173070,
+      "available": "2003-10-06",
+      "dateEvidence": "https://web.archive.org/web/20031006000054id_/http://www.mof.go.jp:80/zaito/zaito2003/pdfs/H29-2.pdf",
+      "vintage": "翌年版実績"
+    },
+    {
+      "year": 2003,
+      "date": "2003-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/156/keika/h20030328.htm",
+      "plan": 194612,
+      "planSource": "https://web.archive.org/web/20110324040309id_/http://www.mof.go.jp/zaito/zaito2004e/images/h034.gif",
+      "source": "https://web.archive.org/web/20110324040309id_/http://www.mof.go.jp/zaito/zaito2004e/images/h034.gif",
+      "actual": 156467,
+      "available": "2005-02-19",
+      "dateEvidence": "https://web.archive.org/web/20050219205957id_/http://www.mof.go.jp:80/zaito/zaito2004/pdfs/H031-02.pdf",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2004,
+      "date": "2004-03-26",
+      "dateSource": "https://www.mlit.go.jp/pri/houkoku/gaiyou/pdf/kkk54.pdf",
+      "plan": 160263,
+      "planSource": "https://web.archive.org/web/20060912165205id_/http://www.mof.go.jp:80/zaito/zaito2005/pdfs/H034.pdf",
+      "source": "https://web.archive.org/web/20060912165205id_/http://www.mof.go.jp:80/zaito/zaito2005/pdfs/H034.pdf",
+      "actual": 145296,
+      "available": "2006-09-12",
+      "dateEvidence": "https://web.archive.org/web/20060912165205id_/http://www.mof.go.jp:80/zaito/zaito2005/pdfs/H034.pdf",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2005,
+      "date": "2005-03-23",
+      "dateSource": "https://dl.ndl.go.jp/view/download/digidepo_11043053_po_1620001.pdf?alternativeNo=&contentNo=1",
+      "plan": 122140,
+      "planSource": "https://web.archive.org/web/20061201200654id_/http://www.mof.go.jp:80/zaito/zaito2006/images/34-35-05.gif",
+      "source": "https://web.archive.org/web/20061201200654id_/http://www.mof.go.jp:80/zaito/zaito2006/images/34-35-05.gif",
+      "actual": 105504,
+      "available": "2006-12-01",
+      "dateEvidence": "https://web.archive.org/web/20061201200654id_/http://www.mof.go.jp:80/zaito/zaito2006/images/34-35-05.gif",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2006,
+      "date": "2006-03-27",
+      "dateSource": "https://www.gov-online.go.jp/prg/prg435.html",
+      "plan": 103615,
+      "planSource": "https://web.archive.org/web/20110323182313id_/http://www.mof.go.jp/zaito/zaito2007/images/p36_01.gif",
+      "source": "https://web.archive.org/web/20110323182313id_/http://www.mof.go.jp/zaito/zaito2007/images/p36_01.gif",
+      "actual": 85808,
+      "available": "2011-03-23",
+      "dateEvidence": "https://web.archive.org/web/20110323182313id_/http://www.mof.go.jp/zaito/zaito2007/images/p36_01.gif",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2007,
+      "date": "2007-03-26",
+      "dateSource": "https://www.jfm.go.jp/ir/bond/nongov/n3hfqk0000000fhp-att/191005hakkousha.pdf",
+      "plan": 94228,
+      "planSource": "https://web.archive.org/web/20110323181813id_/http://www.mof.go.jp/zaito/images/chart_41.gif",
+      "source": "https://web.archive.org/web/20110323181813id_/http://www.mof.go.jp/zaito/images/chart_41.gif",
+      "actual": 77345,
+      "available": "2011-03-23",
+      "dateEvidence": "https://web.archive.org/web/20110323181813id_/http://www.mof.go.jp/zaito/images/chart_41.gif",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2008,
+      "date": "2008-03-28",
+      "dateSource": "https://www.thr.mlit.go.jp/bumon/kisya/kisyah/17509_kisya_preview.html",
+      "plan": 93880,
+      "planSource": "https://web.archive.org/web/20110323174629id_/http://www.mof.go.jp/zaito/image/figure_IV-04.jpg",
+      "source": "https://web.archive.org/web/20110323174629id_/http://www.mof.go.jp/zaito/image/figure_IV-04.jpg",
+      "actual": 100417,
+      "available": "2011-03-23",
+      "dateEvidence": "https://web.archive.org/web/20110323174629id_/http://www.mof.go.jp/zaito/image/figure_IV-04.jpg",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2009,
+      "date": "2009-03-27",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/214E.htm",
+      "plan": 119918,
+      "planSource": "https://web.archive.org/web/20110323181256id_/http://www.mof.go.jp/zaito/zaito2010/images/p47-1.gif",
+      "source": "https://web.archive.org/web/20110323181256id_/http://www.mof.go.jp/zaito/zaito2010/images/p47-1.gif",
+      "actual": 136166,
+      "available": "2011-03-23",
+      "dateEvidence": "https://web.archive.org/web/20110323181256id_/http://www.mof.go.jp/zaito/zaito2010/images/p47-1.gif",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2010,
+      "date": "2010-03-24",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/25DE.htm",
+      "plan": 135057,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001055#page=53",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001055#page=53",
+      "actual": 108622,
+      "available": "2011-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001055",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2011,
+      "date": "2011-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/177/keika/h20110329.htm",
+      "plan": 109101,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001056#page=54",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001056#page=54",
+      "actual": 102510,
+      "available": "2012-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001056",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2012,
+      "date": "2012-04-05",
+      "dateSource": "https://www.reconstruction.go.jp/files/user/topics/main-cat1/sub-cat1-1/20131129_gennjoutotorikumi.pdf",
+      "plan": 135242,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001057#page=54",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001057#page=54",
+      "actual": 106929,
+      "available": "2013-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001057",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2013,
+      "date": "2013-05-15",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g766/all_766.pdf",
+      "plan": 130621,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001058#page=60",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001058#page=60",
+      "actual": 104313,
+      "available": "2014-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001058",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/186/keika/h20140320.htm",
+      "plan": 117616,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001060#page=52",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001060#page=52",
+      "actual": 92078,
+      "available": "2015-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001060",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "dateSource": "https://www.hrr.mlit.go.jp/shinano/press/pdf/h270409.pdf",
+      "plan": 109610,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001061#page=53",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11001061#page=53",
+      "actual": 89242,
+      "available": "2016-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I11001061",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/190/190-0329-v001.htm",
+      "plan": 100876,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F13416530#page=57",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F13416530#page=57",
+      "actual": 123857,
+      "available": "2017-08-31",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I13416530",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "dateSource": "https://www.mext.go.jp/b_menu/shingi/chousa/shisetu/046/shiryo/__icsFiles/afieldfile/2017/06/27/1386976_01.pdf",
+      "plan": 108662,
+      "planSource": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F13416532#page=62",
+      "source": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F13416532#page=62",
+      "actual": 104298,
+      "available": "2018-09-30",
+      "dateEvidence": "https://ndlsearch.ndl.go.jp/books/R100000039-I13416532",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g829/829_g.pdf",
+      "plan": 108538,
+      "planSource": "https://web.archive.org/web/20220706101247id_/https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g810/all_810.pdf#page=46",
+      "source": "https://web.archive.org/web/20220706101247id_/https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g810/all_810.pdf#page=46",
+      "actual": 98286,
+      "available": "2020-02-14",
+      "dateEvidence": "https://web.archive.org/web/20220706171518id_/https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g810/810_f.pdf",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "dateSource": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00090.html",
+      "plan": 106911,
+      "planSource": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/71hyoukakon04.pdf#page=38",
+      "source": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/71hyoukakon04.pdf#page=38",
+      "actual": 110037,
+      "available": "2021-01-06",
+      "dateEvidence": "https://web.archive.org/web/20220821055501id_/https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g821/821.html",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/201/201-0327-v001.htm",
+      "plan": 111864,
+      "planSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g834/all_834.pdf",
+      "source": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g834/all_834.pdf",
+      "actual": 254020,
+      "available": "2022-02-17",
+      "dateEvidence": null,
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/204/204-0326-v001.htm",
+      "plan": 383027,
+      "planSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g845/all_845.pdf",
+      "source": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g845/all_845.pdf",
+      "actual": 140922,
+      "available": "2023-01-06",
+      "dateEvidence": null,
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/208/208-0322-v001.htm",
+      "plan": 164488,
+      "planSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g858/ALL_858.pdf",
+      "source": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g858/ALL_858.pdf",
+      "actual": 131841,
+      "available": "2024-02-14",
+      "dateEvidence": null,
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/211/211-0328-v001.htm",
+      "plan": 127099,
+      "planSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g869/all_869.pdf",
+      "source": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g869/all_869.pdf",
+      "actual": 83858,
+      "available": "2025-02-13",
+      "dateEvidence": null,
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/213/213-0328-v012.htm",
+      "plan": 102868,
+      "planSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g878/all_878.pdf",
+      "source": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g878/all_878.pdf",
+      "actual": 86640,
+      "available": "2025-12-18",
+      "dateEvidence": null,
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2025/index.html",
+      "plan": 97511,
+      "planSource": "https://www.mof.go.jp/policy/filp/publication/filp_report/zaito2026/FILP_report2026_siryo3.pdf",
+      "source": "https://www.mof.go.jp/policy/filp/publication/filp_report/zaito2026/FILP_report2026_siryo3.pdf",
+      "actual": 84177,
+      "available": "2026-10-03",
+      "dateEvidence": "https://keizaireport.com/date.php/-/date=2026-10-03/",
+      "vintage": "決算時見込"
+    },
+    {
+      "year": 2026,
+      "date": "2026-04-07",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2026/index.html",
+      "plan": 127162,
+      "planSource": "https://www.mof.go.jp/policy/filp/plan/fy2026/20251226.html",
+      "source": null,
+      "actual": null,
+      "available": null,
+      "dateEvidence": null,
+      "vintage": "未公表"
+    }
+  ],
+  "results": [
+    {
+      "year": 2013,
+      "date": "2013-05-15",
+      "train": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011
+      ],
+      "forecasts": [
+        130621,
+        116338.45918686016,
+        119013.01759306493
+      ],
+      "errors": [
+        26308,
+        12025.459186860156,
+        14700.017593064927
+      ],
+      "gains": [
+        0,
+        14282.540813139844,
+        11607.982406935073
+      ],
+      "actual": 104313
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "train": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "forecasts": [
+        117616,
+        105419.22277705549,
+        104085.76843856847
+      ],
+      "errors": [
+        25538,
+        13341.22277705549,
+        12007.76843856847
+      ],
+      "gains": [
+        0,
+        12196.77722294451,
+        13530.23156143153
+      ],
+      "actual": 92078
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "train": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "forecasts": [
+        109610,
+        98184.23637741139,
+        97441.06293677789
+      ],
+      "errors": [
+        20368,
+        8942.236377411391,
+        8199.06293677789
+      ],
+      "gains": [
+        0,
+        11425.763622588609,
+        12168.93706322211
+      ],
+      "actual": 89242
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "train": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "forecasts": [
+        100876,
+        89112.42945239595,
+        87814.5466145029
+      ],
+      "errors": [
+        22981,
+        34744.570547604046,
+        36042.453385497094
+      ],
+      "gains": [
+        0,
+        -11763.570547604046,
+        -13061.453385497094
+      ],
+      "actual": 123857
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "train": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "forecasts": [
+        108662,
+        95451.31129948159,
+        97516.63012799133
+      ],
+      "errors": [
+        4364,
+        8846.68870051841,
+        6781.369872008669
+      ],
+      "gains": [
+        0,
+        -4482.688700518411,
+        -2417.3698720086686
+      ],
+      "actual": 104298
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "train": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "forecasts": [
+        108538,
+        99680.34344929126,
+        99596.09821618944
+      ],
+      "errors": [
+        10252,
+        1394.3434492912638,
+        1310.0982161894353
+      ],
+      "gains": [
+        0,
+        8857.656550708736,
+        8941.901783810565
+      ],
+      "actual": 98286
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "train": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "forecasts": [
+        106911,
+        99672.29679714332,
+        99463.35782136736
+      ],
+      "errors": [
+        3126,
+        10364.703202856675,
+        10573.64217863264
+      ],
+      "gains": [
+        0,
+        -7238.7032028566755,
+        -7447.642178632639
+      ],
+      "actual": 110037
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "train": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "forecasts": [
+        111864,
+        102454.39925903731,
+        102628.77667072236
+      ],
+      "errors": [
+        142156,
+        151565.6007409627,
+        151391.22332927765
+      ],
+      "gains": [
+        0,
+        -9409.60074096269,
+        -9235.223329277651
+      ],
+      "actual": 254020
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "train": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "forecasts": [
+        383027,
+        346738.3459792387,
+        23044.41091932094
+      ],
+      "errors": [
+        242105,
+        205816.3459792387,
+        117877.58908067906
+      ],
+      "gains": [
+        0,
+        36288.654020761314,
+        124227.41091932094
+      ],
+      "actual": 140922
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "train": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "forecasts": [
+        164488,
+        173026.69755647666,
+        138398.56112674042
+      ],
+      "errors": [
+        32647,
+        41185.69755647666,
+        6557.5611267404165
+      ],
+      "gains": [
+        0,
+        -8538.697556476662,
+        26089.438873259583
+      ],
+      "actual": 131841
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "train": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "forecasts": [
+        127099,
+        126430.91887883256,
+        143317.76440978175
+      ],
+      "errors": [
+        43241,
+        42572.918878832555,
+        59459.764409781754
+      ],
+      "gains": [
+        0,
+        668.0811211674445,
+        -16218.764409781754
+      ],
+      "actual": 83858
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "train": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "forecasts": [
+        102868,
+        102439.1466324111,
+        110706.4137927709
+      ],
+      "errors": [
+        16228,
+        15799.146632411095,
+        24066.413792770894
+      ],
+      "gains": [
+        0,
+        428.8533675889048,
+        -7838.413792770894
+      ],
+      "actual": 86640
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "train": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "forecasts": [
+        97511,
+        95750.94926458239,
+        99764.93752736234
+      ],
+      "errors": [
+        13334,
+        11573.949264582392,
+        15587.937527362345
+      ],
+      "gains": [
+        0,
+        1760.050735417608,
+        -2253.9375273623446
+      ],
+      "actual": 84177
+    },
+    {
+      "year": 2026,
+      "date": "2026-04-07",
+      "train": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "forecasts": [
+        127162,
+        125621.77687542056,
+        121361.71143786491
+      ],
+      "errors": [],
+      "gains": [],
+      "actual": null
+    }
+  ],
+  "summary": [
+    {
+      "median": 22981,
+      "mean": 46357.53846153846,
+      "wins": 0
+    },
+    {
+      "median": 13341.22277705549,
+      "mean": 42936.37563800781,
+      "wins": 8
+    },
+    {
+      "median": 14700.017593064927,
+      "mean": 35734.99245287317,
+      "wins": 6
+    }
+  ]
+}

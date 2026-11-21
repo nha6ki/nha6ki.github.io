@@ -1,0 +1,1150 @@
+{
+  "inputMoneyUnit": "百万円",
+  "forecastMoneyUnit": "億円",
+  "rateUnit": "％",
+  "history": [
+    {
+      "year": 2002,
+      "budget": 13315699.577,
+      "actual": 11077289.960502,
+      "budgetUrl": "https://web.archive.org/web/20240612042245id_/https://www.bb.mof.go.jp/server/2002/dlpdf/DL200212001.pdf#page=204",
+      "actualUrl": "https://web.archive.org/web/20240615230519id_/https://www.bb.mof.go.jp/server/2002/dlpdf/DL200278001.pdf",
+      "available": "2004-01-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "date": "2002-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/154/1540000.pdf",
+      "market": {
+        "rate": 1.399,
+        "date": "2002-03-20",
+        "availability": "2002-03-20",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 237,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20030415005402id_/http://www.mof.go.jp/jouhou/syukei/h14/sy140208ks.pdf",
+        "month": "2002-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/115604376X02620030716/114"
+      }
+    },
+    {
+      "year": 2003,
+      "budget": 11796443.105,
+      "actual": 8960954.315667,
+      "budgetUrl": "https://web.archive.org/web/20240812112956id_/https://www.bb.mof.go.jp/server/2003/dlpdf/DL200312001.pdf#page=129",
+      "actualUrl": "https://web.archive.org/web/20240908035056id_/https://www.bb.mof.go.jp/server/2003/dlpdf/DL200378001.pdf",
+      "available": "2004-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "date": "2003-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/156/keika/h20030328.htm",
+      "market": {
+        "rate": 0.758,
+        "date": "2003-03-04",
+        "availability": "2003-03-04",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 247,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20030605225226id_/http://www.mof.go.jp/jouhou/syukei/h15/sy150205.pdf",
+        "month": "2003-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/115604376X02620030716/114"
+      },
+      "altActualUrl": "https://report.jbaudit.go.jp/org/h16/2004-h16-0971-0.htm"
+    },
+    {
+      "year": 2004,
+      "budget": 11865777.46,
+      "actual": 8743727.235283,
+      "budgetUrl": "https://web.archive.org/web/20250504054925id_/https://www.bb.mof.go.jp/server/2004/dlpdf/DL200412001.pdf#page=124",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2004/dlpdf/DL200478001.pdf",
+      "available": "2006-01-20",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/F96.htm",
+      "date": "2004-03-26",
+      "dateSource": "https://www.mlit.go.jp/pri/houkoku/gaiyou/pdf/kkk54.pdf",
+      "market": {
+        "rate": 1.309,
+        "date": "2004-03-02",
+        "availability": "2004-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 258,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": null,
+        "url": "https://web.archive.org/web/20040623002259id_/http://www.mof.go.jp/jouhou/syukei/h16/sy160123a.htm",
+        "month": "2004-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提"
+      },
+      "altActualUrl": "https://report.jbaudit.go.jp/org/h16/2004-h16-0971-0.htm"
+    },
+    {
+      "year": 2005,
+      "budget": 12411871.688,
+      "actual": 8665370.020486,
+      "budgetUrl": "https://web.archive.org/web/20240715031302id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200512001.pdf#page=127",
+      "actualUrl": "https://web.archive.org/web/20220806012605id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200578001.pdf#page=41",
+      "available": "2006-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2007pdf/20070202076.pdf",
+      "date": "2005-03-23",
+      "dateSource": "https://dl.ndl.go.jp/view/download/digidepo_11043053_po_1620001.pdf?alternativeNo=&contentNo=1",
+      "market": {
+        "rate": 1.504,
+        "date": "2005-03-03",
+        "availability": "2005-03-03",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 268,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20050309004206id_/http://www.mof.go.jp/jouhou/syukei/h17/sy170128a.htm",
+        "month": "2005-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/116614370X00520070320/285"
+      }
+    },
+    {
+      "year": 2006,
+      "budget": 12092567.58,
+      "actual": 9577727.883006,
+      "budgetUrl": "https://web.archive.org/web/20240808172841id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200612001.pdf#page=126",
+      "actualUrl": "https://web.archive.org/web/20240715055637id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200678001.pdf#page=43",
+      "available": "2007-11-20",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/169_168_kessan_6.htm",
+      "date": "2006-03-27",
+      "dateSource": "https://www.gov-online.go.jp/prg/prg435.html",
+      "market": {
+        "rate": 1.622,
+        "date": "2006-03-02",
+        "availability": "2006-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 277,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20060303085019id_/http://www.mof.go.jp/jouhou/syukei/h18/sy180125a.htm",
+        "month": "2006-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/116614370X00520070320/285"
+      }
+    },
+    {
+      "year": 2007,
+      "budget": 13676458.666,
+      "actual": 10361852.019719,
+      "budgetUrl": "https://web.archive.org/web/20250505134006id_/https://www.bb.mof.go.jp/server/2007/dlpdf/DL200712001.pdf#page=140",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2007/dlpdf/DL200778001.pdf",
+      "available": "2008-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/171/1710001.pdf",
+      "date": "2007-03-26",
+      "dateSource": "https://www.jfm.go.jp/ir/bond/nongov/n3hfqk0000000fhp-att/191005hakkousha.pdf",
+      "market": {
+        "rate": 1.666,
+        "date": "2007-03-01",
+        "availability": "2007-03-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 285,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.3,
+        "url": "https://web.archive.org/web/20070207145027id_/http://www.mof.go.jp/jouhou/syukei/h19/sy190131a.htm",
+        "month": "2007-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/116615261X00920070313/52"
+      },
+      "altActualUrl": "https://report.jbaudit.go.jp/org/h20/2008-h20-0920-0.htm"
+    },
+    {
+      "year": 2008,
+      "budget": 13554241.478,
+      "actual": 10508277.006304,
+      "budgetUrl": "https://web.archive.org/web/20240812102031id_/https://www.bb.mof.go.jp/server/2008/dlpdf/DL200812001.pdf#page=143",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2008/dlpdf/DL200878001.pdf",
+      "available": "2009-11-24",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/251E.htm",
+      "date": "2008-03-28",
+      "dateSource": "https://www.thr.mlit.go.jp/bumon/kisya/kisyah/17509_kisya_preview.html",
+      "market": {
+        "rate": 1.371,
+        "date": "2008-03-04",
+        "availability": "2008-03-04",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 290,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20080526142354id_/http://www.mof.go.jp/jouhou/syukei/h20/sy200123a.htm",
+        "month": "2008-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "後年度試算の金利前提",
+        "confirmation": "https://kokkai.ndl.go.jp/txt/116914370X00220080327/230"
+      },
+      "altActualUrl": "https://report.jbaudit.go.jp/org/h20/2008-h20-0920-0.htm"
+    },
+    {
+      "year": 2009,
+      "budget": 13635635.75,
+      "actual": 10064669.405022,
+      "budgetUrl": "https://web.archive.org/web/20240612050000id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200912001.pdf#page=141",
+      "actualUrl": "https://web.archive.org/web/20240517213031id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200978001.pdf#page=35",
+      "available": "2010-11-19",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/183_176_kessan_10.htm",
+      "date": "2009-03-27",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/214E.htm",
+      "market": {
+        "rate": 1.296,
+        "date": "2009-03-03",
+        "availability": "2009-03-03",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 299,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20090812091800id_/http://www.mof.go.jp/jouhou/syukei/h21/sy2102a.htm",
+        "month": "2009-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2010,
+      "budget": 14003887,
+      "actual": 10134045,
+      "budgetUrl": "https://web.archive.org/web/20160817062932id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2010budget.htm",
+      "actualUrl": "https://web.archive.org/web/20160817062927id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2010account.htm",
+      "available": "2011-11-22",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/184_179_kessan_11.htm",
+      "date": "2010-03-24",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/25DE.htm",
+      "market": {
+        "rate": 1.329,
+        "date": "2010-03-02",
+        "availability": "2010-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 306,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20100322193638id_/http://www.mof.go.jp/jouhou/syukei/h22/sy2202a.htm",
+        "month": "2010-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2011,
+      "budget": 13558101,
+      "actual": 10148413,
+      "budgetUrl": "https://web.archive.org/web/20160817061708id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2011budget.htm",
+      "actualUrl": "https://web.archive.org/web/20160817061800id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2011account.htm",
+      "available": "2012-11-16",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_iinkai.nsf/html/gianrireki/184_181_kessan_12.htm",
+      "date": "2011-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/177/keika/h20110329.htm",
+      "market": {
+        "rate": 1.31,
+        "date": "2011-03-01",
+        "availability": "2011-03-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 313,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20110523002128id_/http://www.mof.go.jp/budget/topics/outlook/sy2301a.htm",
+        "month": "2011-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2012,
+      "budget": 13362570,
+      "actual": 9912173,
+      "budgetUrl": "https://web.archive.org/web/20160817062938id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2012budget.htm",
+      "actualUrl": "https://web.archive.org/web/20160817061805id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2012account.htm",
+      "available": "2013-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2014pdf/20140203155.pdf",
+      "date": "2012-04-05",
+      "dateSource": "https://www.reconstruction.go.jp/files/user/topics/main-cat1/sub-cat1-1/20131129_gennjoutotorikumi.pdf",
+      "market": {
+        "rate": 1.007,
+        "date": "2012-04-03",
+        "availability": "2012-04-03",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 321,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://web.archive.org/web/20120220025249id_/http://www.mof.go.jp/budget/topics/outlook/sy2401a.htm",
+        "month": "2012-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2013,
+      "budget": 13116387,
+      "actual": 9894337,
+      "budgetUrl": "https://web.archive.org/web/20140419192339id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2013budget.htm",
+      "actualUrl": "https://web.archive.org/web/20160817062943id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2013account.htm",
+      "available": "2014-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2015pdf/20150202003.pdf",
+      "date": "2013-05-15",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g766/all_766.pdf",
+      "market": {
+        "rate": 0.597,
+        "date": "2013-05-01",
+        "availability": "2013-05-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 328,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 1.8,
+        "url": "https://web.archive.org/web/20130312175102id_/http://www.mof.go.jp/budget/topics/outlook/sy2503a.htm",
+        "month": "2013-03",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2014,
+      "budget": 13290571,
+      "actual": 9845692,
+      "budgetUrl": "https://web.archive.org/web/20160817061817id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2014budget.htm",
+      "actualUrl": "https://web.archive.org/web/20160815103843id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2014account.htm",
+      "available": "2016-01-04",
+      "dateUrl": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11018709",
+      "date": "2014-03-20",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/186/keika/h20140320.htm",
+      "market": {
+        "rate": 0.597,
+        "date": "2014-03-04",
+        "availability": "2014-03-04",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 333,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 1.8,
+        "url": "https://web.archive.org/web/20140213134049id_/http://www.mof.go.jp/budget/topics/outlook/sy2601a.htm",
+        "month": "2014-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2015,
+      "budget": 13152409,
+      "actual": 9713067.792165,
+      "budgetUrl": "https://web.archive.org/web/20160817062736id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2015budget.htm",
+      "actualUrl": "https://web.archive.org/web/20240514175634id_/https://www.bb.mof.go.jp/server/2015/dlpdf/DL201578001.pdf#page=23",
+      "available": "2016-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2017pdf/20170201143.pdf",
+      "date": "2015-04-09",
+      "dateSource": "https://www.hrr.mlit.go.jp/shinano/press/pdf/h270409.pdf",
+      "market": {
+        "rate": 0.369,
+        "date": "2015-04-02",
+        "availability": "2015-04-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 338,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 1.8,
+        "url": "https://web.archive.org/web/20150223133205id_/http://www.mof.go.jp/budget/topics/outlook/sy2702a.htm",
+        "month": "2015-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2016,
+      "budget": 12307904,
+      "actual": 9380499.773065,
+      "budgetUrl": "https://web.archive.org/web/20160817062948id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2016budget.htm",
+      "actualUrl": "https://web.archive.org/web/20240715042036id_/https://www.bb.mof.go.jp/server/2016/dlpdf/DL201678001.pdf#page=23",
+      "available": "2017-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2018pdf/20180801052.pdf",
+      "date": "2016-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/190/190-0329-v001.htm",
+      "market": {
+        "rate": -0.024,
+        "date": "2016-03-01",
+        "availability": "2016-03-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 342,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 1.6,
+        "url": "https://web.archive.org/web/20160401010449id_/http://www.mof.go.jp/budget/topics/outlook/sy2802a.htm",
+        "month": "2016-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2017,
+      "budget": 10912593.141,
+      "actual": 8888320.862536,
+      "budgetUrl": "https://web.archive.org/web/20240612045917id_/https://www.bb.mof.go.jp/server/2017/dlpdf/DL201712001.pdf#page=116",
+      "actualUrl": "https://web.archive.org/web/20250322021314id_/https://www.bb.mof.go.jp/server/2017/dlpdf/DL201778001.pdf#page=23",
+      "available": "2018-11-20",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2019pdf/20190206123.pdf",
+      "date": "2017-03-27",
+      "dateSource": "https://www.mext.go.jp/b_menu/shingi/chousa/shisetu/046/shiryo/__icsFiles/afieldfile/2017/06/27/1386976_01.pdf",
+      "market": {
+        "rate": 0.082,
+        "date": "2017-03-02",
+        "availability": "2017-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 346,
+        "dateRuleUrl": "https://www.mof.go.jp/pri/publication/policy_history/series/h1-12/5_1.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://web.archive.org/web/20170708060020id_/http://www.mof.go.jp/budget/topics/outlook/sy2901a.htm",
+        "month": "2017-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2018,
+      "budget": 10755723,
+      "actual": 8710549,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2018/analysis/30bunseki.pdf",
+      "actualUrl": "https://web.archive.org/web/20240725201822id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2018account.htm",
+      "available": "2019-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2020pdf/20200207179.pdf",
+      "date": "2018-03-28",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g829/829_g.pdf",
+      "market": {
+        "rate": 0.061,
+        "date": "2018-03-01",
+        "availability": "2018-03-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 350,
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://web.archive.org/web/20180318020223id_/http://www.mof.go.jp/budget/topics/outlook/sy3001a.htm",
+        "month": "2018-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2019,
+      "budget": 10489659,
+      "actual": 8461924,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/councils/policy_evaluation/proceedings/material/65hyoukakon4.pdf",
+      "actualUrl": "https://web.archive.org/web/20210302112312id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2019account.htm",
+      "available": "2020-11-20",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/206/meisai/m206450203001.htm",
+      "date": "2019-03-27",
+      "dateSource": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00090.html",
+      "market": {
+        "rate": -0.002,
+        "date": "2019-03-05",
+        "availability": "2019-03-05",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 353,
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://web.archive.org/web/20190818110831id_/https://www.mof.go.jp/budget/topics/outlook/sy3101a.htm",
+        "month": "2019-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2020,
+      "budget": 10001037,
+      "actual": 8189066,
+      "budgetUrl": "https://web.archive.org/web/20201101094822id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2020budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2020account.htm",
+      "available": "2021-12-06",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_rchome.nsf/html/rchome/Shiryo/doukou212kessan.pdf/$File/doukou212kessan.pdf",
+      "date": "2020-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/201/201-0327-v001.htm",
+      "market": {
+        "rate": -0.1,
+        "date": "2020-03-03",
+        "availability": "2020-03-03",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 357,
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy0201a.htm",
+        "month": "2020-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2021,
+      "budget": 10176298,
+      "actual": 7975466,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2021budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2021account.html",
+      "available": "2022-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2023pdf/20230208196.pdf",
+      "date": "2021-03-26",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/204/204-0326-v001.htm",
+      "market": {
+        "rate": 0.131,
+        "date": "2021-03-02",
+        "availability": "2021-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 361,
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://web.archive.org/web/20210306125751id_/https://www.mof.go.jp/budget/topics/outlook/sy0301a.htm",
+        "month": "2021-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2022,
+      "budget": 9788439,
+      "actual": 7890979,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2022budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2022account.html",
+      "available": "2023-11-20",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DDA94E.htm",
+      "date": "2022-03-22",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/208/208-0322-v001.htm",
+      "market": {
+        "rate": 0.179,
+        "date": "2022-03-01",
+        "availability": "2022-03-01",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 365,
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy0401a.html",
+        "month": "2022-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2023,
+      "budget": 10022751,
+      "actual": 8172161,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2023budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2023account.html",
+      "available": "2024-11-29",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2023/ke0611.html",
+      "date": "2023-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/211/211-0328-v001.htm",
+      "market": {
+        "rate": 0.5,
+        "date": "2023-03-02",
+        "availability": "2023-03-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 369,
+        "releaseUrl": "https://www.mof.go.jp/jgbs/auction/calendar/nyusatsu/resul20230302.htm",
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.1,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy0501a.htm",
+        "month": "2023-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2024,
+      "budget": 11505004,
+      "actual": 8901658,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2024budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2024account.html",
+      "available": "2025-11-18",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2024/ke0711.html",
+      "date": "2024-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/213/213-0328-v012.htm",
+      "market": {
+        "rate": 0.718,
+        "date": "2024-03-05",
+        "availability": "2024-03-05",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 373,
+        "releaseUrl": "https://www.mof.go.jp/jgbs/auction/calendar/nyusatsu/resul20240305.htm",
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 1.9,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy2024a.htm",
+        "month": "2024-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2025,
+      "budget": 12794995,
+      "actual": 10732336,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2025budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2025account.html",
+      "available": "2026-11-20",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2025/ke0811.html",
+      "date": "2025-03-31",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2025/index.html",
+      "market": {
+        "rate": 1.404,
+        "date": "2025-03-04",
+        "availability": "2025-03-04",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 377,
+        "releaseUrl": "https://www.mof.go.jp/jgbs/auction/calendar/nyusatsu/resul20250304.htm",
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 2.0,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy2025a.htm",
+        "month": "2025-01",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    },
+    {
+      "year": 2026,
+      "budget": 16459802,
+      "actual": null,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/kokusaiseiri/2026budget.html",
+      "actualUrl": null,
+      "available": null,
+      "dateUrl": null,
+      "date": "2026-04-07",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2026/index.html",
+      "market": {
+        "rate": 2.35,
+        "date": "2026-04-02",
+        "availability": "2026-04-02",
+        "url": "https://www.mof.go.jp/jgbs/reference/appendix/jgb_historical_data.xls",
+        "issue": 382,
+        "releaseUrl": "https://www.mof.go.jp/jgbs/auction/calendar/nyusatsu/resul20260402.htm",
+        "dateRuleUrl": "https://www.mof.go.jp/about_mof/policy_evaluation/mof/fy2026/analysis/2026bunseki09.pdf"
+      },
+      "assumed": {
+        "rate": 3.0,
+        "url": "https://www.mof.go.jp/policy/budget/topics/outlook/sy2026a.htm",
+        "month": "2026-02",
+        "source": "財務省「予算の後年度歳出・歳入への影響試算」",
+        "evidence": "経済指標の前提・対象年度欄「金利（10年国債）」"
+      }
+    }
+  ],
+  "results": [
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "forecasts": [
+        132905.71,
+        100565.84487232272,
+        99339.40792304609
+      ],
+      "actual": 98456.92,
+      "errors": [
+        34448.78999999999,
+        2108.924872322721,
+        882.4879230460938
+      ],
+      "gains": [
+        0.0,
+        32339.865127677273,
+        33566.3020769539
+      ],
+      "train": [
+        2002,
+        2003,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "intercept": -0.2303194190764403,
+      "slope": 0.01848532155775092,
+      "meanBias": -0.24332938838878537,
+      "gap": -1.203
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "forecasts": [
+        131524.09,
+        98500.47476506283,
+        98637.78905815413
+      ],
+      "actual": 97130.67792165,
+      "errors": [
+        34393.41207835,
+        1369.796843412827,
+        1507.1111365041288
+      ],
+      "gains": [
+        0.0,
+        33023.61523493717,
+        32886.30094184587
+      ],
+      "train": [
+        2003,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "intercept": -0.25228001024793806,
+      "slope": -0.001565253220031771,
+      "meanBias": -0.2510841567878338,
+      "gap": -1.431
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "forecasts": [
+        123079.04,
+        91944.09625424033,
+        90810.03281693996
+      ],
+      "actual": 93804.99773065001,
+      "errors": [
+        29274.042269349986,
+        1860.9014764096792,
+        2994.9649137100496
+      ],
+      "gains": [
+        0.0,
+        27413.140792940307,
+        26279.077355639936
+      ],
+      "train": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "intercept": -0.24486006066250315,
+      "slope": 0.010665710088466505,
+      "meanBias": -0.25296706690074655,
+      "gap": -1.624
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "forecasts": [
+        109125.93141,
+        81960.97998843978,
+        81425.2051601603
+      ],
+      "actual": 88883.20862536,
+      "errors": [
+        20242.722784640006,
+        6922.228636920219,
+        7458.0034651996975
+      ],
+      "gains": [
+        0.0,
+        13320.494147719786,
+        12784.719319440308
+      ],
+      "train": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "intercept": -0.22343996044115777,
+      "slope": 0.02986431302649401,
+      "meanBias": -0.24893213804057304,
+      "gap": -1.018
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "forecasts": [
+        107557.23,
+        80461.37875385922,
+        80470.80126251667
+      ],
+      "actual": 87105.49,
+      "errors": [
+        20451.73999999999,
+        6644.11124614079,
+        6634.688737483331
+      ],
+      "gains": [
+        0.0,
+        13807.6287538592,
+        13817.05126251666
+      ],
+      "train": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "intercept": -0.2533297692047772,
+      "slope": -0.0014408652151004647,
+      "meanBias": -0.2519203148513659,
+      "gap": -1.0390000000000001
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "forecasts": [
+        104896.59,
+        79067.44800279434,
+        79112.90071239768
+      ],
+      "actual": 84619.24,
+      "errors": [
+        20277.34999999999,
+        5551.79199720567,
+        5506.339287602328
+      ],
+      "gains": [
+        0.0,
+        14725.558002794322,
+        14771.010712397663
+      ],
+      "train": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "intercept": -0.2513924446995921,
+      "slope": -0.005073884036922061,
+      "meanBias": -0.24623433418765714,
+      "gap": -1.102
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "forecasts": [
+        100010.37,
+        75730.1846563132,
+        75942.35901218279
+      ],
+      "actual": 81890.66,
+      "errors": [
+        18119.709999999992,
+        6160.475343686805,
+        5948.300987817216
+      ],
+      "gains": [
+        0.0,
+        11959.234656313187,
+        12171.409012182776
+      ],
+      "train": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "intercept": -0.2585331614390147,
+      "slope": -0.014898339583588393,
+      "meanBias": -0.24277667749541165,
+      "gap": -1.2000000000000002
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "forecasts": [
+        101762.98,
+        77755.16022872202,
+        77648.01593608092
+      ],
+      "actual": 79754.66,
+      "errors": [
+        22008.319999999992,
+        1999.4997712779877,
+        2106.644063919084
+      ],
+      "gains": [
+        0.0,
+        20008.820228722005,
+        19901.67593608091
+      ],
+      "train": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "intercept": -0.24491768029369998,
+      "slope": -0.008200006601583498,
+      "meanBias": -0.23591899304912228,
+      "gap": -0.9690000000000001
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "forecasts": [
+        97884.39,
+        75723.09315443783,
+        76120.21457365618
+      ],
+      "actual": 78909.79,
+      "errors": [
+        18974.600000000006,
+        3186.696845562168,
+        2789.575426343814
+      ],
+      "gains": [
+        0.0,
+        15787.903154437838,
+        16185.024573656192
+      ],
+      "train": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "intercept": -0.2060503067275885,
+      "slope": 0.017693176848928165,
+      "meanBias": -0.2264027680569106,
+      "gap": -0.921
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "forecasts": [
+        100227.51,
+        77888.69292222694,
+        81518.03194864554
+      ],
+      "actual": 81721.61,
+      "errors": [
+        18505.899999999994,
+        3832.9170777730615,
+        203.5780513544596
+      ],
+      "gains": [
+        0.0,
+        14672.982922226933,
+        18302.321948645535
+      ],
+      "train": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "intercept": -0.14909380935924513,
+      "slope": 0.06262713006410137,
+      "meanBias": -0.22288109400076936,
+      "gap": -0.6000000000000001
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "forecasts": [
+        115050.04,
+        90148.09840113256,
+        90034.30944474511
+      ],
+      "actual": 89016.58,
+      "errors": [
+        26033.459999999992,
+        1131.5184011325618,
+        1017.7294447451131
+      ],
+      "gains": [
+        0.0,
+        24901.94159886743,
+        25015.73055525488
+      ],
+      "train": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "intercept": -0.11115676247392837,
+      "slope": 0.0899126204621563,
+      "meanBias": -0.2164444410351134,
+      "gap": -1.182
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "forecasts": [
+        127949.95,
+        101036.54025313529,
+        105812.2978773774
+      ],
+      "actual": 107323.36,
+      "errors": [
+        20626.589999999997,
+        6286.819746864712,
+        1511.0621226226067
+      ],
+      "gains": [
+        0.0,
+        14339.770253135284,
+        19115.52787737739
+      ],
+      "train": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "intercept": -0.12979711592573176,
+      "slope": 0.07251836249515756,
+      "meanBias": -0.2103432611491033,
+      "gap": -0.5960000000000001
+    },
+    {
+      "year": 2026,
+      "date": "2026-04-07",
+      "forecasts": [
+        164598.02,
+        130517.75556999097,
+        135652.54689931663
+      ],
+      "actual": null,
+      "errors": [],
+      "gains": [],
+      "train": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "intercept": -0.13163973523515252,
+      "slope": 0.06802430951434126,
+      "meanBias": -0.20705148476275126,
+      "gap": -0.6499999999999999
+    }
+  ],
+  "summary": [
+    {
+      "mean": 23613.05309436166,
+      "median": 20539.164999999994,
+      "wins": 0
+    },
+    {
+      "mean": 3921.3068548924334,
+      "median": 3509.806961667615,
+      "wins": 12
+    },
+    {
+      "mean": 3213.37379669566,
+      "median": 2448.109745131449,
+      "wins": 12
+    }
+  ]
+}

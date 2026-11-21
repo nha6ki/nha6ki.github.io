@@ -1,0 +1,1158 @@
+{
+  "inputUnit": "百万円",
+  "forecastUnit": "億円",
+  "history": [
+    {
+      "year": 2002,
+      "budget": 1576069.104,
+      "actual": 1897788.360932,
+      "budgetUrl": "https://web.archive.org/web/20240612042245id_/https://www.bb.mof.go.jp/server/2002/dlpdf/DL200212001.pdf#page=207",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2002/dlpdf/DL200275001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://web.archive.org/web/20250504054925id_/https://www.bb.mof.go.jp/server/2004/dlpdf/DL200412001.pdf#page=132",
+      "date": "2002-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/154/1540000.pdf",
+      "available": "2004-01-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "rateYear": 2001,
+      "rate": 5.02,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2002,
+        "calendarYear": 2001,
+        "rate": 5.02,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://fraser.stlouisfed.org/files/docs/publications/ei/2002/01-2002.pdf",
+        "vintageIssue": "2002-01",
+        "vintageVerified": true,
+        "vintageMethod": "Economic Indicators, Interest Rates and Bond Yields, U.S. Treasury constant maturities 10-year annual row"
+      }
+    },
+    {
+      "year": 2003,
+      "budget": 1471805.43,
+      "actual": 1745024.759984,
+      "budgetUrl": "https://web.archive.org/web/20240812112956id_/https://www.bb.mof.go.jp/server/2003/dlpdf/DL200312001.pdf#page=132",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2003/dlpdf/DL200375001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://web.archive.org/web/20240715031302id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200512001.pdf#page=135",
+      "date": "2003-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/156/keika/h20030328.htm",
+      "available": "2004-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2012pdf/20120402068.pdf",
+      "rateYear": 2002,
+      "rate": 4.61,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2003,
+        "calendarYear": 2002,
+        "rate": 4.61,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://fraser.stlouisfed.org/files/docs/publications/ei/2003/01-2003.pdf",
+        "vintageIssue": "2003-01",
+        "vintageVerified": true,
+        "vintageMethod": "Economic Indicators, Interest Rates and Bond Yields, U.S. Treasury constant maturities 10-year annual row"
+      }
+    },
+    {
+      "year": 2004,
+      "budget": 1675664.989,
+      "actual": 2251821.847124,
+      "budgetUrl": "https://web.archive.org/web/20250504054925id_/https://www.bb.mof.go.jp/server/2004/dlpdf/DL200412001.pdf#page=127",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2004/dlpdf/DL200478001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://web.archive.org/web/20240808172841id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200612001.pdf#page=134",
+      "date": "2004-03-26",
+      "dateSource": "https://www.mlit.go.jp/pri/houkoku/gaiyou/pdf/kkk54.pdf",
+      "available": "2006-01-20",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/F96.htm",
+      "rateYear": 2003,
+      "rate": 4.01,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2004,
+        "calendarYear": 2003,
+        "rate": 4.01,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://fraser.stlouisfed.org/files/docs/publications/ei/2004/01-2004.pdf",
+        "vintageIssue": "2004-01",
+        "vintageVerified": true,
+        "vintageMethod": "Economic Indicators, Interest Rates and Bond Yields, U.S. Treasury constant maturities 10-year annual row"
+      }
+    },
+    {
+      "year": 2005,
+      "budget": 2300974.949,
+      "actual": 3013835.811241,
+      "budgetUrl": "https://web.archive.org/web/20240715031302id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200512001.pdf#page=130",
+      "actualUrl": "https://web.archive.org/web/20220806012605id_/https://www.bb.mof.go.jp/server/2005/dlpdf/DL200578001.pdf#page=46",
+      "notes": "外国為替資金特別会計・款項「運用収入」。予算は当年度の当初額。決算は特別会計決算参照書の収納済歳入額。",
+      "date": "2005-03-23",
+      "dateSource": "https://dl.ndl.go.jp/view/download/digidepo_11043053_po_1620001.pdf?alternativeNo=&contentNo=1",
+      "available": "2006-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2007pdf/20070202076.pdf",
+      "rateYear": 2004,
+      "rate": 4.27,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2005,
+        "calendarYear": 2004,
+        "rate": 4.27,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://www.govinfo.gov/content/pkg/ECONI-2005-02/pdf/ECONI-2005-02.pdf",
+        "vintageIssue": "2005-02",
+        "vintageVerified": true,
+        "vintageMethod": "Economic Indicators, Interest Rates and Bond Yields, U.S. Treasury constant maturities 10-year annual row"
+      }
+    },
+    {
+      "year": 2006,
+      "budget": 3042202.855,
+      "actual": 3906601.55247,
+      "budgetUrl": "https://web.archive.org/web/20240808172841id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200612001.pdf#page=129",
+      "actualUrl": "https://web.archive.org/web/20240715055637id_/https://www.bb.mof.go.jp/server/2006/dlpdf/DL200678001.pdf#page=48",
+      "notes": "外国為替資金特別会計・款項「運用収入」。予算は当年度の当初額。決算は特別会計決算参照書の収納済歳入額。",
+      "date": "2006-03-27",
+      "dateSource": "https://www.gov-online.go.jp/prg/prg435.html",
+      "available": "2007-11-20",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/169_168_kessan_6.htm",
+      "rateYear": 2005,
+      "rate": 4.29,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2006,
+        "calendarYear": 2005,
+        "rate": 4.29,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2006-03-01&cosd=2005-01-01&coed=2005-12-31",
+        "vintageIssue": "2006-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2007,
+      "budget": 3787205.919,
+      "actual": 4511746.227054,
+      "budgetUrl": "https://web.archive.org/web/20250505134006id_/https://www.bb.mof.go.jp/server/2007/dlpdf/DL200712001.pdf#page=174",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2007/dlpdf/DL200775001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://web.archive.org/web/20240612050000id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200912001.pdf#page=186",
+      "date": "2007-03-26",
+      "dateSource": "https://www.jfm.go.jp/ir/bond/nongov/n3hfqk0000000fhp-att/191005hakkousha.pdf",
+      "available": "2008-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/gianjoho/old_gaiyo/171/1710001.pdf",
+      "rateYear": 2006,
+      "rate": 4.8,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2007,
+        "calendarYear": 2006,
+        "rate": 4.8,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://fraser.stlouisfed.org/files/docs/publications/ei/2007/EI_012007.pdf",
+        "vintageIssue": "2007-01",
+        "vintageVerified": true,
+        "vintageMethod": "Economic Indicators, Interest Rates and Bond Yields, U.S. Treasury constant maturities 10-year annual row"
+      }
+    },
+    {
+      "year": 2008,
+      "budget": 4025260.355,
+      "actual": 3840199.099685,
+      "budgetUrl": "https://web.archive.org/web/20240812102031id_/https://www.bb.mof.go.jp/server/2008/dlpdf/DL200812001.pdf#page=180",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2008/dlpdf/DL200875001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://www.bb.mof.go.jp/server/2010/dlpdf/DL201012001.pdf",
+      "date": "2008-03-28",
+      "dateSource": "https://www.thr.mlit.go.jp/bumon/kisya/kisyah/17509_kisya_preview.html",
+      "available": "2009-11-24",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/251E.htm",
+      "rateYear": 2007,
+      "rate": 4.63,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2008,
+        "calendarYear": 2007,
+        "rate": 4.63,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2008-03-01&cosd=2007-01-01&coed=2007-12-31",
+        "vintageIssue": "2008-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2009,
+      "budget": 3299766.879,
+      "actual": 2948058.775147,
+      "budgetUrl": "https://web.archive.org/web/20240612050000id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200912001.pdf#page=181",
+      "actualUrl": "https://web.archive.org/web/20240517213031id_/https://www.bb.mof.go.jp/server/2009/dlpdf/DL200978001.pdf#page=70",
+      "notes": "外国為替資金特別会計・款項「運用収入」。予算は当年度の当初額。決算は特別会計決算参照書の収納済歳入額。",
+      "date": "2009-03-27",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/214E.htm",
+      "available": "2010-11-19",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/183_176_kessan_10.htm",
+      "rateYear": 2008,
+      "rate": 3.66,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2009,
+        "calendarYear": 2008,
+        "rate": 3.66,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2009-03-01&cosd=2008-01-01&coed=2008-12-31",
+        "vintageIssue": "2009-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2010,
+      "budget": 2575882.279,
+      "actual": 2729017.59523,
+      "budgetUrl": "https://www.bb.mof.go.jp/server/2010/dlpdf/DL201012001.pdf",
+      "actualUrl": "https://www.bb.mof.go.jp/server/2010/dlpdf/DL201078001.pdf",
+      "notes": "外国為替資金特別会計の歳入「運用収入」の収納済歳入額を決算書で確認。翌々年度の特別会計予算参照書・損益計算書の当該年度決算欄（円）とも一致。",
+      "altActualUrl": "https://web.archive.org/web/20211203001752id_/https://www.bb.mof.go.jp/server/2012/dlpdf/DL201212001.pdf#page=186",
+      "date": "2010-03-24",
+      "dateSource": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/25DE.htm",
+      "available": "2011-11-22",
+      "dateUrl": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/184_179_kessan_11.htm",
+      "rateYear": 2009,
+      "rate": 3.26,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2010,
+        "calendarYear": 2009,
+        "rate": 3.26,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2010-03-01&cosd=2009-01-01&coed=2009-12-31",
+        "vintageIssue": "2010-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2011,
+      "budget": 2268885,
+      "budgetUrl": "https://web.archive.org/web/20160809024956id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2011budget.htm",
+      "actual": 2357676,
+      "actualUrl": "https://web.archive.org/web/20160809031153id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2011account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2011-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/177/keika/h20110329.htm",
+      "available": "2012-11-16",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_iinkai.nsf/html/gianrireki/184_181_kessan_12.htm",
+      "rateYear": 2010,
+      "rate": 3.22,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2011,
+        "calendarYear": 2010,
+        "rate": 3.22,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2011-03-01&cosd=2010-01-01&coed=2010-12-31",
+        "vintageIssue": "2011-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2012,
+      "budget": 2086980,
+      "budgetUrl": "https://web.archive.org/web/20160809025330id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2012budget.htm",
+      "actual": 2093925,
+      "actualUrl": "https://web.archive.org/web/20160809025324id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2012account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2012-04-05",
+      "dateSource": "https://www.reconstruction.go.jp/files/user/topics/main-cat1/sub-cat1-1/20131129_gennjoutotorikumi.pdf",
+      "available": "2013-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2014pdf/20140203155.pdf",
+      "rateYear": 2011,
+      "rate": 2.78,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2012,
+        "calendarYear": 2011,
+        "rate": 2.78,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2012-03-01&cosd=2011-01-01&coed=2011-12-31",
+        "vintageIssue": "2012-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2013,
+      "budget": 2075177,
+      "budgetUrl": "https://web.archive.org/web/20160809031232id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2013budget.htm",
+      "actual": 2407392,
+      "actualUrl": "https://web.archive.org/web/20160809031227id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2013account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2013-05-15",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g766/all_766.pdf",
+      "available": "2014-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2015pdf/20150202003.pdf",
+      "rateYear": 2012,
+      "rate": 1.8,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2013,
+        "calendarYear": 2012,
+        "rate": 1.8,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2013-03-01&cosd=2012-01-01&coed=2012-12-31",
+        "vintageIssue": "2013-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2014,
+      "budget": 2293909,
+      "budgetUrl": "https://web.archive.org/web/20160809031242id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2014budget.htm",
+      "actual": 2411268,
+      "actualUrl": "https://web.archive.org/web/20160809031237id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2014account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2014-03-20",
+      "dateSource": "https://www.sangiin.go.jp/japanese/joho1/kousei/koho/186/keika/h20140320.htm",
+      "available": "2016-01-04",
+      "dateUrl": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F11018709",
+      "rateYear": 2013,
+      "rate": 2.35,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2014,
+        "calendarYear": 2013,
+        "rate": 2.35,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2014-03-01&cosd=2013-01-01&coed=2013-12-31",
+        "vintageIssue": "2014-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2015,
+      "budget": 2471286,
+      "budgetUrl": "https://web.archive.org/web/20160809025337id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2015budget.htm",
+      "actual": 2533906,
+      "actualUrl": "https://web.archive.org/web/20210215081628id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2015account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2015-04-09",
+      "dateSource": "https://www.hrr.mlit.go.jp/shinano/press/pdf/h270409.pdf",
+      "available": "2016-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2017pdf/20170201143.pdf",
+      "rateYear": 2014,
+      "rate": 2.54,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2015,
+        "calendarYear": 2014,
+        "rate": 2.54,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2015-03-01&cosd=2014-01-01&coed=2014-12-31",
+        "vintageIssue": "2015-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2016,
+      "budget": 2487348,
+      "budgetUrl": "https://web.archive.org/web/20161019064916id_/http://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2016budget.htm",
+      "actual": 2187712,
+      "actualUrl": "https://web.archive.org/web/20201026082305id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2016account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2016-03-29",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/190/190-0329-v001.htm",
+      "available": "2017-11-21",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2018pdf/20180801052.pdf",
+      "rateYear": 2015,
+      "rate": 2.14,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2016,
+        "calendarYear": 2015,
+        "rate": 2.14,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2016-03-01&cosd=2015-01-01&coed=2015-12-31",
+        "vintageIssue": "2016-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2017,
+      "budget": 2378274,
+      "budgetUrl": "https://web.archive.org/web/20210215033028id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2017budget.html",
+      "actual": 2253959,
+      "actualUrl": "https://web.archive.org/web/20210223122821id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2017account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2017-03-27",
+      "dateSource": "https://www.mext.go.jp/b_menu/shingi/chousa/shisetu/046/shiryo/__icsFiles/afieldfile/2017/06/27/1386976_01.pdf",
+      "available": "2018-11-20",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2019pdf/20190206123.pdf",
+      "rateYear": 2016,
+      "rate": 1.84,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2017,
+        "calendarYear": 2016,
+        "rate": 1.84,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2017-03-01&cosd=2016-01-01&coed=2016-12-31",
+        "vintageIssue": "2017-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2018,
+      "budget": 2747642,
+      "budgetUrl": "https://web.archive.org/web/20230714031523id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2018budget.html",
+      "actual": 2511757,
+      "actualUrl": "https://web.archive.org/web/20210215004807id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2018account.htm",
+      "notes": "財務省 外国為替資金特別会計 歳入「運用収入」。予算は当初予算の年度総額、決算は収納済歳入額。単位は百万円。",
+      "date": "2018-03-28",
+      "dateSource": "https://www.mof.go.jp/pri/publication/zaikin_geppo/hyou/g829/829_g.pdf",
+      "available": "2019-11-19",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2020pdf/20200207179.pdf",
+      "rateYear": 2017,
+      "rate": 2.33,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2018,
+        "calendarYear": 2017,
+        "rate": 2.33,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2018-03-01&cosd=2017-01-01&coed=2017-12-31",
+        "vintageIssue": "2018-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2019,
+      "budget": 2996084,
+      "actual": 2809124,
+      "budgetUrl": "https://web.archive.org/web/20210224033607id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2019budget.html",
+      "actualUrl": "https://web.archive.org/web/20210215003511id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2019account.htm",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2019-03-27",
+      "dateSource": "https://www.mhlw.go.jp/stf/kaiken/daijin/0000194708_00090.html",
+      "available": "2020-11-20",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/206/meisai/m206450203001.htm",
+      "rateYear": 2018,
+      "rate": 2.91,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2019,
+        "calendarYear": 2018,
+        "rate": 2.91,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2019-03-01&cosd=2018-01-01&coed=2018-12-31",
+        "vintageIssue": "2019-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 249
+      }
+    },
+    {
+      "year": 2020,
+      "budget": 2999028,
+      "actual": 2438116,
+      "budgetUrl": "https://web.archive.org/web/20210224132137id_/https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2020budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2020account.htm",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2020-03-27",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/201/201-0327-v001.htm",
+      "available": "2021-12-06",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_rchome.nsf/html/rchome/Shiryo/doukou212kessan.pdf/$File/doukou212kessan.pdf",
+      "rateYear": 2019,
+      "rate": 2.14,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2020,
+        "calendarYear": 2019,
+        "rate": 2.14,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2020-03-01&cosd=2019-01-01&coed=2019-12-31",
+        "vintageIssue": "2020-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2021,
+      "budget": 2305090,
+      "actual": 2136610,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2021budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2021account.html",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2021-03-26",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/204/204-0326-v001.htm",
+      "available": "2022-11-18",
+      "dateUrl": "https://www.sangiin.go.jp/japanese/annai/chousa/rippou_chousa/backnumber/2023pdf/20230208196.pdf",
+      "rateYear": 2020,
+      "rate": 0.89,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2021,
+        "calendarYear": 2020,
+        "rate": 0.89,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2021-03-01&cosd=2020-01-01&coed=2020-12-31",
+        "vintageIssue": "2021-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2022,
+      "budget": 2329606,
+      "actual": 3024066,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2022budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2022account.html",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2022-03-22",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/208/208-0322-v001.htm",
+      "available": "2023-11-20",
+      "dateUrl": "https://www.shugiin.go.jp/internet/itdb_gian.nsf/html/gian/keika/1DDA94E.htm",
+      "rateYear": 2021,
+      "rate": 1.45,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2022,
+        "calendarYear": 2021,
+        "rate": 1.45,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2022-03-01&cosd=2021-01-01&coed=2021-12-31",
+        "vintageIssue": "2022-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 251
+      }
+    },
+    {
+      "year": 2023,
+      "budget": 2830933,
+      "actual": 4257245,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2023budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2023account.html",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2023-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/211/211-0328-v001.htm",
+      "available": "2024-11-29",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2023/ke0611.html",
+      "rateYear": 2022,
+      "rate": 2.95,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2023,
+        "calendarYear": 2022,
+        "rate": 2.95,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2023-03-01&cosd=2022-01-01&coed=2022-12-31",
+        "vintageIssue": "2023-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 249
+      }
+    },
+    {
+      "year": 2024,
+      "budget": 4305211,
+      "actual": 4836952,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2024budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2024account.html",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2024-03-28",
+      "dateSource": "https://www.sangiin.go.jp/japanese/touhyoulist/213/213-0328-v012.htm",
+      "available": "2025-11-18",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2024/ke0711.html",
+      "rateYear": 2023,
+      "rate": 3.96,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2024,
+        "calendarYear": 2023,
+        "rate": 3.96,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2024-03-01&cosd=2023-01-01&coed=2023-12-31",
+        "vintageIssue": "2024-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2025,
+      "budget": 4783133,
+      "actual": 4649460,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2025budget.html",
+      "actualUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2025account.html",
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2025-03-31",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2025/index.html",
+      "available": "2026-11-20",
+      "dateUrl": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2025/ke0811.html",
+      "rateYear": 2024,
+      "rate": 4.21,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2025,
+        "calendarYear": 2024,
+        "rate": 4.21,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2025-03-01&cosd=2024-01-01&coed=2024-12-31",
+        "vintageIssue": "2025-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 250
+      }
+    },
+    {
+      "year": 2026,
+      "budget": 4654200,
+      "actual": null,
+      "budgetUrl": "https://www.mof.go.jp/about_mof/mof_budget/special_account/gaitame/2026budget.html",
+      "actualUrl": null,
+      "notes": "当初予算・歳入歳出決算の概要、歳入「運用収入」。百万円未満切捨て。",
+      "date": "2026-04-07",
+      "dateSource": "https://www.mof.go.jp/policy/filp/plan/fy2026/index.html",
+      "available": null,
+      "dateUrl": null,
+      "rateYear": 2025,
+      "rate": 4.29,
+      "rateUrl": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+      "rateSource": {
+        "year": 2026,
+        "calendarYear": 2025,
+        "rate": 4.29,
+        "url": "https://fred.stlouisfed.org/data/RIFLGFCY10NA",
+        "vintageUrl": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?bgcolor=%23ebf3fb&chart_type=line&id=DGS10&vintage_date=2026-03-01&cosd=2025-01-01&coed=2025-12-31",
+        "vintageIssue": "2026-03-01",
+        "vintageVerified": true,
+        "vintageMethod": "ALFRED DGS10 daily observations as of March 1, preceding calendar-year mean rounded to 2 decimal places",
+        "dailyCount": 249
+      }
+    }
+  ],
+  "results": [
+    {
+      "year": 2013,
+      "date": "2013-05-15",
+      "train": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011
+      ],
+      "forecasts": [
+        20751.77,
+        23791.656516005973,
+        19398.935964865537
+      ],
+      "actual": 24073.92,
+      "errors": [
+        3322.149999999998,
+        282.2634839940256,
+        4674.984035134461
+      ],
+      "gains": [
+        0.0,
+        3039.886516005972,
+        -1352.8340351344632
+      ],
+      "slope": 0.08905314238855283,
+      "intercept": -0.22548691637670232,
+      "meanBias": 0.1464880593802828
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "train": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "forecasts": [
+        22939.09,
+        25838.776174853465,
+        22217.325633288536
+      ],
+      "actual": 24112.68,
+      "errors": [
+        1173.5900000000001,
+        1726.0961748534646,
+        1895.3543667114645
+      ],
+      "gains": [
+        0.0,
+        -552.5061748534645,
+        -721.7643667114644
+      ],
+      "slope": 0.0984856262180181,
+      "intercept": -0.2629056069350151,
+      "meanBias": 0.12640807350481045
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "train": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "forecasts": [
+        24712.86,
+        27773.63469616264,
+        26667.145090196726
+      ],
+      "actual": 25339.06,
+      "errors": [
+        626.2000000000007,
+        2434.574696162639,
+        1328.0850901967242
+      ],
+      "gains": [
+        0.0,
+        -1808.3746961626384,
+        -701.8850901967235
+      ],
+      "slope": 0.03955286098914928,
+      "intercept": -0.021384585718246252,
+      "meanBias": 0.12385351983390988
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "train": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "forecasts": [
+        24873.48,
+        27226.1595003709,
+        26183.804397963147
+      ],
+      "actual": 21877.12,
+      "errors": [
+        2996.3600000000006,
+        5349.039500370902,
+        4306.6843979631485
+      ],
+      "gains": [
+        0.0,
+        -2352.679500370901,
+        -1310.324397963148
+      ],
+      "slope": 0.030678099132810395,
+      "intercept": -0.012971555423821779,
+      "meanBias": 0.09458586013581147
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "train": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "forecasts": [
+        23782.74,
+        25355.705344472284,
+        24843.35410711429
+      ],
+      "actual": 22539.59,
+      "errors": [
+        1243.1500000000015,
+        2816.115344472284,
+        2303.76410711429
+      ],
+      "gains": [
+        0.0,
+        -1572.9653444722826,
+        -1060.6141071142883
+      ],
+      "slope": 0.014429327598770846,
+      "intercept": 0.018045996603693736,
+      "meanBias": 0.06613894549039696
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "train": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "forecasts": [
+        27476.42,
+        28181.98595907443,
+        28043.431520062386
+      ],
+      "actual": 25117.57,
+      "errors": [
+        2358.8499999999985,
+        3064.415959074431,
+        2925.8615200623863
+      ],
+      "gains": [
+        0.0,
+        -705.5659590744326,
+        -567.0115200623877
+      ],
+      "slope": 0.006399323724140805,
+      "intercept": 0.005725871137598242,
+      "meanBias": 0.025678962509469272
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "train": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "forecasts": [
+        29960.84,
+        30000.405981762884,
+        29928.957871476796
+      ],
+      "actual": 28091.24,
+      "errors": [
+        1869.5999999999985,
+        1909.1659817628824,
+        1837.7178714767942
+      ],
+      "gains": [
+        0.0,
+        -39.565981762883894,
+        31.8821285232043
+      ],
+      "slope": -0.027099051433806816,
+      "intercept": 0.07779411301494078,
+      "meanBias": 0.0013205898687379536
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "train": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "forecasts": [
+        29990.28,
+        29910.298623452898,
+        30190.16204130598
+      ],
+      "actual": 24381.16,
+      "errors": [
+        5609.119999999999,
+        5529.138623452898,
+        5809.002041305979
+      ],
+      "gains": [
+        0.0,
+        79.98137654710081,
+        -199.88204130598024
+      ],
+      "slope": -0.02064558429121897,
+      "intercept": 0.050846444519107914,
+      "meanBias": -0.0026669099637316564
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "train": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "forecasts": [
+        23050.9,
+        23091.27408576764,
+        22751.987096353925
+      ],
+      "actual": 21366.1,
+      "errors": [
+        1684.800000000003,
+        1725.1740857676414,
+        1385.8870963539266
+      ],
+      "gains": [
+        0.0,
+        -40.37408576763846,
+        298.9129036460763
+      ],
+      "slope": 0.009046732865614497,
+      "intercept": -0.021019107776735296,
+      "meanBias": 0.0017515188460163976
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "train": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "forecasts": [
+        23296.06,
+        22762.66005538899,
+        22496.95738853532
+      ],
+      "actual": 30240.66,
+      "errors": [
+        6944.5999999999985,
+        7477.999944611009,
+        7743.70261146468
+      ],
+      "gains": [
+        0.0,
+        -533.3999446110101,
+        -799.1026114646811
+      ],
+      "slope": 0.011942907418889318,
+      "intercept": -0.05161926560893865,
+      "meanBias": -0.022896573266509835
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "train": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "forecasts": [
+        28309.33,
+        27343.44296594849,
+        27506.25171481091
+      ],
+      "actual": 42572.45,
+      "errors": [
+        14263.119999999995,
+        15229.007034051509,
+        15066.198285189086
+      ],
+      "gains": [
+        0.0,
+        -965.8870340515132,
+        -803.0782851890908
+      ],
+      "slope": 0.007392112213150488,
+      "intercept": -0.05017470318458457,
+      "meanBias": -0.03411903545762172
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "train": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "forecasts": [
+        43052.11,
+        42852.27838405642,
+        37258.32019374227
+      ],
+      "actual": 48369.52,
+      "errors": [
+        5317.409999999996,
+        5517.241615943574,
+        11111.199806257726
+      ],
+      "gains": [
+        0.0,
+        -199.83161594357807,
+        -5793.78980625773
+      ],
+      "slope": -0.06763903609935953,
+      "intercept": 0.13327437272224094,
+      "meanBias": -0.0046416218843531535
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "train": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "forecasts": [
+        47831.33,
+        49253.474501144796,
+        56374.10399492483
+      ],
+      "actual": 46494.6,
+      "errors": [
+        1336.7300000000032,
+        2758.8745011447973,
+        9879.503994924831
+      ],
+      "gains": [
+        0.0,
+        -1422.144501144794,
+        -8542.773994924828
+      ],
+      "slope": 0.07240737804014187,
+      "intercept": -0.12623300312986427,
+      "meanBias": 0.029732489168601293
+    },
+    {
+      "year": 2026,
+      "date": "2026-04-07",
+      "train": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "forecasts": [
+        46542.0,
+        48262.5403192777,
+        54064.68543306839
+      ],
+      "actual": null,
+      "errors": [],
+      "gains": [],
+      "slope": 0.06312137412067381,
+      "intercept": -0.10915850398743687,
+      "meanBias": 0.03696747710192303
+    }
+  ],
+  "summary": [
+    {
+      "median": 2358.8499999999985,
+      "mean": 3749.6676923076916,
+      "wins": 0
+    },
+    {
+      "median": 2816.115344472284,
+      "mean": 4293.777457358619,
+      "wins": 2
+    },
+    {
+      "median": 4306.6843979631485,
+      "mean": 5405.226555704269,
+      "wins": 2
+    }
+  ]
+}

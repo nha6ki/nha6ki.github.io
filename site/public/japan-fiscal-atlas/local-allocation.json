@@ -1,0 +1,929 @@
+{
+  "unit": "億円",
+  "methods": [
+    "当初計画額",
+    "平均ずれ率補正",
+    "計画額の前年比回帰"
+  ],
+  "history": [
+    {
+      "year": 2001,
+      "plan": 203498,
+      "actual": null,
+      "planSource": "https://www.cao.go.jp/zei-cho/history/1996-2009/gijiroku/kiso/2003/pdf/kiso_b03a.pdf",
+      "actualSources": []
+    },
+    {
+      "year": 2002,
+      "plan": 195449,
+      "actual": 195449,
+      "planSource": "https://www.cao.go.jp/zei-cho/history/1996-2009/gijiroku/kiso/2003/pdf/kiso_b03a.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2003,
+      "plan": 180693,
+      "actual": 180693,
+      "planSource": "https://www.cao.go.jp/zei-cho/history/1996-2009/gijiroku/kiso/2003/pdf/kiso_b03a.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2004,
+      "plan": 168861,
+      "actual": 170201,
+      "planSource": "https://www.shugiin.go.jp/internet/itdb_kaigirokua.nsf/html/kaigirokua/001815920040123001.htm",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2005,
+      "plan": 168979,
+      "actual": 169587,
+      "planSource": "https://www.city.nishitokyo.lg.jp/siseizyoho/zaisei/yosan/H19yosan/19gaiyo.files/19gaiyo1.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2006,
+      "plan": 159073,
+      "actual": 159954,
+      "planSource": "https://www.city.nishitokyo.lg.jp/siseizyoho/zaisei/yosan/H19yosan/19gaiyo.files/19gaiyo1.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2007,
+      "plan": 152027,
+      "actual": 152027,
+      "planSource": "https://www.city.nishitokyo.lg.jp/siseizyoho/zaisei/yosan/H19yosan/19gaiyo.files/19gaiyo1.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年（第171回国会）",
+        "sources": [
+          {
+            "title": "総務省・地方交付税関係参考資料（表八）",
+            "url": "https://www.soumu.go.jp/main_content/000030069.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2008,
+      "plan": 154061,
+      "actual": 154061,
+      "planSource": "https://www.town.shiraoi.hokkaido.jp/fs/2/8/4/1/2/_/H21gaiyou3.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2009年11月24日",
+        "sources": [
+          {
+            "title": "特別会計決算参照書",
+            "url": "https://www.bb.mof.go.jp/server/2008/dlpdf/DL200878001.pdf"
+          },
+          {
+            "title": "国会提出日",
+            "url": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/174_173_kessan_1.htm"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2009,
+      "plan": 158202,
+      "actual": 158202,
+      "planSource": "https://www.town.shiraoi.hokkaido.jp/fs/2/8/4/1/2/_/H21gaiyou3.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2012年3月",
+        "sources": [
+          {
+            "title": "福井県・市町財政要覧（全国総額）",
+            "url": "https://www.pref.fukui.lg.jp/doc/sityousinkou/22zaiseiyouran_d/fil/001.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2010,
+      "plan": 168935,
+      "actual": 171936,
+      "planSource": "https://www.nga.gr.jp/item/material/files/group/2/H230207soumudaijinkaigou_sankou3.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2012年3月",
+        "sources": [
+          {
+            "title": "福井県・市町財政要覧（全国総額）",
+            "url": "https://www.pref.fukui.lg.jp/doc/sityousinkou/22zaiseiyouran_d/fil/001.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2011,
+      "plan": 173734,
+      "actual": 179388,
+      "planSource": "https://www.nga.gr.jp/item/material/files/group/2/H230207soumudaijinkaigou_sankou3.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2013年3月",
+        "sources": [
+          {
+            "title": "福井県・市町財政要覧（全国総額）",
+            "url": "https://www.pref.fukui.lg.jp/doc/sityousinkou/23zaiseiyouran_d/fil/001.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2012,
+      "plan": 174545,
+      "actual": 175253,
+      "planSource": "https://www.nga.gr.jp/item/material/files/group/2/003%20h23%20kuni04.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "availability": {
+        "documentDate": "2013年11月19日",
+        "sources": [
+          {
+            "title": "特別会計決算参照書",
+            "url": "https://www.bb.mof.go.jp/server/2012/dlpdf/DL201278001.pdf"
+          },
+          {
+            "title": "国会提出日",
+            "url": "https://www.shugiin.go.jp/internet/itdb_iinkai.nsf/html/gianrireki/188_185_kessan_1.htm"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2013,
+      "plan": 170624,
+      "actual": 170884,
+      "planSource": "https://www.city.matsue.lg.jp/material/files/group/10/H25_tosyo_01.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2013-05-15",
+      "availability": {
+        "documentDate": "2015年2月12日",
+        "sources": [
+          {
+            "title": "2013年度決算",
+            "url": "https://www.bb.mof.go.jp/server/2013/dlpdf/DL201375001.pdf"
+          },
+          {
+            "title": "前年度からの繰越額",
+            "url": "https://www.bb.mof.go.jp/server/2012/dlpdf/DL201278001.pdf"
+          },
+          {
+            "title": "不用額を確認した法律",
+            "url": "https://www.sangiin.go.jp/japanese/joho1/kousei/gian/189/pdf/s031890011890.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2014,
+      "plan": 168855,
+      "actual": 169170,
+      "planSource": "https://www.zck.or.jp/uploaded/attachment/1484.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2014-03-20",
+      "availability": {
+        "documentDate": "2015年10月8日",
+        "sources": [
+          {
+            "title": "川崎市・総務委員会資料",
+            "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000067/67727/271008soumu3-1.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2015,
+      "plan": 167548,
+      "actual": 168017,
+      "planSource": "https://www.gichokai.gr.jp/attach/b02/169-3.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2015-04-09",
+      "availability": {
+        "documentDate": "2016年10月12日",
+        "sources": [
+          {
+            "title": "川崎市・総務委員会資料",
+            "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000076/76869/281012soumu2-1.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2016,
+      "plan": 167003,
+      "actual": 167513,
+      "planSource": "https://www.si-gichokai.jp/news/info/file/28tizaigaiyou.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2016-03-29",
+      "availability": {
+        "documentDate": "2018年2月",
+        "sources": [
+          {
+            "title": "福井県・全国総額",
+            "url": "https://www.pref.fukui.lg.jp/doc/sityousinkou/28zaiseiyouran_d/fil/06.pdf"
+          },
+          {
+            "title": "発行月",
+            "url": "https://www.pref.fukui.lg.jp/doc/sityousinkou/zaiseiyouran.html"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2017,
+      "plan": 163298,
+      "actual": 163298,
+      "planSource": "https://www.fdma.go.jp/laws/tutatsu/assets/281222_sai181.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2017-03-27",
+      "availability": {
+        "documentDate": "2018年10月9日",
+        "sources": [
+          {
+            "title": "川崎市・特別委員会資料",
+            "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000087/87127/30.10.09_daitoshi_aohonn.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2018,
+      "plan": 160085,
+      "actual": 161181,
+      "planSource": "https://www.jametro.or.jp/upload/country/fZNRbQZztjlF.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2018-03-28",
+      "availability": {
+        "documentDate": "2019年10月7日",
+        "sources": [
+          {
+            "title": "川崎市・特別委員会資料",
+            "url": "https://www.city.kawasaki.jp/980/cmsfiles/contents/0000107/107204/311007daitoshi1-1.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2019,
+      "plan": 161809,
+      "actual": 162759,
+      "planSource": "https://www.pref.fukushima.lg.jp/uploaded/attachment/371907.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2019-03-27",
+      "availability": {
+        "documentDate": "2020年11月20日",
+        "sources": [
+          {
+            "title": "特別会計決算参照書",
+            "url": "https://www.bb.mof.go.jp/server/2019/dlpdf/DL201978001.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2020,
+      "plan": 165882,
+      "actual": 165882,
+      "planSource": "https://www.pref.fukushima.lg.jp/uploaded/attachment/371907.pdf",
+      "actualSources": [
+        "https://data.bodik.jp/dataset/8b248253-2e25-4ddf-8ff8-0746b042e078/resource/f3bf66cd-aeaf-4d63-a2e2-be058d3492b3/download/122_305_221228_.pdf#page=50"
+      ],
+      "forecastDate": "2020-03-27",
+      "availability": {
+        "documentDate": "2021年12月6日",
+        "sources": [
+          {
+            "title": "財務省・特別会計決算の説明",
+            "url": "https://www.mof.go.jp/policy/budget/budger_workflow/account/fy2020/kessan_02_21.pdf"
+          },
+          {
+            "title": "国会提出日",
+            "url": "https://www.shugiin.go.jp/Internet/itdb_iinkai.nsf/html/gianrireki/207_207_kessan_1.htm"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2021,
+      "plan": 174385,
+      "actual": 194085,
+      "planSource": "https://www.pref.okayama.jp/uploaded/life/699455_6241821_misc.pdf",
+      "actualSources": [
+        "https://www.pref.kumamoto.jp/uploaded/life/167526_390720_misc.pdf"
+      ],
+      "forecastDate": "2021-03-26"
+    },
+    {
+      "year": 2022,
+      "plan": 180538,
+      "actual": 185508,
+      "planSource": "https://www.pref.miyagi.jp/documents/48087/r4tizaikeikaku.pdf",
+      "actualSources": [
+        "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/026/994/gyouzaiseigaikyou66_r04.3_8.pdf"
+      ],
+      "forecastDate": "2022-03-22"
+    },
+    {
+      "year": 2023,
+      "plan": 183611,
+      "actual": 189353,
+      "planSource": "https://www.mof.go.jp/policy/budget/budger_workflow/budget/fy2023/seifuan2023/10.pdf",
+      "actualSources": [
+        "https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/029/992/8-2.pdf"
+      ],
+      "forecastDate": "2023-03-28"
+    },
+    {
+      "year": 2024,
+      "plan": 186671,
+      "actual": 198597,
+      "planSource": "https://www.mof.go.jp/policy/budget/budger_workflow/budget/fy2024/seifuan2024/10.pdf",
+      "actualSources": [
+        "https://www.pref.kumamoto.jp/uploaded/attachment/307924.pdf"
+      ],
+      "forecastDate": "2024-03-28"
+    },
+    {
+      "year": 2025,
+      "plan": 189574,
+      "actual": 202676,
+      "planSource": "https://www.city-kirishima.jp/zaisei/r7yosan/documents/r07_gaiyou.pdf",
+      "actualSources": [
+        "https://www.pref.miyazaki.lg.jp/documents/105181/105181_20251222105720-1.pdf",
+        "https://www.pref.aomori.lg.jp/soshiki/zaimu/shichoson/files/31_R7tokubetsukouhuzei.pdf"
+      ],
+      "forecastDate": "2025-03-31"
+    }
+  ],
+  "results": [
+    {
+      "year": 2013,
+      "date": "2013-05-15",
+      "train": [
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011
+      ],
+      "growth": -0.02246412100031514,
+      "meanBias": 0.0067380171808130605,
+      "intercept": 0.008311811690084851,
+      "slope": 0.10761634531484919,
+      "forecasts": [
+        170624,
+        171773.66744345907,
+        171629.70991121896
+      ],
+      "actual": 170884,
+      "errors": [
+        260,
+        889.6674434590677,
+        745.7099112189608
+      ],
+      "gains": [
+        0,
+        -629.6674434590677,
+        -485.70991121896077
+      ]
+    },
+    {
+      "year": 2014,
+      "date": "2014-03-20",
+      "train": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ],
+      "growth": -0.010367826331582841,
+      "meanBias": 0.007143643237130926,
+      "intercept": 0.008147918289483438,
+      "slope": 0.09843908980740626,
+      "forecasts": [
+        168855,
+        170061.23987880576,
+        170058.48343321768
+      ],
+      "actual": 169170,
+      "errors": [
+        315,
+        891.2398788057617,
+        888.4834332176833
+      ],
+      "gains": [
+        0,
+        -576.2398788057617,
+        -573.4834332176833
+      ]
+    },
+    {
+      "year": 2015,
+      "date": "2015-04-09",
+      "train": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ],
+      "growth": -0.007740368955612809,
+      "meanBias": 0.007296025082592283,
+      "intercept": 0.007786351430367674,
+      "slope": 0.1000949755170391,
+      "forecasts": [
+        167548,
+        168770.43441053815,
+        168722.7761035122
+      ],
+      "actual": 168017,
+      "errors": [
+        469,
+        753.434410538146,
+        705.7761035122094
+      ],
+      "gains": [
+        0,
+        -284.43441053814604,
+        -236.77610351220937
+      ]
+    },
+    {
+      "year": 2016,
+      "date": "2016-03-29",
+      "train": [
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014
+      ],
+      "growth": -0.003252799197841827,
+      "meanBias": 0.00668902358019412,
+      "intercept": 0.0066030312260070825,
+      "slope": 0.14034311069440442,
+      "forecasts": [
+        167003,
+        168120.08700496316,
+        168029.48782534545
+      ],
+      "actual": 167513,
+      "errors": [
+        510,
+        607.087004963163,
+        516.4878253454517
+      ],
+      "gains": [
+        0,
+        -97.08700496316305,
+        -6.487825345451711
+      ]
+    },
+    {
+      "year": 2017,
+      "date": "2017-03-27",
+      "train": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ],
+      "growth": -0.022185230205445383,
+      "meanBias": 0.006609135340893158,
+      "intercept": 0.0066420150572781295,
+      "slope": 0.14222104082362785,
+      "forecasts": [
+        163298,
+        164377.2585828972,
+        163867.38885876822
+      ],
+      "actual": 163298,
+      "errors": [
+        0,
+        1079.2585828971933,
+        569.3888587682159
+      ],
+      "gains": [
+        0,
+        -1079.2585828971933,
+        -569.3888587682159
+      ]
+    },
+    {
+      "year": 2018,
+      "date": "2018-03-28",
+      "train": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ],
+      "growth": -0.01967568494409,
+      "meanBias": 0.006360685302084068,
+      "intercept": 0.0053076165205630885,
+      "slope": 0.198475040197097,
+      "forecasts": [
+        160085,
+        161103.25030658414,
+        160309.51667681432
+      ],
+      "actual": 161181,
+      "errors": [
+        1096,
+        77.74969341585529,
+        871.4833231856755
+      ],
+      "gains": [
+        0,
+        1018.2503065841447,
+        224.51667681432446
+      ]
+    },
+    {
+      "year": 2019,
+      "date": "2019-03-27",
+      "train": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ],
+      "growth": 0.010769278820626615,
+      "meanBias": 0.006360685302084068,
+      "intercept": 0.00464431676835995,
+      "slope": 0.22834101958935796,
+      "forecasts": [
+        161809,
+        162838.21612804494,
+        162958.3916031586
+      ],
+      "actual": 162759,
+      "errors": [
+        950,
+        79.21612804493634,
+        199.39160315861227
+      ],
+      "gains": [
+        0,
+        870.7838719550637,
+        750.6083968413877
+      ]
+    },
+    {
+      "year": 2020,
+      "date": "2020-03-27",
+      "train": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "growth": 0.025171652998288163,
+      "meanBias": 0.007045321589056619,
+      "intercept": 0.006133633441874563,
+      "slope": 0.21649125927611798,
+      "forecasts": [
+        165882,
+        167050.6920358359,
+        167803.42386238775
+      ],
+      "actual": 165882,
+      "errors": [
+        0,
+        1168.6920358359057,
+        1921.4238623877463
+      ],
+      "gains": [
+        0,
+        -1168.6920358359057,
+        -1921.4238623877463
+      ]
+    },
+    {
+      "year": 2021,
+      "date": "2021-03-26",
+      "train": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "growth": 0.05125932892055807,
+      "meanBias": 0.007632433554398466,
+      "intercept": 0.006970174203340263,
+      "slope": 0.2546923840913178,
+      "forecasts": [
+        174385,
+        175715.98192538376,
+        177877.15290232247
+      ],
+      "actual": 194085,
+      "errors": [
+        19700,
+        18369.018074616237,
+        16207.847097677528
+      ],
+      "gains": [
+        0,
+        1330.9819253837632,
+        3492.152902322472
+      ]
+    },
+    {
+      "year": 2022,
+      "date": "2022-03-22",
+      "train": [
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "growth": 0.03528399805029103,
+      "meanBias": 0.005856010669857081,
+      "intercept": 0.006329663395788447,
+      "slope": 0.2841404771787629,
+      "forecasts": [
+        180538,
+        181595.23245431465,
+        183490.74871712906
+      ],
+      "actual": 185508,
+      "errors": [
+        4970,
+        3912.7675456853467,
+        2017.2512828709441
+      ],
+      "gains": [
+        0,
+        1057.2324543146533,
+        2952.748717129056
+      ]
+    },
+    {
+      "year": 2023,
+      "date": "2023-03-28",
+      "train": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "growth": 0.01702134730638427,
+      "meanBias": 0.013898453456428195,
+      "intercept": 0.01320414345699445,
+      "slope": 1.1230635629909984,
+      "forecasts": [
+        183611,
+        186162.90893758822,
+        189545.34395022356
+      ],
+      "actual": 189353,
+      "errors": [
+        5742,
+        3190.0910624117823,
+        192.34395022355602
+      ],
+      "gains": [
+        0,
+        2551.9089375882177,
+        5549.656049776444
+      ]
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-28",
+      "train": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "growth": 0.016665668178921678,
+      "meanBias": 0.01624571044966223,
+      "intercept": 0.012590861209058979,
+      "slope": 0.9932133757149322,
+      "forecasts": [
+        186671,
+        189703.6030153489,
+        192111.23242996857
+      ],
+      "actual": 198597,
+      "errors": [
+        11926,
+        8893.396984651103,
+        6485.7675700314285
+      ],
+      "gains": [
+        0,
+        3032.6030153488973,
+        5440.2324299685715
+      ]
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-31",
+      "train": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "growth": 0.01555142469906956,
+      "meanBias": 0.019220592221304435,
+      "intercept": 0.011141220021627912,
+      "slope": 1.0591217487403968,
+      "forecasts": [
+        189574,
+        193217.72454976157,
+        194808.5309646856
+      ],
+      "actual": 202676,
+      "errors": [
+        13102,
+        9458.275450238434,
+        7867.469035314396
+      ],
+      "gains": [
+        0,
+        3643.724549761566,
+        5234.530964685604
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "median": 950,
+      "mean": 4541.538461538462,
+      "wins": 0
+    },
+    {
+      "median": 1079.2585828971933,
+      "mean": 3797.684176581764,
+      "wins": 7
+    },
+    {
+      "median": 871.4833231856755,
+      "mean": 3014.524912070185,
+      "wins": 7
+    }
+  ]
+}
