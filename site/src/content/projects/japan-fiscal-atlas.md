@@ -1,7 +1,7 @@
 ---
 title: "Japan Fiscal Atlas"
 category: "ai"
-summary: "Explore forecasts of Japan’s public finances and see how they are tested against fiscal outcomes."
+summary: "Eight studies of Japan’s public finances compare annual forecasts with official estimates and fiscal outcomes."
 date: "2026-11"
 technologies:
   - Linear regression
@@ -12,14 +12,14 @@ featured: false
 image: "/images/projects/japan-fiscal-atlas.webp"
 imageAlt: "Forecast evaluation timeline: public information at the forecast date, a forecast and its benchmark, and the subsequent fiscal outcome."
 links:
-  - label: "Explore the forecasts (Japanese)"
+  - label: "Open Japan Fiscal Atlas (Japanese)"
     url: "https://nha6ki.github.io/japan-fiscal-atlas/"
   - label: "GitHub repository"
     url: "https://github.com/nha6ki/japan-fiscal-atlas"
 ---
 
-What could an analyst have known when Japan’s initial budget was enacted? Japan Fiscal Atlas uses that question to guide its annual budget studies. It reconstructs forecasts from the information available at the time and compares them with the original budget or plan.
+What could an analyst have forecast when Japan’s initial budget was enacted? Japan Fiscal Atlas reconstructs annual forecasts for eight indicators, including corporate tax revenue, pension contributions, and public debt interest payments. It compares each forecast with the original budget or plan and, where available, the reported fiscal outcome.
 
-On the Japanese-language site, each study explains what is being forecast, which data the methods use, and how the forecasts are evaluated. Readers can explore errors year by year and follow the source notes to see which historical figures could be verified.
+The studies test two alternatives: adjusting the official estimate by past percentage deviations and fitting a regression using an indicator suited to each forecast. The corporate tax study also includes a nominal GDP benchmark. The Japanese-language site shows errors by year, explains which information was available at the forecast date, and links to the underlying sources.
 
-[![Japan Fiscal Atlas homepage showing the forecast targets, evaluation periods, and results for all eight fiscal domains.](/images/projects/japan-fiscal-atlas-home.jpg)](https://japan-fiscal-atlas.knitessay512.chatgpt.site/)
+[![Japan Fiscal Atlas homepage comparing the number of years each method improved on the official estimate, across eight indicators.](/images/projects/japan-fiscal-atlas-home.jpg)](https://nha6ki.github.io/japan-fiscal-atlas/)
