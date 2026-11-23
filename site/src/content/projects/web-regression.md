@@ -17,7 +17,7 @@ links:
     url: "https://github.com/nha6ki/web-regression/actions/runs/45102137868"
 ---
 
-Two editorial teams each have a task called 校正を確認 (“check the proofs”). When one team marks its task complete, the other team's copy should stay open. The demo highlights this case. Playwright selects the task in the second project, then reads both task IDs through the Vikunja API to check that only the selected record changed.
+Two editorial teams each have a task called 校正を確認 (“check the proofs”). When one team marks its task complete, the other team's copy should stay open. Playwright selects the task in the second project, then reads both task IDs through the Vikunja API to check that only the selected record changed.
 
 ## What the suite checks
 

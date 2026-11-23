@@ -10,13 +10,10 @@ aside{align-self:start}.navtitle,h2{font-weight:650;letter-spacing:-.03em}.navti
 .bar{background:#162f36}.bar .brand{text-decoration:none}
 main{min-width:0}
 main h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:500}
-.intro .example{margin-top:1.75rem}
 .menu .overview-link{display:block}
 .language{font-weight:600}
 footer.foot{border-top:1px solid var(--line);padding-top:.6rem}
 footer.foot code{margin-inline-start:.3em}
-.example{padding:clamp(1.1rem,2.6vw,2rem);background:#e6efe9;border:1px solid #b9cec2;border-radius:12px}
-.example h2{font-size:clamp(1.45rem,2.4vw,2.15rem);line-height:1.15}.example .label{font: .88rem ui-monospace,monospace;color:#34534c;margin:0 0 .85rem}.example dl{margin:1rem 0}.example dl div{border-top:1px solid #b9cec2;display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;padding:.55rem 0}.example dd{margin:0;font-weight:650}.example .done{color:#19553e}.example a{font-weight:650}
 .verdict{max-width:72ch;margin:1rem 0 0;padding:.65rem 1rem;border-inline-start:3px solid var(--teal);background:#eaf2ec}
 .verdict strong{display:block}
 .source{color:#435b55;font-size:.94rem}
