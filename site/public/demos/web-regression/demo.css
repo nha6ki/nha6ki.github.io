@@ -19,3 +19,36 @@ main h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-weight
 .source{color:#435b55;font-size:.94rem}
 
 .shopify-log { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #f0f4f2; color: #223a34; line-height: 1.6; }
+
+/* Case navigation and evidence share the same reading column. */
+:root { --paper: #fbfcfa; --line: #d1ddd6; }
+body { line-height: 1.7; }
+.layout { gap: clamp(2rem, 4vw, 4rem); }
+main h1 { line-height: 1.22; }
+main .lead { margin-bottom: 1.5rem; }
+.desktop { border-inline-end: 1px solid var(--line); padding-inline-end: 1rem; }
+.app-menu { border-bottom: 1px solid var(--line); }
+.app-menu summary { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .55rem; list-style: none; }
+.app-menu summary::-webkit-details-marker { display: none; }
+.app-menu summary::after { content: ''; width: .45em; height: .45em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-inline-end: .3rem; }
+.app-menu[open] summary::after { transform: rotate(225deg); }
+.app-menu summary:hover, .case-list a:hover { background: #edf4ef; }
+.app-menu[open] { padding-bottom: .4rem; }
+.app-menu[open] summary { color: var(--teal); }
+.app-section { border-top: 1px solid var(--line); padding: 1.6rem 0 1.9rem; scroll-margin-top: 1rem; }
+.app-section h2 { margin-bottom: .6rem; }
+.case-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem,100%),1fr)); gap: .5rem; list-style: none; padding: 0; margin: 1rem 0 0; }
+.case-list a { display: flex; flex-direction: column; justify-content: center; height: 100%; padding: .6rem .85rem; background: white; border: 1px solid var(--line); border-radius: .4rem; text-decoration: none; font-weight: 600; }
+.case-list small { font-family: ui-monospace,monospace; color: #526863; font-size: .81rem; }
+.return { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: .65rem; }
+.return a, main p a[href$=".json"] { display: inline-flex; align-items: center; min-height: 44px; }
+.mobile > summary { display: list-item; padding-block: .6rem; }
+@media (min-width: 54.01rem) and (min-height: 32rem) {
+  aside { position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow: auto; padding: 4px; }
+}
+@media (max-width: 40rem) {
+  .case-list { grid-template-columns: 1fr; }
+  .case-list a { flex-direction: row; justify-content: flex-start; align-items: baseline; gap: .7rem; }
+  .case-list small { flex: 0 0 3.4em; }
+}
+html[lang="ja"] main h1 { max-width: 100%; text-wrap: pretty; }
