@@ -8,19 +8,15 @@ aside{align-self:start}.navtitle,h2{font-weight:650;letter-spacing:-.03em}.navti
 /* The overview pairs the tested behavior with its observed outcome. */
 :root{--paper:#faf9f5;--ink:#182f36;--line:#cbd4cf}
 .bar{background:#162f36}.bar .brand{text-decoration:none}
-.overview{max-width:80rem;margin:auto;padding:clamp(1.4rem,4vw,3.8rem) clamp(1rem,4vw,4rem)}
-.intro,.catalogs{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,5vw,5rem)}
-.intro{align-items:center;padding-bottom:clamp(1.6rem,4vw,3.5rem)}
-.overview h1,main#case h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:500;letter-spacing:-.045em}
-.overview h1{font-size:clamp(2.9rem,6vw,5.4rem);max-width:10ch;margin:0 0 1rem}
-:lang(ja) .overview h1{max-width:12ch;line-height:1.25}
-.overview .lead{max-width:47ch}.run{display:inline-block;margin-top:.5rem;font-weight:600}.run code{font-size:.85rem}
+main{min-width:0}
+main h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:500}
+.intro .example{margin-top:1.75rem}
+.menu .overview-link{display:block}
+.language{font-weight:600}
+footer.foot{border-top:1px solid var(--line);padding-top:.6rem}
+footer.foot code{margin-inline-start:.3em}
 .example{padding:clamp(1.1rem,2.6vw,2rem);background:#e6efe9;border:1px solid #b9cec2;border-radius:12px}
 .example h2{font-size:clamp(1.45rem,2.4vw,2.15rem);line-height:1.15}.example .label{font: .88rem ui-monospace,monospace;color:#34534c;margin:0 0 .85rem}.example dl{margin:1rem 0}.example dl div{border-top:1px solid #b9cec2;display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;padding:.55rem 0}.example dd{margin:0;font-weight:650}.example .done{color:#19553e}.example a{font-weight:650}
-.list-heading{border-top:1px solid var(--line);padding-top:1.2rem;font-size:1.6rem}.catalog h3{font-size:1.15rem;margin:0}.catalog ul{list-style:none;padding:0;margin:.45rem 0}.catalog li{border-top:1px solid var(--line)}.catalog a{display:block;padding:.68rem .25rem;line-height:1.5;text-decoration:none}.catalog a:hover,.catalog a:focus-visible{text-decoration:underline;background:#edf1eb}.back{display:inline-block;margin:0 0 .7rem}.overview .foot{border-top:1px solid var(--line);margin-top:2rem;padding-top:.6rem}
-@media(max-width:47rem){.intro,.catalogs{grid-template-columns:1fr;gap:1.4rem}.overview h1{max-width:16ch}.example h2{margin-bottom:.6rem}}
-
 .verdict{max-width:72ch;margin:1rem 0 0;padding:.65rem 1rem;border-inline-start:3px solid var(--teal);background:#eaf2ec}
 .verdict strong{display:block}
 .source{color:#435b55;font-size:.94rem}
-html[lang="en"] .overview h1{max-width:16ch}
