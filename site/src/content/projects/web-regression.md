@@ -21,15 +21,15 @@ This project uses Playwright to check how ten web applications handle changes to
 
 ## What the tests cover
 
-**WordPress · 3 tests.** Readers see a post when it is published and see corrections at the same URL. A separate test checks access to an unpublished draft.
+**Shopify · 3 tests.** In a development storefront, cart API checks cover color selection, quantity changes and removal of one variant. The first case also verifies the product link and color in the rendered cart.
 
 **WooCommerce · 3 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items.
 
-**Shopify · 3 tests.** In a development storefront, cart API checks cover color selection, quantity changes and removal of one variant. The first case also verifies the product link and color in the rendered cart.
-
-**Nextcloud · 3 tests.** Moving and restoring a file preserves its contents. Updating a file leaves its namesake in another folder intact.
+**WordPress · 3 tests.** Readers see a post when it is published and see corrections at the same URL. A separate test checks access to an unpublished draft.
 
 **Moodle · 3 tests.** Teachers can retrieve submitted files, students can see their grades and comments, and grading one submission leaves the other student’s work ungraded.
+
+**Nextcloud · 3 tests.** Moving and restoring a file preserves its contents. Updating a file leaves its namesake in another folder intact.
 
 **Vikunja · 4 tests.** The suite checks that a task entered in Japanese belongs to the intended project, that a completed task stays complete after a reload, and that submitting an empty title leaves the project's task IDs unchanged. The fourth test gives two editorial teams a task called 校正を確認 (“check the proofs”). After marking one team's task complete in the browser, it retrieves both tasks by ID to confirm that the other team's task is still open.
 
