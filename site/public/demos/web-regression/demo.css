@@ -17,3 +17,5 @@ main h1{font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif;font-weight
 .verdict{max-width:72ch;margin:1rem 0 0;padding:.65rem 1rem;border-inline-start:3px solid var(--teal);background:#eaf2ec}
 .verdict strong{display:block}
 .source{color:#435b55;font-size:.94rem}
+
+.shopify-log { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; background: #f0f4f2; color: #223a34; line-height: 1.6; }

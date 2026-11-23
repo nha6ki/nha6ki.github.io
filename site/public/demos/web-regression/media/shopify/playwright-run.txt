@@ -1,0 +1,8 @@
+Running 3 tests using 1 worker
+
+  ✓  1 external\shopify\cart.spec.ts:67:5 › 選んだバリエーションがカート画面と保存明細に表示される (5.0s)
+Open the storefront in the Edge window. Enter the storefront password there if prompted.
+  ✓  2 external\shopify\cart.spec.ts:78:5 › 数量変更後の明細金額とカート合計が単価の2倍になる (1.7s)
+  ✓  3 external\shopify\cart.spec.ts:89:5 › 一方の色を削除しても他方の数量が維持される (1.7s)
+
+  3 passed (15.4s)
