@@ -1,0 +1,11 @@
+{
+  "modelId": 2,
+  "first": {
+    "id": 2,
+    "user": null
+  },
+  "second": {
+    "id": 3,
+    "user": 3
+  }
+}

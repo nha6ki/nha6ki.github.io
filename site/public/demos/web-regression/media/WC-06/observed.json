@@ -1,0 +1,19 @@
+{
+  "orderId": 17,
+  "currency": "JPY",
+  "discount": "200",
+  "total": "1300",
+  "cartTotal": "1300",
+  "lines": [
+    {
+      "productId": 12,
+      "quantity": 1,
+      "total": "1000"
+    },
+    {
+      "productId": 13,
+      "quantity": 1,
+      "total": "300"
+    }
+  ]
+}
