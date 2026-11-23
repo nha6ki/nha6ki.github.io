@@ -11,4 +11,16 @@
 <h2>Managing everyday tasks in Vikunja</h2>
 <p>Vikunja organizes work by project. For example, a team member can add a task called “Review the monthly report materials” and mark it complete after checking the documents.</p>
 <p>Four tests check that a Japanese task title is saved in the intended project, that completion survives a page reload, that submitting an empty title creates no task, and that completing one task leaves a task with the same title in another project open.</p>
-<h2>Grist</h2><p>Three invoice tests cover formula recalculation, item names and row deletion.</p><h2>Paperless-ngx</h2><p>Three document management tests cover PDF import, metadata and tag filtering.</p><h2>Snipe-IT</h2><p>Three inventory tests cover checkout, check-in and tracking two PCs of the same model.</p><h2>WordPress</h2><p>Three publishing tests cover draft access, publication and corrections from the editor’s and reader’s perspectives.</p></main></div></body></html>
+<h2>Managing invoice lines in Grist</h2>
+<p>Grist stores records in tables and uses formulas to calculate values. In this demo, each invoice line has an item name, a quantity and a unit price. A formula multiplies the quantity by the unit price to give the line total.</p>
+<p>Three tests check that changing the quantity from 2 to 3 at a unit price of 2,500 gives a total of 7,500, that correcting a Japanese item name preserves the line ID and total, and that deleting one line leaves the other intact.</p>
+<h2>Organizing documents in Paperless-ngx</h2>
+<p>Paperless-ngx helps teams file invoices, delivery notes and other documents by correspondent and tag. For example, a reviewer can tag a delivery note as “needs review” and later use that tag to find it.</p>
+<p>Three tests check that a downloaded original matches the uploaded PDF byte for byte, that a document retains its assigned correspondent and tag, and that filtering by “needs review” returns only the tagged delivery note.</p>
+<h2>Tracking PC loans in Snipe-IT</h2>
+<p>Snipe-IT keeps an inventory of equipment and records who has each device. Each PC has its own asset ID, so two laptops of the same model can be lent out and tracked separately.</p>
+<p>Three tests check that a PC is assigned to the intended borrower at checkout, that checking it back in clears the assignment, and that checking out one of two matching PCs leaves the other unassigned.</p>
+<h2>Publishing notices in WordPress</h2>
+<p>WordPress lets editors draft, publish and revise posts on a website. An editor might prepare a closure notice before making it public, or correct the opening time in a notice that readers can already see.</p>
+<p>Three tests check that an editor can read a draft while a signed-out reader cannot, that publishing a Japanese notice from the posts list makes it readable to the public, and that correcting the opening time from 9 a.m. to 10 a.m. shows only the new time at the original URL.</p>
+</main></div></body></html>
