@@ -9,8 +9,8 @@ featured: false
 image: "/demos/web-regression/media/V-01/1-V-01b.png"
 imageAlt: "A newly created Japanese task in the Vikunja project list."
 links:
-  - label: "View demo (Japanese)"
-    url: "https://nha6ki.github.io/demos/web-regression/"
+  - label: "View demo"
+    url: "https://nha6ki.github.io/demos/web-regression/en/"
   - label: "GitHub"
     url: "https://github.com/nha6ki/web-regression"
   - label: "CI results"
