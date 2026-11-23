@@ -19,3 +19,8 @@ aside{align-self:start}.navtitle,h2{font-weight:650;letter-spacing:-.03em}.navti
 .example h2{font-size:clamp(1.45rem,2.4vw,2.15rem);line-height:1.15}.example .label{font: .88rem ui-monospace,monospace;color:#34534c;margin:0 0 .85rem}.example dl{margin:1rem 0}.example dl div{border-top:1px solid #b9cec2;display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;padding:.55rem 0}.example dd{margin:0;font-weight:650}.example .done{color:#19553e}.example a{font-weight:650}
 .list-heading{border-top:1px solid var(--line);padding-top:1.2rem;font-size:1.6rem}.catalog h3{font-size:1.15rem;margin:0}.catalog ul{list-style:none;padding:0;margin:.45rem 0}.catalog li{border-top:1px solid var(--line)}.catalog a{display:block;padding:.68rem .25rem;line-height:1.5;text-decoration:none}.catalog a:hover,.catalog a:focus-visible{text-decoration:underline;background:#edf1eb}.back{display:inline-block;margin:0 0 .7rem}.overview .foot{border-top:1px solid var(--line);margin-top:2rem;padding-top:.6rem}
 @media(max-width:47rem){.intro,.catalogs{grid-template-columns:1fr;gap:1.4rem}.overview h1{max-width:16ch}.example h2{margin-bottom:.6rem}}
+
+.verdict{max-width:72ch;margin:1rem 0 0;padding:.65rem 1rem;border-inline-start:3px solid var(--teal);background:#eaf2ec}
+.verdict strong{display:block}
+.source{color:#435b55;font-size:.94rem}
+html[lang="en"] .overview h1{max-width:16ch}
