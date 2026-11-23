@@ -1,0 +1,14 @@
+{
+  "id": "WC-01",
+  "title": "カートの数量を変更すると明細小計と合計が一致する",
+  "expected": {
+    "quantity": 2,
+    "subtotal": "2400",
+    "total": "2400"
+  },
+  "observed": {
+    "quantity": 2,
+    "subtotal": "2400",
+    "total": "2400"
+  }
+}

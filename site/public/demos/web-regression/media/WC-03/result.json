@@ -1,0 +1,14 @@
+{
+  "id": "WC-03",
+  "title": "商品限定クーポンは対象商品の明細にだけ適用される",
+  "expected": {
+    "paperJPY": "1000",
+    "envelopeJPY": "300",
+    "totalJPY": "1300"
+  },
+  "observed": {
+    "paperJPY": "1000",
+    "envelopeJPY": "300",
+    "totalJPY": "1300"
+  }
+}

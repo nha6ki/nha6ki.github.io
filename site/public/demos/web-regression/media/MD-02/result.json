@@ -1,0 +1,11 @@
+{
+  "id": "MD-02",
+  "title": "採点後、学生の画面に点数と講評が表示される",
+  "expected": {
+    "score": 84,
+    "comment": "図の説明が明確です。"
+  },
+  "observed": {
+    "feedbackPanel": "Feedback\nFeedback\nGrade\t84.00 / 100.00\nGraded on\tMonday, 23 November 2026, 7:29 AM\nGraded by\tQqQA qateacher\nFeedback comments\t\n図の説明が明確です。"
+  }
+}

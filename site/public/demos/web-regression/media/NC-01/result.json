@@ -1,0 +1,12 @@
+{
+  "id": "NC-01",
+  "title": "日本語名のファイルを移動し、保存先と内容を確認する",
+  "expected": {
+    "sourceHTTP": 404,
+    "destinationText": "月次報告：確認済み。\n"
+  },
+  "observed": {
+    "sourceHTTP": 404,
+    "destinationText": "月次報告：確認済み。\n"
+  }
+}

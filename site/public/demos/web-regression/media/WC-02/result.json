@@ -1,0 +1,16 @@
+{
+  "id": "WC-02",
+  "title": "注文した商品・数量・金額が店舗の注文記録と一致する",
+  "expected": {
+    "orderId": 15,
+    "productId": 12,
+    "quantity": 2,
+    "totalJPY": 2400
+  },
+  "observed": {
+    "orderId": 15,
+    "productId": 12,
+    "quantity": 2,
+    "totalJPY": 2400
+  }
+}

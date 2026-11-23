@@ -1,0 +1,10 @@
+{
+  "id": "NC-02",
+  "title": "ごみ箱から復元すると元のパスで同じ内容を取得できる",
+  "expected": {
+    "restoredText": "復元する原本。\n"
+  },
+  "observed": {
+    "restoredText": "復元する原本。\n"
+  }
+}

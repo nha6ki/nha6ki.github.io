@@ -1,0 +1,12 @@
+{
+  "id": "MD-03",
+  "title": "同じ課題を提出した2人のうち選んだ学生だけが採点される",
+  "expected": {
+    "firstStudent": "notgraded",
+    "secondStudentScore": 73
+  },
+  "observed": {
+    "firstStudent": "notgraded",
+    "secondStudentScore": 73
+  }
+}
