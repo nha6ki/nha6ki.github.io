@@ -17,14 +17,16 @@ links:
     url: "https://github.com/nha6ki/web-regression/actions/runs/45102137868"
 ---
 
-Two editorial teams each have a task called 校正を確認 (“check the proofs”). When one team marks its task complete, the other team's copy should stay open. Playwright selects the task in the second project, then reads both task IDs through the Vikunja API to check that only the selected record changed.
+This project uses Playwright to check how two web applications handle everyday changes to issues and tasks. The tests combine actions in Chromium with requests to each application's API. For example, after submitting a Gitea issue in Japanese, the test takes the issue number from the browser URL, retrieves that issue through the API, and compares its saved title and description with the text entered in the form.
 
-## What the suite checks
+## What the seven tests cover
 
-In Gitea, three tests cover creating a Japanese issue, finding a renamed issue and closing it, and viewing a private issue as a collaborator or a signed-in nonmember. In Vikunja, four tests cover creating a Japanese task in the intended project, retaining its completion state after reload, submitting an empty title, and distinguishing identically named tasks across projects.
+**Gitea · 3 tests.** One test checks the Japanese issue submission described above. Another renames an issue through the API, finds it by its new title in the browser, and verifies that the same issue can be closed through the API. The third checks access to an issue in a private repository. A collaborator with read access can see its title and description, while a signed-in nonmember is denied access in both the browser and the API.
 
-## Recordings and results
+**Vikunja · 4 tests.** The suite checks that a task entered in Japanese belongs to the intended project, that a completed task stays complete after a reload, and that submitting an empty title leaves the project's task IDs unchanged. The fourth test gives two editorial teams a task called 校正を確認 (“check the proofs”). After marking one team's task complete in the browser, it retrieves both tasks by ID to confirm that the other team's task is still open.
 
-The demo includes before-and-after screenshots and browser recordings from a local run of all seven cases at revision `72da163`. The recordings show the browser actions. The test code specifies how each API response contributes to the verdict.
+## Running the suite and reviewing the results
 
-The published revision, `82805f6`, passed all seven tests in 17.1 seconds on GitHub Actions. This is the Playwright execution time. Docker Compose starts fresh application instances for each run, and the same Bash command runs the suite locally or in CI.
+The same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
+
+The [demo](/demos/web-regression/en/overview.html) shows screenshots and browser recordings from a local run of all seven cases based on commit `72da163`. In a separate [GitHub Actions run](https://github.com/nha6ki/web-regression/actions/runs/45102137868) at commit `82805f6`, all seven tests passed. Playwright reported 17.1 seconds for the test suite itself.
