@@ -1,7 +1,7 @@
 ---
 title: "Web Regression Testing"
 category: "web"
-summary: "Twenty-eight regression tests check workflows across nine web applications, including shopping carts, file recovery and assignment grading."
+summary: "Thirty-one regression tests check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
 date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]
 order: 0
@@ -14,16 +14,18 @@ links:
   - label: "GitHub"
     url: "https://github.com/nha6ki/web-regression"
   - label: "CI results"
-    url: "https://github.com/nha6ki/web-regression/actions/runs/45129469117"
+    url: "https://github.com/nha6ki/web-regression/actions/runs/45155022127"
 ---
 
-This project uses Playwright to check how nine web applications handle changes to business records. The tests combine actions in Chromium with requests to each application's API. For example, after submitting a Gitea issue in Japanese, the test takes the issue number from the browser URL, retrieves that issue through the API, and compares its saved title and description with the text entered in the form.
+This project uses Playwright to check how ten web applications handle changes to business records. The tests combine actions in Chromium with requests to each application's API. For example, after submitting a Gitea issue in Japanese, the test takes the issue number from the browser URL, retrieves that issue through the API, and compares its saved title and description with the text entered in the form.
 
 ## What the tests cover
 
 **WordPress · 3 tests.** Readers see a post when it is published and see corrections at the same URL. A separate test checks access to an unpublished draft.
 
 **WooCommerce · 3 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items.
+
+**Shopify · 3 tests.** In a development storefront, cart API checks cover color selection, quantity changes and removal of one variant. The first case also verifies the product link and color in the rendered cart.
 
 **Nextcloud · 3 tests.** Moving and restoring a file preserves its contents. Updating a file leaves its namesake in another folder intact.
 
@@ -41,6 +43,6 @@ This project uses Playwright to check how nine web applications handle changes t
 
 ## Running the suite and reviewing the results
 
-The same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
+For the 28 Docker cases, the same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
 
-The [demo](/demos/web-regression/en/overview.html) includes local evidence collected in three runs. The original seven cases were recorded against `72da163`, the next twelve against `511d527`, and the latest nine against `9cea410`. Each new case includes expected and observed values. Three also include screenshots and a recording. A separate [GitHub Actions run](https://github.com/nha6ki/web-regression/actions/runs/45129469117) passed all 28 tests on `9cea410`.
+The [demo](/demos/web-regression/en/overview.html) includes evidence from three Docker-based recording runs and a separate Shopify test summary. The original seven cases were recorded against `72da163`, the next twelve against `511d527`, and another nine against `9cea410`. Each of those nine cases includes expected and observed values. Three also include screenshots and a recording. A separate [GitHub Actions run](https://github.com/nha6ki/web-regression/actions/runs/45155022127) passed all 28 Docker tests on `8085b2f`. The three Shopify cases passed in a separate Windows/Edge run (15.4 seconds).
