@@ -1,0 +1,17 @@
+{
+  "requested": {
+    "id": 2,
+    "tags": [
+      1
+    ],
+    "correspondent": 1
+  },
+  "retrieved": {
+    "id": 2,
+    "title": "印刷代の請求書",
+    "tags": [
+      1
+    ],
+    "correspondent": 1
+  }
+}

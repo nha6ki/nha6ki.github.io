@@ -1,0 +1,17 @@
+{
+  "selectedAsset": 4,
+  "assets": [
+    {
+      "id": 3,
+      "tag": "QA-TWIN-A",
+      "modelId": 3,
+      "assignedUser": null
+    },
+    {
+      "id": 4,
+      "tag": "QA-TWIN-B",
+      "modelId": 3,
+      "assignedUser": 4
+    }
+  ]
+}
