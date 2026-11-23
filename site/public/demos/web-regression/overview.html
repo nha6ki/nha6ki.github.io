@@ -5,6 +5,10 @@
 <div class="layout"><aside><div class="desktop"><p class="navtitle">検査ケース</p><nav class="menu" aria-label="検査ケース"><a class="overview-link" href="overview.html" aria-current="page">概要</a><p class="group">Gitea</p><a href="G-01.html"><small>G-01</small><span>日本語Issueの登録</span></a><a href="G-02.html"><small>G-02</small><span>改題後の検索とクローズ</span></a><a href="G-03.html"><small>G-03</small><span>非公開Issueの閲覧権限</span></a><p class="group">Vikunja</p><a href="V-01.html"><small>V-01</small><span>日本語タスクの登録</span></a><a href="V-02.html"><small>V-02</small><span>完了状態の保存</span></a><a href="V-03.html"><small>V-03</small><span>空欄での登録</span></a><a href="index.html"><small>V-04</small><span>同名タスクの識別</span></a></nav></div>
 <details class="mobile"><summary>7件の検査から選ぶ</summary><nav class="menu" aria-label="検査ケース"><a class="overview-link" href="overview.html" aria-current="page">概要</a><p class="group">Gitea</p><a href="G-01.html"><small>G-01</small><span>日本語Issueの登録</span></a><a href="G-02.html"><small>G-02</small><span>改題後の検索とクローズ</span></a><a href="G-03.html"><small>G-03</small><span>非公開Issueの閲覧権限</span></a><p class="group">Vikunja</p><a href="V-01.html"><small>V-01</small><span>日本語タスクの登録</span></a><a href="V-02.html"><small>V-02</small><span>完了状態の保存</span></a><a href="V-03.html"><small>V-03</small><span>空欄での登録</span></a><a href="index.html"><small>V-04</small><span>同名タスクの識別</span></a></nav></details></aside>
 <main id="overview"><h1>Web アプリの回帰テスト</h1><p class="lead">Gitea と Vikunja の回帰テスト7件を、操作動画と判定結果で紹介します。</p>
-<p><strong>Gitea</strong> は、ソースコードと開発課題（Issue）を管理するアプリです。課題の登録・検索・閲覧権限を検査しました。</p>
-<p><strong>Vikunja</strong> は、プロジェクトごとにタスクを管理するアプリです。タスクの登録と完了状態の更新を検査しました。</p>
+<h2>Giteaで開発課題を管理する</h2>
+<p>Giteaは、開発チームがソースコードと開発課題を管理するアプリです。不具合や改善要望を「Issue」として記録し、対応が終わったらそのIssueを閉じます。</p>
+<p>3件の検査では、日本語で登録した件名と本文が保存されるか、件名を変更した後も検索して同じIssueを閉じられるか、非公開のIssueを閲覧できる人が権限どおりかを確かめます。</p>
+<h2>Vikunjaで日々のタスクを管理する</h2>
+<p>Vikunjaは、仕事をプロジェクトごとに整理するアプリです。たとえば「月次報告の資料を確認」というタスクを登録し、作業が済んだら完了にします。</p>
+<p>4件の検査では、日本語の件名と登録先が正しいか、再読み込み後も完了状態が続くか、件名が空のときにタスクが増えないか、別のプロジェクトに同名のタスクがあっても選んだ1件だけが完了するかを確かめます。</p>
 <footer class="foot"><a href="/projects/web-regression/">プロジェクト紹介</a><a href="https://github.com/nha6ki/web-regression">GitHub</a><a href="https://github.com/nha6ki/web-regression/actions/runs/45102137868">公開版 CI · 全7件合格 · <code>82805f6</code></a></footer></main></div></body></html>
