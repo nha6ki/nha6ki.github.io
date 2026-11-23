@@ -10,14 +10,14 @@ image: "/demos/web-regression/media/V-01/1-V-01b.png"
 imageAlt: "A newly created Japanese task in the Vikunja project list."
 links:
   - label: "View demo"
-    url: "https://nha6ki.github.io/demos/web-regression/en/"
+    url: "https://nha6ki.github.io/demos/web-regression/en/overview.html"
   - label: "GitHub"
     url: "https://github.com/nha6ki/web-regression"
   - label: "CI results"
     url: "https://github.com/nha6ki/web-regression/actions/runs/45102137868"
 ---
 
-Two editorial teams each have a task called 校正を確認 (“check the proofs”). When one team marks its task complete, the other team's copy should stay open. The demo opens with this case. Playwright selects the task in the second project, then reads both task IDs through the Vikunja API to check that only the selected record changed.
+Two editorial teams each have a task called 校正を確認 (“check the proofs”). When one team marks its task complete, the other team's copy should stay open. The demo highlights this case. Playwright selects the task in the second project, then reads both task IDs through the Vikunja API to check that only the selected record changed.
 
 ## What the suite checks
 
