@@ -1,0 +1,12 @@
+{
+  "stage": "SH-02-before",
+  "currency": "USD",
+  "items": [
+    {
+      "color": "Red",
+      "quantity": 1,
+      "final_line_price": 1000
+    }
+  ],
+  "total_price": 1000
+}
