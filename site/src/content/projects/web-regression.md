@@ -1,7 +1,7 @@
 ---
 title: "Web Regression Testing"
 category: "web"
-summary: "Forty regression tests check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
+summary: "Forty-one published regression cases check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
 date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]
 order: 0
@@ -21,7 +21,7 @@ This project uses Playwright to check how ten web applications handle changes to
 
 ## What the tests cover
 
-**Shopify · 6 tests.** In a development storefront, cart API checks cover color selection, quantity changes and removal of one variant. The first case also verifies the product link and color in the rendered cart. The additional cases cover mobile product selection, repeated additions of a single variant and cart persistence across tabs.
+**Shopify · 7 tests.** The storefront cases follow variant selection, cart updates and checkout. In the guest payment case, the checkout confirmation number identifies the paid test order in the Admin API. The test compares its line items, subtotal, shipping, tax and total with checkout.
 
 **WooCommerce · 6 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items. Coupon tests cover removal on mobile, invalid codes and the line totals saved after discounted checkout.
 
@@ -45,4 +45,4 @@ This project uses Playwright to check how ten web applications handle changes to
 
 For the 34 Docker cases, the same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
 
-The [demo](/demos/web-regression/en/overview.html) pairs storefront and reader screenshots with recordings where available. For the discounted WooCommerce order, it includes the recorded order ID, line totals and discount. The [main CI run](https://github.com/nha6ki/web-regression/actions/runs/45273687078) passed all 34 Docker tests on `a1b867a`. The six Shopify cases passed across separate Edge runs against a development store on Windows.
+The [demo](/demos/web-regression/en/overview.html) pairs storefront and reader screenshots with recordings where available. For the discounted WooCommerce order, it includes the recorded order ID, line totals and discount. The [main CI run](https://github.com/nha6ki/web-regression/actions/runs/45273687078) passed all 34 Docker tests on `a1b867a`. The seven Shopify cases passed across separate Edge runs against a development store on Windows.

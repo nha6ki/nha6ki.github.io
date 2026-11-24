@@ -1,0 +1,11 @@
+{
+  "order": "#1003",
+  "red": 2,
+  "blue": 1,
+  "currency": "USD",
+  "subtotalCents": 3000,
+  "shippingCents": 800,
+  "taxCents": 0,
+  "totalCents": 3800,
+  "testOrder": true
+}
