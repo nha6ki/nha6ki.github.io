@@ -1,0 +1,50 @@
+{
+  "currency": "USD",
+  "before": {
+    "items": [
+      {
+        "engraving": "ALPHA",
+        "variantId": 51742690050151,
+        "quantity": 1,
+        "lineCents": 1000
+      },
+      {
+        "engraving": "BRAVO",
+        "variantId": 51742690050151,
+        "quantity": 1,
+        "lineCents": 1000
+      }
+    ],
+    "totalCents": 2000
+  },
+  "afterReload": {
+    "items": [
+      {
+        "engraving": "ALPHA",
+        "variantId": 51742690050151,
+        "quantity": 2,
+        "lineCents": 2000
+      },
+      {
+        "engraving": "BRAVO",
+        "variantId": 51742690050151,
+        "quantity": 1,
+        "lineCents": 1000
+      }
+    ],
+    "totalCents": 3000
+  },
+  "checkoutItems": [
+    {
+      "engraving": "ALPHA",
+      "quantity": "2",
+      "amount": "$20.00"
+    },
+    {
+      "engraving": "BRAVO",
+      "quantity": "1",
+      "amount": "$10.00"
+    }
+  ],
+  "checkoutSubtotal": "$30.00"
+}
