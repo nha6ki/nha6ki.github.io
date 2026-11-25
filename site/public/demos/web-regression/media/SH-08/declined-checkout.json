@@ -1,0 +1,8 @@
+{
+  "red": 2,
+  "blue": 1,
+  "subtotalBeforeCents": 3000,
+  "subtotalAfter": "$30.00",
+  "declineMessage": "There was an issue processing your payment. Try again or use a different payment method.",
+  "retryButtonEnabled": true
+}
