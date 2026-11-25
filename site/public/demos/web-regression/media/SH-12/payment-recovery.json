@@ -1,0 +1,47 @@
+{
+  "currency": "USD",
+  "declinedCheckoutCents": {
+    "subtotal": 3000,
+    "shipping": 800,
+    "tax": 0,
+    "total": 3800
+  },
+  "approvedCheckoutCents": {
+    "subtotal": 3000,
+    "shipping": 800,
+    "tax": 0,
+    "total": 3800
+  },
+  "order": {
+    "test": true,
+    "financialStatus": "PAID",
+    "lines": [
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Blue",
+        "quantity": 1
+      },
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Red",
+        "quantity": 2
+      }
+    ],
+    "subtotal": {
+      "amount": "30.0",
+      "currencyCode": "USD"
+    },
+    "shipping": {
+      "amount": "8.0",
+      "currencyCode": "USD"
+    },
+    "tax": {
+      "amount": "0.0",
+      "currencyCode": "USD"
+    },
+    "total": {
+      "amount": "38.0",
+      "currencyCode": "USD"
+    }
+  }
+}
