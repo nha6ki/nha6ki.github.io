@@ -1,0 +1,23 @@
+{
+  "initial": {
+    "red": 2,
+    "blue": 1,
+    "subtotal": "$30.00",
+    "shipping": "$8.00",
+    "total": "USD\n$38.00"
+  },
+  "expedited": {
+    "red": 2,
+    "blue": 1,
+    "subtotal": "$30.00",
+    "shipping": "$15.00",
+    "total": "USD\n$45.00"
+  },
+  "restored": {
+    "red": 2,
+    "blue": 1,
+    "subtotal": "$30.00",
+    "shipping": "$8.00",
+    "total": "USD\n$38.00"
+  }
+}
