@@ -1,0 +1,33 @@
+{
+  "before": {
+    "lines": [
+      {
+        "color": "Red",
+        "quantity": 2,
+        "amount": "$20.00"
+      },
+      {
+        "color": "Blue",
+        "quantity": 1,
+        "amount": "$10.00"
+      }
+    ],
+    "subtotal": "$30.00"
+  },
+  "correctedCartCents": 2000,
+  "after": {
+    "lines": [
+      {
+        "color": "Red",
+        "quantity": 1,
+        "amount": "$10.00"
+      },
+      {
+        "color": "Blue",
+        "quantity": 1,
+        "amount": "$10.00"
+      }
+    ],
+    "subtotal": "$20.00"
+  }
+}
