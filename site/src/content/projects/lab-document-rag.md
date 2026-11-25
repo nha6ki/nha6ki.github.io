@@ -1,6 +1,6 @@
 ---
 title: "Local RAG for Lab Notes and Slides on AMD and NVIDIA DGX Spark"
-category: "ai"
+categories: ["ai"]
 summary: "Search lab notes and slide figures in Japanese or English, then follow a citation to the original line or slide."
 date: "2026-11"
 technologies:

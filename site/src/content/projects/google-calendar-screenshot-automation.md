@@ -1,6 +1,6 @@
 ---
 title: "Google Calendar Screenshot Automation"
-category: "data"
+categories: ["data"]
 summary: "Automates daily screenshots of a rolling seven-day Google Calendar view and archives them in Google Drive."
 date: "2026-09"
 technologies:

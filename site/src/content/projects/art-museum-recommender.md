@@ -1,6 +1,6 @@
 ---
 title: "Art & Museum Recommender"
-category: "ai"
+categories: ["ai","web"]
 summary: "Personalized artwork recommendations based on individual aesthetic preferences."
 date: "2026-10"
 technologies:

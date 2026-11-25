@@ -1,6 +1,6 @@
 ---
 title: "RoboCup Standard Platform League — Camellia Dragons"
-category: "robotics"
+categories: ["robotics"]
 summary: "Developed soccer strategies, player behaviors, and goalkeeper motions for NAO humanoid robots as a member of Camellia Dragons at Aichi Prefectural University."
 date: "2017-05"
 technologies:

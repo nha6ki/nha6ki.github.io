@@ -1,6 +1,6 @@
 ---
 title: "Cat Behavior & Collar Sensor Signals"
-category: "web"
+categories: ["web","analysis"]
 summary: "Watch 12 cats’ annotated behaviors alongside synchronized traces from their collar accelerometers."
 date: "2026-11"
 technologies:

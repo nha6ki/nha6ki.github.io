@@ -1,6 +1,6 @@
 ---
 title: "Personal Portfolio Website"
-category: "web"
+categories: ["web"]
 summary: "A responsive portfolio website built with Astro, featuring project pages, DEV.to integration, and automated deployment."
 date: "2026-11"
 technologies:

@@ -1,6 +1,6 @@
 ---
 title: "Kagayake Aichi Sustainable Laboratory"
-category: "other"
+categories: ["other"]
 summary: "Collaborated with the Bank of Tokyo-Mitsubishi UFJ to develop proposals promoting cashless and paperless banking among younger generations. Team BTMU placed third out of 10 teams."
 date: "2018-03"
 technologies:

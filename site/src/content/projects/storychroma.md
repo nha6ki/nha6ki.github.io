@@ -1,6 +1,6 @@
 ---
 title: "StoryChroma"
-category: "ai"
+categories: ["ai","web","analysis"]
 summary: "An interactive Japanese audiobook that synchronizes narration, text, and dynamic color visualization of model-estimated emotions."
 date: "2026-11"
 technologies:

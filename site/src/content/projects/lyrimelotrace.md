@@ -1,6 +1,6 @@
 ---
 title: "LyriMeloTrace"
-category: "ai"
+categories: ["ai","web","analysis"]
 summary: "An interactive music demo that synchronizes a song with two emotion trajectories estimated independently from its lyrics and recording."
 date: "2026-11"
 technologies:

@@ -1,6 +1,6 @@
 ---
 title: "Company Disclosure Monitor: The Magnificent Seven"
-category: "data"
+categories: ["ai","analysis","data"]
 summary: "A bilingual SEC filing monitor for seven US companies. Trace quarterly earnings to their sources, investigate discrepancies in Excel, and read reviewed filing highlights."
 date: "2026-11"
 technologies:

@@ -1,6 +1,6 @@
 ---
 title: "Japan Fiscal Atlas"
-category: "ai"
+categories: ["analysis"]
 summary: "Eight studies of Japan’s public finances compare annual forecasts with official estimates and fiscal outcomes."
 date: "2026-11"
 technologies:

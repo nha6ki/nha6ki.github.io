@@ -1,6 +1,6 @@
 ---
 title: "MeowAtlas"
-category: "ai"
+categories: ["ai","web","analysis"]
 summary: "An interactive listening atlas for exploring 440 cat vocalizations from 21 cats through a fixed sound map and spectrogram comparison."
 date: "2026-11"
 technologies:

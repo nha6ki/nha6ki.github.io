@@ -1,6 +1,6 @@
 ---
 title: "Recommend Art Museum"
-category: "ai"
+categories: ["ai","web"]
 summary: "A Flask web application for recommending paintings from artwork and photographic inputs."
 date: "2020-10"
 technologies:

@@ -1,6 +1,6 @@
 ---
 title: "FelisField"
-category: "ai"
+categories: ["ai","web","analysis"]
 summary: "A 3D map of 17,303 cat photographs from six sources. Explore how coat color and other visual features vary from one point to the next."
 date: "2026-11"
 technologies:

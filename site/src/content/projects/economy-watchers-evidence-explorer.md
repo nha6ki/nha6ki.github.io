@@ -1,6 +1,6 @@
 ---
 title: "Economy Watchers · Industry Evidence Explorer"
-category: "ai"
+categories: ["ai","analysis"]
 summary: "Explore 2,513 Japanese survey responses in a bilingual report that links industry findings to the original comments."
 date: "2026-11"
 technologies:

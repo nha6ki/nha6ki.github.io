@@ -1,6 +1,6 @@
 ---
 title: "Web Regression Testing"
-category: "web"
+categories: ["web"]
 summary: "Forty-one published regression cases check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
 date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]

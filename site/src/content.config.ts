@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { categories } from './lib/categories';
+import { categories, projectCategories } from './lib/categories';
 
 const projects = defineCollection({
   loader: glob({
@@ -11,7 +11,8 @@ const projects = defineCollection({
 
   schema: z.object({
     title: z.string(),
-    category: z.enum([...categories.map(({ id }) => id), 'other']),
+    category: z.enum([...categories.map(({ id }) => id), 'other']).default('other'),
+    categories: z.array(z.enum([...projectCategories.map(({ id }) => id), 'other'])).min(1).optional(),
     summary: z.string(),
     technologies: z.array(z.string()),
     order: z.number().int().nonnegative(),
@@ -27,7 +28,10 @@ const projects = defineCollection({
         url: z.url(),
       })
     ).default([]),
-  }),
+  }).transform(data => ({
+    ...data,
+    categories: data.categories ?? [data.category],
+  })),
 });
 
 export const collections = { projects };

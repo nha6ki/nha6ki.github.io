@@ -1,6 +1,6 @@
 ---
 title: "Robotic Smart Home (RSH)"
-category: "robotics"
+categories: ["robotics"]
 summary: "Developed HSR applications for voice-activated object disposal, robotic manipulation, smart-home controls, and RGB-D hand gesture recognition."
 date: "2020-10"
 technologies:

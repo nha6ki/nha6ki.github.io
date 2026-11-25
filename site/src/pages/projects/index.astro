@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { getCollection } from 'astro:content';
-import { categories, categoryIcons } from '../../lib/categories';
+import { projectCategories, categoryIcons } from '../../lib/categories';
 
 const projects = (await getCollection('projects'))
   .sort(
@@ -14,13 +14,11 @@ const projects = (await getCollection('projects'))
 // Projects in "other" are available through All only.
 const filters = [
   { id: 'all', label: 'All' },
-  ...categories.filter(({ id }) => id === 'ai'),
-  ...categories.filter(({ id }) => id === 'web'),
-  ...categories.filter(({ id }) => id !== 'ai' && id !== 'web'),
+  ...projectCategories,
 ].map(({ id, label }) => ({
   id,
   label,
-  count: projects.filter(project => id === 'all' || project.data.category === id).length,
+  count: projects.filter(project => id === 'all' || project.data.categories.some(category => category === id)).length,
 })).filter(({ count }) => count > 0);
 ---
 
@@ -81,7 +79,7 @@ const filters = [
         const selected = button.dataset.category;
         let count = 0;
         cards.forEach(card => {
-          card.hidden = selected !== 'all' && card.dataset.category !== selected;
+          card.hidden = selected !== 'all' && !card.dataset.categories?.split(' ').includes(selected ?? '');
           if (!card.hidden) count += 1;
         });
         buttons.forEach(option => {
