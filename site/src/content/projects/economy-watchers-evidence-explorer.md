@@ -27,7 +27,7 @@ Two respondents can give the same economic assessment for different reasons. I b
 
 ## A supermarket example
 
-One supermarket reported that sales and spending per customer held at year-earlier levels even though shoppers bought fewer items. Another reported that both customer traffic and the number of items sold rose about 2% year on year, lifting sales. The two comments illustrate why a broad sales theme is a starting point for reading the evidence, not a conclusion about the industry. In the demo, find **Three industry examples** and open the supermarket evidence for responses **Current-0350** and **Current-0100**. [Explore the industry examples](https://nha6ki.github.io/economy-watchers-explorer/#:~:text=Three%20industry%20examples)
+One supermarket reported that sales and spending per customer held at year-earlier levels even though shoppers bought fewer items. Another reported that both customer traffic and the number of items sold rose about 2% year on year, lifting sales. The two comments illustrate why a broad sales theme is a starting point for reading the evidence, not a conclusion about the industry. In the demo, find **Three industry examples** and open the supermarket evidence for responses **Current-0350** and **Current-0100**. [Explore the industry examples](https://nha6ki.github.io/economy-watchers-explorer/#explorer)
 
 ## Local analysis
 
