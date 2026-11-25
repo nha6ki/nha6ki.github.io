@@ -1,0 +1,26 @@
+{
+  "firstAddition": {
+    "variantId": 51742690017383,
+    "color": "Red",
+    "quantity": 1,
+    "lineCents": 1000,
+    "totalCents": 1000,
+    "displayedTotal": "$10.00 USD"
+  },
+  "beforeCorrection": {
+    "variantId": 51742690017383,
+    "color": "Red",
+    "quantity": 2,
+    "lineCents": 2000,
+    "totalCents": 2000,
+    "displayedTotal": "$20.00 USD"
+  },
+  "afterReload": {
+    "variantId": 51742690017383,
+    "color": "Red",
+    "quantity": 1,
+    "lineCents": 1000,
+    "totalCents": 1000,
+    "displayedTotal": "$10.00 USD"
+  }
+}
