@@ -1,0 +1,30 @@
+{
+  "before": {
+    "guestA": {
+      "color": "Red",
+      "quantity": 1,
+      "totalCents": 1000,
+      "displayedTotal": "$10.00 USD"
+    },
+    "guestB": {
+      "color": "Blue",
+      "quantity": 1,
+      "totalCents": 1000,
+      "displayedTotal": "$10.00 USD"
+    }
+  },
+  "afterReload": {
+    "guestA": {
+      "color": "Red",
+      "quantity": 2,
+      "totalCents": 2000,
+      "displayedTotal": "$20.00 USD"
+    },
+    "guestB": {
+      "color": "Blue",
+      "quantity": 1,
+      "totalCents": 1000,
+      "displayedTotal": "$10.00 USD"
+    }
+  }
+}
