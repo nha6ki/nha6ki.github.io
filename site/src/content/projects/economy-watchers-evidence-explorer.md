@@ -10,6 +10,7 @@ technologies:
   - JavaScript
   - GitHub Pages
 order: 12
+featured: true
 image: "/images/projects/economy-watchers-overview.webp"
 imageAlt: "English demo homepage showing the October 2026 survey overview and a chart comparing assessments for current conditions and the outlook."
 links:
