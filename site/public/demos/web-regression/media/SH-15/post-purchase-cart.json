@@ -1,0 +1,59 @@
+{
+  "paidOrderBefore": {
+    "status": "PAID",
+    "test": true,
+    "items": [
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Blue",
+        "quantity": 1
+      },
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Red",
+        "quantity": 2
+      }
+    ],
+    "subtotal": {
+      "amount": "30.0",
+      "currencyCode": "USD"
+    },
+    "total": {
+      "amount": "38.0",
+      "currencyCode": "USD"
+    }
+  },
+  "clearedCart": {
+    "quantity": 0,
+    "totalCents": 0
+  },
+  "nextCart": {
+    "color": "Blue",
+    "quantity": 1,
+    "totalCents": 1000
+  },
+  "paidOrderAfter": {
+    "status": "PAID",
+    "test": true,
+    "items": [
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Blue",
+        "quantity": 1
+      },
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Red",
+        "quantity": 2
+      }
+    ],
+    "subtotal": {
+      "amount": "30.0",
+      "currencyCode": "USD"
+    },
+    "total": {
+      "amount": "38.0",
+      "currencyCode": "USD"
+    }
+  }
+}
