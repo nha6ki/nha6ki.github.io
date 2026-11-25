@@ -1,0 +1,33 @@
+{
+  "cart": {
+    "original": "Congratulations on your graduation!",
+    "afterReload": "Congratulations on your new job!"
+  },
+  "checkoutCents": {
+    "subtotal": 3000,
+    "shipping": 800,
+    "tax": 0,
+    "total": 3800
+  },
+  "order": {
+    "note": "Congratulations on your new job!",
+    "status": "PAID",
+    "test": true,
+    "items": [
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Blue",
+        "quantity": 1
+      },
+      {
+        "title": "QA Notebook",
+        "variantTitle": "Red",
+        "quantity": 2
+      }
+    ],
+    "total": {
+      "amount": "38.0",
+      "currencyCode": "USD"
+    }
+  }
+}
