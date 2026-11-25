@@ -27,10 +27,8 @@ Two respondents can give the same economic assessment for different reasons. I b
 
 ## A supermarket example
 
-One supermarket reported that sales and spending per customer held at year-earlier levels even though shoppers bought fewer items. Another reported that both customer traffic and the number of items sold rose about 2% year on year, lifting sales. The two comments illustrate why a broad sales theme is a starting point for reading the evidence, not a conclusion about the industry. In the demo, find **Three industry examples** and open the supermarket evidence for responses **Current-0350** and **Current-0100**. [Explore the industry examples](https://nha6ki.github.io/economy-watchers-explorer/#industry-results)
+One supermarket reported that sales and spending per customer held at year-earlier levels even though shoppers bought fewer items. Another reported that both customer traffic and the number of items sold rose about 2% year on year, lifting sales. The two comments illustrate why a broad sales theme is a starting point for reading the evidence, not a conclusion about the industry. In the demo, find **Three industry examples** and open the supermarket evidence for responses **Current-0350** and **Current-0100**. [Explore the industry examples](https://nha6ki.github.io/economy-watchers-explorer/#:~:text=Three%20industry%20examples)
 
-## Local analysis, static publication
+## Local analysis
 
 I ran Gemma 4 12B (QAT) locally through Ollama to classify themes and produce 618 findings presented in Japanese and English. Each finding links to its source comments by response ID. Readers can filter by survey section, sector, industry or theme, search the Japanese comments, highlight supporting passages, and download an industry workbook.
-
-The site separates respondents’ actual assessments from the model’s theme labels and summaries. The build checks evidence references and text spans, but not every classification or translation has been independently verified. The GitHub repository can rebuild both pages and their counts from saved outputs using Python’s standard library. It does not rerun the model, and the published site does not require Ollama or an inference API.
