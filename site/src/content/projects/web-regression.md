@@ -21,7 +21,13 @@ This project uses Playwright to check how ten web applications handle changes to
 
 ## What the tests cover
 
-**Shopify · 21 tests.** The storefront cases follow variant selection, cart updates, shipping changes and checkout. In the guest payment case, the checkout confirmation number identifies the paid test order in the Admin API. The test compares its line items, subtotal, shipping, tax and total with checkout. A declined test payment checks that the items and subtotal remain in checkout and the payment button is enabled again.
+**Shopify · 21 tests.** These cases follow a purchase from the storefront to the order saved by the store. Three examples show what the tests compare:
+
+- [Recover from a declined payment](/demos/web-regression/en/SH-12.html). The guest retries in the same checkout, then the test uses the confirmation number to find the paid order.
+- [Change shipping before retrying](/demos/web-regression/en/SH-16.html). The order records $15 express shipping and a $45 total after the buyer switches from standard delivery.
+- [Fulfill a personalized order](/demos/web-regression/en/SH-20.html). The store receives separate instructions for two blue notebooks engraved ALPHA and one engraved BRAVO.
+
+[Browse all 21 Shopify tests by workflow](/demos/web-regression/en/overview.html#app-shopify).
 
 **WooCommerce · 6 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items. Coupon tests cover removal on mobile, invalid codes and the line totals saved after discounted checkout.
 

@@ -52,3 +52,30 @@ main .lead { margin-bottom: 1.5rem; }
   .case-list small { flex: 0 0 3.4em; }
 }
 html[lang="ja"] main h1 { max-width: 100%; text-wrap: pretty; }
+
+.shopify-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+  gap: .75rem;
+  list-style: none;
+  margin: .75rem 0 1rem;
+  padding: 0;
+}
+.shopify-highlights a {
+  display: grid;
+  align-content: start;
+  gap: .35rem;
+  height: 100%;
+  background: #edf4ef;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--teal);
+  border-radius: .4rem;
+  padding: .9rem 1rem;
+  text-decoration: none;
+}
+.shopify-highlights a:hover strong, .shopify-highlights a:focus-visible strong { text-decoration: underline; }
+.shopify-highlights small { color: #435b55; font-family: ui-monospace, monospace; }
+.shopify-highlights span { color: var(--ink); font-size: .95rem; }
+.shopify-catalog summary { cursor: pointer; padding: .65rem 0; font-weight: 650; color: var(--teal); }
+.shopify-catalog h4 { margin: 1.2rem 0 .4rem; }
+.shopify-catalog .case-list { margin-top: 0; }
