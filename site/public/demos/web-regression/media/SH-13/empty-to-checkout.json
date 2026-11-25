@@ -1,0 +1,19 @@
+{
+  "emptyAfterReload": {
+    "items": [],
+    "quantity": 0,
+    "totalCents": 0
+  },
+  "rebuiltCart": {
+    "variantId": 51742690050151,
+    "color": "Blue",
+    "quantity": 1,
+    "totalCents": 1000
+  },
+  "checkout": {
+    "lineCount": 1,
+    "color": "Blue",
+    "quantity": 1,
+    "subtotal": "$10.00"
+  }
+}
