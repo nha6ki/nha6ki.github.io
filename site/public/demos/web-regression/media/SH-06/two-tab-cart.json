@@ -1,0 +1,20 @@
+{
+  "currency": "USD",
+  "displayedTotal": "$30.00 USD",
+  "itemCount": 3,
+  "totalCents": 3000,
+  "lines": [
+    {
+      "variantId": 51742690050151,
+      "color": "Blue",
+      "quantity": 1,
+      "lineCents": 1000
+    },
+    {
+      "variantId": 51742690017383,
+      "color": "Red",
+      "quantity": 2,
+      "lineCents": 2000
+    }
+  ]
+}
