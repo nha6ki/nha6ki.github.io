@@ -1,0 +1,37 @@
+{
+  "checkout": {
+    "currency": "USD",
+    "amountsInCents": {
+      "subtotal": 3000,
+      "shipping": 800,
+      "tax": 0,
+      "total": 3800
+    }
+  },
+  "order": {
+    "test": true,
+    "status": "PAID",
+    "subtotal": {
+      "amount": "30.0",
+      "currencyCode": "USD"
+    },
+    "total": {
+      "amount": "38.0",
+      "currencyCode": "USD"
+    },
+    "items": [
+      {
+        "product": "QA Notebook",
+        "color": "Blue",
+        "quantity": 1,
+        "engraving": "BRAVO"
+      },
+      {
+        "product": "QA Notebook",
+        "color": "Blue",
+        "quantity": 2,
+        "engraving": "ALPHA"
+      }
+    ]
+  }
+}
