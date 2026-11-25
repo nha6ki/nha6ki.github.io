@@ -1,7 +1,7 @@
 ---
 title: "Web Regression Testing"
 categories: ["web"]
-summary: "Fifty-five published regression cases check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
+summary: "Fifty-six published regression cases check workflows across ten web applications, including shopping carts, file recovery and assignment grading."
 date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]
 order: 0
@@ -14,7 +14,7 @@ links:
   - label: "GitHub"
     url: "https://github.com/nha6ki/web-regression"
   - label: "CI results"
-    url: "https://github.com/nha6ki/web-regression/actions/runs/45273687078"
+    url: "https://github.com/nha6ki/web-regression/actions/runs/45287442348"
 ---
 
 This project uses Playwright to check how ten web applications handle changes to business records. The tests combine actions in Chromium with requests to each application's API. For example, after submitting a Gitea issue in Japanese, the test takes the issue number from the browser URL, retrieves that issue through the API, and compares its saved title and description with the text entered in the form.
@@ -29,7 +29,7 @@ This project uses Playwright to check how ten web applications handle changes to
 
 [Browse all 21 Shopify tests by workflow](/demos/web-regression/en/overview.html#app-shopify).
 
-**WooCommerce · 6 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items. Coupon tests cover removal on mobile, invalid codes and the line totals saved after discounted checkout.
+**WooCommerce · 7 tests.** Cart totals reflect quantity changes, store orders match purchases and coupons apply only to eligible items. Coupon tests cover removal on mobile, invalid codes and the line totals saved after discounted checkout. [Changing the quantity after applying a coupon](/demos/web-regression/en/WC-07.html) doubles the discount on the eligible paper line and preserves the envelope price.
 
 **WordPress · 6 tests.** Readers see a post when it is published and see corrections at the same URL. A separate test checks access to an unpublished draft. The suite also follows a registration link on mobile, checks search and direct access after withdrawal, and verifies both category listings after moving a post.
 
@@ -49,6 +49,6 @@ This project uses Playwright to check how ten web applications handle changes to
 
 ## Running the suite and reviewing the results
 
-For the 34 Docker cases, the same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
+For the 35 Docker cases, the same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
 
-The [demo](/demos/web-regression/en/overview.html) pairs storefront and reader screenshots with recordings where available. For the discounted WooCommerce order, it includes the recorded order ID, line totals and discount. The [main CI run](https://github.com/nha6ki/web-regression/actions/runs/45273687078) passed all 34 Docker tests on `a1b867a`. The twenty-one Shopify cases passed across separate Edge runs against a development store on Windows.
+The [demo](/demos/web-regression/en/overview.html) pairs storefront and reader screenshots with recordings where available. For the discounted WooCommerce order, it includes the recorded order ID, line totals and discount. The [main CI run](https://github.com/nha6ki/web-regression/actions/runs/45287442348) passed all 35 Docker tests on `52a2903`. The twenty-one Shopify cases passed across separate Edge runs against a development store on Windows.
