@@ -145,9 +145,9 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
       </nav>
     )}
 
-    {!hasInlineIntroduction && !isWebRegression && project.data.image && (
+    {!hasInlineIntroduction && project.data.image && (
       <a
-        class="project-cover-link"
+        class:list={["project-cover-link", { "project-cover-wide": isWebRegression }]}
         href={project.data.image}
         target="_blank"
         rel="noopener noreferrer"
@@ -166,14 +166,6 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
     {isWebRegression && (
       <section class="regression-example" aria-labelledby="regression-example-title">
         <h2 id="regression-example-title">A declined Shopify payment, retried successfully</h2>
-        <figure class="regression-example-image">
-          <img
-            src="/demos/web-regression/media/SH-12/01-rejection.png"
-            alt="Shopify reported a payment processing error and invited the buyer to try again."
-            decoding="async"
-          />
-          <figcaption>Checkout during the first test payment</figcaption>
-        </figure>
         <ol>
           <li>Shopify displayed a payment error on the first attempt.</li>
           <li>The buyer retried in the same checkout. The total was $38.00.</li>
@@ -238,9 +230,6 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
   }
 
   .regression-example h2 { margin-top: 0; }
-  .regression-example-image { margin: 1rem 0; }
-  .regression-example-image img { display: block; width: min(100%, 439px); height: auto; border-radius: 5px; }
-  .regression-example-image figcaption { margin-top: .4rem; font-size: .9rem; }
   .regression-example ol { padding-inline-start: 1.4em; }
   .regression-example li + li { margin-top: .3em; }
   .regression-example a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -326,6 +315,8 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
     margin: 30px auto 16px;
     border-radius: 10px;
   }
+
+  .project-cover-wide { width: 100%; }
 
   .project-cover {
     display: block;

@@ -6,8 +6,8 @@ date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]
 order: 0
 featured: false
-image: "/demos/web-regression/media/V-01/1-V-01b.png"
-imageAlt: "A newly created Japanese task in the Vikunja project list."
+image: "/demos/web-regression/media/overview-cover.webp"
+imageAlt: "The Web Regression Testing overview, with links to ten applications and three featured Shopify results."
 links:
   - label: "View demo"
     url: "https://nha6ki.github.io/demos/web-regression/en/overview.html"
