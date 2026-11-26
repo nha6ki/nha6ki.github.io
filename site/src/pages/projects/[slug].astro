@@ -163,18 +163,6 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
       </a>
     )}
 
-    {isWebRegression && (
-      <section class="regression-example" aria-labelledby="regression-example-title">
-        <h2 id="regression-example-title">A declined Shopify payment, retried successfully</h2>
-        <ol>
-          <li>Shopify displayed a payment error on the first attempt.</li>
-          <li>The buyer retried in the same checkout. The total was $38.00.</li>
-          <li>The store recorded a paid test order for two red notebooks and one blue notebook, totaling $38.00.</li>
-        </ol>
-        <a href="/demos/web-regression/en/SH-12.html">See the SH-16 evidence</a>
-      </section>
-    )}
-
     <div class="project-body">
       <Content />
     </div>
@@ -220,19 +208,6 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
     color: #fff;
     text-decoration: underline;
   }
-
-  .regression-example {
-    background: #f2f7f5;
-    border: 1px solid #d1ddd6;
-    border-radius: 10px;
-    padding: clamp(16px, 3vw, 24px);
-    margin: 0 0 28px;
-  }
-
-  .regression-example h2 { margin-top: 0; }
-  .regression-example ol { padding-inline-start: 1.4em; }
-  .regression-example li + li { margin-top: .3em; }
-  .regression-example a { display: inline-flex; align-items: center; min-height: 44px; }
 
   .project-date {
     display: block;

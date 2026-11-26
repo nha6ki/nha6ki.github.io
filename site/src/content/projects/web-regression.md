@@ -47,8 +47,8 @@ This project uses Playwright to check how ten web applications handle changes to
 
 **Snipe-IT · 3 tests.** The suite verifies the borrower after checkout, checks that a return clears the assignment, and confirms that checking out one PC leaves another of the same model unassigned.
 
-## Running the suite and reviewing the results
+## Running the tests and reviewing the results
 
-For the 35 Docker cases, the same command, `bash run.sh`, runs the suite locally and in GitHub Actions. Docker Compose starts fresh application instances for each run. Playwright writes an HTML report, and the script removes the test environment when the run ends.
+Run `bash run.sh` from the repository root to run the Docker suite. GitHub Actions uses the same command. Docker Compose starts a fresh test environment, Playwright saves an HTML report, and the script tears down the environment when the run ends. The [GitHub Actions run for commit `52a2903`](https://github.com/nha6ki/web-regression/actions/runs/45287442348) passed all 35 Docker cases.
 
-The [demo](/demos/web-regression/en/overview.html) pairs storefront and reader screenshots with recordings where available. For the discounted WooCommerce order, it includes the recorded order ID, line totals and discount. The [main CI run](https://github.com/nha6ki/web-regression/actions/runs/45287442348) passed all 35 Docker tests on `52a2903`. The twenty-one Shopify cases passed across separate Edge runs against a development store on Windows.
+The 21 Shopify cases passed in separate Edge runs on Windows against a development store. The [public demo](/demos/web-regression/en/overview.html) documents both sets of results, with screenshots, recordings where available, and data comparisons for selected cases. In [WC-07](/demos/web-regression/en/WC-07.html), for example, you can compare the cart after a quantity change with the saved WooCommerce order, including the discount and the final total.
