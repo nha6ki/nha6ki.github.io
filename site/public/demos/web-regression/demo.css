@@ -90,12 +90,23 @@ html[lang="ja"] main h1 { max-width: 100%; text-wrap: pretty; }
 .evidence-table caption { text-align: start; font-weight: 700; font-size: 1.05rem; margin-bottom: .4rem; }
 .evidence-table th, .evidence-table td { border-bottom: 1px solid var(--line); padding: .5rem; text-align: start; vertical-align: top; overflow-wrap: anywhere; }
 .evidence-table thead th { background: #edf4ef; }
-.image-action { display: inline-flex; align-items: center; min-height: 44px; font-size: .88rem; }
-.case-neighbors { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
-.case-neighbors a { flex: 1 1 12rem; display: grid; align-content: center; min-height: 44px; border: 1px solid var(--line); border-radius: .4rem; padding: .5rem .7rem; text-decoration: none; }
+.case-breadcrumb { margin: -.2rem 0 .45rem; }
+.case-back { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .9rem; text-decoration: none; }
+.case-back:hover, .case-back:focus-visible { text-decoration: underline; }
+.case-nav { margin-top: 2rem; border-top: 1px solid var(--line); }
+.case-neighbors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .25rem 1.5rem; }
+.case-neighbors a { display: flex; align-items: baseline; gap: .65rem; min-height: 44px; padding: .8rem .4rem; text-decoration: none; border-radius: 4px; }
+.case-neighbors [rel="next"] { grid-column: 2; flex-direction: row-reverse; text-align: end; }
 .case-neighbors a:hover { background: #edf4ef; }
-.case-neighbors a:hover span { text-decoration: underline; }
-.case-neighbors small { color: #435b55; }
+.case-neighbors a:hover .case-nav-copy > span, .case-neighbors a:focus-visible .case-nav-copy > span { text-decoration: underline; }
+.case-nav-copy { display: grid; gap: .1rem; overflow-wrap: anywhere; }
+.case-nav-copy small { color: #435b55; font-size: .8rem; }
+.case-nav-arrow { flex: none; }
+@media (max-width: 40rem) {
+  .case-neighbors { grid-template-columns: minmax(0, 1fr); }
+  .case-neighbors [rel="next"] { grid-column: 1; }
+  .case-neighbors a + a { border-top: 1px solid var(--line); }
+}
 @media (max-width: 54rem) {
   .mobile[open] .menu { max-height: min(46vh, 22rem); overflow-y: auto; padding: .25rem; }
 }
