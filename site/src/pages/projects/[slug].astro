@@ -18,6 +18,8 @@ const { project } = Astro.props as {
 };
 
 const { Content } = await render(project);
+const isWebRegression = project.id === 'web-regression';
+const demoLink = isWebRegression ? project.data.links.find((link) => link.label === 'View demo') : undefined;
 
 // This project introduces its two systems before showing their cover illustration.
 const hasInlineIntroduction = project.id === 'lab-document-rag';
@@ -51,7 +53,7 @@ function linkInfo(url: string) {
   return { github: false, detail: hostname };
 }
 
-const resourceLinks = project.data.links.map((link) => ({
+const resourceLinks = project.data.links.filter((link) => link !== demoLink).map((link) => ({
   ...link,
   info: linkInfo(link.url),
 }));
@@ -79,7 +81,14 @@ const resourceLinks = project.data.links.map((link) => ({
       </time>
     )}
 
-    {resourceLinks.length > 0 && (
+    {demoLink && (
+      <nav class="web-regression-actions" aria-label="Project resources">
+        <a class="web-regression-demo" href={demoLink.url}>{demoLink.label}</a>
+        {resourceLinks.map((link) => <a href={link.url}>{link.label}</a>)}
+      </nav>
+    )}
+
+    {!isWebRegression && resourceLinks.length > 0 && (
       <nav
         class="project-resources"
         aria-label="Project resources"
@@ -136,7 +145,7 @@ const resourceLinks = project.data.links.map((link) => ({
       </nav>
     )}
 
-    {!hasInlineIntroduction && project.data.image && (
+    {!hasInlineIntroduction && !isWebRegression && project.data.image && (
       <a
         class="project-cover-link"
         href={project.data.image}
@@ -154,6 +163,26 @@ const resourceLinks = project.data.links.map((link) => ({
       </a>
     )}
 
+    {isWebRegression && (
+      <section class="regression-example" aria-labelledby="regression-example-title">
+        <h2 id="regression-example-title">A declined Shopify payment, retried successfully</h2>
+        <figure class="regression-example-image">
+          <img
+            src="/demos/web-regression/media/SH-12/01-rejection.png"
+            alt="Shopify reported a payment processing error and invited the buyer to try again."
+            decoding="async"
+          />
+          <figcaption>Checkout during the first test payment</figcaption>
+        </figure>
+        <ol>
+          <li>Shopify displayed a payment error on the first attempt.</li>
+          <li>The buyer retried in the same checkout. The total was $38.00.</li>
+          <li>The store recorded a paid test order for two red notebooks and one blue notebook, totaling $38.00.</li>
+        </ol>
+        <a href="/demos/web-regression/en/SH-12.html">See the SH-12 evidence</a>
+      </section>
+    )}
+
     <div class="project-body">
       <Content />
     </div>
@@ -168,6 +197,54 @@ const resourceLinks = project.data.links.map((link) => ({
 </BaseLayout>
 
 <style>
+  .web-regression-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    margin: 24px 0;
+  }
+
+  .web-regression-actions a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+
+  .web-regression-actions .web-regression-demo {
+    border-radius: 7px;
+    padding: 0 17px;
+    background: #075e59;
+    color: #fff;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  .web-regression-actions .web-regression-demo:hover,
+  .web-regression-actions .web-regression-demo:focus-visible {
+    background: #124943;
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .regression-example {
+    background: #f2f7f5;
+    border: 1px solid #d1ddd6;
+    border-radius: 10px;
+    padding: clamp(16px, 3vw, 24px);
+    margin: 0 0 28px;
+  }
+
+  .regression-example h2 { margin-top: 0; }
+  .regression-example-image { margin: 1rem 0; }
+  .regression-example-image img { display: block; width: min(100%, 439px); height: auto; border-radius: 5px; }
+  .regression-example-image figcaption { margin-top: .4rem; font-size: .9rem; }
+  .regression-example ol { padding-inline-start: 1.4em; }
+  .regression-example li + li { margin-top: .3em; }
+  .regression-example a { display: inline-flex; align-items: center; min-height: 44px; }
+
   .project-date {
     display: block;
     margin: 12px 0 24px;
