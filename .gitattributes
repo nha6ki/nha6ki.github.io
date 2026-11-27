@@ -1,0 +1,3 @@
+
+# Preserve the sample PDF cross-reference byte offsets.
+site/public/projects/invoiceflow/review/*.pdf binary

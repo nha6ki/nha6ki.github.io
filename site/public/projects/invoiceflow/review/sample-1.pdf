@@ -1,0 +1,46 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 395 >>
+stream
+BT /F1 12 Tf 50 752 Td 24 TL
+(SAMPLE INVOICE) Tj T*
+(Invoice DEMO-INV-001) Tj T*
+(Supplier: Demo Supplier) Tj T*
+(Order: DEMO-100) Tj T*
+(Issued: 2025-07-01) Tj T*
+(Currency: EUR) Tj T*
+() Tj T*
+(Item | Quantity | Net unit price | Net line amount) Tj T*
+(WIDGET-A | 40 | 10.00 | 400.00) Tj T*
+() Tj T*
+(Tax-inclusive total: 400.00) Tj T*
+() Tj T*
+(Synthetic example for Invoice Review.) Tj T*
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Root 1 0 R /Size 6 >>
+startxref
+757
+%%EOF

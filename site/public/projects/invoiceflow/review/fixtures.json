@@ -1,0 +1,112 @@
+{
+  "fixtures/po-three-way.json": {
+    "matching": "three_way",
+    "po_number": "DEMO-100",
+    "supplier": "Demo Supplier",
+    "currency": "EUR",
+    "lines": [
+      {
+        "item": "WIDGET-A",
+        "quantity": "100",
+        "unit_price": "10.00",
+        "line_total": "1000.00"
+      }
+    ]
+  },
+  "fixtures/po-uc1.json": {
+    "po_number": "PO202525478",
+    "supplier": "LE VENDEUR",
+    "currency": "EUR",
+    "gross_total": "12000",
+    "lines": [
+      {
+        "item": "SERVICE_FOURNI1",
+        "quantity": "200",
+        "unit_price": "40",
+        "line_total": "8000"
+      },
+      {
+        "item": "SERVICE_FOURNI2",
+        "quantity": "5",
+        "unit_price": "400",
+        "line_total": "2000"
+      }
+    ]
+  },
+  "fixtures/three-way/receipt-1.json": {
+    "receipt_id": "RCPT-001",
+    "lines": [
+      {
+        "item": "WIDGET-A",
+        "quantity": "60"
+      }
+    ]
+  },
+  "fixtures/three-way/receipt-2.json": {
+    "receipt_id": "RCPT-002",
+    "lines": [
+      {
+        "item": "WIDGET-A",
+        "quantity": "10"
+      }
+    ]
+  },
+  "fixtures/three-way/invoice-1.json": {
+    "invoice_number": "DEMO-INV-001",
+    "issue_date": "2025-07-01",
+    "supplier": "Demo Supplier",
+    "currency": "EUR",
+    "po_number": "DEMO-100",
+    "gross_total": "400.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "WIDGET-A",
+        "quantity": "40",
+        "unit_price": "10.00",
+        "line_total": "400.00"
+      }
+    ]
+  },
+  "fixtures/three-way/invoice-2.json": {
+    "invoice_number": "DEMO-INV-002",
+    "issue_date": "2025-07-02",
+    "supplier": "Demo Supplier",
+    "currency": "EUR",
+    "po_number": "DEMO-100",
+    "gross_total": "300.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "WIDGET-A",
+        "quantity": "30",
+        "unit_price": "10.00",
+        "line_total": "300.00"
+      }
+    ]
+  },
+  "fixtures/amount-review/UC1_F202500003_00-INV_20250701_EN16931_FX.json": {
+    "invoice_number": "F202500003",
+    "issue_date": "2025-07-01",
+    "supplier": "LE VENDEUR",
+    "currency": "EUR",
+    "po_number": "PO202525478",
+    "gross_total": "12000.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "SERVICE_FOURNI1",
+        "quantity": "200",
+        "unit_price": "40",
+        "line_total": "9600.00"
+      },
+      {
+        "line_id": "2",
+        "item": "SERVICE_FOURNI2",
+        "quantity": "5",
+        "unit_price": "400",
+        "line_total": "2000.00"
+      }
+    ]
+  }
+}
