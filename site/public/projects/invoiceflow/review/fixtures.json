@@ -108,5 +108,101 @@
         "line_total": "2000.00"
       }
     ]
+  },
+  "fixtures/practice/DEMO-PO-004.json": {
+    "po_number": "DEMO-PO-004",
+    "supplier": "North Pier Print",
+    "currency": "GBP",
+    "gross_total": "180.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Training manual",
+        "quantity": "12",
+        "unit_price": "15.00",
+        "line_total": "180.00"
+      }
+    ]
+  },
+  "fixtures/practice/DEMO-INV-004.json": {
+    "invoice_number": "DEMO-INV-004",
+    "issue_date": "2025-07-04",
+    "supplier": "North Pier Print",
+    "currency": "GBP",
+    "po_number": "DEMO-PO-004",
+    "gross_total": "180.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Training manual",
+        "quantity": "12",
+        "unit_price": "15.00",
+        "line_total": "180.00"
+      }
+    ]
+  },
+  "fixtures/practice/DEMO-PO-005.json": {
+    "po_number": "DEMO-PO-005",
+    "supplier": "Maple Studio",
+    "currency": "CAD",
+    "gross_total": "340.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Design session",
+        "quantity": "4",
+        "unit_price": "85.00",
+        "line_total": "340.00"
+      }
+    ]
+  },
+  "fixtures/practice/DEMO-INV-005.json": {
+    "invoice_number": "DEMO-INV-005",
+    "issue_date": "2025-07-05",
+    "supplier": "Maple Studio",
+    "currency": "USD",
+    "po_number": "DEMO-PO-005",
+    "gross_total": "340.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Design session",
+        "quantity": "4",
+        "unit_price": "85.00",
+        "line_total": "340.00"
+      }
+    ]
+  },
+  "fixtures/practice/DEMO-PO-006.json": {
+    "po_number": "DEMO-PO-006",
+    "supplier": "Harbor Instruments",
+    "currency": "USD",
+    "gross_total": "360.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Calibration kit",
+        "quantity": "3",
+        "unit_price": "120.00",
+        "line_total": "360.00"
+      }
+    ]
+  },
+  "fixtures/practice/DEMO-INV-006.json": {
+    "invoice_number": "DEMO-INV-006",
+    "issue_date": "2025-07-06",
+    "supplier": "Harbor Instruments",
+    "currency": "USD",
+    "po_number": "DEMO-PO-060",
+    "gross_total": "360.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Calibration kit",
+        "quantity": "3",
+        "unit_price": "120.00",
+        "line_total": "360.00"
+      }
+    ]
   }
 }

@@ -16,6 +16,23 @@ CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 def check(page, english=False):
     expect(page.locator('header button[onclick="load()"]')).to_have_count(0)
     needs_review = "Needs review" if english else "要確認"
+    expect(page.locator("#queue tr")).to_have_count(6, timeout=60_000)
+    for number, field, correct in [(4, None, None), (5, "currency", "CAD"), (6, "po_number", "DEMO-PO-006")]:
+        code = f"DEMO-INV-{number:03}"
+        sample = page.locator("#queue tr").filter(has_text=code)
+        ready = "Awaiting approval" if english else "承認待ち"
+        expect(sample).to_contain_text(needs_review if field else ready)
+        sample.get_by_role("button").click()
+        expect(page.locator("#pdf")).to_have_attribute("src", f"./sample-{number}.pdf")
+        response = page.request.get(page.locator("#pdf").evaluate("e => e.src"))
+        assert response.ok and response.body().startswith(b"%PDF-")
+        if field:
+            page.locator(f"#f-{field}").fill(correct)
+            page.get_by_role("button", name="Recheck" if english else "照合し直す", exact=True).click()
+        page.locator("#actor").fill("Browser test")
+        page.locator("#note").fill("Verified against sample invoice")
+        page.locator("#approve").click()
+        expect(page.locator("#ledger")).to_contain_text(code)
     row = page.locator("#queue tr").filter(has_text="DEMO-INV-002")
     expect(row).to_contain_text(needs_review, timeout=60_000)
     row.get_by_role("button", name="Open" if english else "開く").click()

@@ -15,7 +15,7 @@ technologies:
   - Playwright
   - GitHub Actions
 order: 13
-featured: true
+featured: false
 links:
   - label: "GitHub"
     url: "https://github.com/nha6ki/InvoiceFlow"
@@ -33,9 +33,9 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 ## Inside Invoice Review
 
-[Open Invoice Review](/projects/invoiceflow/review/en.html) to work through the three sample records. Two invoices need attention. The third is an approved invoice whose quantity affects the next approval.
+[Open Invoice Review](/projects/invoiceflow/review/en.html) to explore six invoices. Start with the two guided cases below. Then compare three fictional source PDFs with their extracted values: DEMO-INV-004 is ready for approval, DEMO-INV-005 has a currency discrepancy, and DEMO-INV-006 has a purchase order number discrepancy.
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue-en.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue-en.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1792" height="614" loading="lazy"></a></div>
+<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue-en.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue-en.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1344" height="744" loading="lazy"></a></div>
 
 ## Correct a line amount
 
@@ -45,7 +45,7 @@ Open **F202500003** and compare the first line with the sample PDF. The extracte
 
 ## Release a partial invoice
 
-Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arrived. The third invoice in the queue, **DEMO-INV-001**, already accounts for 40 of them. That leaves 20 available for a new invoice requesting 30.
+Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arrived. The earlier invoice **DEMO-INV-001** already accounts for 40 of them. That leaves 20 available for a new invoice requesting 30.
 
 Add the sample receipt for 10 more units and check how the available balance changes. Read the tax-inclusive total from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
 
@@ -63,7 +63,7 @@ The webhook passes one approved record at a time to the Sheets node. Rows 2 and 
 
 [Open the invoice register in Google Sheets](https://docs.google.com/spreadsheets/d/1lMzjNoQJdlf1jaMvwN8BAMunPins4vZB73U1CruHy88/edit?usp=sharing)
 
-A separate read-back workflow later returned **F202500003** and **F202500004** from rows 2 and 3. The three records in the browser demo and the two rows in this local read-back belong to different sample runs.
+A separate read-back workflow later returned **F202500003** and **F202500004** from rows 2 and 3. The six records in the browser demo and the two rows in this local read-back belong to different sample runs.
 
 <div class="invoice-figure" style="--figure-width:724px"><a href="/images/projects/invoiceflow/n8n-rows.png" aria-label="Open full-size image: Get Row(s) output listing the two invoice numbers returned from Google Sheets."><img src="/images/projects/invoiceflow/n8n-rows.png" alt="Get Row(s) output listing the two invoice numbers returned from Google Sheets." width="724" height="211" loading="lazy"></a></div>
 

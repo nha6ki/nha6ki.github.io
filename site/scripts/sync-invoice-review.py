@@ -33,6 +33,10 @@ def main():
     # Each browser tab owns its database. An action refreshes the queue after writing.
     refresh_button = '<button onclick="load()">一覧を更新</button>'.encode()
     generated["index.html"] = generated["index.html"].replace(refresh_button, b"")
+    generated["index.html"] = generated["index.html"].replace(
+        "3件目の DEMO-INV-001 は、上記の40個を登録した請求書です。承認時の記録を参照できます。".encode(),
+        "DEMO-INV-001 には40個を承認した記録があります。ほかの3件でも原本PDFと抽出値を比較できます。004は承認待ち、005は通貨、006は発注番号の確認が必要です。".encode(),
+    )
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:
         stale = [name for name, data in generated.items()

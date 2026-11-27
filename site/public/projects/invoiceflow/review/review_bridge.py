@@ -23,6 +23,11 @@ if flow.approve(db, first["id"], "Demo", "Opening approval", confirmed_gross_tot
 flow.ingest(db, Path(SAMPLES + "invoice-2.json"), PO, False)
 flow.ingest(db, Path(AMOUNT), FIXTURES["fixtures/po-uc1.json"], False)
 
+for number in ("004", "005", "006"):
+    source = Path(f"fixtures/practice/DEMO-INV-{number}.json")
+    order = FIXTURES[f"fixtures/practice/DEMO-PO-{number}.json"]
+    flow.ingest(db, source, order, False)
+
 
 def handle(path, body):
     if path == "/api/files":
