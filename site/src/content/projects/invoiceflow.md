@@ -33,13 +33,13 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 [Open Invoice Review](/projects/invoiceflow/review/en.html) to work through the three sample records. Two invoices need attention. The third is an approved invoice whose quantity affects the next approval.
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1792" height="614" loading="lazy"></a></div>
+<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue-en.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue-en.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1792" height="614" loading="lazy"></a></div>
 
 ## Correct a line amount
 
 Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount and run the checks again. Enter a reviewer name and reason to approve it, then open the history to see both the extracted and approved values.
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/amount.webp" aria-label="Open full-size image: Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference."><img src="/images/projects/invoiceflow/amount.webp" alt="Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference." width="1792" height="368" loading="lazy"></a></div>
+<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/amount-en.webp" aria-label="Open full-size image: Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference."><img src="/images/projects/invoiceflow/amount-en.webp" alt="Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference." width="1792" height="368" loading="lazy"></a></div>
 
 ## Release a partial invoice
 
@@ -47,7 +47,7 @@ Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arr
 
 Add the sample receipt for 10 more units and check how the available balance changes. Read the tax-inclusive total from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/receipts.webp" aria-label="Open full-size image: The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check."><img src="/images/projects/invoiceflow/receipts.webp" alt="The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check." width="1792" height="716" loading="lazy"></a></div>
+<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/receipts-en.webp" aria-label="Open full-size image: The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check."><img src="/images/projects/invoiceflow/receipts-en.webp" alt="The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check." width="1792" height="716" loading="lazy"></a></div>
 
 ## Send an approved invoice to Google Sheets
 

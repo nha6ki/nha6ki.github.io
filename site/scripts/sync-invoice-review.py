@@ -30,6 +30,9 @@ def main():
          "sys.stdout.buffer.write(public_review.public_html(browser=True).encode('utf-8'))"],
         cwd=source,
     )
+    # Each browser tab owns its database. An action refreshes the queue after writing.
+    refresh_button = '<button onclick="load()">一覧を更新</button>'.encode()
+    generated["index.html"] = generated["index.html"].replace(refresh_button, b"")
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:
         stale = [name for name, data in generated.items()

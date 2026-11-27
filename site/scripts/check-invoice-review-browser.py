@@ -14,6 +14,7 @@ CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 
 
 def check(page, english=False):
+    expect(page.locator('header button[onclick="load()"]')).to_have_count(0)
     needs_review = "Needs review" if english else "要確認"
     row = page.locator("#queue tr").filter(has_text="DEMO-INV-002")
     expect(row).to_contain_text(needs_review, timeout=60_000)
