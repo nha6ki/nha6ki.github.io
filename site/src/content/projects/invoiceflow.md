@@ -1,5 +1,7 @@
 ---
 title: "InvoiceFlow — Invoice Review & Three-Way Matching"
+image: "/images/projects/invoiceflow/review-cover-en.webp"
+imageAlt: "Invoice Review demo showing two review tasks and the sample invoice queue."
 categories: ["ai", "data", "web"]
 summary: "Extract invoice fields locally, reconcile partial invoices against orders and receipts, and review discrepancies before approval."
 date: "2026-11"
