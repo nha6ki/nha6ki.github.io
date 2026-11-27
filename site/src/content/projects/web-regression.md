@@ -5,7 +5,7 @@ summary: "Fifty-six published regression cases check workflows across ten web ap
 date: "2026-11"
 technologies: ["Playwright", "TypeScript", "Docker Compose", "GitHub Actions"]
 order: 0
-featured: false
+featured: true
 image: "/demos/web-regression/media/overview-cover.webp"
 imageAlt: "The Web Regression Testing overview, with links to ten applications and three featured Shopify results."
 links:

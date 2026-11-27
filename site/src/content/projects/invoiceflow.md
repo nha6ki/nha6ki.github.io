@@ -15,7 +15,7 @@ technologies:
   - Playwright
   - GitHub Actions
 order: 13
-featured: false
+featured: true
 links:
   - label: "GitHub"
     url: "https://github.com/nha6ki/InvoiceFlow"
