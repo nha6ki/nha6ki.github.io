@@ -45,6 +45,25 @@ def read_answer(path):
         return json.loads("".join(c.get("response","") for c in chunks))
     return json.loads(path.read_text())
 
+def invoice_lines(obj):
+    """Treat malformed line collections as absent without overwriting the source."""
+    lines = obj.get("lines")
+    return lines if isinstance(lines, list) else []
+
+
+def check_edited_invoice(obj):
+    if not isinstance(obj, dict) or not isinstance(obj.get("lines"), list):
+        raise ValueError("Invoice needs an object and lines array")
+    headers = (value for key, value in obj.items() if key != "lines")
+    if any(value is not None and not isinstance(value, str) for value in headers):
+        raise ValueError("Field values must be strings or null")
+    for line in invoice_lines(obj):
+        if not isinstance(line, dict) or any(
+            value is not None and not isinstance(value, str) for value in line.values()
+        ):
+            raise ValueError("Line values must be strings or null")
+
+
 def normalize(raw, comma):
     obj=copy.deepcopy(raw); changes=[]
     if not isinstance(obj,dict):
@@ -54,7 +73,7 @@ def normalize(raw, comma):
         obj["supplier"]=supplier["legal_name"]
         changes.append({"field":"supplier","before":supplier,"after":obj["supplier"]})
     for label,container,keys in [("invoice",obj,("gross_total",))]+[
-        (f"line[{i}]",line,NUMBERS) for i,line in enumerate(obj.get("lines",[]),1) if isinstance(line,dict)]:
+        (f"line[{i}]",line,NUMBERS) for i,line in enumerate(invoice_lines(obj),1) if isinstance(line,dict)]:
         for key in keys:
             before=container.get(key); value=before
             if isinstance(value,(int,float)) and not isinstance(value,bool):
@@ -75,6 +94,8 @@ def num(value):
     return Decimal(value)
 
 def validate(obj,po):
+    if not isinstance(obj, dict):
+        raise ValueError("Invoice must be an object")
     issues=[]
     match_receipts = three_way.enabled(po)
     for key in FIELDS:
@@ -88,8 +109,8 @@ def validate(obj,po):
         num(obj.get("gross_total"))
     except ValueError:
         issues.append({"field":"gross_total","reason":"invalid_decimal"})
-    lines=obj.get("lines")
-    if not isinstance(lines,list) or not lines:
+    lines=invoice_lines(obj)
+    if not lines:
         return issues+[{"field":"lines","reason":"missing_or_invalid"}]
     for i,line in enumerate(lines,1):
         if not isinstance(line,dict):
@@ -146,6 +167,8 @@ def validate(obj,po):
     return issues
 
 def check_po(po):
+    if not isinstance(po, dict):
+        raise ValueError("PO must be an object")
     if "matching" in po and not three_way.enabled(po):
         raise ValueError("Unknown PO matching mode")
     for key in ("supplier","currency","po_number"):
@@ -155,7 +178,7 @@ def check_po(po):
         num(po.get("gross_total"))
     names = set()
     for line in po["lines"]:
-        if not isinstance(line.get("item"),str): raise ValueError("PO needs item")
+        if not isinstance(line, dict) or not isinstance(line.get("item"),str): raise ValueError("PO needs item")
         for key in NUMBERS: num(line.get(key))
         if three_way.enabled(po) and (not line["item"].strip() or line["item"] in names or num(line["quantity"]) <= 0):
             raise ValueError("Three-way PO requires unique items and positive quantities")
@@ -173,26 +196,79 @@ def assess(conn,obj,po):
     return {"issues": issues, "reconciliation": evidence}
 
 
-def ingest(conn,path,po,comma):
+def readiness(assessment):
+    return "needs_review" if assessment["issues"] else "ready_for_approval"
+
+
+def ingest(conn, path, po, comma, *, replace_draft_context=False):
     check_po(po)
-    raw=read_answer(path)
-    digest=hashlib.sha256(dump(raw).encode()).hexdigest()
+    raw = read_answer(path)
+    digest = hashlib.sha256(dump(raw).encode()).hexdigest()
+    obj, changes = normalize(raw, comma)
+    context = {"decimal_comma": comma}
     with conn:
         conn.execute("BEGIN IMMEDIATE")
-        prior=conn.execute("SELECT id,status FROM reviews WHERE source_hash=?",(digest,)).fetchone()
-        if prior: return {"id":prior["id"],"status":prior["status"],"reused":True}
-        three_way.bind_order(conn,po)
-        obj,changes=normalize(raw,comma)
-        issues=assess(conn,obj,po)["issues"]
-        status="needs_review" if issues else "ready_for_approval"
-        cur=conn.execute("INSERT INTO reviews(source_hash,source,raw,normalized,normalization,po,issues,status,created) VALUES(?,?,?,?,?,?,?,?,?)",
-            (digest,str(path),dump(raw),dump(obj),dump(changes),dump(po),dump(issues),status,now()))
-        conn.execute("INSERT INTO events(review_id,actor,note,action,payload,created) VALUES(?,?,?,?,?,?)",
-            (cur.lastrowid,"system","Saved model answer and PO snapshot","ingest",dump(changes),now()))
-    return {"id":cur.lastrowid,"status":status,"issues":issues}
+        prior = conn.execute("SELECT * FROM reviews WHERE source_hash=?", (digest,)).fetchone()
+        if prior:
+            previous_po = json.loads(prior["po"])
+            previous = conn.execute(
+                "SELECT payload FROM events WHERE review_id=? AND action IN ('ingest','replace_context') ORDER BY id DESC LIMIT 1",
+                (prior["id"],),
+            ).fetchone()
+            # Older ingest events stored only the normalization changes.
+            event = json.loads(previous["payload"]) if previous else None
+            previous_comma = event.get("decimal_comma") if isinstance(event, dict) else None
+            same_comma = (previous_comma == comma if previous_comma is not None
+                          else json.loads(prior["normalized"]) == obj)
+            if previous_po == po and same_comma:
+                status = prior["status"]
+                if status != "registered":
+                    status = readiness(assess(conn, obj, po))
+                return {"id": prior["id"], "status": status, "reused": True}
+            if prior["status"] == "registered":
+                raise ValueError(f"Review {prior['id']} is registered and its ingestion context cannot change")
+            if not replace_draft_context:
+                raise ValueError(
+                    f"Review {prior['id']} already uses a different PO snapshot or decimal setting. "
+                    "Use ingest --replace-draft-context to explicitly update the unregistered review."
+                )
 
-def approve(conn,id,actor,note,corrected=None):
-    if not actor.strip() or not note.strip(): raise ValueError("Actor and note required")
+        three_way.bind_order(conn, po)
+        assessment = assess(conn, obj, po)
+        status = readiness(assessment)
+        if prior:
+            ident = prior["id"]
+            conn.execute(
+                "UPDATE reviews SET normalized=?, normalization=?, po=?, issues=?, status=? WHERE id=?",
+                (dump(obj), dump(changes), dump(po), dump(assessment["issues"]), status, ident),
+            )
+            action = "replace_context"
+            note = "Explicit replacement of draft ingestion context"
+            payload = {**context, "previous_decimal_comma": previous_comma,
+                       "previous_po": previous_po, "po": po,
+                       "previous_normalization": json.loads(prior["normalization"]),
+                       "normalization": changes}
+        else:
+            cur = conn.execute(
+                "INSERT INTO reviews(source_hash,source,raw,normalized,normalization,po,issues,status,created) VALUES(?,?,?,?,?,?,?,?,?)",
+                (digest, str(path), dump(raw), dump(obj), dump(changes), dump(po), dump(assessment["issues"]), status, now()),
+            )
+            ident = cur.lastrowid
+            action = "ingest"
+            note = "Saved model answer and PO snapshot"
+            payload = {**context, "normalization": changes}
+        conn.execute(
+            "INSERT INTO events(review_id,actor,note,action,payload,created) VALUES(?,?,?,?,?,?)",
+            (ident, "system", note, action, dump(payload), now()),
+        )
+    return {"id": ident, "status": status, "issues": assessment["issues"]}
+
+
+def approve(conn,id,actor,note,corrected=None, *, confirmed_gross_total=None):
+    if not all(isinstance(value, str) and value.strip() for value in (actor, note)):
+        raise ValueError("Actor and note required")
+    if corrected is not None:
+        check_edited_invoice(corrected)
     with conn:
         conn.execute("BEGIN IMMEDIATE")
         row=conn.execute("SELECT * FROM reviews WHERE id=?",(id,)).fetchone()
@@ -208,11 +284,23 @@ def approve(conn,id,actor,note,corrected=None):
         if existing: return {"id":id,"status":"duplicate_invoice","existing_review":existing["review_id"]}
         if assessment["issues"]:
             return {"id":id,"status":"needs_review",**assessment}
+        evidence = {}
+        if three_way.enabled(po):
+            try:
+                confirmed = num(confirmed_gross_total) == num(obj["gross_total"])
+            except ValueError:
+                confirmed = False
+            if not confirmed:
+                return {"id": id, "status": "needs_review", **assessment,
+                        "issues": [{"field": "gross_total", "reason": "gross_total_confirmation_required"}]}
+            evidence["gross_total_confirmation"] = {
+                "method": "reviewer_attestation", "amount": obj["gross_total"], "currency": obj["currency"],
+            }
         conn.execute("INSERT INTO ledger(review_id,supplier,invoice_number,invoice,created) VALUES(?,?,?,?,?)",
             (id,obj["supplier"],obj["invoice_number"],dump(obj),now()))
         conn.execute("UPDATE reviews SET status='registered' WHERE id=?",(id,))
         conn.execute("INSERT INTO events(review_id,actor,note,action,payload,created) VALUES(?,?,?,?,?,?)",
-            (id,actor,note,"approve",dump({"before":json.loads(row["normalized"]),"after":obj,"reconciliation":assessment["reconciliation"]}),now()))
+            (id,actor,note,"approve",dump({"before":json.loads(row["normalized"]),"after":obj,"reconciliation":assessment["reconciliation"],**evidence}),now()))
     return {"id":id,"status":"registered"}
 
 def main():
@@ -221,6 +309,7 @@ def main():
     sub=p.add_subparsers(dest="command",required=True)
     i=sub.add_parser("ingest"); i.add_argument("answer",type=Path); i.add_argument("--po",type=Path,required=True)
     i.add_argument("--decimal-comma",action="store_true")
+    i.add_argument("--replace-draft-context", action="store_true")
     rec=sub.add_parser("receive")
     rec.add_argument("receipt",type=Path)
     rec.add_argument("--po",type=Path,required=True)
@@ -228,14 +317,15 @@ def main():
     sh=sub.add_parser("show"); sh.add_argument("id",type=int)
     ap=sub.add_parser("approve"); ap.add_argument("id",type=int); ap.add_argument("--actor",required=True); ap.add_argument("--note",required=True)
     ap.add_argument("--corrected",type=Path)
+    ap.add_argument("--confirmed-gross-total", help="Tax-inclusive total read from the source invoice")
     a=p.parse_args()
     with _resource_closing(connect(a.db)) as conn, conn:
-        if a.command=="ingest": result=ingest(conn,a.answer,json.loads(a.po.read_text()),a.decimal_comma)
+        if a.command=="ingest": result=ingest(conn,a.answer,json.loads(a.po.read_text()),a.decimal_comma, replace_draft_context=a.replace_draft_context)
         elif a.command=="receive":
             po=json.loads(a.po.read_text())
             check_po(po)
             result=three_way.add_receipt(conn,po,json.loads(a.receipt.read_text()),num,now)
-        elif a.command=="approve": result=approve(conn,a.id,a.actor,a.note,json.loads(a.corrected.read_text()) if a.corrected else None)
+        elif a.command=="approve": result=approve(conn,a.id,a.actor,a.note,json.loads(a.corrected.read_text()) if a.corrected else None, confirmed_gross_total=a.confirmed_gross_total)
         elif a.command=="show":
             row=conn.execute("SELECT * FROM reviews WHERE id=?",(a.id,)).fetchone()
             if row is None: raise SystemExit("Review not found")

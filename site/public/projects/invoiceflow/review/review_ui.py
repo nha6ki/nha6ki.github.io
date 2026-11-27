@@ -23,8 +23,11 @@ def detail(conn,id):
     result["events"]=[]
     for r in conn.execute("SELECT * FROM events WHERE review_id=? ORDER BY id",(id,)):
         event=dict(r);event["payload"]=json.loads(event["payload"]);result["events"].append(event)
-    if not registered and flow.three_way.enabled(result["po"]):
-        result.update(flow.assess(conn,result["current"],result["po"]))
+    result["requires_gross_confirmation"] = not registered and flow.three_way.enabled(result["po"])
+    if not registered:
+        assessment = flow.assess(conn, result["current"], result["po"])
+        result.update(assessment)
+        result["status"] = flow.readiness(assessment)
     elif registered:
         result["reconciliation"]=next(
             (event["payload"].get("reconciliation",[]) for event in reversed(result["events"])
@@ -37,14 +40,33 @@ def detail(conn,id):
     result["pdf_name"]=name+".pdf"
     return result
 
-def shape(obj):
-    if not isinstance(obj,dict) or not isinstance(obj.get("lines"),list):
-        raise ValueError("Invoice needs an object and lines array")
-    for item in [obj]+obj["lines"]:
-        if not isinstance(item,dict) or any(isinstance(v,(dict,list)) for k,v in item.items() if k!="lines"):
-            raise ValueError("Field values must be strings or null")
-        if any(v is not None and not isinstance(v,str) for k,v in item.items() if k!="lines"):
-            raise ValueError("Field values must be strings or null")
+def list_reviews(conn):
+    rows = conn.execute("""
+        SELECT r.id, r.created, r.status, r.normalized, r.po, l.invoice
+        FROM reviews r LEFT JOIN ledger l ON l.review_id=r.id ORDER BY r.id DESC
+    """)
+    result = []
+    for row in rows:
+        status = row["status"]
+        invoice = json.loads(row["invoice"] or row["normalized"])
+        if status != "registered":
+            status = flow.readiness(flow.assess(conn, invoice, json.loads(row["po"])))
+        result.append({"id": row["id"], "created": row["created"], "status": status, "invoice": invoice})
+    return result
+
+
+def validate_draft(conn, ident, invoice):
+    flow.check_edited_invoice(invoice)
+    row = conn.execute("SELECT po FROM reviews WHERE id=?", (ident,)).fetchone()
+    if not row:
+        raise ValueError("Review not found")
+    return flow.assess(conn, invoice, json.loads(row["po"]))
+
+
+def approve_draft(conn, ident, invoice, body):
+    return flow.approve(conn, ident, body["actor"], body["note"], invoice,
+                        confirmed_gross_total=body.get("confirmed_gross_total"))
+
 
 class Handler(BaseHTTPRequestHandler):
     def reply(self,data,status=200,kind="application/json; charset=utf-8"):
@@ -62,11 +84,8 @@ class Handler(BaseHTTPRequestHandler):
                     html=(ROOT/"review_ui.html").read_text().replace("__TOKEN__",self.server.token)
                     return self.reply(html.encode(),kind="text/html; charset=utf-8")
                 if path=="/api/reviews":
-                    rows=[]
-                    for r in conn.execute("SELECT id FROM reviews ORDER BY id DESC"):
-                        d=detail(conn,r["id"])
-                        rows.append({k:d[k] for k in ("id","status","created")}|{"invoice":d["current"]})
-                    return self.reply(rows)
+                    conn.execute("BEGIN")
+                    return self.reply(list_reviews(conn))
                 if path=="/api/ledger":
                     rows=[dict(r) for r in conn.execute("SELECT * FROM ledger ORDER BY id DESC")]
                     for r in rows:r["invoice"]=json.loads(r["invoice"])
@@ -99,14 +118,12 @@ class Handler(BaseHTTPRequestHandler):
                     if not answer.name.endswith(".stream.jsonl") or po.parent!=ROOT/"fixtures":
                         raise ValueError("Choose a saved model stream and a PO fixture")
                     return self.reply(flow.ingest(conn,answer,json.loads(po.read_text()),bool(body.get("comma"))))
-                id=int(body["id"]);obj=body["invoice"];shape(obj)
+                id=int(body["id"]);obj=body["invoice"]
                 if path=="/api/validate":
                     conn.execute("BEGIN")
-                    row=conn.execute("SELECT po FROM reviews WHERE id=?",(id,)).fetchone()
-                    if not row: raise ValueError("Review not found")
-                    return self.reply(flow.assess(conn,obj,json.loads(row["po"])))
+                    return self.reply(validate_draft(conn, id, obj))
                 if path=="/api/approve":
-                    result=flow.approve(conn,id,body["actor"],body["note"],obj)
+                    result=approve_draft(conn, id, obj, body)
                     return self.reply(result)
                 return self.reply({"error":"Not found"},404)
         except (ValueError,TypeError,KeyError,OSError) as exc:

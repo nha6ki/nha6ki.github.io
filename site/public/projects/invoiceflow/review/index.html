@@ -21,19 +21,19 @@ input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-wid
 <div><section><h2 id="title">抽出値と発注値</h2><p class="muted">編集内容は承認時に保存されます。発注値は取り込み時点の記録です。</p><div id="fields" class="fields"></div>
 <h3>請求書の明細（編集可）</h3><div class="scroll"><table><thead><tr><th>行ID</th><th>品目名</th><th>数量</th><th>純単価</th><th>税抜明細額</th></tr></thead><tbody id="lines"></tbody></table></div>
 <h3>発注台帳の明細</h3><div id="order" class="scroll"></div><div id="issues"></div><div id="reconciliation" class="scroll" hidden></div>
-<div id="approval"><label>確認者<input id="actor" placeholder="確認者名"></label><label>確認・修正理由<textarea id="note" placeholder="原本を確認した内容や修正理由を記入"></textarea></label><div class="toolbar"><button id="validate">照合し直す</button><button class="primary" id="approve">承認して登録</button></div></div><p id="registered" class="badge" hidden>登録済みです</p>
+<div id="approval"><label id="gross-confirmation" hidden>原本の税込合計（税額は自動照合しません）<input id="confirmed-gross-total" inputmode="decimal" placeholder="原本の金額を小数点「.」で入力"></label><label>確認者<input id="actor" placeholder="確認者名"></label><label>確認・修正理由<textarea id="note" placeholder="原本を確認した内容や修正理由を記入"></textarea></label><div class="toolbar"><button id="validate">照合し直す</button><button class="primary" id="approve">承認して登録</button></div></div><p id="registered" class="badge" hidden>登録済みです</p>
 </section><details><summary>元の抽出値・正規化・承認履歴</summary><pre id="history"></pre></details></div></div></div>
 <section><h2>登録済み台帳</h2><div id="ledger" class="scroll"></div></section></main>
 <script src="./review-client.js"></script>
 <script>
-const $=id=>document.getElementById(id);
+const token="__TOKEN__", $=id=>document.getElementById(id);
 const labels={invoice_number:"請求書番号",issue_date:"発行日",supplier:"仕入先",currency:"通貨",po_number:"発注番号",gross_total:"税込合計"};
 const statusNames={registered:"登録済み",needs_review:"要確認",ready_for_approval:"承認待ち"};
-const reasons={quantity_exceeds_available:"今回請求が承認可能な残数を超えています",nonpositive_quantity:"請求数量は正の値が必要です",legacy_approval_exists:"この発注には旧方式の承認済み請求があります",three_way_required:"この発注には受領照合が必要です",missing_or_invalid:"必須項目が未入力または形式不正",invalid_date:"日付形式不正",invalid_decimal:"数値形式不正",po_mismatch:"発注値と不一致",arithmetic_mismatch:"数量×単価と明細額が不一致",ambiguous_item_names:"同名品目があり対応を特定できません",item_set_mismatch:"品目の組み合わせが発注と異なります"};
+const reasons={gross_total_confirmation_required:"原本の税込合計を入力し、請求値と一致することを確認してください",invalid_object:"明細の形式が不正です",quantity_exceeds_available:"今回請求が承認可能な残数を超えています",nonpositive_quantity:"請求数量は正の値が必要です",legacy_approval_exists:"この発注には旧方式の承認済み請求があります",three_way_required:"この発注には受領照合が必要です",missing_or_invalid:"必須項目が未入力または形式不正",invalid_date:"日付形式不正",invalid_decimal:"数値形式不正",po_mismatch:"発注値と不一致",arithmetic_mismatch:"数量×単価と明細額が不一致",ambiguous_item_names:"同名品目があり対応を特定できません",item_set_mismatch:"品目の組み合わせが発注と異なります"};
 let current=null;
 function el(tag,text){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e}
 function message(text){$("message").textContent=text}
-function api(path, body) { return window.invoiceReviewRequest(path, body); }
+async function api(path,body){if(window.invoiceReviewRequest)return window.invoiceReviewRequest(path,body);const r=await fetch(path,body===undefined?{}:{method:"POST",headers:{"Content-Type":"application/json","X-Review-Token":token},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(d.error||r.status);return d}
 function table(headers,rows){const t=el("table"),head=el("tr");for(const h of headers)head.append(el("th",h));t.append(head);for(const row of rows){const tr=el("tr");for(const v of row)tr.append(el("td",v??"—"));t.append(tr)}return t}
 function reconciliation(rows=[]){
   const target=$("reconciliation");
@@ -66,25 +66,29 @@ function issues(list){
     target.append(el("div",text));
   }
 }
-function invoice(){const obj=structuredClone(current.current);for(const k of Object.keys(labels)){const v=$("f-"+k).value;obj[k]=v===""?null:v}obj.lines=[...$("lines").children].map(tr=>{const line=structuredClone(current.current.lines[Number(tr.dataset.index)]);for(const input of tr.querySelectorAll("input"))line[input.dataset.key]=input.value===""?null:input.value;return line});return obj}
+function sourceLines(){return Array.isArray(current.current.lines)?current.current.lines:[]}
+function invoice(){const obj=structuredClone(current.current);for(const k of Object.keys(labels)){const v=$("f-"+k).value;obj[k]=v===""?null:v}obj.lines=[...$("lines").children].map(tr=>{const source=sourceLines()[Number(tr.dataset.index)];const line=source&&typeof source==="object"&&!Array.isArray(source)?structuredClone(source):{};for(const input of tr.querySelectorAll("input"))line[input.dataset.key]=input.value===""?null:input.value;return line});return obj}
 async function openReview(id){current=await api("/api/review/"+id);$("detail").hidden=false;$("title").textContent="請求書 "+current.current.invoice_number;$("fields").replaceChildren();for(const [k,label]of Object.entries(labels)){const box=el("label",label),input=el("input");input.id="f-"+k;input.value=current.current[k]??"";input.disabled=current.status==="registered";box.append(input);if(k in current.po)box.append(el("div","発注 "+current.po[k]));$("fields").append(box)}
-$("lines").replaceChildren();current.current.lines.forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.value=line[k]??"";input.disabled=current.status==="registered";td.append(input);tr.append(td)}$("lines").append(tr)});
+$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);tr.append(td)}$("lines").append(tr)});
 $("order").replaceChildren(table(["品目名","数量","純単価","税抜明細額"],current.po.lines.map(l=>[l.item,l.quantity,l.unit_price,l.line_total])));
-$("pdf").hidden=false;$("pdf").src="./sample-"+id+".pdf";$("pdfnote").textContent="公開用のサンプル請求書";
-$("approval").hidden=current.status==="registered";$("registered").hidden=current.status!=="registered";$("note").value="";$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2);issues(current.status==="registered"?[]:current.issues);reconciliation(current.reconciliation)}
+const pdfURL=window.invoiceReviewPDF?.(id)??(current.pdf_available?"/pdf/"+id:null);
+$("pdf").hidden=!pdfURL;$("pdf").src=pdfURL??"about:blank";$("pdfnote").textContent=window.invoiceReviewPDF?"公開用のサンプル請求書":current.pdf_available?current.pdf_name:"対応する原本がdataフォルダに見つかりません。";
+$("gross-confirmation").hidden=!current.requires_gross_confirmation;$("confirmed-gross-total").value="";$("approval").hidden=current.status==="registered";$("registered").hidden=current.status!=="registered";$("note").value="";$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2);issues(current.status==="registered"?[]:current.issues);reconciliation(current.reconciliation)}
 async function load(){const [rows,ledger,files]=await Promise.all([api("/api/reviews"),api("/api/ledger"),api("/api/files")]);$("queue").replaceChildren();for(const r of rows){const tr=el("tr");for(const v of [r.invoice.invoice_number,r.invoice.supplier,r.invoice.gross_total+" "+r.invoice.currency,statusNames[r.status]||r.status])tr.append(el("td",v));const td=el("td"),b=el("button","開く");b.onclick=()=>openReview(r.id).catch(e=>message(e.message));td.append(b);tr.append(td);$("queue").append(tr)}if(!rows.length)$("queue").append(el("tr","確認対象はまだありません。上から抽出結果を取り込んでください。"));
 for(const [id,values]of [["answer",files.answers],["po",files.pos]]){const selected=$(id).value;$(id).replaceChildren();for(const value of values){const o=el("option",value);o.value=value;$(id).append(o)}if(values.includes(selected))$(id).value=selected}
 $("ledger").replaceChildren(table(["請求書番号","仕入先","税込合計","登録日時"],ledger.map(r=>[r.invoice_number,r.supplier,r.invoice.gross_total+" "+r.invoice.currency,r.created])))}
 $("ingest").onclick=async()=>{try{const r=await api("/api/ingest",{answer:$("answer").value,po:$("po").value,comma:$("comma").checked});await load();await openReview(r.id);message(r.reused?"取り込み済みの記録を表示しました。":"抽出結果を取り込みました。")}catch(e){message(e.message)}};
 $("validate").onclick=async()=>{try{const r=await api("/api/validate",{id:current.id,invoice:invoice()});issues(r.issues);reconciliation(r.reconciliation);message("編集値で照合しました。保存は承認時に行います。")}catch(e){message(e.message)}};
-$("approve").onclick=async()=>{const b=$("approve");b.disabled=true;try{const r=await api("/api/approve",{id:current.id,invoice:invoice(),actor:$("actor").value,note:$("note").value});if(r.status==="registered"){await load();await openReview(current.id);message(r.reused?"登録済みです。追加登録はありません。":"承認し、台帳に登録しました。")}else{if(r.issues)issues(r.issues);reconciliation(r.reconciliation);message(r.status==="duplicate_invoice"?"同じ仕入先・請求書番号がすでに登録されています。":"不一致が残っています。照合結果を確認してください。")}}catch(e){message(e.message)}finally{b.disabled=false}};
+$("fields").addEventListener("input",e=>{if(["f-gross_total","f-currency"].includes(e.target.id))$("confirmed-gross-total").value=""});
+$("approve").onclick=async()=>{const b=$("approve");b.disabled=true;try{const r=await api("/api/approve",{id:current.id,invoice:invoice(),actor:$("actor").value,note:$("note").value,confirmed_gross_total:$("confirmed-gross-total").value.trim()});if(r.status==="registered"){await load();await openReview(current.id);message(r.reused?"登録済みです。追加登録はありません。":"承認し、台帳に登録しました。")}else{if(r.issues)issues(r.issues);reconciliation(r.reconciliation);message(r.status==="duplicate_invoice"?"同じ仕入先・請求書番号がすでに登録されています。":"不一致が残っています。照合結果を確認してください。")}}catch(e){message(e.message)}finally{b.disabled=false}};
 $("sample-receipt").onclick=async()=>{
   try{
     const result=await api("/api/demo/receipt",{});
-    if(current)await openReview(current.id);
+    if(current){const id=current.id;await load();await openReview(id)}
     message(result.reused?"この受領はすでに登録されています。":"追加受領10個を登録しました。");
   }catch(e){message(e.message)}
 };
+window.invoiceReviewPDF=id=>"./sample-"+id+".pdf";
 message("照合エンジンを読み込んでいます。初回は少し時間がかかります。");
-load().then(()=>message("")).catch(e=>message(e.message));
+load().then(()=>{if(window.invoiceReviewRequest)message("")}).catch(e=>message(e.message));
 </script></html>

@@ -18,7 +18,7 @@ AMOUNT = "fixtures/amount-review/UC1_F202500003_00-INV_20250701_EN16931_FX.json"
 db = flow.connect(":memory:")
 three_way.add_receipt(db, PO, FIXTURES[SAMPLES + "receipt-1.json"], flow.num, flow.now)
 first = flow.ingest(db, Path(SAMPLES + "invoice-1.json"), PO, False)
-if flow.approve(db, first["id"], "Demo", "Opening approval")["status"] != "registered":
+if flow.approve(db, first["id"], "Demo", "Opening approval", confirmed_gross_total="400.00")["status"] != "registered":
     raise RuntimeError("Could not seed the prior approval")
 flow.ingest(db, Path(SAMPLES + "invoice-2.json"), PO, False)
 flow.ingest(db, Path(AMOUNT), FIXTURES["fixtures/po-uc1.json"], False)
@@ -28,11 +28,7 @@ def handle(path, body):
     if path == "/api/files":
         return {"answers": [], "pos": []}
     if path == "/api/reviews":
-        result = []
-        for row in db.execute("SELECT id FROM reviews ORDER BY id DESC"):
-            item = ui.detail(db, row["id"])
-            result.append({"id": item["id"], "status": item["status"], "invoice": item["current"]})
-        return result
+        return ui.list_reviews(db)
     if path == "/api/ledger":
         return [dict(row) | {"invoice": json.loads(row["invoice"])}
                 for row in db.execute("SELECT * FROM ledger ORDER BY id DESC")]
@@ -41,11 +37,9 @@ def handle(path, body):
     if path == "/api/demo/receipt":
         return three_way.add_receipt(db, PO, FIXTURES[SAMPLES + "receipt-2.json"], flow.num, flow.now)
     if path == "/api/validate":
-        ui.shape(body["invoice"])
-        return flow.assess(db, body["invoice"], ui.detail(db, body["id"])["po"])
+        return ui.validate_draft(db, body["id"], body["invoice"])
     if path == "/api/approve":
-        ui.shape(body["invoice"])
-        return flow.approve(db, body["id"], body["actor"], body["note"], body["invoice"])
+        return ui.approve_draft(db, body["id"], body["invoice"], body)
     raise ValueError("この操作は公開版では利用できません。")
 
 

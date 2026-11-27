@@ -54,3 +54,12 @@ jobs:
           test -f dist/robots.txt
           test -f dist/og-default.png
           test -f dist/sitemap-index.xml
+
+
+      - name: Exercise the built Invoice Review in Chromium
+        run: |
+          python3 -m venv "$RUNNER_TEMP/invoice-review-test"
+          test_python="$RUNNER_TEMP/invoice-review-test/bin/python"
+          "$test_python" -m pip install playwright==1.62.0
+          "$test_python" -m playwright install --with-deps chromium
+          "$test_python" scripts/check-invoice-review-browser.py
