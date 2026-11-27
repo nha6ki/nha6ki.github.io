@@ -1,159 +1,286 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
-
-const steps = [
-  { id: 'quantity', title: 'Partial invoice', text: '30 units claimed against 20 received units still available' },
-  { id: 'amount', title: 'Line amount', text: 'EUR 9,600 entered for 200 units at EUR 40' },
-];
 ---
-<BaseLayout title="InvoiceFlow interactive demo | Haruki Niwa"
-  description="Try partial invoice reconciliation and amount review with sample data.">
-  <main class="demo">
+<BaseLayout title="InvoiceFlow review workbench | Haruki Niwa"
+  description="Run InvoiceFlow's actual reconciliation rules on editable sample invoices in your browser.">
+  <main class="workbench">
     <a href="/projects/invoiceflow/">← InvoiceFlow project</a>
     <header>
-      <h1>InvoiceFlow interactive demo</h1>
-      <p>Review a blocked invoice, resolve the discrepancy, and approve it. This browser simulation uses sample data. The local application handles PDF extraction and Google Sheets delivery.</p>
+      <h1>Invoice review workbench</h1>
+      <p>Edit an invoice, add a receipt, and see whether the actual InvoiceFlow rules allow approval. Data and the review database stay in this browser session. Input is structured JSON, already extracted from an invoice in a typical workflow.</p>
     </header>
-    <noscript><p>Enable JavaScript to try the interactive scenarios.</p></noscript>
-    <invoice-review-demo>
-      <div class="scenarios" role="group" aria-label="Select a scenario">
-        {steps.map((step, i) => (
-          <button type="button" data-scenario={step.id} aria-pressed={i === 0 ? 'true' : 'false'}>
-            <strong>{step.title}</strong><span>{step.text}</span>
-          </button>
-        ))}
+    <invoice-workbench>
+      <div class="controls" role="group" aria-label="Load a sample">
+        <button type="button" data-sample="quantity">Partial delivery</button>
+        <button type="button" data-sample="amount">Incorrect line amount</button>
       </div>
-      <section class="card" aria-labelledby="invoice-title">
-        <div class="card-heading"><h2 id="invoice-title" data-title>Invoice DEMO-INV-002</h2><span class="badge" data-status data-tone="hold">On hold</span></div>
-        <dl class="metrics" data-quantity>
-          <div><dt>Ordered</dt><dd>100</dd></div>
-          <div><dt>Received</dt><dd data-received>60</dd></div>
-          <div><dt>Previously approved</dt><dd>40</dd></div>
-          <div><dt>Available before this invoice</dt><dd data-available>20</dd></div>
-          <div><dt>On this invoice</dt><dd>30</dd></div>
-        </dl>
-        <dl class="metrics" data-amount hidden>
-          <div><dt>Quantity</dt><dd>200</dd></div>
-          <div><dt>Net unit price</dt><dd>€40</dd></div>
-          <div><dt>Calculated net amount</dt><dd>€8,000</dd></div>
-          <div><dt>Entered line amount</dt><dd data-entered>€9,600</dd></div>
-        </dl>
-        <p class="result" data-result role="status">The invoice exceeds the available quantity by 10 units.</p>
-        <div class="actions">
-          <button type="button" data-resolve>Add a receipt for 10 units</button>
-          <button type="button" data-approve class="approve" disabled>Approve invoice</button>
-          <button type="button" data-reset>Reset scenario</button>
-        </div>
-      </section>
-      <section class="history" aria-labelledby="history-title">
-        <h2 id="history-title">Review history</h2>
-        <ol data-history><li>Held · Requested 30 units; 20 available.</li></ol>
-      </section>
-    </invoice-review-demo>
+      <div class="workspace">
+        <section aria-labelledby="input-heading">
+          <h2 id="input-heading">Review inputs</h2>
+          <details>
+            <summary>Purchase order, initial receipts and prior approvals</summary>
+            <label for="setup">Setup JSON</label>
+            <textarea id="setup" rows="11" spellcheck="false"></textarea>
+            <p class="hint">Start a new review to apply setup edits. This clears the current session's approval and receipt history.</p>
+          </details>
+          <label for="invoice">Invoice JSON</label>
+          <textarea id="invoice" rows="14" spellcheck="false"></textarea>
+          <div class="controls">
+            <button type="button" data-action="start">Start new review</button>
+            <button type="button" data-action="check" disabled>Recheck invoice</button>
+          </div>
+          <details data-receipt-panel>
+            <summary>Add a receipt</summary>
+            <label for="receipt">Receipt JSON</label>
+            <textarea id="receipt" rows="8" spellcheck="false"></textarea>
+            <button type="button" data-action="receipt" disabled>Record receipt and recheck</button>
+          </details>
+        </section>
+        <section aria-labelledby="result-heading">
+          <h2 id="result-heading">Review result</h2>
+          <p data-status role="status" class="status">Start a review to load the browser engine.</p>
+          <p data-error role="alert" hidden></p>
+          <ul data-issues hidden></ul>
+          <div data-evidence class="scroll" hidden></div>
+          <label for="note">Approval reason</label>
+          <input id="note" placeholder="What did you verify?" maxlength="300" />
+          <div class="controls">
+            <button type="button" data-action="approve" disabled>Approve invoice</button>
+            <button type="button" data-download disabled>Download review JSON</button>
+          </div>
+          <details data-audit-panel hidden>
+            <summary>Review history</summary>
+            <pre data-audit></pre>
+          </details>
+        </section>
+      </div>
+    </invoice-workbench>
+    <noscript><p>Enable JavaScript to run the workbench.</p></noscript>
   </main>
 </BaseLayout>
 
 <script>
-  class InvoiceReviewDemo extends HTMLElement {
-    connectedCallback() {
-      const node = (selector: string) => this.querySelector<HTMLElement>(selector)!;
-      const buttons = [...this.querySelectorAll<HTMLButtonElement>('[data-scenario]')];
-      const resolve = this.querySelector<HTMLButtonElement>('[data-resolve]')!;
-      const approve = this.querySelector<HTMLButtonElement>('[data-approve]')!;
-      let scenario = 'quantity';
-      let phase: 'hold' | 'ready' | 'approved' = 'hold';
+  import engine from './review_flow.py?raw';
+  import reconciliation from './three_way.py?raw';
+  import adapter from './workbench.py?raw';
 
-      const render = () => {
-        const quantity = scenario === 'quantity';
-        const resolved = phase !== 'hold';
-        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.scenario === scenario)));
-        node('[data-title]').textContent = quantity ? 'Invoice DEMO-INV-002' : 'Invoice DEMO-AMT-001';
-        node('[data-quantity]').hidden = !quantity;
-        node('[data-amount]').hidden = quantity;
-        node('[data-received]').textContent = resolved ? '70' : '60';
-        node('[data-available]').textContent = resolved ? '30' : '20';
-        node('[data-entered]').textContent = resolved ? '€8,000' : '€9,600';
-        const status = node('[data-status]');
-        status.dataset.tone = phase;
-        status.textContent = { hold: 'On hold', ready: 'Ready for approval', approved: 'Approved' }[phase];
-        resolve.textContent = quantity ? 'Add a receipt for 10 units' : 'Correct the line amount to €8,000';
-        resolve.disabled = resolved;
-        approve.disabled = phase !== 'ready';
+  const CDN = 'https://cdn.jsdelivr.net/pyodide/v314.0.8/full/';
+  type Runtime = {
+    FS: { writeFile: (name: string, source: string) => void };
+    runPython: (source: string) => unknown;
+    globals: { get: (name: string) => unknown };
+  };
+  type Issue = { field: string; reason: string; expected?: string; actual?: string | null; difference?: string };
+  type Evidence = {
+    item: string; ordered: string; received: string; approved: string; requested: string;
+    available: string; excess: string; receipt_ids: string[]; prior_invoices: string[];
+  };
+  type Result = {
+    status: 'needs_review' | 'ready_for_approval' | 'registered'; issues: Issue[];
+    reconciliation: Evidence[]; events: unknown[];
+    receipt: { receipt_id: string; reused: boolean } | null; error?: string;
+  };
+  let runtime: Promise<(action: string, payload: string) => string> | undefined;
+  function loadEngine() {
+    runtime ??= (async () => {
+      const url = CDN + 'pyodide.mjs';
+      const { loadPyodide } = await import(/* @vite-ignore */ url);
+      const py: Runtime = await loadPyodide({ indexURL: CDN });
+      py.FS.writeFile('review_flow.py', engine);
+      py.FS.writeFile('three_way.py', reconciliation);
+      py.runPython(adapter);
+      return py.globals.get('run_action') as (action: string, payload: string) => string;
+    })().catch(error => {
+      runtime = undefined;
+      throw error;
+    });
+    return runtime;
+  }
 
-        const reasons = quantity
-          ? ['The invoice exceeds the available quantity by 10 units.', '30 units are now available. The invoice passes the quantity check.']
-          : ['The entered amount exceeds the calculated net amount by €1,600.', 'The corrected amount matches 200 × €40.'];
-        node('[data-result]').textContent = phase === 'approved'
-          ? 'Approved and recorded in this demo session.'
-          : reasons[resolved ? 1 : 0];
-
-        const entries = [quantity ? 'Held · Requested 30 units; 20 available.' : 'Held · Entered €9,600; expected €8,000.'];
-        if (resolved) entries.push(quantity
-          ? 'Rechecked · Receipt RCPT-002 added 10 units.'
-          : 'Rechecked · Net line amount corrected from €9,600 to €8,000.');
-        if (phase === 'approved') entries.push('Approved · Review completed by Demo reviewer.');
-        node('[data-history]').replaceChildren(...entries.map(text => {
-          const item = document.createElement('li');
-          item.textContent = text;
-          return item;
-        }));
+  function sample(kind: string) {
+    const line = (quantity: string, unit_price: string, line_total: string) =>
+      ({ item: 'WIDGET-A', quantity, unit_price, line_total });
+    const identity = { supplier: 'Demo Supplier', currency: 'EUR', po_number: 'DEMO-PO-100' };
+    const invoice = (id: string, quantity: string, price: string, net: string, gross: string) => ({
+      ...identity, invoice_number: id, issue_date: '2025-07-02', gross_total: gross,
+      lines: [{ line_id: '1', ...line(quantity, price, net) }],
+    });
+    const receipt = (id: string, quantity: string) => ({
+      receipt_id: id, lines: [{ item: 'WIDGET-A', quantity }],
+    });
+    if (kind === 'amount') {
+      return {
+        setup: {
+          order: { ...identity, matching: 'three_way', lines: [line('200', '40', '8000')] },
+          receipts: [receipt('RCPT-001', '200')], prior_invoices: [],
+        },
+        invoice: invoice('DEMO-AMT-001', '200', '40', '9600', '9600'),
+        receipt: receipt('RCPT-002', '10'),
       };
+    }
+    return {
+      setup: {
+        order: { ...identity, matching: 'three_way', lines: [line('100', '10', '1000')] },
+        receipts: [receipt('RCPT-001', '60')], prior_invoices: [invoice('DEMO-INV-001', '40', '10', '400', '400')],
+      },
+      invoice: invoice('DEMO-INV-002', '30', '10', '300', '300'),
+      receipt: receipt('RCPT-002', '10'),
+    };
+  }
 
-      buttons.forEach(button => button.addEventListener('click', () => {
-        if (scenario === button.dataset.scenario) return;
-        scenario = button.dataset.scenario!;
-        phase = 'hold';
-        render();
+  class Workbench extends HTMLElement {
+    connectedCallback() {
+      const el = <T extends HTMLElement>(selector: string) => this.querySelector<T>(selector)!;
+      const setup = el<HTMLTextAreaElement>('#setup');
+      const invoice = el<HTMLTextAreaElement>('#invoice');
+      const receipt = el<HTMLTextAreaElement>('#receipt');
+      const note = el<HTMLInputElement>('#note');
+      const status = el('[data-status]');
+      const error = el('[data-error]');
+      const issues = el('[data-issues]');
+      const evidence = el('[data-evidence]');
+      const audit = el('[data-audit]');
+      const download = el<HTMLButtonElement>('[data-download]');
+      const controls = [...this.querySelectorAll<HTMLButtonElement>('button:not([data-download])')];
+      const pretty = (value: unknown) => JSON.stringify(value, null, 2);
+      let result: Result | undefined;
+      let dirty = false;
+      let busy = false;
+
+      const sync = () => {
+        const registered = result?.status === 'registered';
+        controls.forEach(button => {
+          const action = button.dataset.action;
+          button.disabled = busy || (action === 'approve'
+            ? dirty || result?.status !== 'ready_for_approval' || !note.value.trim()
+            : (action === 'check' || action === 'receipt') && (!result || registered));
+        });
+        setup.disabled = receipt.disabled = busy;
+        invoice.disabled = note.disabled = busy || registered;
+        download.disabled = busy || !result || dirty;
+      };
+      const show = (next: Result) => {
+        let message = {
+          needs_review: 'On hold — resolve the issues before approval.',
+          ready_for_approval: 'Ready for approval — record your reason to continue.',
+          registered: 'Approved — the review event is recorded in this session.',
+        }[next.status];
+        if (next.receipt?.reused) message += ' Receipt already recorded; no quantities were added.';
+        status.textContent = message;
+        status.dataset.tone = next.status;
+        issues.replaceChildren(...next.issues.map(issue => {
+          const row = document.createElement('li');
+          const values = issue.expected !== undefined
+            ? ` · expected ${issue.expected}, entered ${issue.actual ?? 'missing'}${issue.difference ? `, difference ${issue.difference}` : ''}`
+            : '';
+          row.textContent = `${issue.field} — ${issue.reason.replaceAll('_', ' ')}${values}`;
+          return row;
+        }));
+        issues.hidden = !next.issues.length;
+
+        const table = document.createElement('table');
+        const head = table.createTHead().insertRow();
+        for (const label of ['Item', 'Ordered', 'Received', 'Prior approvals', 'Requested', 'Available', 'Excess', 'Receipts / prior invoices']) {
+          const cell = document.createElement('th');
+          cell.scope = 'col';
+          cell.textContent = label;
+          head.append(cell);
+        }
+        const body = table.createTBody();
+        for (const row of next.reconciliation) {
+          const values = [row.item, row.ordered, row.received, row.approved, row.requested,
+            row.available, row.excess, [...row.receipt_ids, ...row.prior_invoices].join(', ')];
+          const tr = body.insertRow();
+          values.forEach(value => { tr.insertCell().textContent = value; });
+        }
+        evidence.replaceChildren(table);
+        evidence.hidden = !next.reconciliation.length;
+        audit.textContent = pretty(next.events);
+        el('[data-audit-panel]').hidden = !next.events.length;
+      };
+      const run = async (action: string) => {
+        if (busy) return;
+        busy = true;
+        sync();
+        try {
+          error.hidden = true;
+          const payload: Record<string, unknown> = { invoice: JSON.parse(invoice.value) };
+          if (action === 'start') payload.setup = JSON.parse(setup.value);
+          if (action === 'receipt') payload.receipt = JSON.parse(receipt.value);
+          if (action === 'approve') payload.note = note.value;
+          if (!runtime) status.textContent = 'Loading the Python review engine…';
+          const execute = await loadEngine();
+          const next = JSON.parse(execute(action, JSON.stringify(payload))) as Result;
+          if (next.error !== undefined) throw Error(next.error);
+          result = next;
+          dirty = false;
+          show(result);
+        } catch (exc) {
+          error.textContent = exc instanceof Error ? exc.message : String(exc);
+          error.hidden = false;
+          status.textContent = 'Action could not be completed. Check the input and try again.';
+        } finally {
+          busy = false;
+          sync();
+        }
+      };
+      const useSample = (kind: string) => {
+        const values = sample(kind);
+        setup.value = pretty(values.setup);
+        invoice.value = pretty(values.invoice);
+        receipt.value = pretty(values.receipt);
+        note.value = '';
+        dirty = true;
+        result = undefined;
+        issues.hidden = evidence.hidden = el('[data-audit-panel]').hidden = true;
+        void run('start');
+      };
+      controls.forEach(button => button.addEventListener('click', () => {
+        if (button.dataset.sample) useSample(button.dataset.sample);
+        else if (button.dataset.action) void run(button.dataset.action);
       }));
-      resolve.addEventListener('click', () => {
-        if (phase !== 'hold') return;
-        phase = 'ready';
-        render();
-        approve.focus();
+      invoice.addEventListener('input', () => {
+        dirty = true;
+        status.textContent = 'Invoice edited — recheck to update the decision.';
+        sync();
       });
-      approve.addEventListener('click', () => {
-        if (phase !== 'ready') return;
-        phase = 'approved';
-        render();
-        node('[data-reset]').focus();
+      note.addEventListener('input', sync);
+      download.addEventListener('click', () => {
+        const href = URL.createObjectURL(new Blob([pretty(result)], { type: 'application/json' }));
+        const link = document.createElement('a');
+        link.href = href;
+        link.download = 'invoiceflow-review.json';
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(href), 1000);
       });
-      node('[data-reset]').addEventListener('click', () => {
-        phase = 'hold';
-        render();
-        resolve.focus();
-      });
-      render();
+      useSample('quantity');
     }
   }
-  customElements.define('invoice-review-demo', InvoiceReviewDemo);
+  customElements.define('invoice-workbench', Workbench);
 </script>
 
 <style>
-  .demo { max-width: 65rem; margin-inline: auto; padding: clamp(1rem, 4vw, 3rem); }
-  header { max-width: 47rem; margin-block: 2rem 1.5rem; }
-  header h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; }
-  header p { line-height: 1.6; }
-  invoice-review-demo { display: block; }
-  [hidden] { display: none !important; }
-  .scenarios, .metrics { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
-  button, .card, .history { border: 1px solid currentColor; border-radius: .65rem; }
-  button { font: inherit; padding: .65rem .85rem; background: transparent; color: inherit; cursor: pointer; }
-  button:disabled { opacity: .55; cursor: default; }
-  button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-  .scenarios button { text-align: left; min-width: 0; }
-  .scenarios button[aria-pressed="true"] { background: #d6f3ec; border-color: #14685a; color: #153a35; }
-  .scenarios span { display: block; font-size: .86rem; margin-top: .3rem; }
-  .card, .history { margin-top: 1rem; padding: clamp(.85rem, 3vw, 1.5rem); }
-  .card-heading, .actions { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
-  .card-heading { justify-content: space-between; }
-  h2 { font-size: 1.15rem; margin: 0; }
-  .badge { padding: .3rem .65rem; border-radius: 1rem; font-size: .8rem; font-weight: 700; color: #153a35; background: #d6f3ec; }
-  .badge[data-tone="hold"] { background: #ffebcb; color: #5a3600; }
-  .metrics { margin-block: 1rem; }
-  .metrics div { padding: .55rem 0; border-bottom: 1px solid currentColor; }
-  dt { font-size: .85rem; }
-  dd { font-size: 1.6rem; font-weight: 700; margin: .2rem 0 0; font-variant-numeric: tabular-nums; }
-  .approve:enabled { background: #14685a; color: #fff; border-color: #14685a; }
-  .result { margin-block: 1.2rem; }
-  ol { margin-bottom: 0; padding-inline-start: 1.4rem; line-height: 1.7; }
+  .workbench { max-width: 72rem; margin-inline: auto; padding: clamp(1rem, 4vw, 3rem); }
+  header { max-width: 49rem; margin-block: 2rem 1.5rem; }
+  h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; }
+  .workspace { display: grid; grid-template-columns: 1fr 1.25fr; gap: 1rem; margin-block: 1rem; }
+  section { border: 1px solid currentColor; padding: 1rem; border-radius: .65rem; min-width: 0; }
+  h2 { font-size: 1.18rem; margin: 0 0 1rem; }
+  label { display: block; font-weight: 650; margin-block: .8rem .25rem; }
+  input, textarea { width: 100%; background: transparent; color: inherit; border: 1px solid currentColor; border-radius: .4rem; padding: .6rem; }
+  textarea, pre { font: .81rem/1.55 ui-monospace, monospace; overflow: auto; }
+  textarea { resize: vertical; }
+  button { font: inherit; padding: .55rem .75rem; background: transparent; color: inherit; border: 1px solid currentColor; border-radius: .4rem; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  button[data-action="approve"]:enabled { background: #14685a; color: #fff; }
+  .controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-block: .65rem; }
+  .status { padding: .65rem; border-radius: .4rem; background: #e1f4ee; color: #153a35; }
+  .status[data-tone="needs_review"] { background: #ffebcb; color: #5a3600; }
+  [data-error] { padding: .45rem; color: #6a2500; background: #ffebcb; }
+  .hint { font-size: .85rem; }
+  .scroll { overflow-x: auto; }
+  details { margin-block: .65rem; }
+  summary { cursor: pointer; }
+  pre { max-height: 22rem; }
+  @media (max-width: 760px) { .workspace { grid-template-columns: 1fr; } }
 </style>
