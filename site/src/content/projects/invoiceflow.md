@@ -19,19 +19,17 @@ links:
     url: "https://github.com/nha6ki/InvoiceFlow"
 ---
 
-InvoiceFlow is a local invoice review tool. It reads rendered PDF pages with a vision model and places the extracted values beside the original document. The reviewer can check why an invoice was held, correct the fields, and record the reason for approval. Approved records can then be sent to Google Sheets through n8n.
+The review queue opens with two invoices on hold and one already approved. Start with the amount discrepancy, then try a partial invoice that needs another receipt.
 
-The public review uses a Japanese interface and sample invoices. It runs in your browser, and refreshing the page resets the sample ledger.
+## Correct a line amount
 
-## Reconciling partial invoices
+Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount and run the checks again. Enter a reviewer name and reason to approve it, then open the history to see both the extracted and approved values.
 
-In the demo, a purchase order covers 100 units. The supplier has delivered 60, and an earlier approved invoice accounts for 40. A new invoice for 30 exceeds the remaining received quantity by 10, so InvoiceFlow holds it. After a receipt for another 10 units is recorded, the reviewer can recheck and approve the same invoice.
+## Release a partial invoice
 
-At approval, SQLite checks the available quantity again against both the order and recorded receipts, after subtracting prior approvals. The approval history retains the quantities, receipt IDs, and prior invoice numbers used in that decision. The demo uses synthetic purchase orders and receipts.
+Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arrived. The third invoice in the queue, **DEMO-INV-001**, already accounts for 40 of them. That leaves 20 available for a new invoice requesting 30.
 
-## Checking an incorrect amount
-
-The amount review demo starts with 9,600 entered for a line with 200 units at a net unit price of 40. InvoiceFlow displays the calculated amount of 8,000 and the difference of 1,600. After checking the PDF, a reviewer can correct the amount and rerun the checks. The history shows both the previous and approved values. This check applies to lines with a quantity and unit price.
+Add the sample receipt for 10 more units and check how the available balance changes. Read the tax-inclusive total from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
 
 ## What the extraction checks showed
 
