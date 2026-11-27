@@ -75,6 +75,11 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
 
     {!hasInlineIntroduction && <p class="lead">{project.data.summary}</p>}
 
+    {project.id === 'invoiceflow' && (
+      <p><a class="invoice-demo-link" href="/projects/invoiceflow/review/">Try Invoice Review</a><br />
+      <small>Japanese interface · Sample data · Resets on refresh</small></p>
+    )}
+
     {formattedDate && (
       <time class="project-date" datetime={project.data.date}>
         {formattedDate}
@@ -317,4 +322,9 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
       transition: none;
     }
   }
+</style>
+
+<style>
+.invoice-demo-link { display:inline-block; background:#176b58; color:white; padding:.7rem 1.1rem; border-radius:.4rem; font-weight:700; text-decoration:none }
+.invoice-demo-link:focus-visible { outline:3px solid #2679c9; outline-offset:3px }
 </style>

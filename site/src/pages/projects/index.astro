@@ -77,6 +77,10 @@ const filters = [
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         const selected = button.dataset.category;
+        const url = new URL(location.href);
+        if (selected && selected !== 'all') url.searchParams.set('category', selected); else url.searchParams.delete('category');
+        history.replaceState(null, '', url);
+        sessionStorage.setItem('project-category', selected ?? 'all');
         let count = 0;
         cards.forEach(card => {
           card.hidden = selected !== 'all' && !card.dataset.categories?.split(' ').includes(selected ?? '');
@@ -90,6 +94,9 @@ const filters = [
           : `Showing ${count} ${count === 1 ? 'project' : 'projects'} in ${button.dataset.label}.`;
       });
     });
+    const selected = new URL(location.href).searchParams.get('category') ?? sessionStorage.getItem('project-category');
+    const initial = Array.from(buttons).find(button => button.dataset.category === selected);
+    if (initial) initial.click();
     filters.hidden = false;
   }
 </script>
