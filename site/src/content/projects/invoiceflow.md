@@ -53,9 +53,11 @@ Once the reviewer approves the invoice, the local sender reads its ledger entry 
 
 ![Published n8n workflow connecting a POST webhook to the Google Sheets append-or-update operation.](/images/projects/invoiceflow/n8n-workflow.png)
 
-The connection carries one approved record from the POST webhook to the Sheets node. In the local run below, invoice **F202500003** appears in the **Invoices** tab with supplier **LE VENDEUR**, total **EUR 12,000**, and purchase order **PO202525478**.
+The webhook passes one approved record at a time to the Sheets node. Rows 2 and 3 of the register show **F202500003** and **F202500004**, each for **EUR 12,000** from **LE VENDEUR**. Both refer to purchase order **PO202525478**. The last two columns record who approved each invoice and when.
 
-![Google Sheets register with F202500003 in row 2 and the supplier, currency, total and purchase order alongside it.](/images/projects/invoiceflow/sheet.png)
+![Two invoice rows in Google Sheets, including their record keys, invoice numbers, amounts, purchase order, approver and approval timestamps.](/images/projects/invoiceflow/sheet.png)
+
+[Open the invoice register in Google Sheets](https://docs.google.com/spreadsheets/d/1lMzjNoQJdlf1jaMvwN8BAMunPins4vZB73U1CruHy88/edit?usp=sharing)
 
 A separate read-back workflow later returned **F202500003** and **F202500004** from rows 2 and 3. The three records in the browser demo and the two rows in this local read-back belong to different sample runs.
 
