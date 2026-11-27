@@ -37,6 +37,12 @@ def main():
         "3件目の DEMO-INV-001 は、上記の40個を登録した請求書です。承認時の記録を参照できます。".encode(),
         "DEMO-INV-001 には40個を承認した記録があります。ほかの3件でも原本PDFと抽出値を比較できます。004は承認待ち、005は通貨、006は発注番号の確認が必要です。".encode(),
     )
+    page = generated["index.html"].decode()
+    page = page.replace("2件の請求書を照合する", "3つのレビュー操作を試す")
+    page = page.replace("<ol>", '<ol><li><strong>空欄単価を修正する · F202600025</strong><br>原本の4行目の単価は空欄です。「未記載にする」を押し、確認者と理由を入力して「修正を保存（承認しない）」を押します。履歴を確認してください。階層明細の承認は保留されます。</li>', 1)
+    page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p class="muted">UC12は報告されたモデル出力から再構成したサンプルです。この画面ではAI抽出やGoogle Sheets送信は実行しません。修正はこのタブ内に保存され、再読み込みや言語切替で初期状態に戻ります。</p><p class="muted">処理はブラウザ内で行います。')
+    page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p><a href="./sample-7.pdf" target="_blank" rel="noopener">UC12原本PDF</a> · <a href="./sample-7-source.json">出典とサンプル作成情報</a></p><p class="muted">処理はブラウザ内で行います。')
+    generated["index.html"] = page.encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:
         stale = [name for name, data in generated.items()

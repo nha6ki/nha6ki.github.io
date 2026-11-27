@@ -93,10 +93,21 @@ def num(value):
         raise ValueError(f"Invalid decimal: {value!r}")
     return Decimal(value)
 
+def structure_issues(obj):
+    """Hold typed or parent-linked rows until the matcher supports their semantics."""
+    for line in invoice_lines(obj):
+        if not isinstance(line, dict):
+            continue
+        annotated_id = re.search(r"\b(GROUP|DETAIL|INFORMATION)\b|#\s*Parent", str(line.get("line_id", "")), re.I)
+        if line.get("line_type") or line.get("parent_line_id") or annotated_id:
+            return [{"field": "lines", "reason": "unsupported_line_structure"}]
+    return []
+
+
 def validate(obj,po):
     if not isinstance(obj, dict):
         raise ValueError("Invoice must be an object")
-    issues=[]
+    issues=structure_issues(obj)
     match_receipts = three_way.enabled(po)
     for key in FIELDS:
         if key not in obj or not isinstance(obj[key],str) or not obj[key].strip():
@@ -167,6 +178,8 @@ def validate(obj,po):
     return issues
 
 def check_po(po):
+    if po == {"matching": "review_only", "lines": []}:
+        return
     if not isinstance(po, dict):
         raise ValueError("PO must be an object")
     if "matching" in po and not three_way.enabled(po):
@@ -184,8 +197,13 @@ def check_po(po):
             raise ValueError("Three-way PO requires unique items and positive quantities")
         names.add(line["item"])
 
-def assess(conn,obj,po):
+def assess(conn,obj,po, *, original=None):
+    if po.get("matching") == "review_only":
+        return {"issues": [{"field": "po_number", "reason": "purchase_order_unavailable"}] +
+                structure_issues(original if original is not None else obj), "reconciliation": []}
     issues = validate(obj,po)
+    if original is not None:
+        issues.extend(issue for issue in structure_issues(original) if issue not in issues)
     if not three_way.enabled(po):
         key = three_way.order_key(po)
         if conn.execute("SELECT 1 FROM receipt_orders WHERE order_key=?", (key,)).fetchone():
@@ -233,7 +251,8 @@ def ingest(conn, path, po, comma, *, replace_draft_context=False):
                     "Use ingest --replace-draft-context to explicitly update the unregistered review."
                 )
 
-        three_way.bind_order(conn, po)
+        if po.get("matching") != "review_only":
+            three_way.bind_order(conn, po)
         assessment = assess(conn, obj, po)
         status = readiness(assessment)
         if prior:
@@ -264,6 +283,34 @@ def ingest(conn, path, po, comma, *, replace_draft_context=False):
     return {"id": ident, "status": status, "issues": assessment["issues"]}
 
 
+def save_draft(conn, ident, actor, note, invoice, expected_current):
+    """Persist a review correction and its audit event without registering it."""
+    if not all(isinstance(value, str) and value.strip() for value in (actor, note)):
+        raise ValueError("Actor and note required")
+    check_edited_invoice(invoice)
+    with conn:
+        conn.execute("BEGIN IMMEDIATE")
+        row = conn.execute("SELECT * FROM reviews WHERE id=?", (ident,)).fetchone()
+        if row is None:
+            raise ValueError("Review does not exist")
+        if row["status"] == "registered":
+            raise ValueError("Registered invoices cannot be edited")
+        before = json.loads(row["normalized"])
+        if before != expected_current:
+            raise ValueError("別の画面で修正されています。開き直して確認してください。")
+        assessment = assess(conn, invoice, json.loads(row["po"]), original=json.loads(row["raw"]))
+        status = readiness(assessment)
+        if invoice == before:
+            return {"id": ident, "status": status, "unchanged": True, **assessment}
+        conn.execute("UPDATE reviews SET normalized=?, issues=?, status=? WHERE id=?",
+                     (dump(invoice), dump(assessment["issues"]), status, ident))
+        conn.execute(
+            "INSERT INTO events(review_id,actor,note,action,payload,created) VALUES(?,?,?,?,?,?)",
+            (ident, actor.strip(), note.strip(), "save_draft",
+             dump({"before": before, "after": invoice, "reconciliation": assessment["reconciliation"]}), now()))
+    return {"id": ident, "status": status, "unchanged": False, **assessment}
+
+
 def approve(conn,id,actor,note,corrected=None, *, confirmed_gross_total=None):
     if not all(isinstance(value, str) and value.strip() for value in (actor, note)):
         raise ValueError("Actor and note required")
@@ -276,7 +323,7 @@ def approve(conn,id,actor,note,corrected=None, *, confirmed_gross_total=None):
         if row["status"]=="registered": return {"id":id,"status":"registered","reused":True}
         obj=corrected if corrected is not None else json.loads(row["normalized"])
         po = json.loads(row["po"])
-        assessment = assess(conn,obj,po)
+        assessment = assess(conn,obj,po, original=json.loads(row["raw"]))
         if any(issue["reason"] != "quantity_exceeds_available" for issue in assessment["issues"]):
             return {"id":id,"status":"needs_review",**assessment}
         existing=conn.execute("SELECT review_id FROM ledger WHERE supplier=? AND invoice_number=?",
@@ -307,7 +354,10 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--db",type=Path,default=Path("review.sqlite"))
     sub=p.add_subparsers(dest="command",required=True)
-    i=sub.add_parser("ingest"); i.add_argument("answer",type=Path); i.add_argument("--po",type=Path,required=True)
+    i=sub.add_parser("ingest"); i.add_argument("answer",type=Path)
+    order = i.add_mutually_exclusive_group(required=True)
+    order.add_argument("--po", type=Path)
+    order.add_argument("--review-only", action="store_true", help="Inspect an extraction without a PO; approval is blocked")
     i.add_argument("--decimal-comma",action="store_true")
     i.add_argument("--replace-draft-context", action="store_true")
     rec=sub.add_parser("receive")
@@ -320,7 +370,9 @@ def main():
     ap.add_argument("--confirmed-gross-total", help="Tax-inclusive total read from the source invoice")
     a=p.parse_args()
     with _resource_closing(connect(a.db)) as conn, conn:
-        if a.command=="ingest": result=ingest(conn,a.answer,json.loads(a.po.read_text()),a.decimal_comma, replace_draft_context=a.replace_draft_context)
+        if a.command=="ingest":
+            po = {"matching": "review_only", "lines": []} if a.review_only else json.loads(a.po.read_text())
+            result=ingest(conn,a.answer,po,a.decimal_comma,replace_draft_context=a.replace_draft_context)
         elif a.command=="receive":
             po=json.loads(a.po.read_text())
             check_po(po)

@@ -1,0 +1,8 @@
+{
+  "source_repository": "fnfempe/France_RFE",
+  "source_commit": "97ba0f3d4ef2abed5780e9490d5c3a2be832ab1d",
+  "path": "FNFE_RFE_INVOICE/Z.example/TEST/FX/EXTENDED/UC12_F202600025_SOUS-LIGNE_EXTENDED_FX.pdf",
+  "sha256": "f4d824bc75e1dc125f418272b65248a7a9110b88d3ec3dac884377b684625142",
+  "fixture_provenance": "Reconstructed from user-reported Qwen3.5:9b-q8_0 extraction values; not an original model stream. Blank unit price was reported as zero.",
+  "inference_in_browser": false
+}

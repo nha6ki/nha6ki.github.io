@@ -16,7 +16,20 @@ CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 def check(page, english=False):
     expect(page.locator('header button[onclick="load()"]')).to_have_count(0)
     needs_review = "Needs review" if english else "要確認"
-    expect(page.locator("#queue tr")).to_have_count(6, timeout=60_000)
+    expect(page.locator("#queue tr")).to_have_count(7, timeout=60_000)
+    correction = page.locator("#queue tr").filter(has_text="F202600025")
+    correction.get_by_role("button").click()
+    expect(page.locator("#pdf")).to_have_attribute("src", "./sample-7.pdf")
+    expect(page.locator('#lines tr').nth(3).locator('[data-key="unit_price"]')).to_have_value("0.00")
+    page.locator('#lines tr').nth(3).get_by_role('button').click()
+    page.locator('#actor').fill('Demo reviewer')
+    page.locator('#note').fill('Source line 4 has no printed unit price')
+    page.locator('#save-draft').click()
+    expect(page.locator('#history')).to_contain_text('save_draft', use_inner_text=False)
+    correction.get_by_role('button').click()
+    expect(page.locator('#lines tr').nth(3).locator('[data-key="unit_price"]')).to_have_value('')
+    expect(page.locator('#issues')).to_contain_text('Approval is blocked' if english else '承認できません')
+    expect(page.locator('#ledger')).not_to_contain_text('F202600025')
     for number, field, correct in [(4, None, None), (5, "currency", "CAD"), (6, "po_number", "DEMO-PO-006")]:
         code = f"DEMO-INV-{number:03}"
         sample = page.locator("#queue tr").filter(has_text=code)

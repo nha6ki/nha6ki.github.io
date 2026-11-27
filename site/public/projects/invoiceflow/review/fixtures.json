@@ -204,5 +204,55 @@
         "line_total": "360.00"
       }
     ]
+  },
+  "fixtures/correction/UC12.json": {
+    "invoice_number": "F202600025",
+    "issue_date": "2025-01-05",
+    "supplier": "LE VENDEUR",
+    "currency": "EUR",
+    "po_number": "PO202525478",
+    "gross_total": "580,00",
+    "lines": [
+      {
+        "line_id": "1",
+        "line_type": "GROUP",
+        "parent_line_id": null,
+        "item": "LIVRE-JOUET - MA PETITE HISTOIRE ET DOUDOU",
+        "description": null,
+        "quantity": "20,00",
+        "unit_price": "25,00",
+        "line_total": "500,00"
+      },
+      {
+        "line_id": "2",
+        "line_type": "DETAIL",
+        "parent_line_id": "1",
+        "item": "LIVRE - MA PETITE HISTOIRE",
+        "description": null,
+        "quantity": "20,00",
+        "unit_price": "10,00",
+        "line_total": "200,00"
+      },
+      {
+        "line_id": "3",
+        "line_type": "DETAIL",
+        "parent_line_id": "1",
+        "item": "JOUET - DOUDOU",
+        "description": null,
+        "quantity": "20,00",
+        "unit_price": "15,00",
+        "line_total": "300,00"
+      },
+      {
+        "line_id": "4",
+        "line_type": "INFORMATION",
+        "parent_line_id": null,
+        "item": "CADEAU - PAQUET CADEAU",
+        "description": null,
+        "quantity": "1,00",
+        "unit_price": "0,00",
+        "line_total": "0,00"
+      }
+    ]
   }
 }

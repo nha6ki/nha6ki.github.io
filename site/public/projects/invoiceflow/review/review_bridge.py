@@ -29,6 +29,10 @@ for number in ("004", "005", "006"):
     flow.ingest(db, source, order, False)
 
 
+# Reconstructed from the user-reported model output; not the original stream file.
+flow.ingest(db, Path("fixtures/correction/UC12.json"), {"matching": "review_only", "lines": []}, True)
+
+
 def handle(path, body):
     if path == "/api/files":
         return {"answers": [], "pos": []}
@@ -43,6 +47,9 @@ def handle(path, body):
         return three_way.add_receipt(db, PO, FIXTURES[SAMPLES + "receipt-2.json"], flow.num, flow.now)
     if path == "/api/validate":
         return ui.validate_draft(db, body["id"], body["invoice"])
+    if path == "/api/save-draft":
+        return flow.save_draft(db, body["id"], body["actor"], body["note"],
+                               body["invoice"], body["expected_current"])
     if path == "/api/approve":
         return ui.approve_draft(db, body["id"], body["invoice"], body)
     raise ValueError("この操作は公開版では利用できません。")

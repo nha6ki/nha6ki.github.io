@@ -47,7 +47,7 @@
         if (!entry) return;
         pending.delete(data.id);
         clearTimeout(entry.timer);
-        if (data.error !== undefined) entry.reject(Error(english ? ({"照合を完了できませんでした。ページを再読み込みしてやり直してください。": "Could not complete the check. Reload the page and try again.", "この操作は公開版では利用できません。": "This action is unavailable in the public demo."}[data.error] ?? data.error) : data.error));
+        if (data.error !== undefined) entry.reject(Error(english ? ({"照合を完了できませんでした。ページを再読み込みしてやり直してください。": "Could not complete the check. Reload the page and try again.", "別の画面で修正されています。開き直して確認してください。": "This review changed elsewhere. Reopen it before saving.", "この操作は公開版では利用できません。": "This action is unavailable in the public demo."}[data.error] ?? data.error) : data.error));
         else entry.resolve(data.value);
       };
     }

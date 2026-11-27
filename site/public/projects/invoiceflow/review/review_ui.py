@@ -1,6 +1,6 @@
 """Local invoice review UI. Run beside review_flow.py; no extra packages."""
 from contextlib import closing as _resource_closing
-import argparse,json,secrets
+import argparse,hashlib,json,secrets
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.parse import urlparse
@@ -25,24 +25,56 @@ def detail(conn,id):
         event=dict(r);event["payload"]=json.loads(event["payload"]);result["events"].append(event)
     result["requires_gross_confirmation"] = not registered and flow.three_way.enabled(result["po"])
     if not registered:
-        assessment = flow.assess(conn, result["current"], result["po"])
+        assessment = flow.assess(conn, result["current"], result["po"], original=result["raw"])
         result.update(assessment)
         result["status"] = flow.readiness(assessment)
     elif registered:
         result["reconciliation"]=next(
             (event["payload"].get("reconciliation",[]) for event in reversed(result["events"])
              if event["action"]=="approve"), [])
-    name=Path(row["source"]).name
-    for ending in (".stream.jsonl",".normalized.json",".json"):
-        if name.endswith(ending):
-            name=name[:-len(ending)];break
-    result["pdf_available"]=(ROOT/"data"/(name+".pdf")).is_file()
-    result["pdf_name"]=name+".pdf"
+    document = source_document(row["source"])
+    result.update(document_available=document is not None,
+                  document_name=document[0].name if document else None,
+                  document_type=document[1] if document else None)
+    result["pdf_available"] = document is not None and document[1] == "application/pdf"
+    result["pdf_name"] = document[0].name if result["pdf_available"] else None
     return result
+
+def source_document(answer_path):
+    """Resolve a verified new source, or the historical data/<answer-stem>.pdf."""
+    answer = Path(answer_path)
+    name = answer.name
+    for ending in (".stream.jsonl", ".normalized.json", ".json"):
+        if name.endswith(ending):
+            name = name[:-len(ending)]
+            break
+    metadata_path = answer.parent / (name + ".source.json")
+    if metadata_path.exists():
+        try:
+            metadata_path = safe_path(str(metadata_path), ROOT)
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+            filename = metadata["file"]
+            if not isinstance(filename, str) or Path(filename).name != filename:
+                return None
+            source = safe_path(filename, metadata_path.parent)
+            media = {".pdf": "application/pdf", ".png": "image/png",
+                     ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}.get(source.suffix.lower())
+            if not media or media != metadata["media_type"]:
+                return None
+            if hashlib.sha256(source.read_bytes()).hexdigest() != metadata["sha256"]:
+                return None
+            return source, media
+        except (ValueError, OSError, KeyError, TypeError):
+            return None
+    try:
+        return safe_path(name + ".pdf", ROOT / "data"), "application/pdf"
+    except (ValueError, OSError):
+        return None
+
 
 def list_reviews(conn):
     rows = conn.execute("""
-        SELECT r.id, r.created, r.status, r.normalized, r.po, l.invoice
+        SELECT r.id, r.created, r.status, r.normalized, r.po, r.raw, l.invoice
         FROM reviews r LEFT JOIN ledger l ON l.review_id=r.id ORDER BY r.id DESC
     """)
     result = []
@@ -50,17 +82,17 @@ def list_reviews(conn):
         status = row["status"]
         invoice = json.loads(row["invoice"] or row["normalized"])
         if status != "registered":
-            status = flow.readiness(flow.assess(conn, invoice, json.loads(row["po"])))
+            status = flow.readiness(flow.assess(conn, invoice, json.loads(row["po"]), original=json.loads(row["raw"])))
         result.append({"id": row["id"], "created": row["created"], "status": status, "invoice": invoice})
     return result
 
 
 def validate_draft(conn, ident, invoice):
     flow.check_edited_invoice(invoice)
-    row = conn.execute("SELECT po FROM reviews WHERE id=?", (ident,)).fetchone()
+    row = conn.execute("SELECT po, raw FROM reviews WHERE id=?", (ident,)).fetchone()
     if not row:
         raise ValueError("Review not found")
-    return flow.assess(conn, invoice, json.loads(row["po"]))
+    return flow.assess(conn, invoice, json.loads(row["po"]), original=json.loads(row["raw"]))
 
 
 def approve_draft(conn, ident, invoice, body):
@@ -98,10 +130,14 @@ class Handler(BaseHTTPRequestHandler):
                 if path.startswith("/api/review/"):
                     conn.execute("BEGIN")
                     return self.reply(detail(conn,int(path.rsplit("/",1)[-1])))
-                if path.startswith("/pdf/"):
-                    d=detail(conn,int(path.rsplit("/",1)[-1]))
-                    p=safe_path(d["pdf_name"],ROOT/"data")
-                    return self.reply(p.read_bytes(),kind="application/pdf")
+                if path.startswith(("/pdf/", "/source/")):
+                    row = conn.execute("SELECT source FROM reviews WHERE id=?",
+                                       (int(path.rsplit("/", 1)[-1]),)).fetchone()
+                    document = source_document(row["source"]) if row else None
+                    if document is None or (path.startswith("/pdf/") and document[1] != "application/pdf"):
+                        raise ValueError("Source document is unavailable or has changed")
+                    source, media = document
+                    return self.reply(source.read_bytes(), kind=media)
             self.reply({"error":"Not found"},404)
         except (ValueError,OSError) as exc:self.reply({"error":str(exc)},404)
     def do_POST(self):
@@ -122,6 +158,9 @@ class Handler(BaseHTTPRequestHandler):
                 if path=="/api/validate":
                     conn.execute("BEGIN")
                     return self.reply(validate_draft(conn, id, obj))
+                if path=="/api/save-draft":
+                    return self.reply(flow.save_draft(conn, id, body["actor"], body["note"],
+                                                      obj, body["expected_current"]))
                 if path=="/api/approve":
                     result=approve_draft(conn, id, obj, body)
                     return self.reply(result)
