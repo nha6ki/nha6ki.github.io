@@ -1,0 +1,26 @@
+.invoice-figure {
+  width: min(100%, var(--figure-width));
+  margin: 1rem auto 1.5rem;
+}
+.invoice-figure a {
+  display: block;
+  cursor: zoom-in;
+}
+.invoice-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+.invoice-register-image {
+  overflow-x: auto;
+  padding-bottom: .4rem;
+}
+.invoice-register-image a {
+  min-width: 1200px;
+}
+.invoice-figure a:focus-visible {
+  outline: 3px solid #2679c9;
+  outline-offset: -3px;
+}
