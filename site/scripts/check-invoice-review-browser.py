@@ -13,19 +13,20 @@ REVIEW = "/projects/invoiceflow/review/"
 CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 
 
-def check(page):
+def check(page, english=False):
+    needs_review = "Needs review" if english else "要確認"
     row = page.locator("#queue tr").filter(has_text="DEMO-INV-002")
-    expect(row).to_contain_text("要確認", timeout=60_000)
-    row.get_by_role("button", name="開く").click()
+    expect(row).to_contain_text(needs_review, timeout=60_000)
+    row.get_by_role("button", name="Open" if english else "開く").click()
     expect(page.locator("#reconciliation")).to_contain_text("RCPT-001")
     page.locator("#sample-receipt").click()
-    expect(row).to_contain_text("承認待ち")
+    expect(row).to_contain_text("Awaiting approval" if english else "承認待ち")
     expect(page.locator("#reconciliation")).to_contain_text("RCPT-002")
 
     page.locator("#actor").fill("Browser test")
     page.locator("#note").fill("Checked the sample PDF")
     page.locator("#approve").click()
-    expect(page.locator("#issues")).to_contain_text("原本の税込合計を入力")
+    expect(page.locator("#issues")).to_contain_text("Enter the total including tax" if english else "原本の税込合計を入力")
     expect(page.locator("#ledger")).not_to_contain_text("DEMO-INV-002")
     page.locator("#confirmed-gross-total").fill("301.00")
     page.locator("#approve").click()
@@ -38,7 +39,7 @@ def check(page):
     expect(page.locator("#history")).to_contain_text("reviewer_attestation", use_inner_text=False)
 
     page.reload()
-    expect(row).to_contain_text("要確認", timeout=60_000)
+    expect(row).to_contain_text(needs_review, timeout=60_000)
     expect(page.locator("#ledger")).not_to_contain_text("DEMO-INV-002")
 
 
@@ -64,6 +65,20 @@ def main():
                 page.on("pageerror", lambda error: errors.append(str(error)))
                 page.goto(f"http://127.0.0.1:{server.server_port}{REVIEW}")
                 check(page)
+                page.get_by_role("link", name="English", exact=True).click()
+                expect(page.locator("html")).to_have_attribute("lang", "en")
+                check(page, english=True)
+                row = page.locator("#queue tr").filter(has_text="F202500003")
+                row.get_by_role("button", name="Open").click()
+                page.locator("#lines tr").first.locator('[data-key="line_total"]').fill("8000")
+                page.get_by_role("button", name="Recheck", exact=True).click()
+                expect(page.locator("#issues")).to_contain_text("Matching checks passed")
+                page.locator("#actor").fill("Reviewer")
+                page.locator("#note").fill("Verified net amount against the PDF")
+                page.get_by_role("button", name="Approve and register").click()
+                expect(page.locator("#ledger")).to_contain_text("F202500003")
+                page.get_by_role("link", name="日本語", exact=True).click()
+                expect(page.locator("html")).to_have_attribute("lang", "ja")
                 assert not errors, errors
                 browser.close()
         finally:

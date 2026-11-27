@@ -4,7 +4,14 @@
   let unusable = false;
   let requestId = 0;
   const pending = new Map();
-  const loadError = "照合エンジンを読み込めませんでした。ネット接続を確認してページを再読み込みしてください。";
+  const english = document.documentElement.lang === "en";
+  const switcher = document.createElement("a");
+  switcher.href = english ? "./" : "./en.html";
+  switcher.lang = switcher.hreflang = english ? "ja" : "en";
+  switcher.textContent = english ? "日本語" : "English";
+  switcher.style.color = "inherit";
+  document.querySelector("header > div").append(" · ", switcher);
+  const loadError = english ? "Could not load the matching engine. Check your connection and reload the page." : "照合エンジンを読み込めませんでした。ネット接続を確認してページを再読み込みしてください。";
 
   function stop() {
     unusable = true;
@@ -40,7 +47,7 @@
         if (!entry) return;
         pending.delete(data.id);
         clearTimeout(entry.timer);
-        if (data.error !== undefined) entry.reject(Error(data.error));
+        if (data.error !== undefined) entry.reject(Error(english ? ({"照合を完了できませんでした。ページを再読み込みしてやり直してください。": "Could not complete the check. Reload the page and try again.", "この操作は公開版では利用できません。": "This action is unavailable in the public demo."}[data.error] ?? data.error) : data.error));
         else entry.resolve(data.value);
       };
     }

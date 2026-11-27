@@ -1,8 +1,19 @@
 """Generate static Review assets from an explicitly selected InvoiceFlow checkout."""
 import argparse
+import json
+import re
 from pathlib import Path
 import subprocess
 import sys
+
+
+def english_page(source):
+    translations = json.loads(Path(__file__).with_name("invoice-review-en.json").read_text(encoding="utf-8"))
+    pattern = "|".join(re.escape(key) for key in sorted(translations, key=len, reverse=True))
+    page = re.sub(pattern, lambda match: translations[match.group()], source)
+    if re.search(r"[ぁ-龯]", page):
+        raise ValueError("Invoice Review contains untranslated interface text")
+    return page.replace('lang="ja"', 'lang="en"', 1)
 
 
 def main():
@@ -19,6 +30,7 @@ def main():
          "sys.stdout.buffer.write(public_review.public_html(browser=True).encode('utf-8'))"],
         cwd=source,
     )
+    generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:
         stale = [name for name, data in generated.items()
                  if not (target / name).is_file() or (target / name).read_bytes() != data]

@@ -29,7 +29,7 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 ## Inside Invoice Review
 
-[Open Invoice Review](/projects/invoiceflow/review/) to work through the three sample records. Two invoices need attention. The third is an approved invoice whose quantity affects the next approval.
+[Open Invoice Review](/projects/invoiceflow/review/en.html) to work through the three sample records. Two invoices need attention. The third is an approved invoice whose quantity affects the next approval.
 
 ![Invoice Review in the browser with the sample invoice queue loaded.](/images/projects/invoiceflow/queue.png)
 

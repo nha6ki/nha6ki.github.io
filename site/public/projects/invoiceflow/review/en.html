@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invoice Review</title>
+<style>
+:root{font:15px/1.6 system-ui,sans-serif;color:#182e30;background:#f4f6f5}*{box-sizing:border-box}
+body{margin:0}header{padding:20px 28px;background:#163c38;color:white;display:flex;justify-content:space-between;align-items:center}h1{font-size:23px;margin:0}header small{color:#bfd1ca}
+main{max-width:1600px;margin:auto;padding:24px}button{cursor:pointer;border:1px solid #a7bdb5;background:white;border-radius:6px;padding:9px 14px;color:#163c38;font:inherit}button.primary{background:#176b58;color:white;border-color:#176b58}button:disabled{opacity:.5;cursor:default}
+section,details{background:white;border:1px solid #dbe4df;border-radius:9px;padding:18px;margin-bottom:18px}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px}input,select,textarea{padding:8px;border:1px solid #b6c8bf;border-radius:4px;font:inherit;max-width:100%;background:white}
+input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-width:480px}textarea{width:100%;min-height:65px}table{width:100%;border-collapse:collapse}td,th{padding:9px;text-align:left;border-bottom:1px solid #e4ebe7;vertical-align:top}th{font-size:12px;color:#526963}td input{min-width:65px}tbody tr:hover{background:#f3f8f5}.split{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(550px,1.1fr);gap:18px}.pdf{height:850px;width:100%;border:0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.badge{font-size:12px;background:#e3f0e8;border-radius:20px;padding:4px 10px}.warn{background:#fff2dd;color:#7a4b00}.issues{border-left:4px solid #bf852a;padding:10px 16px;background:#fff8eb;margin:12px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.muted{color:#60756e;font-size:13px}.scroll{overflow-x:auto;min-width:0}.split>*{min-width:0}.review-summary{min-width:0}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #2679c9;outline-offset:2px}#message{position:sticky;top:0;padding:12px 18px;background:#e2eee9;z-index:2;margin-bottom:15px;border-radius:6px}#message:empty{display:none}[hidden]{display:none!important}@media(max-width:1000px){.split{grid-template-columns:minmax(0,1fr)}.pdf{height:380px}.pdf-panel{order:2}main{padding:12px}.fields{grid-template-columns:minmax(0,1fr)}header{gap:12px;flex-wrap:wrap}}
+</style>
+<header><div><h1>Invoice Review</h1><small>Invoice verification and approval</small> · <a style="color:inherit" href="../">Project overview</a></div><button onclick="load()">Refresh list</button></header>
+<main><div id="message" role="status"></div>
+<section><h2>Review two sample invoices</h2>
+<ol>
+<li><strong>Correct a line amount · F202500003</strong><br>Compare the line amount of 9,600 with the source PDF, correct it, then select “Recheck”.</li>
+<li><strong>Review a partial invoice · DEMO-INV-002</strong><br>Of the 60 units received, 40 have already been billed. Check why the request for another 30 units is on hold, then record the additional receipt.</li>
+</ol>
+<p>The third invoice, DEMO-INV-001, accounts for the 40 units already approved. Open it to inspect the approval record.</p>
+<p class="muted">Changes stay in this browser tab. Reloading or switching languages resets the sample data.</p>
+<div hidden><select id="answer"></select><select id="po"></select>
+<input id="comma" type="checkbox"><button id="ingest" disabled>Import</button></div></section>
+<section><h2>Invoice queue</h2><div class="scroll"><table><thead><tr><th>Invoice number</th><th>Supplier</th><th>Total including tax</th><th>Status</th><th></th></tr></thead><tbody id="queue"></tbody></table></div></section>
+<div id="detail" hidden>
+<section class="review-summary" tabindex="-1" id="summary"><h2 id="summary-title">Matching results</h2><div id="issues"></div><div id="reconciliation" class="scroll" hidden></div><button id="sample-receipt" type="button" hidden>Record sample receipt of 10 units</button></section><div class="split"><section class="pdf-panel"><details><summary>View source PDF</summary><p id="pdfnote" class="muted"></p><iframe class="pdf" title="Source invoice PDF" id="pdf"></iframe></details></section>
+<div><section><h2 id="title">Invoice and purchase order</h2><p class="muted">Edits are saved on approval. Purchase order values reflect the order at import.</p><div id="fields" class="fields"></div>
+<h3>Invoice lines (editable before approval)</h3><div class="scroll"><table><thead><tr><th>Line ID</th><th>Item name</th><th>Quantity</th><th>Net unit price</th><th>Net line amount</th></tr></thead><tbody id="lines"></tbody></table></div>
+<h3>Purchase order lines</h3><div id="order" class="scroll"></div>
+<div id="approval"><label id="gross-confirmation" hidden>Total including tax on the source invoice (verify tax manually)<input id="confirmed-gross-total" inputmode="decimal" placeholder="Enter the source total using a decimal point"></label><label>Reviewer<input id="actor" placeholder="Reviewer name"></label><label>Reason for approval or correction<textarea id="note" placeholder="Describe what you checked or why you changed a value"></textarea></label><div class="toolbar"><button id="validate">Recheck</button><button class="primary" id="approve">Approve and register</button></div></div><p id="registered" class="badge" hidden>Registered in the ledger</p>
+</section><details><summary>Original extraction, normalization and approval history</summary><pre id="history"></pre></details></div></div></div>
+<section><h2>Invoice register</h2><div id="ledger" class="scroll"></div></section></main>
+<script src="./review-client.js"></script>
+<script>
+const token="__TOKEN__", $=id=>document.getElementById(id);
+const labels={invoice_number:"Invoice number",issue_date:"Issue date",supplier:"Supplier",currency:"Currency",po_number:"Purchase order number",gross_total:"Total including tax"};
+const statusNames={registered:"Registered",needs_review:"Needs review",ready_for_approval:"Awaiting approval"};
+const reasons={gross_total_confirmation_required:"Enter the total including tax from the source invoice and check that it matches the invoice total",invalid_object:"Invalid line format",quantity_exceeds_available:"The quantity billed exceeds the quantity available for approval",nonpositive_quantity:"The quantity billed must be positive",legacy_approval_exists:"This purchase order already has an invoice approved under the previous matching method",three_way_required:"Receipt matching is required for this purchase order",missing_or_invalid:"A required value is missing or invalid",invalid_date:"Invalid date format",invalid_decimal:"Invalid number format",po_mismatch:"Value differs from the purchase order",arithmetic_mismatch:"The line amount differs from quantity multiplied by unit price",ambiguous_item_names:"Duplicate item names prevent a unique match",item_set_mismatch:"The invoice items differ from the purchase order items"};
+let current=null;
+function el(tag,text){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e}
+function message(text){$("message").textContent=text}
+async function api(path,body){if(window.invoiceReviewRequest)return window.invoiceReviewRequest(path,body);const r=await fetch(path,body===undefined?{}:{method:"POST",headers:{"Content-Type":"application/json","X-Review-Token":token},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw Error(d.error||r.status);return d}
+function table(headers,rows){const t=el("table"),head=el("tr");for(const h of headers)head.append(el("th",h));t.append(head);for(const row of rows){const tr=el("tr");for(const v of row)tr.append(el("td",v??"—"));t.append(tr)}return t}
+function reconciliation(rows=[]){
+  const target=$("reconciliation");
+  target.hidden=!rows.length;
+  target.replaceChildren();
+  if(!rows.length)return;
+  target.append(el("h3","Quantity check against orders and receipts"),table(
+    ["Item","Ordered","Received to date","Previously approved","Billed this time","Available to approve","Excess","Receipt IDs","Prior approved invoices"],
+    rows.map(r=>[r.item,r.ordered,r.received,r.approved,r.requested,r.available,r.excess,
+                 r.receipt_ids.join(", "),r.prior_invoices.join(", ")])));
+}
+function issues(list){
+  const target=$("issues");
+  target.replaceChildren();
+  target.className=list.length?"issues":"";
+  if(!list.length){
+    target.append(el("p","Matching checks passed."));
+    return;
+  }
+  for(const i of list){
+    let text=(labels[i.field]||i.field)+" — "+(reasons[i.reason]||i.reason);
+    if(i.reason==="arithmetic_mismatch" && "expected" in i){
+      text+=" / Quantity "+i.quantity+" × net unit price "+i.unit_price+" = "+i.expected;
+      text+=" / Entered line amount "+i.actual+" (difference "+i.difference+")";
+    }else if("expected" in i){
+      text+=" / Ordered "+(i.expected??"Missing")+" / Billed "+(i.actual??"Missing");
+    }else if(i.reason==="invalid_decimal" && "actual" in i){
+      text+=" / Billed "+(i.actual??"Missing");
+    }
+    target.append(el("div",text));
+  }
+}
+function sourceLines(){return Array.isArray(current.current.lines)?current.current.lines:[]}
+function invoice(){const obj=structuredClone(current.current);for(const k of Object.keys(labels)){const v=$("f-"+k).value;obj[k]=v===""?null:v}obj.lines=[...$("lines").children].map(tr=>{const source=sourceLines()[Number(tr.dataset.index)];const line=source&&typeof source==="object"&&!Array.isArray(source)?structuredClone(source):{};for(const input of tr.querySelectorAll("input"))line[input.dataset.key]=input.value===""?null:input.value;return line});return obj}
+async function openReview(id){current=await api("/api/review/"+id);$("detail").hidden=false;$("title").textContent="Invoice "+current.current.invoice_number;$("fields").replaceChildren();for(const [k,label]of Object.entries(labels)){const box=el("label",label),input=el("input");input.id="f-"+k;input.value=current.current[k]??"";input.disabled=current.status==="registered";box.append(input);if(k in current.po)box.append(el("div","Purchase order: "+current.po[k]));$("fields").append(box)}
+$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.setAttribute("aria-label",`Line ${index+1}, ${({line_id:"line ID",item:"item name",quantity:"quantity",unit_price:"net unit price",line_total:"net line amount"})[k]}`);input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);tr.append(td)}$("lines").append(tr)});
+$("order").replaceChildren(table(["Item name","Quantity","Net unit price","Net line amount"],current.po.lines.map(l=>[l.item,l.quantity,l.unit_price,l.line_total])));
+const pdfURL=window.invoiceReviewPDF?.(id)??(current.pdf_available?"/pdf/"+id:null);
+$("pdf").hidden=!pdfURL;$("pdf").src=pdfURL??"about:blank";$("pdfnote").textContent=window.invoiceReviewPDF?"Sample invoice PDF":current.pdf_available?current.pdf_name:"Source PDF unavailable.";
+$("gross-confirmation").hidden=!current.requires_gross_confirmation;$("confirmed-gross-total").value="";$("approval").hidden=current.status==="registered";$("registered").hidden=current.status!=="registered";$("note").value="";$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2);issues(current.status==="registered"?[]:current.issues);reconciliation(current.reconciliation);$("sample-receipt").hidden=current.current.invoice_number!=="DEMO-INV-002" || current.status==="registered"}
+async function load(){const [rows,ledger,files]=await Promise.all([api("/api/reviews"),api("/api/ledger"),api("/api/files")]);$("queue").replaceChildren();for(const r of rows){const tr=el("tr");for(const v of [r.invoice.invoice_number,r.invoice.supplier,r.invoice.gross_total+" "+r.invoice.currency,statusNames[r.status]||r.status])tr.append(el("td",v));const td=el("td"),b=el("button","Open");b.onclick=async()=>{try{await openReview(r.id);$("summary").focus();$("summary").scrollIntoView({block:"start"})}catch(e){message(e.message)}};td.append(b);tr.append(td);$("queue").append(tr)}if(!rows.length)$("queue").append(el("tr","No invoices to review."));
+for(const [id,values]of [["answer",files.answers],["po",files.pos]]){const selected=$(id).value;$(id).replaceChildren();for(const value of values){const o=el("option",value);o.value=value;$(id).append(o)}if(values.includes(selected))$(id).value=selected}
+$("ledger").replaceChildren(table(["Invoice number","Supplier","Total including tax","Registered at"],ledger.map(r=>[r.invoice_number,r.supplier,r.invoice.gross_total+" "+r.invoice.currency,r.created])))}
+$("ingest").onclick=async()=>{try{const r=await api("/api/ingest",{answer:$("answer").value,po:$("po").value,comma:$("comma").checked});await load();await openReview(r.id);message(r.reused?"Opened the existing review.":"Imported the extraction.")}catch(e){message(e.message)}};
+$("validate").onclick=async()=>{try{const r=await api("/api/validate",{id:current.id,invoice:invoice()});issues(r.issues);reconciliation(r.reconciliation);message("Checked the edited values. Edits are saved on approval.")}catch(e){message(e.message)}};
+$("fields").addEventListener("input",e=>{if(["f-gross_total","f-currency"].includes(e.target.id))$("confirmed-gross-total").value=""});
+$("approve").onclick=async()=>{const b=$("approve");b.disabled=true;try{const r=await api("/api/approve",{id:current.id,invoice:invoice(),actor:$("actor").value,note:$("note").value,confirmed_gross_total:$("confirmed-gross-total").value.trim()});if(r.status==="registered"){await load();await openReview(current.id);message(r.reused?"Already registered. No additional entry was created.":"Approved and added to the register.")}else{if(r.issues)issues(r.issues);reconciliation(r.reconciliation);message(r.status==="duplicate_invoice"?"This supplier and invoice number are already in the register.":"Discrepancies remain. Check the matching results.")}}catch(e){message(e.message)}finally{b.disabled=false}};
+$("sample-receipt").onclick=async()=>{
+  try{
+    const result=await api("/api/demo/receipt",{});
+    if(current){const id=current.id;await load();await openReview(id)}
+    message(result.reused?"This receipt has already been recorded.":"Recorded a receipt for 10 additional units.");
+  }catch(e){message(e.message)}
+};
+window.invoiceReviewPDF=id=>"./sample-"+id+".pdf";
+message("Loading the matching engine. The first run may take a moment.");
+load().then(()=>{if(window.invoiceReviewRequest)message("")}).catch(e=>message(e.message));
+</script></html>
