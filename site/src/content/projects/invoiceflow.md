@@ -21,6 +21,8 @@ links:
 
 InvoiceFlow is a local invoice review tool. It reads rendered PDF pages with a vision model and places the extracted values beside the original document. The reviewer can check why an invoice was held, correct the fields, and record the reason for approval. Approved records can then be sent to Google Sheets through n8n.
 
+[Try the interactive demo](/projects/invoiceflow/demo/)
+
 ## Reconciling partial invoices
 
 In the demo, a purchase order covers 100 units. The supplier has delivered 60, and an earlier approved invoice accounts for 40. A new invoice for 30 exceeds the remaining received quantity by 10, so InvoiceFlow holds it. After a receipt for another 10 units is recorded, the reviewer can recheck and approve the same invoice.

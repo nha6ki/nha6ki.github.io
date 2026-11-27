@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+
+const steps = [
+  { id: 'quantity', title: 'Partial invoice', text: '30 units claimed against 20 received units still available' },
+  { id: 'amount', title: 'Line amount', text: 'EUR 9,600 entered for 200 units at EUR 40' },
+];
+---
+<BaseLayout title="InvoiceFlow interactive demo | Haruki Niwa"
+  description="Try partial invoice reconciliation and amount review with sample data.">
+  <main class="demo">
+    <a href="/projects/invoiceflow/">← InvoiceFlow project</a>
+    <header>
+      <h1>InvoiceFlow interactive demo</h1>
+      <p>Review a blocked invoice, resolve the discrepancy, and approve it. This browser simulation uses sample data. The local application handles PDF extraction and Google Sheets delivery.</p>
+    </header>
+    <noscript><p>Enable JavaScript to try the interactive scenarios.</p></noscript>
+    <invoice-review-demo>
+      <div class="scenarios" role="group" aria-label="Select a scenario">
+        {steps.map((step, i) => (
+          <button type="button" data-scenario={step.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+            <strong>{step.title}</strong><span>{step.text}</span>
+          </button>
+        ))}
+      </div>
+      <section class="card" aria-labelledby="invoice-title">
+        <div class="card-heading"><h2 id="invoice-title" data-title>Invoice DEMO-INV-002</h2><span class="badge" data-status data-tone="hold">On hold</span></div>
+        <dl class="metrics" data-quantity>
+          <div><dt>Ordered</dt><dd>100</dd></div>
+          <div><dt>Received</dt><dd data-received>60</dd></div>
+          <div><dt>Previously approved</dt><dd>40</dd></div>
+          <div><dt>Available before this invoice</dt><dd data-available>20</dd></div>
+          <div><dt>On this invoice</dt><dd>30</dd></div>
+        </dl>
+        <dl class="metrics" data-amount hidden>
+          <div><dt>Quantity</dt><dd>200</dd></div>
+          <div><dt>Net unit price</dt><dd>€40</dd></div>
+          <div><dt>Calculated net amount</dt><dd>€8,000</dd></div>
+          <div><dt>Entered line amount</dt><dd data-entered>€9,600</dd></div>
+        </dl>
+        <p class="result" data-result role="status">The invoice exceeds the available quantity by 10 units.</p>
+        <div class="actions">
+          <button type="button" data-resolve>Add a receipt for 10 units</button>
+          <button type="button" data-approve class="approve" disabled>Approve invoice</button>
+          <button type="button" data-reset>Reset scenario</button>
+        </div>
+      </section>
+      <section class="history" aria-labelledby="history-title">
+        <h2 id="history-title">Review history</h2>
+        <ol data-history><li>Held · Requested 30 units; 20 available.</li></ol>
+      </section>
+    </invoice-review-demo>
+  </main>
+</BaseLayout>
+
+<script>
+  class InvoiceReviewDemo extends HTMLElement {
+    connectedCallback() {
+      const node = (selector: string) => this.querySelector<HTMLElement>(selector)!;
+      const buttons = [...this.querySelectorAll<HTMLButtonElement>('[data-scenario]')];
+      const resolve = this.querySelector<HTMLButtonElement>('[data-resolve]')!;
+      const approve = this.querySelector<HTMLButtonElement>('[data-approve]')!;
+      let scenario = 'quantity';
+      let phase: 'hold' | 'ready' | 'approved' = 'hold';
+
+      const render = () => {
+        const quantity = scenario === 'quantity';
+        const resolved = phase !== 'hold';
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.scenario === scenario)));
+        node('[data-title]').textContent = quantity ? 'Invoice DEMO-INV-002' : 'Invoice DEMO-AMT-001';
+        node('[data-quantity]').hidden = !quantity;
+        node('[data-amount]').hidden = quantity;
+        node('[data-received]').textContent = resolved ? '70' : '60';
+        node('[data-available]').textContent = resolved ? '30' : '20';
+        node('[data-entered]').textContent = resolved ? '€8,000' : '€9,600';
+        const status = node('[data-status]');
+        status.dataset.tone = phase;
+        status.textContent = { hold: 'On hold', ready: 'Ready for approval', approved: 'Approved' }[phase];
+        resolve.textContent = quantity ? 'Add a receipt for 10 units' : 'Correct the line amount to €8,000';
+        resolve.disabled = resolved;
+        approve.disabled = phase !== 'ready';
+
+        const reasons = quantity
+          ? ['The invoice exceeds the available quantity by 10 units.', '30 units are now available. The invoice passes the quantity check.']
+          : ['The entered amount exceeds the calculated net amount by €1,600.', 'The corrected amount matches 200 × €40.'];
+        node('[data-result]').textContent = phase === 'approved'
+          ? 'Approved and recorded in this demo session.'
+          : reasons[resolved ? 1 : 0];
+
+        const entries = [quantity ? 'Held · Requested 30 units; 20 available.' : 'Held · Entered €9,600; expected €8,000.'];
+        if (resolved) entries.push(quantity
+          ? 'Rechecked · Receipt RCPT-002 added 10 units.'
+          : 'Rechecked · Net line amount corrected from €9,600 to €8,000.');
+        if (phase === 'approved') entries.push('Approved · Review completed by Demo reviewer.');
+        node('[data-history]').replaceChildren(...entries.map(text => {
+          const item = document.createElement('li');
+          item.textContent = text;
+          return item;
+        }));
+      };
+
+      buttons.forEach(button => button.addEventListener('click', () => {
+        if (scenario === button.dataset.scenario) return;
+        scenario = button.dataset.scenario!;
+        phase = 'hold';
+        render();
+      }));
+      resolve.addEventListener('click', () => {
+        if (phase !== 'hold') return;
+        phase = 'ready';
+        render();
+        approve.focus();
+      });
+      approve.addEventListener('click', () => {
+        if (phase !== 'ready') return;
+        phase = 'approved';
+        render();
+        node('[data-reset]').focus();
+      });
+      node('[data-reset]').addEventListener('click', () => {
+        phase = 'hold';
+        render();
+        resolve.focus();
+      });
+      render();
+    }
+  }
+  customElements.define('invoice-review-demo', InvoiceReviewDemo);
+</script>
+
+<style>
+  .demo { max-width: 65rem; margin-inline: auto; padding: clamp(1rem, 4vw, 3rem); }
+  header { max-width: 47rem; margin-block: 2rem 1.5rem; }
+  header h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; }
+  header p { line-height: 1.6; }
+  invoice-review-demo { display: block; }
+  [hidden] { display: none !important; }
+  .scenarios, .metrics { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
+  button, .card, .history { border: 1px solid currentColor; border-radius: .65rem; }
+  button { font: inherit; padding: .65rem .85rem; background: transparent; color: inherit; cursor: pointer; }
+  button:disabled { opacity: .55; cursor: default; }
+  button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  .scenarios button { text-align: left; min-width: 0; }
+  .scenarios button[aria-pressed="true"] { background: #d6f3ec; border-color: #14685a; color: #153a35; }
+  .scenarios span { display: block; font-size: .86rem; margin-top: .3rem; }
+  .card, .history { margin-top: 1rem; padding: clamp(.85rem, 3vw, 1.5rem); }
+  .card-heading, .actions { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
+  .card-heading { justify-content: space-between; }
+  h2 { font-size: 1.15rem; margin: 0; }
+  .badge { padding: .3rem .65rem; border-radius: 1rem; font-size: .8rem; font-weight: 700; color: #153a35; background: #d6f3ec; }
+  .badge[data-tone="hold"] { background: #ffebcb; color: #5a3600; }
+  .metrics { margin-block: 1rem; }
+  .metrics div { padding: .55rem 0; border-bottom: 1px solid currentColor; }
+  dt { font-size: .85rem; }
+  dd { font-size: 1.6rem; font-weight: 700; margin: .2rem 0 0; font-variant-numeric: tabular-nums; }
+  .approve:enabled { background: #14685a; color: #fff; border-color: #14685a; }
+  .result { margin-block: 1.2rem; }
+  ol { margin-bottom: 0; padding-inline-start: 1.4rem; line-height: 1.7; }
+</style>
