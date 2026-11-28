@@ -33,6 +33,12 @@ for number in ("004", "005", "006"):
 flow.ingest(db, Path("fixtures/correction/UC12.json"), {"matching": "review_only", "lines": []}, True)
 
 
+PUBLIC_SOURCES = {}
+for source in FIXTURES["fixtures/public-layouts/sources.json"]:
+    result = flow.ingest(db, Path(source["fixture"]), {"matching": "review_only", "lines": []}, False)
+    PUBLIC_SOURCES[result["id"]] = source
+
+
 def handle(path, body):
     if path == "/api/files":
         return {"answers": [], "pos": []}
@@ -42,7 +48,8 @@ def handle(path, body):
         return [dict(row) | {"invoice": json.loads(row["invoice"])}
                 for row in db.execute("SELECT * FROM ledger ORDER BY id DESC")]
     if path.startswith("/api/review/"):
-        return ui.detail(db, int(path.rsplit("/", 1)[-1]))
+        ident = int(path.rsplit("/", 1)[-1])
+        return ui.detail(db, ident) | {"sample_source": PUBLIC_SOURCES.get(ident)}
     if path == "/api/demo/receipt":
         return three_way.add_receipt(db, PO, FIXTURES[SAMPLES + "receipt-2.json"], flow.num, flow.now)
     if path == "/api/validate":

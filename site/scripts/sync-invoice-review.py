@@ -42,6 +42,13 @@ def main():
     page = page.replace("<ol>", '<ol><li><strong>空欄単価を修正する · F202600025</strong><br>原本の4行目の単価は空欄です。「未記載にする」を押し、確認者と理由を入力して「修正を保存（承認しない）」を押します。履歴を確認してください。階層明細の承認は保留されます。</li>', 1)
     page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p class="muted">UC12は報告されたモデル出力から再構成したサンプルです。この画面ではAI抽出やGoogle Sheets送信は実行しません。修正はこのタブ内に保存され、再読み込みや言語切替で初期状態に戻ります。</p><p class="muted">処理はブラウザ内で行います。')
     page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p><a href="./sample-7.pdf" target="_blank" rel="noopener">UC12原本PDF</a> · <a href="./sample-7-source.json">出典とサンプル作成情報</a></p><p class="muted">処理はブラウザ内で行います。')
+    page = page.replace('const sampleURL=window.invoiceReviewPDF?.(id);', 'const sampleURL=current.sample_source?"./"+current.sample_source.file:window.invoiceReviewPDF?.(id);')
+    page = page.replace('const isImage=!sampleURL && current.document_type?.startsWith("image/");', 'const isImage=current.sample_source?.media_type?.startsWith("image/") || (!sampleURL && current.document_type?.startsWith("image/"));')
+    page = page.replace('r.invoice.invoice_number,r.invoice.supplier', '(r.invoice.invoice_number??"未記載"),r.invoice.supplier')
+    page = page.replace('"請求書 "+current.current.invoice_number', '"請求書 "+(current.current.invoice_number??current.current.supplier)')
+    page = page.replace('showStructure();', 'showStructure();showPublicSource(current.sample_source);')
+    page = page.replace('<p class="muted">UC12は', '<p>公開元のサンプル3件（Joe Shmoe、Sparksuite、NI57721）を追加しました。原本から手作業で転記した確認用データです。AI抽出結果ではなく、発注書がないため承認できません。合計10件を確認できます。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
+    page = page.replace("編集内容は承認時に保存されます。発注値は取り込み時点の記録です。", "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。")
     generated["index.html"] = page.encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:

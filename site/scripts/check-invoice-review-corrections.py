@@ -17,7 +17,7 @@ with tempfile.TemporaryDirectory() as directory:
     bridge = runpy.run_path('review_bridge.py')
     request = bridge['handle']
     rows = request('/api/reviews', None)
-    assert len(rows) == 7
+    assert len(rows) == 10
     ident = next(r['id'] for r in rows if r['invoice']['invoice_number'] == 'F202600025')
     before = request(f'/api/review/{ident}', None)['current']
     assert before['lines'][3]['unit_price'] == '0.00'
@@ -41,5 +41,33 @@ with tempfile.TemporaryDirectory() as directory:
         pass
     else:
         raise AssertionError('Stale update was accepted')
+    # Public originals remain unapproved; absent values must not become zeros.
+    import hashlib
+    sources = json.loads((assets / 'public-samples.json').read_text())
+    assert len(sources) == 3
+    assert sources == bridge['FIXTURES']['fixtures/public-layouts/sources.json']
+    for source in sources:
+        assert hashlib.sha256((assets / source['file']).read_bytes()).hexdigest() == source['sha256']
+        assert 'Permission is hereby granted' in (assets / source['license_file']).read_text()
+        ident = next(i for i, value in bridge['PUBLIC_SOURCES'].items() if value == source)
+        detail = request(f'/api/review/{ident}', None)
+        assert detail['sample_source'] == source
+        assert detail['current']['po_number'] is None
+        assert detail['status'] == 'needs_review'
+        result = request('/api/approve', dict(id=ident, invoice=detail['current'], actor='Tester', note='Source reviewed'))
+        assert result['status'] == 'needs_review'
+        assert any(i['reason'] == 'purchase_order_unavailable' for i in result['issues'])
+        if source['author'] == 'Trey Hunner':
+            assert detail['current']['invoice_number'] is None
+            assert detail['current']['lines'][-1]['quantity'] is None
+        if source['author'] == 'Sparksuite':
+            assert all(l['quantity'] is None and l['unit_price'] is None for l in detail['current']['lines'])
+        after = copy.deepcopy(detail['current'])
+        after['lines'][0]['description'] = 'Reviewer annotation'
+        request('/api/save-draft', dict(id=ident, invoice=after, expected_current=detail['current'], actor='Tester', note='Review annotation'))
+        saved = request(f'/api/review/{ident}', None)
+        assert saved['current'] == after and saved['raw'] == detail['raw']
+        assert saved['events'][-1]['action'] == 'save_draft'
+    assert len(request('/api/ledger', None)) == 1
     bridge['db'].close()
-print('Public correction bridge checks passed: seven samples, null saved, audit retained, approval blocked.')
+print('Public correction bridge checks passed: ten samples, null saved, audit retained, approval blocked.')

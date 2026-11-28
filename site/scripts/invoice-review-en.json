@@ -18,7 +18,7 @@
   "照合結果": "Matching results",
   "サンプル受領を10個追加": "Record sample receipt of 10 units",
   "原本PDFを表示": "View source PDF",
-  "原本請求書": "Source invoice PDF",
+  "原本請求書": "Source invoice",
   "抽出値と発注値": "Invoice and purchase order",
   "編集内容は承認時に保存されます。発注値は取り込み時点の記録です。": "Edits are saved on approval. Purchase order values reflect the order at import.",
   "請求書の明細（編集可）": "Invoice lines (editable before approval)",
@@ -80,7 +80,7 @@
   "請求書 ": "Invoice ",
   "発注 ": "Purchase order: ",
   "`明細${index+1}の${({line_id:\"行ID\",item:\"品目名\",quantity:\"数量\",unit_price:\"純単価\",line_total:\"税抜明細額\"})[k]}`": "`Line ${index+1}, ${({line_id:\"line ID\",item:\"item name\",quantity:\"quantity\",unit_price:\"net unit price\",line_total:\"net line amount\"})[k]}`",
-  "公開用のサンプル請求書": "Sample invoice PDF",
+  "公開用のサンプル請求書": "Sample source document",
   "対応する原本がdataフォルダに見つかりません。": "Source PDF unavailable.",
   "開く": "Open",
   "確認対象はまだありません。上から抽出結果を取り込んでください。": "No invoices to review.",
@@ -120,5 +120,9 @@
   "原本が見つからないか、保存後に変更されています。": "Source is missing or has changed since it was saved.",
   "編集値で照合しました。変更を残すには「修正を保存」を押してください。": "Checked the edited values. Select “Save correction” to keep them.",
   "変更はありません。": "No changes to save.",
-  "修正と履歴を保存しました。承認・台帳登録は行っていません。": "Correction and history saved. No approval or ledger entry was created."
+  "修正と履歴を保存しました。承認・台帳登録は行っていません。": "Correction and history saved. No approval or ledger entry was created.",
+  "公開元のサンプル3件（Joe Shmoe、Sparksuite、NI57721）を追加しました。原本から手作業で転記した確認用データです。AI抽出結果ではなく、発注書がないため承認できません。合計10件を確認できます。": "The ten-invoice queue includes three public template samples: Joe Shmoe, Sparksuite and NI57721. These are manually transcribed review data, not AI extraction results. Approval is blocked because no purchase orders are supplied.",
+  "出典・ライセンス情報": "Sources and licenses",
+  "未記載": "Not printed",
+  "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。": "Save corrections with the save button. Approval is a separate action. Purchase order values reflect the order at import."
 }

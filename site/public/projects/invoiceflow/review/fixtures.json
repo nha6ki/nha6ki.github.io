@@ -254,5 +254,166 @@
         "line_total": "0,00"
       }
     ]
-  }
+  },
+  "fixtures/public-layouts/sample-8.json": {
+    "invoice_number": null,
+    "issue_date": "2011-10-15",
+    "supplier": "Joe Shmoe",
+    "currency": "USD",
+    "po_number": null,
+    "gross_total": "479.08",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Consulting Services: January 3, 2011",
+        "quantity": "8.00",
+        "unit_price": "12.51",
+        "line_total": "100.08"
+      },
+      {
+        "line_id": "2",
+        "item": "Consulting Services: January 4, 2011",
+        "quantity": "6.50",
+        "unit_price": "12.51",
+        "line_total": "81.32"
+      },
+      {
+        "line_id": "3",
+        "item": "Consulting Services: January 5, 2011",
+        "quantity": "5.25",
+        "unit_price": "12.51",
+        "line_total": "65.68"
+      },
+      {
+        "line_id": "4",
+        "item": "Consulting Services: January 6, 2011",
+        "quantity": "9.75",
+        "unit_price": "12.51",
+        "line_total": "121.97"
+      },
+      {
+        "line_id": "5",
+        "item": "Consulting Services: January 7, 2011",
+        "quantity": "4.00",
+        "unit_price": "12.51",
+        "line_total": "50.04"
+      },
+      {
+        "line_id": "6",
+        "item": "Ajax Hosting: January 8, 2011",
+        "quantity": null,
+        "unit_price": "60.00",
+        "line_total": "60.00"
+      }
+    ]
+  },
+  "fixtures/public-layouts/sample-9.json": {
+    "invoice_number": "123",
+    "issue_date": "2023-01-01",
+    "supplier": "Sparksuite, Inc.",
+    "currency": "USD",
+    "po_number": null,
+    "gross_total": "385.00",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Website design",
+        "quantity": null,
+        "unit_price": null,
+        "line_total": "300.00"
+      },
+      {
+        "line_id": "2",
+        "item": "Hosting (3 months)",
+        "quantity": null,
+        "unit_price": null,
+        "line_total": "75.00"
+      },
+      {
+        "line_id": "3",
+        "item": "Domain name (1 year)",
+        "quantity": null,
+        "unit_price": null,
+        "line_total": "10.00"
+      }
+    ]
+  },
+  "fixtures/public-layouts/sample-10.json": {
+    "invoice_number": "20250125-001",
+    "issue_date": "2025-01-25",
+    "supplier": "NI57721",
+    "currency": "JPY",
+    "po_number": null,
+    "gross_total": "2640000",
+    "lines": [
+      {
+        "line_id": "1",
+        "item": "Service Foo",
+        "quantity": "11",
+        "unit_price": "100000",
+        "line_total": "1100000"
+      },
+      {
+        "line_id": "2",
+        "item": "Service Bar",
+        "quantity": "4",
+        "unit_price": "300000",
+        "line_total": "1200000"
+      },
+      {
+        "line_id": "3",
+        "item": "Service Baz",
+        "quantity": "10",
+        "unit_price": "10000",
+        "line_total": "100000"
+      }
+    ]
+  },
+  "fixtures/public-layouts/sources.json": [
+    {
+      "fixture": "fixtures/public-layouts/sample-8.json",
+      "file": "sample-8.pdf",
+      "media_type": "application/pdf",
+      "title": "Hourly services and expenses",
+      "author": "Trey Hunner",
+      "repository": "https://github.com/treyhunner/invoices",
+      "upstream_path": "invoice.pdf",
+      "commit": "3b34a669e69f5a2f3a9fb790b273ebfeea616556",
+      "sha256": "77235b4d4212e67ec457c02022dc49ea384cba14919b010adc3d6635a3ae43a7",
+      "license": "MIT",
+      "license_file": "sample-8-LICENSE.txt",
+      "provenance": "Manual transcription of a public template sample; not AI output or a real commercial transaction.",
+      "notes": "Invoice number and PO are not printed. USD is inferred from the dollar symbol and US address. The printed subtotal is 419.08; individual rounded amounts sum to 419.09. Values are retained as printed."
+    },
+    {
+      "fixture": "fixtures/public-layouts/sample-9.json",
+      "file": "sample-9.pdf",
+      "media_type": "application/pdf",
+      "title": "Item and amount invoice",
+      "author": "Sparksuite",
+      "repository": "https://github.com/sparksuite/simple-html-invoice-template",
+      "upstream_path": "https://github.com/gotenberg/gotenberg/files/15334922/my.pdf",
+      "commit": "7d74fe34c862b7712f1a23a3f12147a4a8bd53e1",
+      "sha256": "6392623d3368066b0abc1cec0a8810507dea9b04826e68c97dd17e0dd2091461",
+      "license": "MIT",
+      "license_file": "sample-9-LICENSE.txt",
+      "provenance": "Manual transcription of a public template sample; not AI output or a real commercial transaction.",
+      "notes": "Public PDF rendering of the Sparksuite template, with an MIT notice printed above it. No quantities, unit prices or PO are printed. USD is inferred from the dollar symbol and US address. Template revision records the license source, not the PDF renderer revision."
+    },
+    {
+      "fixture": "fixtures/public-layouts/sample-10.json",
+      "file": "sample-10.png",
+      "media_type": "image/png",
+      "title": "Japanese bank-transfer invoice",
+      "author": "NI57721",
+      "repository": "https://github.com/NI57721/typst-invoice-ja",
+      "upstream_path": "sample.png",
+      "commit": "5d5e3dc19effadafe651f84f3497241f244ec779",
+      "sha256": "9baf981da240f33e2a3eab20aa43f58375bd595e27005a691162ea5f41d0304c",
+      "license": "MIT",
+      "license_file": "sample-10-LICENSE.txt",
+      "provenance": "Manual transcription of a public template sample; not AI output or a real commercial transaction.",
+      "notes": "Original published PNG. Subtotal JPY 2,400,000, consumption tax JPY 240,000, total JPY 2,640,000. No PO is printed. JPY is identified by the yen labels. The optional Service Qux note is not an invoiced line."
+    }
+  ]
 }

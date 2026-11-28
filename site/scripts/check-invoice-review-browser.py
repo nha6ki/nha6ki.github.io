@@ -16,7 +16,16 @@ CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 def check(page, english=False):
     expect(page.locator('header button[onclick="load()"]')).to_have_count(0)
     needs_review = "Needs review" if english else "要確認"
-    expect(page.locator("#queue tr")).to_have_count(7, timeout=60_000)
+    expect(page.locator("#queue tr")).to_have_count(10, timeout=60_000)
+    for supplier, number, media in [('Joe Shmoe', 8, 'pdf'), ('Sparksuite, Inc.', 9, 'pdf'), ('NI57721', 10, 'png')]:
+        page.locator('#queue tr').filter(has_text=supplier).get_by_role('button').click()
+        expect(page.locator('#public-source-info')).to_contain_text('manually transcribed' if english else '手作業')
+        expect(page.locator('#issues')).to_contain_text('No purchase order' if english else '発注')
+        original = page.locator('#source-image' if media == 'png' else '#pdf')
+        expect(original).to_have_attribute('src', f'./sample-{number}.{media}')
+        response = page.request.get(original.evaluate('e => e.src'))
+        assert response.ok
+        assert response.body().startswith(b'\x89PNG' if media == 'png' else b'%PDF-')
     correction = page.locator("#queue tr").filter(has_text="F202600025")
     correction.get_by_role("button").click()
     expect(page.locator("#pdf")).to_have_attribute("src", "./sample-7.pdf")

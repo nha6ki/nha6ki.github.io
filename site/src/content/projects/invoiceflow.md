@@ -33,9 +33,13 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 ## Inside Invoice Review
 
-[Open Invoice Review](/projects/invoiceflow/review/en.html) to explore six invoices. Start with the two guided cases below. Then compare three fictional source PDFs with their extracted values: DEMO-INV-004 is ready for approval, DEMO-INV-005 has a currency discrepancy, and DEMO-INV-006 has a purchase order number discrepancy.
+[Open Invoice Review](/projects/invoiceflow/review/en.html) to explore ten invoices. Start with the two guided cases below. Then compare three fictional source PDFs with their extracted values: DEMO-INV-004 is ready for approval, DEMO-INV-005 has a currency discrepancy, and DEMO-INV-006 has a purchase order number discrepancy.
 
 <div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue-en.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue-en.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1344" height="744" loading="lazy"></a></div>
+
+## Compare different invoice layouts
+
+Three additional public template samples provide different source layouts: hourly services and expenses (Joe Shmoe, PDF), item-and-amount billing (Sparksuite, PDF), and a Japanese bank-transfer invoice (NI57721, PNG). Their review data are manually transcribed from the published originals; they are not model extraction results. Missing fields remain blank. No purchase orders accompany these samples, so approval remains blocked. Source links and MIT notices are available beside each invoice.
 
 ## Correct a line amount
 
@@ -63,7 +67,7 @@ The webhook passes one approved record at a time to the Sheets node. Rows 2 and 
 
 [Open the invoice register in Google Sheets](https://docs.google.com/spreadsheets/d/1lMzjNoQJdlf1jaMvwN8BAMunPins4vZB73U1CruHy88/edit?usp=sharing)
 
-A separate read-back workflow later returned **F202500003** and **F202500004** from rows 2 and 3. The six records in the browser demo and the two rows in this local read-back belong to different sample runs.
+A separate read-back workflow later returned **F202500003** and **F202500004** from rows 2 and 3. The ten records in the browser demo and the two rows in this local read-back belong to different sample runs.
 
 <div class="invoice-figure" style="--figure-width:724px"><a href="/images/projects/invoiceflow/n8n-rows.png" aria-label="Open full-size image: Get Row(s) output listing the two invoice numbers returned from Google Sheets."><img src="/images/projects/invoiceflow/n8n-rows.png" alt="Get Row(s) output listing the two invoice numbers returned from Google Sheets." width="724" height="211" loading="lazy"></a></div>
 
