@@ -65,19 +65,22 @@ window.showPublicSource = source => {
     box = document.createElement("aside");
     box.id = "public-source-info";
     box.style.cssText = "margin:0.75rem 0;overflow-wrap:anywhere";
-    document.getElementById("fields").before(box);
+    document.getElementById("title").after(box);
   }
   box.replaceChildren(); box.hidden = false;
   const en = document.documentElement.lang === "en";
   const label = document.createElement("strong");
   label.textContent = source?.data_kind === "saved_model_output"
-    ? (en ? "Origin: Qwen extraction" : "元データ：Qwen抽出")
+    ? (en ? "Input values: extracted by Qwen" : "入力値の作成方法：Qwenで抽出")
     : source
-      ? (en ? "Origin: manual transcription" : "元データ：手作業で転記")
-      : (en ? "Origin: prepared demo data" : "元データ：デモ用データ");
+      ? (en ? "Input values: manually transcribed" : "入力値の作成方法：手作業で転記")
+      : (en ? "Input values: prepared for the demo" : "入力値の作成方法：デモ用に作成");
   box.append(label);
+  document.getElementById("public-source-details")?.remove();
   if (!source) return;
   const details = document.createElement("details");
+  details.id = "public-source-details";
+  details.style.cssText = "margin-top:0.75rem;overflow-wrap:anywhere";
   const summary = document.createElement("summary");
   summary.textContent = en ? "Source details" : "出典・詳細";
   details.append(summary);
@@ -92,5 +95,5 @@ window.showPublicSource = source => {
     const a=document.createElement("a");a.textContent=label;a.href=href;
     a.target="_blank";a.rel="noopener";details.append(a, " · ");
   }
-  box.append(details);
+  document.querySelector(".pdf-panel").append(details);
 };
