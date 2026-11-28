@@ -21,7 +21,7 @@
   "原本請求書": "Source invoice",
   "抽出値と発注値": "Invoice and purchase order",
   "編集内容は承認時に保存されます。発注値は取り込み時点の記録です。": "Edits are saved on approval. Purchase order values reflect the order at import.",
-  "請求書の明細（編集可）": "Invoice lines (editable before approval)",
+  "請求書の明細（編集可）": "Invoice lines",
   "行ID": "Line ID",
   "品目名": "Item name",
   "数量": "Quantity",
@@ -182,5 +182,15 @@
   "4つのレビュー操作を試す": "Try four review tasks",
   "転記内容を確認してCSV出力": "Confirm a transcription and export CSV",
   "原本と保存済みの転記内容を比較し、確認者と理由を記録します。発注台帳がなくても確認済みCSVを出力できます。": "Compare the saved transcription with the source and record a reviewer and reason. Confirmed CSV export does not require a purchase order.",
-  "確認データを読み込めません。ページを再読み込みしてください。原本は確認できます。": "Review status could not be loaded. Reload this page. The source document is still available."
+  "確認データを読み込めません。ページを再読み込みしてください。原本は確認できます。": "Review status could not be loaded. Reload this page. The source document is still available.",
+  "原本を確認してCSV出力": "Review the source and export CSV",
+  "確認状態": "Review status",
+  "原本と入力欄を比較してください。誤りがあれば修正を保存し、確認してCSVを出力します。": "Compare the source with the fields below. Save any corrections, then confirm and export CSV.",
+  "確認してCSV出力": "Confirm and export CSV",
+  "確認・修正メモ": "Review and correction notes",
+  "確認した内容、修正理由、残る注意点": "What you checked, reasons for corrections, and remaining limitations",
+  "表示された注意点を確認し、必要な内容をメモに記録しました": "I checked the warnings and recorded any necessary details in the notes.",
+  "請求書を開き、原本と入力欄を比較します。誤りがあれば「修正を保存」、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。": "Open an invoice and compare the source with the fields. Save any corrections, then confirm and export CSV. This does not approve or execute payment.",
+  "修正を保存": "Save corrections",
+  "空欄の抽出値は「—」で表示します。": "Missing extracted values are shown as —."
 }

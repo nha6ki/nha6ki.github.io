@@ -41,13 +41,7 @@ def main():
     # Each browser tab owns its database. An action refreshes the queue after writing.
     refresh_button = '<button onclick="load()">一覧を更新</button>'.encode()
     generated["index.html"] = generated["index.html"].replace(refresh_button, b"")
-    generated["index.html"] = generated["index.html"].replace(
-        "3件目の DEMO-INV-001 は、上記の40個を登録した請求書です。承認時の記録を参照できます。".encode(),
-        "DEMO-INV-001 には40個を承認した記録があります。ほかの3件でも原本PDFと抽出値を比較できます。004は承認待ち、005は通貨、006は発注番号の確認が必要です。".encode(),
-    )
     page = generated["index.html"].decode()
-    page = page.replace("2件の請求書を照合する", "3つのレビュー操作を試す")
-    page = page.replace("<ol>", '<ol><li><strong>空欄単価を修正する · F202600025</strong><br>原本の4行目の単価は空欄です。「未記載にする」を押し、確認者と理由を入力して「修正を保存（承認しない）」を押します。履歴を確認してください。階層明細の承認は保留されます。</li>', 1)
     page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p class="muted">UC12は報告されたモデル出力から再構成したサンプルです。この画面ではAI抽出やGoogle Sheets送信は実行しません。修正はこのタブ内に保存され、再読み込みや言語切替で初期状態に戻ります。</p><p class="muted">処理はブラウザ内で行います。')
     page = page.replace('<p class="muted">処理はブラウザ内で行います。', '<p><a href="./sample-7.pdf" target="_blank" rel="noopener">UC12原本PDF</a> · <a href="./sample-7-source.json">出典とサンプル作成情報</a></p><p class="muted">処理はブラウザ内で行います。')
     page = page.replace('const sampleURL=window.invoiceReviewPDF?.(id);', 'const sampleURL=current.sample_source?"./"+current.sample_source.file:window.invoiceReviewPDF?.(id);')
@@ -59,8 +53,6 @@ def main():
     page = page.replace('<p class="muted">UC12は', '<p>合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。対応する発注書がないため承認できません。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
     page = page.replace("編集内容は承認時に保存されます。発注値は取り込み時点の記録です。", "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。")
     page = page.replace("対応する発注書がないため承認できません。", "発注書がなくても転記確認とCSV出力は可能です。発注照合と支払承認は別の工程です。")
-    page = page.replace("3つのレビュー操作を試す", "4つのレビュー操作を試す")
-    page = page.replace("<ol>", "<ol><li><strong>転記内容を確認してCSV出力</strong><br>原本と保存済みの転記内容を比較し、確認者と理由を記録します。発注台帳がなくても確認済みCSVを出力できます。</li>", 1)
     generated["index.html"] = standardize_amount_labels(page).encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:

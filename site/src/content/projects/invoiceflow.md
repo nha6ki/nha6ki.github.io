@@ -25,6 +25,10 @@ InvoiceFlow helps a reviewer verify invoice data before export and, when purchas
 
 <link rel="stylesheet" href="/images/projects/invoiceflow/gallery.css">
 
+## Review and export
+
+Open an invoice and compare its source with the extracted fields. Use **Save corrections** when needed, enter the reviewer and notes, and select **Confirm and export CSV**. The source is open by default. The review screen no longer includes PO recheck, matching approval or receipt-registration controls. The matching engine described below remains available in the backend and CLI; CSV export does not approve payment.
+
 ## From PDF to the invoice register
 
 <div class="invoice-figure" style="--figure-width:760px"><a href="/images/projects/invoiceflow/workflow.png" aria-label="Open full-size image: InvoiceFlow workflow. A local model extracts fields from invoice images. Order and receipt checks route discrepancies to a reviewer. Approval writes to SQLite, and a separate delivery action updates Google Sheets."><img src="/images/projects/invoiceflow/workflow.png" alt="InvoiceFlow workflow. A local model extracts fields from invoice images. Order and receipt checks route discrepancies to a reviewer. Approval writes to SQLite, and a separate delivery action updates Google Sheets." width="1010" height="746" loading="lazy"></a></div>
