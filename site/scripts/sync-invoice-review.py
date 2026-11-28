@@ -7,6 +7,14 @@ import subprocess
 import sys
 
 
+def standardize_amount_labels(page):
+    page = page.replace("純単価", "単価（税抜）")
+    page = re.sub(r"単価(?!（税抜）)", "単価（税抜）", page)
+    page = page.replace("税抜明細額", "明細金額（税抜）")
+    page = re.sub(r"明細金額(?!（税抜）)|明細額", "明細金額（税抜）", page)
+    return page.replace("税込合計", "請求総額（税込）")
+
+
 def english_page(source):
     translations = json.loads(Path(__file__).with_name("invoice-review-en.json").read_text(encoding="utf-8"))
     pattern = "|".join(re.escape(key) for key in sorted(translations, key=len, reverse=True))
@@ -50,7 +58,7 @@ def main():
     page = page.replace('showStructure();', 'showStructure();showPublicSource(current.sample_source);')
     page = page.replace('<p class="muted">UC12は', '<p>合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。対応する発注書がないため承認できません。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
     page = page.replace("編集内容は承認時に保存されます。発注値は取り込み時点の記録です。", "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。")
-    generated["index.html"] = page.encode()
+    generated["index.html"] = standardize_amount_labels(page).encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:
         stale = [name for name, data in generated.items()

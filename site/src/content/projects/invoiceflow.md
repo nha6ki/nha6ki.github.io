@@ -21,7 +21,7 @@ links:
     url: "https://github.com/nha6ki/InvoiceFlow"
 ---
 
-InvoiceFlow helps a reviewer decide whether an invoice can be paid. Two examples show what holds an invoice back: an incorrect line amount and a delivery that only partly covers the quantity billed.
+InvoiceFlow helps a reviewer decide whether an invoice can be paid. Two examples show what holds an invoice back: an incorrect line amount (excl. tax) and a delivery that only partly covers the quantity billed.
 
 <link rel="stylesheet" href="/images/projects/invoiceflow/gallery.css">
 
@@ -41,17 +41,17 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 Eight public template samples provide different source layouts. The first three cover: hourly services and expenses (Joe Shmoe, PDF), item-and-amount billing (Sparksuite, PDF), and a Japanese bank-transfer invoice (NI57721, PNG). Five further PDFs add negative discount rows (Big Corp), line-level discounts and mixed taxes (Test Company), service periods (famoser GmbH), multiline repair descriptions (Sammy Maystone), and product sections with subtotals (Azure Interior). The latest five samples use saved local Qwen output and recorded corrections. The earlier three remain manual transcriptions. The model outputs include unsupported guesses, schema errors and ambiguous amount columns; successful extraction does not mean the invoice is correct or approved. Model guesses remain visible until explicitly corrected; the original output is retained. No purchase orders accompany these samples, so approval remains blocked. Source links and license notices are available beside each invoice.
 
-## Correct a line amount
+## Correct a line amount (excl. tax)
 
-Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount and run the checks again. Enter a reviewer name and reason to approve it, then open the history to see both the extracted and approved values.
+Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount (excl. tax) and run the checks again. Enter a reviewer name and reason to approve it, then open the history to see both the extracted and approved values.
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/amount-en.webp" aria-label="Open full-size image: Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference."><img src="/images/projects/invoiceflow/amount-en.webp" alt="Invoice Review shows the entered line amount, the amount calculated from quantity and unit price, and their difference." width="1792" height="368" loading="lazy"></a></div>
+<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/amount-en.webp" aria-label="Open full-size image: Invoice Review shows the entered line amount (excl. tax), the amount calculated from quantity and unit price, and their difference."><img src="/images/projects/invoiceflow/amount-en.webp" alt="Invoice Review shows the entered line amount (excl. tax), the amount calculated from quantity and unit price, and their difference." width="1792" height="368" loading="lazy"></a></div>
 
 ## Release a partial invoice
 
 Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arrived. The earlier invoice **DEMO-INV-001** already accounts for 40 of them. That leaves 20 available for a new invoice requesting 30.
 
-Add the sample receipt for 10 more units and check how the available balance changes. Read the tax-inclusive total from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
+Add the sample receipt for 10 more units and check how the available balance changes. Read the invoice total (incl. tax) from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
 
 <div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/receipts-en.webp" aria-label="Open full-size image: The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check."><img src="/images/projects/invoiceflow/receipts-en.webp" alt="The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check." width="1792" height="716" loading="lazy"></a></div>
 
@@ -92,6 +92,6 @@ A separate read-back workflow later returned **F202500003** and **F202500004** f
 
 ## What the extraction checks showed
 
-The evaluator compares selected fields with the Factur-X XML embedded in the [official example PDFs](https://github.com/fnfempe/France_RFE). The model receives page images, and the evaluator reads the XML after inference. Explicitly asking for the amount excluding tax corrected two line amounts in UC11, the sample used to develop the prompt. Two other examples already had matching line amounts and remained unchanged. One complex example still had invoice-number and item-name differences.
+The evaluator compares selected fields with the Factur-X XML embedded in the [official example PDFs](https://github.com/fnfempe/France_RFE). The model receives page images, and the evaluator reads the XML after inference. Explicitly asking for the amount excluding tax corrected two line amount (excl. tax)s in UC11, the sample used to develop the prompt. Two other examples already had matching line amount (excl. tax)s and remained unchanged. One complex example still had invoice-number and item-name differences.
 
 Two related example invoices were also taken through the Google Sheets workflow. Approval and delivery are separate actions, and a sequential resend uses the same row key. These examples document the tested behavior. The current matcher requires unambiguous item names, and the extraction comparison covers a small set of public examples.
