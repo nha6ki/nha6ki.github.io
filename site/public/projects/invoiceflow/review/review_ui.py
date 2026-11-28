@@ -8,6 +8,33 @@ import review_flow as flow
 import transcription
 
 ROOT=Path(__file__).resolve().parent
+def render_html(mode="local"):
+    html=(ROOT/"review_ui.html").read_text(encoding="utf-8")
+    scope={
+        "local":"確認内容と修正履歴はローカルDBに保存されます。CSV出力だけではGoogle Sheetsへ送信しません。",
+        "browser":"変更内容はこのタブ内のみで保持され、再読み込みや言語切替で初期状態に戻ります。このデモではAI抽出・Google Sheetsへの送信・支払処理は実行しません。",
+        "public":"サンプル以外の個人情報を入力しないでください。セッションは1時間操作がないと終了します。"
+    }[mode]
+    return (html.replace("__REVIEW_MODE__",mode)
+            .replace("<!-- REVIEW_SCOPE -->",scope)
+            .replace("<!-- REVIEW_COUNT -->","15件のサンプル請求書を確認できます。" if mode=="browser" else "")
+            .replace("<!-- REVIEW_FOOTER -->",'<footer class="muted"><a href="./public-samples.json">出典・ライセンス情報</a></footer>' if mode=="browser" else ""))
+
+
+def input_origin(answer_path, ident, document):
+    # A filename alone is not proof that Qwen generated the values.
+    source={"data_kind":"saved_data", "title":document[0].name if document else "", "notes":""}
+    if document: source["original_url"]="/source/"+str(ident)
+    try:
+        report=safe_path(str(Path(answer_path).parent/"report.json"))
+        metadata=json.loads(report.read_text(encoding="utf-8"))
+        model=metadata.get("model") if isinstance(metadata,dict) else None
+        if isinstance(model,str) and model.strip():
+            source["data_kind"]="saved_model_output" if model.lower().startswith("qwen") else "model_output"
+    except (OSError,ValueError,TypeError):
+        pass
+    return source
+
 def safe_path(value,base=ROOT):
     p=(base/value).resolve()
     if not p.is_relative_to(base.resolve()) or not p.is_file():
@@ -39,6 +66,7 @@ def detail(conn,id):
                   document_type=document[1] if document else None)
     result["pdf_available"] = document is not None and document[1] == "application/pdf"
     result["pdf_name"] = document[0].name if result["pdf_available"] else None
+    result["input_origin"] = input_origin(row["source"],id,document)
     result["transcription"] = transcription.state(conn, id)
     return result
 
@@ -112,10 +140,12 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(content)
     def do_GET(self):
         path=urlparse(self.path).path
+        if path=="/review_source.js":
+            return self.reply((ROOT/"review_source.js").read_bytes(),kind="text/javascript; charset=utf-8")
         try:
             with _resource_closing(flow.connect(self.server.db)) as conn, conn:
                 if path=="/":
-                    html=(ROOT/"review_ui.html").read_text().replace("__TOKEN__",self.server.token)
+                    html=render_html().replace("__TOKEN__",self.server.token)
                     return self.reply(html.encode(),kind="text/html; charset=utf-8")
                 if path=="/api/reviews":
                     conn.execute("BEGIN")

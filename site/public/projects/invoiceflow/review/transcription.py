@@ -1,7 +1,7 @@
 """Audited transcription confirmation, independent of PO approval and payment.
 
 A confirmation attests to a saved snapshot, not a purchase or tax decision.
-CSV exports never enter the approved ledger or the Google Sheets delivery queue.
+Confirmation does not enter the PO-approved ledger. Local Sheets delivery is explicit.
 """
 import csv
 import hashlib
