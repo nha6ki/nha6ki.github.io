@@ -1,7 +1,7 @@
 ---
 title: "InvoiceFlow — Invoice Review, Export & PO Matching"
-image: "/images/projects/invoiceflow/review-cover-en.webp"
-imageAlt: "Invoice Review demo showing two review tasks and the sample invoice queue."
+image: "/images/projects/invoiceflow/review-current.png"
+imageAlt: "Invoice Review sample invoice list."
 categories: ["ai", "data", "web"]
 summary: "Extract invoice fields locally, verify them against the source and export confirmed data. Match orders and receipts when available."
 date: "2026-11"
@@ -21,38 +21,35 @@ links:
     url: "https://github.com/nha6ki/InvoiceFlow"
 ---
 
-InvoiceFlow helps a reviewer turn a supplier’s invoice into a checked spreadsheet record. Open the original PDF or image, correct the fields and export the reviewed lines.
+InvoiceFlow brings invoice extraction, human review and spreadsheet delivery together in one workflow. A reviewer compares invoice fields with the original document, corrects the transcription and exports confirmed lines as CSV. Purchase-order and receipt records can also be used for three-way matching.
 
 [Open Invoice Review in English](/projects/invoiceflow/review/en.html) · [日本語版](/projects/invoiceflow/review/)
 
 <link rel="stylesheet" href="/images/projects/invoiceflow/gallery.css">
 
-## Try one invoice
+## Review an invoice
 
-Open **Big Corp** in the queue. Compare the two lines with the PDF: Nike Air Max has a line amount of 53 and the discount has a line amount of −10. Check the currency against the original and correct any discrepancy. Enter your reviewer name and a short note, mark the source as checked, and acknowledge any remaining exceptions you have reviewed. Select **Confirm and export CSV**.
+The demo contains 15 sample invoices in several layouts. Select a document, compare the editable fields and line items with the original, and correct any differences. Enter a reviewer name and a note, check the original against the input, then select **Confirm and export CSV**.
 
-Open the downloaded CSV and find the discount line and the reviewer details. The invoice total is repeated on each line; use it once when calculating totals per invoice.
+<div class="invoice-figure" style="--figure-width:1000px"><a href="/images/projects/invoiceflow/review-current.png"><img src="/images/projects/invoiceflow/review-current.png" alt="Invoice Review showing the sample invoice list." width="1440" height="900" loading="lazy"></a></div>
 
-<div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/queue-en.png" aria-label="Open full-size image: Invoice Review in the browser with the sample invoice queue loaded."><img src="/images/projects/invoiceflow/queue-en.png" alt="Invoice Review in the browser with the sample invoice queue loaded." width="1344" height="744" loading="lazy"></a></div>
+Try **Big Corp** to review a discount line, or **Azure Interior** for grouped products and quantities with units. **NI57721** provides a Japanese invoice image. Source and license details are available beside each document.
 
-## Explore the 15 samples
+The demo uses saved sample data. Edits and confirmations stay in the current browser tab and reset on reload. The Google Sheets panel shows saved delivery history; sending is available in the local installation.
 
-For a different layout, open **NI57721**, a Japanese invoice supplied as a PNG. **Azure Interior** shows product groups, quantities with units and a discounted line. The source details beside each document identify its origin. Of the eight public template examples, three use manual transcriptions and five use saved local Qwen output with correction history.
+## Processing flow
 
-The browser runs the review on saved data. You can try edits in this tab and start again by reloading. On a local installation, Ollama can extract fields from PDF, PNG and JPEG inputs, and SQLite retains the review history. Purchase orders and receipts support an additional matching step when those records are available.
+1. **Extract** invoice fields locally from PDF, PNG or JPEG files using Ollama and Qwen.
+2. **Review** the original alongside the extracted fields, correct discrepancies and record the review.
+3. **Export** confirmed line items as CSV. When order and receipt records are available, inspect three-way matching results.
+4. **Send** the confirmed invoice header and review details from the local application through n8n to Google Sheets.
 
-## From a confirmed invoice to Google Sheets
+The browser demo starts with saved inputs and does not run model extraction. A transcription confirmation records the review of the source document. Purchase-order matching and payment approval are separate steps.
 
-After confirming the transcription locally, the reviewer can send its header and confirmation details to Google Sheets. An n8n webhook passes the record to the Sheets node. The node matches on `record_key` so that a sequential resend updates the existing row. The CSV contains the invoice lines. Payment approval is a separate decision.
+## Google Sheets integration
 
-<div class="invoice-figure" style="--figure-width:560px"><a href="/images/projects/invoiceflow/n8n-workflow.png" aria-label="Open full-size image: Published n8n workflow connecting a POST webhook to the Google Sheets append-or-update operation."><img src="/images/projects/invoiceflow/n8n-workflow.png" alt="Published n8n workflow connecting a POST webhook to the Google Sheets append-or-update operation." width="560" height="275" loading="lazy"></a></div>
+The local application sends a confirmed record to an n8n webhook. The Google Sheets node appends or updates the row using `record_key`. The response is checked against the invoice and confirmation fields. An uncertain response is retained in the delivery history for review.
 
-The register below shows an earlier run for **F202500003** and **F202500004**, both for **EUR 12,000**. The approval columns belong to that earlier workflow. The current sender records the transcription reviewer, confirmation time and snapshot identifier.
+<div class="invoice-figure" style="--figure-width:720px"><a href="/images/projects/invoiceflow/n8n-workflow.png"><img src="/images/projects/invoiceflow/n8n-workflow.png" alt="n8n workflow linking a webhook to the Google Sheets append or update node." width="560" height="275" loading="lazy"></a></div>
 
-<div class="invoice-figure invoice-register-image" style="--figure-width:1460px"><a href="/images/projects/invoiceflow/sheet.png" aria-label="Open full-size image: Two invoice rows in Google Sheets, including their record keys, invoice numbers, amounts, purchase order, approver and approval timestamps."><img src="/images/projects/invoiceflow/sheet.png" alt="Two invoice rows in Google Sheets, including their record keys, invoice numbers, amounts, purchase order, approver and approval timestamps." width="1460" height="90" loading="lazy"></a></div>
-
-[Open the sample register in Google Sheets](https://docs.google.com/spreadsheets/d/1lMzjNoQJdlf1jaMvwN8BAMunPins4vZB73U1CruHy88/edit?usp=sharing)
-
-A separate read-back returned the same two invoice numbers from rows 2 and 3.
-
-<div class="invoice-figure" style="--figure-width:724px"><a href="/images/projects/invoiceflow/n8n-rows.png" aria-label="Open full-size image: Get Row(s) output listing the two invoice numbers returned from Google Sheets."><img src="/images/projects/invoiceflow/n8n-rows.png" alt="Get Row(s) output listing the two invoice numbers returned from Google Sheets." width="724" height="211" loading="lazy"></a></div>
+[Open the sample Google Sheets register](https://docs.google.com/spreadsheets/d/1lMzjNoQJdlf1jaMvwN8BAMunPins4vZB73U1CruHy88/edit?usp=sharing)
