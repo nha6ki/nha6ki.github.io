@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Schematic gradient and two emotion curves">
+<defs><linearGradient id="g"><stop stop-color="#526ca2"/><stop offset=".52" stop-color="#a06691"/><stop offset="1" stop-color="#bf8058"/></linearGradient><radialGradient id="v"><stop stop-color="#111b2a" stop-opacity="0"/><stop offset="1" stop-color="#111b2a" stop-opacity=".72"/></radialGradient></defs>
+<rect width="1200" height="750" fill="url(#g)"/><rect width="1200" height="750" fill="url(#v)"/>
+<text x="78" y="95" fill="#f5f6f8" font-family="Georgia,serif" font-size="38">MusicChroma</text><text x="80" y="139" fill="#e1e5eb" font-family="sans-serif" font-size="16" letter-spacing="4">MUSIC · EMOTION · COLOR</text>
+<path d="M210 515H990" stroke="#fff" stroke-opacity=".24" stroke-width="2"/>
+<path d="M210 520 C265 516 280 478 330 496 S410 544 455 505 522 490 570 514 635 481 680 500 730 537 782 508 840 490 885 510 950 487 990 500" fill="none" stroke="#a1dcf4" stroke-opacity=".8" stroke-width="4"/>
+<path d="M210 502 C265 521 290 529 332 509 S405 488 455 517 515 522 568 498 620 524 676 509 730 491 780 526 840 510 886 497 950 525 990 509" fill="none" stroke="#ffc78f" stroke-opacity=".8" stroke-width="4"/>
+<path d="M602 465v100" stroke="#fff" stroke-opacity=".55" stroke-width="3"/><text x="80" y="680" fill="#eef1f5" font-family="sans-serif" font-size="20" letter-spacing="2">VALENCE  /  AROUSAL</text>
+</svg>
