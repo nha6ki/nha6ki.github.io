@@ -23,7 +23,6 @@ links:
 
 InvoiceFlow brings invoice extraction, human review and spreadsheet delivery together in one workflow. A reviewer compares invoice fields with the original document, corrects the transcription and exports confirmed lines as CSV. Purchase-order and receipt records can also be used for three-way matching.
 
-[Open Invoice Review in English](/projects/invoiceflow/review/en.html) · [日本語版](/projects/invoiceflow/review/)
 
 <link rel="stylesheet" href="/images/projects/invoiceflow/gallery.css">
 

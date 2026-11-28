@@ -76,8 +76,7 @@ const resourceLinks = project.data.links.filter((link) => link !== demoLink).map
     {!hasInlineIntroduction && <p class="lead">{project.data.summary}</p>}
 
     {project.id === 'invoiceflow' && (
-      <p><a class="invoice-demo-link" href="/projects/invoiceflow/review/en.html">Try Invoice Review</a><br />
-      <small>English / 日本語 · Sample data · Resets on refresh</small></p>
+      <p><a class="invoice-demo-link" href="/projects/invoiceflow/review/en.html">Try Invoice Review</a></p>
     )}
 
     {formattedDate && (
