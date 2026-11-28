@@ -199,5 +199,8 @@
   "原本と入力内容を比較してチェックを入れてください。": "Compare the input with the source and tick the confirmation box.",
   "確認者とメモを入力してください。": "Enter the reviewer and notes.",
   "表示された確認事項を確認してください。修正済みの内容は保存されています。": "Check the displayed review items. Any corrections have been saved.",
-  "請求書を開き、原本と入力欄を比較します。誤りを直し、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。": "Open an invoice, compare the source with the fields and correct any errors. Then select Confirm and export CSV. This does not approve or execute payment."
+  "請求書を開き、原本と入力欄を比較します。誤りを直し、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。": "Open an invoice, compare the source with the fields and correct any errors. Then select Confirm and export CSV. This does not approve or execute payment.",
+  "請求書を確認してCSV出力": "Review invoices and export CSV",
+  "15件のサンプル請求書を確認できます。請求書を選び、原本と入力内容を比較してください。必要な箇所を修正し、「確認してCSV出力」を押すとダウンロードできます。": "Explore 15 sample invoices. Select an invoice, compare the input values with the original, and correct any errors. Click “Confirm and export CSV” to download.",
+  "変更内容はこのタブ内のみで保持され、再読み込みや言語切替で初期状態に戻ります。このデモではAI抽出・Google Sheetsへの送信・支払処理は実行しません。": "Changes stay in this tab and reset when you reload or switch languages. This demo does not run AI extraction, send data to Google Sheets, or process payments."
 }

@@ -59,7 +59,7 @@
 })();
 
 // Show one concise origin label; retain source notices in expandable details.
-window.showPublicSource = source => {
+window.showPublicSource = (source, reviewId) => {
   let box = document.getElementById("public-source-info");
   if (!box) {
     box = document.createElement("aside");
@@ -77,6 +77,19 @@ window.showPublicSource = source => {
       : (en ? "Input values: prepared for the demo" : "入力値の作成方法：デモ用に作成");
   box.append(label);
   document.getElementById("public-source-details")?.remove();
+  if (!source && Number(reviewId) === 7) {
+    const details = document.createElement("details");
+    details.id = "public-source-details";
+    const summary = document.createElement("summary");
+    summary.textContent = en ? "Source details" : "出典・詳細";
+    const note = document.createElement("p");
+    note.textContent = en ? "UC12 was reconstructed from reported Qwen output; it is not the original model output file." : "UC12は報告されたQwen出力から再構成したサンプルです。モデルの出力ファイルそのものではありません。";
+    const link = document.createElement("a");
+    link.href = "./sample-7-source.json";
+    link.textContent = en ? "Source and sample provenance" : "出典とサンプル作成情報";
+    details.append(summary, note, link);
+    document.querySelector(".pdf-panel").append(details);
+  }
   if (!source) return;
   const details = document.createElement("details");
   details.id = "public-source-details";
