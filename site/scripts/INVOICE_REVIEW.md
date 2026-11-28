@@ -19,3 +19,7 @@ In the built site, open `/projects/invoiceflow/review/` and check that
 `DEMO-INV-002` changes from 要確認 to 承認待ち when the extra receipt is added.
 Approval must fail without the total from the sample PDF and succeed with
 `300.00`. Reloading should restore the initial sample data.
+
+## Current review scope
+
+`transcription.py` is synchronized from InvoiceFlow with the review modules. The browser worker confirms saved transcriptions and exports CSV without a PO. This does not bypass matching approval, trigger n8n, or approve payment. Confirmations are per-tab and reset on reload. Run both correction and browser checks after regenerating assets.

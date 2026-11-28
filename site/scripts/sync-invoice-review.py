@@ -32,7 +32,7 @@ def main():
     source = args.source.resolve()
     target = Path(__file__).resolve().parents[1] / "public/projects/invoiceflow/review"
     generated = {name: (source / name).read_bytes()
-                 for name in ("review_flow.py", "review_ui.py", "three_way.py")}
+                 for name in ("review_flow.py", "review_ui.py", "three_way.py", "transcription.py")}
     generated["index.html"] = subprocess.check_output(
         [sys.executable, "-c", "import public_review, sys; "
          "sys.stdout.buffer.write(public_review.public_html(browser=True).encode('utf-8'))"],
@@ -58,6 +58,9 @@ def main():
     page = page.replace('showStructure();', 'showStructure();showPublicSource(current.sample_source);')
     page = page.replace('<p class="muted">UC12は', '<p>合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。対応する発注書がないため承認できません。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
     page = page.replace("編集内容は承認時に保存されます。発注値は取り込み時点の記録です。", "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。")
+    page = page.replace("対応する発注書がないため承認できません。", "発注書がなくても転記確認とCSV出力は可能です。発注照合と支払承認は別の工程です。")
+    page = page.replace("3つのレビュー操作を試す", "4つのレビュー操作を試す")
+    page = page.replace("<ol>", "<ol><li><strong>転記内容を確認してCSV出力</strong><br>原本と保存済みの転記内容を比較し、確認者と理由を記録します。発注台帳がなくても確認済みCSVを出力できます。</li>", 1)
     generated["index.html"] = standardize_amount_labels(page).encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()
     if args.check:

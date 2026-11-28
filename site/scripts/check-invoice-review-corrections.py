@@ -10,7 +10,7 @@ import tempfile
 
 assets = Path(__file__).resolve().parents[1] / 'public/projects/invoiceflow/review'
 with tempfile.TemporaryDirectory() as directory:
-    for name in ('review_flow.py', 'review_ui.py', 'three_way.py', 'review_bridge.py', 'fixtures.json'):
+    for name in ('review_flow.py', 'review_ui.py', 'three_way.py', 'transcription.py', 'review_bridge.py', 'fixtures.json'):
         shutil.copy(assets / name, directory)
     os.chdir(directory)
     sys.path.insert(0, directory)
@@ -72,6 +72,10 @@ with tempfile.TemporaryDirectory() as directory:
         saved = request(f'/api/review/{ident}', None)
         assert saved['current'] == after and saved['raw'] == detail['raw']
         assert saved['events'][-1]['action'] == 'save_draft'
+    confirmed = request('/api/confirm-transcription', dict(id=ident, invoice=saved['current'], revision=saved['transcription']['revision'], actor='Tester', note='Source and limitations checked', source_checked=True, exceptions_checked=True))
+    assert confirmed['status'] == 'confirmed' and confirmed['matching'] == 'unavailable'
+    exported = request('/api/export-transcription', dict(id=ident, revision=confirmed['revision']))
+    assert 'not_approved' in exported['csv'] and 'transcription_status' in exported['csv']
     assert len(request('/api/ledger', None)) == 1
     bridge['db'].close()
 print('Public correction bridge checks passed: fifteen samples, null saved, audit retained, approval blocked.')

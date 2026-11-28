@@ -15,7 +15,7 @@ CDN = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/"
 
 def check(page, english=False):
     expect(page.locator('header button[onclick="load()"]')).to_have_count(0)
-    needs_review = "Needs review" if english else "要確認"
+    needs_review = "Matching needs review" if english else "照合要確認"
     expect(page.locator("#queue tr")).to_have_count(15, timeout=60_000)
     for supplier, number, media in [('Joe Shmoe', 8, 'pdf'), ('Sparksuite, Inc.', 9, 'pdf'), ('NI57721', 10, 'png'), ('Big Corp',11,'pdf'), ('Test Company',12,'pdf'), ('famoser GmbH',13,'pdf'), ('Sammy Maystone',14,'pdf'), ('Azure Interior',15,'pdf')]:
         page.locator('#queue tr').filter(has_text=supplier).get_by_role('button').click()
@@ -26,6 +26,19 @@ def check(page, english=False):
         response = page.request.get(original.evaluate('e => e.src'))
         assert response.ok
         assert response.body().startswith(b'\x89PNG' if media == 'png' else b'%PDF-')
+    page.locator('#queue tr').filter(has_text='Big Corp').get_by_role('button').click()
+    page.locator('#transcription-actor').fill('Browser test')
+    page.locator('#transcription-note').fill('Test confirmation, not payment approval')
+    page.locator('#source-checked').check()
+    page.locator('#confirm-transcription').click()
+    expect(page.locator('#workflow-states')).to_contain_text('Confirmed' if english else '確認済み')
+    expect(page.locator('#approve')).to_be_disabled()
+    with page.expect_download() as downloading:
+        page.locator('#export-transcription').click()
+    downloaded = Path(downloading.value.path()).read_text(encoding='utf-8-sig')
+    assert 'not_approved' in downloaded and 'transcription_status' in downloaded
+    page.locator('#lines tr').first.locator('[data-key="item"]').fill('Test edit')
+    expect(page.locator('#export-transcription')).to_be_disabled()
     correction = page.locator("#queue tr").filter(has_text="F202600025")
     correction.get_by_role("button").click()
     expect(page.locator("#pdf")).to_have_attribute("src", "./sample-7.pdf")
@@ -42,7 +55,7 @@ def check(page, english=False):
     for number, field, correct in [(4, None, None), (5, "currency", "CAD"), (6, "po_number", "DEMO-PO-006")]:
         code = f"DEMO-INV-{number:03}"
         sample = page.locator("#queue tr").filter(has_text=code)
-        ready = "Awaiting approval" if english else "承認待ち"
+        ready = "Awaiting matching approval" if english else "照合承認待ち"
         expect(sample).to_contain_text(needs_review if field else ready)
         sample.get_by_role("button").click()
         expect(page.locator("#pdf")).to_have_attribute("src", f"./sample-{number}.pdf")
@@ -60,13 +73,13 @@ def check(page, english=False):
     row.get_by_role("button", name="Open" if english else "開く").click()
     expect(page.locator("#reconciliation")).to_contain_text("RCPT-001")
     page.locator("#sample-receipt").click()
-    expect(row).to_contain_text("Awaiting approval" if english else "承認待ち")
+    expect(row).to_contain_text("Awaiting matching approval" if english else "照合承認待ち")
     expect(page.locator("#reconciliation")).to_contain_text("RCPT-002")
 
     page.locator("#actor").fill("Browser test")
     page.locator("#note").fill("Checked the sample PDF")
     page.locator("#approve").click()
-    expect(page.locator("#issues")).to_contain_text("Enter the total including tax" if english else "原本の税込合計を入力")
+    expect(page.locator("#issues")).to_contain_text("Enter the invoice total (incl. tax)" if english else "原本の請求総額（税込）を入力")
     expect(page.locator("#ledger")).not_to_contain_text("DEMO-INV-002")
     page.locator("#confirmed-gross-total").fill("301.00")
     page.locator("#approve").click()
@@ -115,7 +128,7 @@ def main():
                 expect(page.locator("#issues")).to_contain_text("Matching checks passed")
                 page.locator("#actor").fill("Reviewer")
                 page.locator("#note").fill("Verified net amount against the PDF")
-                page.get_by_role("button", name="Approve and register").click()
+                page.get_by_role("button", name="Approve matching and register").click()
                 expect(page.locator("#ledger")).to_contain_text("F202500003")
                 page.get_by_role("link", name="日本語", exact=True).click()
                 expect(page.locator("html")).to_have_attribute("lang", "ja")

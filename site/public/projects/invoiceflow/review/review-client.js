@@ -75,8 +75,8 @@ window.showPublicSource = source => {
   text.textContent = source.data_kind === "saved_model_output"
     ? (en ? "Saved Qwen model output with recorded corrections. Unverified fields remain under review; no approval is implied."
           : "保存済みのQwen出力と修正履歴です。未確認の項目は要確認のままで、承認済みではありません。")
-    : (en ? "Public template sample · manually transcribed, not AI output. No purchase order is supplied; approval remains blocked."
-          : "公開元のテンプレートサンプルです。データは原本からの手作業による転記で、AI抽出結果ではありません。発注書がないため承認できません。");
+    : (en ? "Public template sample · manually transcribed, not AI output. No PO is supplied. Transcription confirmation and CSV export are available; PO matching remains unavailable."
+          : "公開元のテンプレートサンプルです。データは原本からの手作業による転記で、AI抽出結果ではありません。発注書はありません。転記確認とCSV出力は可能ですが、発注照合は未実施です。");
   box.append(heading, text);
   const notes = document.createElement("p"); notes.textContent = source.notes; box.append(notes);
   if(source.notice_file){const a=document.createElement("a");a.textContent="NOTICE";a.href="./"+source.notice_file;a.target="_blank";a.rel="noopener";box.append(a," · ");}

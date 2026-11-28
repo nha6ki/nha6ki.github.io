@@ -1,9 +1,9 @@
 ---
-title: "InvoiceFlow — Invoice Review & Three-Way Matching"
+title: "InvoiceFlow — Invoice Review, Export & PO Matching"
 image: "/images/projects/invoiceflow/review-cover-en.webp"
 imageAlt: "Invoice Review demo showing two review tasks and the sample invoice queue."
 categories: ["ai", "data", "web"]
-summary: "Extract invoice fields locally, reconcile partial invoices against orders and receipts, and review discrepancies before approval."
+summary: "Extract invoice fields locally, verify them against the source and export confirmed data. Match orders and receipts when available."
 date: "2026-11"
 technologies:
   - Python
@@ -21,7 +21,7 @@ links:
     url: "https://github.com/nha6ki/InvoiceFlow"
 ---
 
-InvoiceFlow helps a reviewer decide whether an invoice can be paid. Two examples show what holds an invoice back: an incorrect line amount (excl. tax) and a delivery that only partly covers the quantity billed.
+InvoiceFlow helps a reviewer verify invoice data before export and, when purchase orders are available, check it against purchasing records. It does not authorize or execute payments. Two examples show what holds an invoice back: an incorrect line amount (excl. tax) and a delivery that only partly covers the quantity billed.
 
 <link rel="stylesheet" href="/images/projects/invoiceflow/gallery.css">
 
@@ -39,11 +39,17 @@ In the local workflow, Ollama reads rendered invoice pages. InvoiceFlow compares
 
 ## Compare different invoice layouts
 
-Eight public template samples provide different source layouts. The first three cover: hourly services and expenses (Joe Shmoe, PDF), item-and-amount billing (Sparksuite, PDF), and a Japanese bank-transfer invoice (NI57721, PNG). Five further PDFs add negative discount rows (Big Corp), line-level discounts and mixed taxes (Test Company), service periods (famoser GmbH), multiline repair descriptions (Sammy Maystone), and product sections with subtotals (Azure Interior). The latest five samples use saved local Qwen output and recorded corrections. The earlier three remain manual transcriptions. The model outputs include unsupported guesses, schema errors and ambiguous amount columns; successful extraction does not mean the invoice is correct or approved. Model guesses remain visible until explicitly corrected; the original output is retained. No purchase orders accompany these samples, so approval remains blocked. Source links and license notices are available beside each invoice.
+Eight public template samples provide different source layouts. The first three cover: hourly services and expenses (Joe Shmoe, PDF), item-and-amount billing (Sparksuite, PDF), and a Japanese bank-transfer invoice (NI57721, PNG). Five further PDFs add negative discount rows (Big Corp), line-level discounts and mixed taxes (Test Company), service periods (famoser GmbH), multiline repair descriptions (Sammy Maystone), and product sections with subtotals (Azure Interior). The latest five samples use saved local Qwen output and recorded corrections. The earlier three remain manual transcriptions. The model outputs include unsupported guesses, schema errors and ambiguous amount columns; successful extraction does not mean the invoice is correct or approved. Model guesses remain visible until explicitly corrected; the original output is retained. No purchase orders accompany these samples. Reviewers can confirm the saved transcription and export CSV; PO matching remains unavailable and payment is not approved. Source links and license notices are available beside each invoice.
+
+## Confirm a transcription without a purchase order
+
+Compare the saved fields with the original PDF or image, save any corrections and confirm the transcription with a reviewer name and reason. Missing source values can remain blank, with limitations recorded. Download the confirmed CSV to continue working in a spreadsheet. Invoice totals repeat on each line in this export and must not be summed across rows.
+
+Transcription confirmation, PO matching and payment approval are shown separately. Confirmation preserves a snapshot and audit trail; a saved edit requires a new confirmation. A missing purchase order is shown as unavailable, not treated as a successful match. CSV export does not add an invoice to the matching-approved ledger or send it through n8n. The existing Google Sheets workflow remains a separate action for matching-approved records.
 
 ## Correct a line amount (excl. tax)
 
-Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount (excl. tax) and run the checks again. Enter a reviewer name and reason to approve it, then open the history to see both the extracted and approved values.
+Open **F202500003** and compare the first line with the sample PDF. The extracted amount is 9,600, but 200 units at 40 each gives 8,000. Correct the line amount (excl. tax) and run the checks again. Enter a reviewer name and reason to approve the match, then open the history to see both the extracted and approved values.
 
 <div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/amount-en.webp" aria-label="Open full-size image: Invoice Review shows the entered line amount (excl. tax), the amount calculated from quantity and unit price, and their difference."><img src="/images/projects/invoiceflow/amount-en.webp" alt="Invoice Review shows the entered line amount (excl. tax), the amount calculated from quantity and unit price, and their difference." width="1792" height="368" loading="lazy"></a></div>
 
@@ -51,7 +57,7 @@ Open **F202500003** and compare the first line with the sample PDF. The extracte
 
 Open **DEMO-INV-002**. The purchase order covers 100 units, but only 60 have arrived. The earlier invoice **DEMO-INV-001** already accounts for 40 of them. That leaves 20 available for a new invoice requesting 30.
 
-Add the sample receipt for 10 more units and check how the available balance changes. Read the invoice total (incl. tax) from the PDF, enter it in the confirmation field, and approve the invoice. The approval history records the receipts and earlier invoice used in the decision.
+Add the sample receipt for 10 more units and check how the available balance changes. Read the invoice total (incl. tax) from the PDF, enter it in the confirmation field, and approve the match. The approval history records the receipts and earlier invoice used in the decision.
 
 <div class="invoice-figure" style="--figure-width:896px"><a href="/images/projects/invoiceflow/receipts-en.webp" aria-label="Open full-size image: The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check."><img src="/images/projects/invoiceflow/receipts-en.webp" alt="The review screen shows 60 received, 40 previously approved, 30 requested and an excess of 10, alongside the receipt and earlier invoice used in the check." width="1792" height="716" loading="lazy"></a></div>
 

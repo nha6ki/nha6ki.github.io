@@ -1,5 +1,5 @@
 const RUNTIME = "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/";
-const files = ["review_flow.py", "three_way.py", "review_ui.py", "fixtures.json", "review_bridge.py"];
+const files = ["review_flow.py", "three_way.py", "transcription.py", "review_ui.py", "fixtures.json", "review_bridge.py"];
 
 const engine = (async () => {
   const reads = Promise.all(files.map(async file => {

@@ -68,6 +68,10 @@ def handle(path, body):
     if path == "/api/save-draft":
         return flow.save_draft(db, body["id"], body["actor"], body["note"],
                                body["invoice"], body["expected_current"])
+    if path == "/api/confirm-transcription":
+        return ui.transcription.confirm(db, body["id"], body)
+    if path == "/api/export-transcription":
+        return ui.transcription.export_csv(db, body["id"], body["revision"])
     if path == "/api/approve":
         return ui.approve_draft(db, body["id"], body["invoice"], body)
     raise ValueError("この操作は公開版では利用できません。")

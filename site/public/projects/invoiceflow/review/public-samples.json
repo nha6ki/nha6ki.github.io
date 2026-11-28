@@ -57,7 +57,7 @@
     "license": "MIT",
     "license_file": "sample-11-LICENSE.txt",
     "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
-    "notes": "Negative discount is a separate printed row. Only line subtotals are printed, so unit prices remain blank. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+    "notes": "Negative discount is a separate printed row. Compare unit prices and line amounts with their respective source columns. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs.",
     "data_kind": "saved_model_output",
     "extraction": {
       "model": "qwen3.5:9b-q8_0",

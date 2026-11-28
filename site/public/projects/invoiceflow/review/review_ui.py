@@ -5,6 +5,7 @@ from pathlib import Path
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from urllib.parse import urlparse
 import review_flow as flow
+import transcription
 
 ROOT=Path(__file__).resolve().parent
 def safe_path(value,base=ROOT):
@@ -38,6 +39,7 @@ def detail(conn,id):
                   document_type=document[1] if document else None)
     result["pdf_available"] = document is not None and document[1] == "application/pdf"
     result["pdf_name"] = document[0].name if result["pdf_available"] else None
+    result["transcription"] = transcription.state(conn, id)
     return result
 
 def source_document(answer_path):
@@ -83,7 +85,7 @@ def list_reviews(conn):
         invoice = json.loads(row["invoice"] or row["normalized"])
         if status != "registered":
             status = flow.readiness(flow.assess(conn, invoice, json.loads(row["po"]), original=json.loads(row["raw"])))
-        result.append({"id": row["id"], "created": row["created"], "status": status, "invoice": invoice})
+        result.append({"id": row["id"], "created": row["created"], "status": status, "invoice": invoice, "transcription": transcription.state(conn, row["id"])})
     return result
 
 
@@ -150,11 +152,17 @@ class Handler(BaseHTTPRequestHandler):
             path=urlparse(self.path).path
             with _resource_closing(flow.connect(self.server.db)) as conn, conn:
                 if path=="/api/ingest":
-                    answer=safe_path(body["answer"]);po=safe_path(body["po"])
-                    if not answer.name.endswith(".stream.jsonl") or po.parent!=ROOT/"fixtures":
+                    answer=safe_path(body["answer"])
+                    po=safe_path(body["po"]) if body.get("po") else None
+                    if not answer.name.endswith(".stream.jsonl") or (po is not None and po.parent!=ROOT/"fixtures"):
                         raise ValueError("Choose a saved model stream and a PO fixture")
-                    return self.reply(flow.ingest(conn,answer,json.loads(po.read_text()),bool(body.get("comma"))))
-                id=int(body["id"]);obj=body["invoice"]
+                    return self.reply(flow.ingest(conn,answer,json.loads(po.read_text()) if po else {"matching":"review_only","lines":[]},bool(body.get("comma"))))
+                id=int(body["id"])
+                if path=="/api/confirm-transcription":
+                    return self.reply(transcription.confirm(conn, id, body))
+                if path=="/api/export-transcription":
+                    return self.reply(transcription.export_csv(conn, id, body["revision"]))
+                obj=body["invoice"]
                 if path=="/api/validate":
                     conn.execute("BEGIN")
                     return self.reply(validate_draft(conn, id, obj))
