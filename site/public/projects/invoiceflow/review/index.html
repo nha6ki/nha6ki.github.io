@@ -9,18 +9,18 @@ input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-wid
 </style>
 <header><div><h1>Invoice Review</h1><small>原本を確認してCSV出力</small> · <a style="color:inherit" href="../">プロジェクト紹介</a></div></header>
 <main><div id="message" role="status"></div>
-<section><h2>原本を確認してCSV出力</h2><p>請求書を開き、原本と入力欄を比較します。誤りがあれば「修正を保存」、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。</p>
+<section><h2>原本を確認してCSV出力</h2><p>請求書を開き、原本と入力欄を比較します。誤りを直し、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。</p>
 <p>合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。発注書がなくても転記確認とCSV出力は可能です。発注照合と支払承認は別の工程です。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は報告されたモデル出力から再構成したサンプルです。この画面ではAI抽出やGoogle Sheets送信は実行しません。修正はこのタブ内に保存され、再読み込みや言語切替で初期状態に戻ります。</p><p><a href="./sample-7.pdf" target="_blank" rel="noopener">UC12原本PDF</a> · <a href="./sample-7-source.json">出典とサンプル作成情報</a></p><p class="muted">処理はブラウザ内で行います。ページを再読み込みすると初期状態に戻ります。</p>
 <div hidden><select id="answer"></select><select id="po"></select>
 <input id="comma" type="checkbox"><button id="ingest" disabled>取り込む</button></div></section>
 <section><h2>請求書一覧</h2><div class="scroll"><table><thead><tr><th>請求書番号</th><th>仕入先</th><th>請求総額（税込）</th><th>状態</th><th></th></tr></thead><tbody id="queue"></tbody></table></div></section>
 <div id="detail" hidden>
-<section class="review-summary" tabindex="-1" id="summary"><h2 id="summary-title">確認状態</h2><div id="workflow-states"></div></section><div class="split"><section class="pdf-panel"><details open><summary>原本を表示</summary><p id="pdfnote" class="muted"></p><iframe class="pdf" title="原本請求書" id="pdf"></iframe><img id="source-image" alt="原本請求書" style="max-width:100%;height:auto" hidden></details></section>
-<div><section><h2 id="title">原本と転記内容の確認</h2><p class="muted">原本と入力欄を比較してください。誤りがあれば修正を保存し、確認してCSVを出力します。</p><div id="fields" class="fields"></div>
+<section class="review-summary" tabindex="-1" id="summary"><h2 id="summary-title">確認状態</h2><div id="workflow-states"></div></section><div class="split"><section class="pdf-panel"><p id="pdfnote" class="muted" hidden></p><iframe class="pdf" title="原本請求書" id="pdf"></iframe><img id="source-image" alt="原本請求書" style="max-width:100%;height:auto" hidden></section>
+<div><section><h2 id="title">原本と転記内容の確認</h2><p class="muted">原本と入力欄を比較し、誤りを直して「確認してCSV出力」を押してください。</p><div id="fields" class="fields"></div>
 <section id="structure" hidden><h3>原本から抽出した明細構造</h3><p>空欄の抽出値は「—」で表示します。</p><div id="structure-table" class="scroll"></div></section><h3>請求書の明細（編集可）</h3><div class="scroll"><table><thead><tr><th>行ID</th><th>品目名</th><th>数量</th><th>単価（税抜）</th><th>明細金額（税抜）</th></tr></thead><tbody id="lines"></tbody></table></div>
-<section id="transcription-panel"><h3>転記確認と出力</h3><p>原本と転記内容が一致することを確認します。支払承認や税務上の判断は行いません。未記載の値を推測で埋める必要はありません。</p><div id="transcription-checks"></div><label>確認者<input id="actor" autocomplete="name"></label><label>確認・修正メモ<textarea id="note" placeholder="確認した内容、修正理由、残る注意点"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> 原本と保存済みの転記内容を比較しました</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> 表示された注意点を確認し、必要な内容をメモに記録しました</label><div class="toolbar"><button id="save-draft">修正を保存</button><button class="primary" id="confirm-transcription">確認してCSV出力</button></div><p class="muted">編集後は修正を保存してから再確認してください。CSVには確認状態を含めます。Google Sheetsへの既存の照合承認済みデータ送信とは別操作です。</p></section></section><details><summary>元の抽出値・正規化・修正・承認履歴</summary><pre id="history"></pre></details></div></div></div>
+<section id="transcription-panel"><h3>転記確認と出力</h3><p>原本と転記内容が一致することを確認します。支払承認や税務上の判断は行いません。未記載の値を推測で埋める必要はありません。</p><div id="transcription-checks"></div><label>確認者<input id="actor" autocomplete="name"></label><label>確認・修正メモ<textarea id="note" placeholder="確認した内容、修正理由、残る注意点"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> 原本と入力内容を比較しました</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> 表示された注意点を確認し、必要な内容をメモに記録しました</label><div class="toolbar"><button class="primary" id="confirm-transcription">確認してCSV出力</button></div><p class="muted">変更があれば修正履歴を保存し、確認を記録してCSVを出力します。</p></section></section><details><summary>元の抽出値・正規化・修正・承認履歴</summary><pre id="history"></pre></details></div></div></div>
 </main>
-<script src="./review-client.js?v=simple-review-1"></script>
+<script src="./review-client.js?v=single-action-1"></script>
 <script>
 const token="__TOKEN__", $=id=>document.getElementById(id);
 const labels={invoice_number:"請求書番号",issue_date:"発行日",supplier:"仕入先",currency:"通貨",po_number:"発注番号",gross_total:"請求総額（税込）"};
@@ -46,20 +46,19 @@ function sourceLines(){return Array.isArray(current.current.lines)?current.curre
 function invoice(){const obj=structuredClone(current.current);for(const k of Object.keys(labels)){const v=$("f-"+k).value;obj[k]=v===""?null:v}obj.lines=[...$("lines").children].map(tr=>{const source=sourceLines()[Number(tr.dataset.index)];const line=source&&typeof source==="object"&&!Array.isArray(source)?structuredClone(source):{};for(const input of tr.querySelectorAll("input"))line[input.dataset.key]=input.value===""?null:input.value;return line});return obj}
 async function openReview(id){if(current?.id!==id)$("note").value="";current=await api("/api/review/"+id);$("detail").hidden=false;$("title").textContent="請求書 "+(current.current.invoice_number??current.current.supplier);$("fields").replaceChildren();for(const [k,label]of Object.entries(labels)){const box=el("label",label),input=el("input");input.id="f-"+k;input.value=current.current[k]??"";input.disabled=current.status==="registered";box.append(input);$("fields").append(box)}
 showStructure();showPublicSource(current.sample_source);showTranscription();
-$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.setAttribute("aria-label",`明細${index+1}の${({line_id:"行ID",item:"品目名",quantity:"数量",unit_price:"単価（税抜）",line_total:"明細金額（税抜）"})[k]}`);input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);if(k==="unit_price"){input.placeholder="未記載（null）";const clear=el("button","未記載にする");clear.type="button";clear.setAttribute("aria-label",`明細${index+1}の単価（税抜）を未記載にする`);clear.disabled=current.status==="registered";clear.onclick=()=>{input.value="";message("単価（税抜）を未記載にしました。理由を入力して修正を保存してください。")};td.append(clear)}tr.append(td)}$("lines").append(tr)});
+$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.setAttribute("aria-label",`明細${index+1}の${({line_id:"行ID",item:"品目名",quantity:"数量",unit_price:"単価（税抜）",line_total:"明細金額（税抜）"})[k]}`);input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);tr.append(td)}$("lines").append(tr)});
 const sampleURL=current.sample_source?"./"+current.sample_source.file:window.invoiceReviewPDF?.(id);
 const sourceURL=sampleURL??(current.document_available?"/source/"+id:current.pdf_available?"/pdf/"+id:null);
 const isImage=current.sample_source?.media_type?.startsWith("image/") || (!sampleURL && current.document_type?.startsWith("image/"));
 $("pdf").hidden=!sourceURL || isImage;$("pdf").src=sourceURL && !isImage?sourceURL:"about:blank";
 $("source-image").hidden=!sourceURL || !isImage;
 if(sourceURL && isImage)$("source-image").src=sourceURL;else $("source-image").removeAttribute("src");
-$("pdfnote").textContent=sampleURL?"公開用のサンプル請求書":sourceURL?(current.document_name??current.pdf_name):"原本が見つからないか、保存後に変更されています。";
-$("save-draft").disabled=current.status==="registered";$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2)}
+$("pdfnote").hidden=!!sourceURL;$("pdfnote").textContent=sourceURL?"":"原本が見つからないか、保存後に変更されています。";
+$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2)}
 async function load(){const [rows,files]=await Promise.all([api("/api/reviews"),api("/api/files")]);$("queue").replaceChildren();for(const r of rows){const tr=el("tr");for(const v of [(r.invoice.invoice_number??"未記載"),r.invoice.supplier,r.invoice.gross_total+" "+(r.invoice.currency??"通貨未記載"),(r.transcription?.status==="confirmed"?"転記確認済み":"転記未確認")])tr.append(el("td",v));const td=el("td"),b=el("button","開く");b.onclick=async()=>{try{await openReview(r.id);$("summary").focus();$("summary").scrollIntoView({block:"start"})}catch(e){message(e.message)}};td.append(b);tr.append(td);$("queue").append(tr)}if(!rows.length)$("queue").append(el("tr","確認対象はまだありません。上から抽出結果を取り込んでください。"));
 for(const [id,values]of [["answer",files.answers],["po",files.pos]]){const selected=$(id).value;$(id).replaceChildren();if(id==="po"){const empty=el("option","発注台帳なし（転記確認のみ）");empty.value="";$(id).append(empty)}for(const value of values){const o=el("option",value);o.value=value;$(id).append(o)}if(values.includes(selected))$(id).value=selected}
 }
 $("ingest").onclick=async()=>{try{const r=await api("/api/ingest",{answer:$("answer").value,po:$("po").value,comma:$("comma").checked});await load();await openReview(r.id);message(r.reused?"取り込み済みの記録を表示しました。":"抽出結果を取り込みました。")}catch(e){message(e.message)}};
-$("save-draft").onclick=async()=>{const b=$("save-draft");b.disabled=true;try{const id=current.id;const r=await api("/api/save-draft",{id,invoice:invoice(),expected_current:current.current,actor:$("actor").value,note:$("note").value});await load();await openReview(id);message(r.unchanged?"変更はありません。":"修正と履歴を保存しました。承認・台帳登録は行っていません。")}catch(e){message(e.message)}finally{b.disabled=false}};
 
 function transcriptionCheck(text){const terms={"required for export": "出力に必要な項目です", "not recorded; verify against source": "未記載です。原本を確認してください", "use YYYY-MM-DD": "日付はYYYY-MM-DDで入力してください", "use a three-letter code or leave missing": "通貨は英字3文字、または未記載にしてください", "not recorded": "未記載です", "invalid decimal": "小数点を使った数値に直してください", "quantity × unit price differs from line amount; verify discounts, charges and price basis": "数量×単価（税抜）と明細金額（税抜）が異なります。値引き・加算・単価（税抜）の基準数量を原本で確認してください", "no line items recorded": "明細が記録されていません", "structured rows require manual verification; do not sum parent and child rows together": "階層明細は手動で確認してください。親行と子行を二重に合計しないでください", "possible duplicate review IDs": "重複候補の記録ID"};for(const [key,value] of Object.entries(terms))text=text.replace(key,value);return text}
 function showTranscription(){
@@ -76,18 +75,33 @@ function showTranscription(){
  $("source-checked").checked=false;$("exceptions-checked").checked=false;$("exceptions-checked").parentElement.hidden=!t.warnings.length;
 
 
- $("confirm-transcription").disabled=t.errors.length>0;
+ $("confirm-transcription").disabled=false;
 }
 function markUnsaved(){
- $("source-checked").checked=false;$("confirm-transcription").disabled=true;
+ $("source-checked").checked=false;$("confirm-transcription").disabled=!current?.transcription;
 }
 $("fields").addEventListener("input",markUnsaved);$("lines").addEventListener("input",markUnsaved);
 $("lines").addEventListener("click",e=>{if(e.target.tagName==="BUTTON")markUnsaved()});
 $("confirm-transcription").onclick=async()=>{const b=$("confirm-transcription");b.disabled=true;try{
- const id=current.id;
- if(current.transcription.status!=="confirmed")await api("/api/confirm-transcription",{id,invoice:invoice(),revision:current.transcription.revision,actor:$("actor").value,note:$("note").value,source_checked:$("source-checked").checked,exceptions_checked:$("exceptions-checked").checked});
+ const id=current.id, edited=invoice(), actor=$("actor").value.trim(), note=$("note").value.trim();
+ const checked=$("source-checked").checked, exceptions=$("exceptions-checked").checked;
+ const changed=JSON.stringify(edited)!==JSON.stringify(current.current);
+ if(changed || current.transcription.status!=="confirmed"){
+  if(!checked)throw Error("原本と入力内容を比較してチェックを入れてください。");
+  if(!actor || !note)throw Error("確認者とメモを入力してください。");
+  if(changed){
+   await api("/api/save-draft",{id,invoice:edited,expected_current:current.current,actor,note});
+   current=await api("/api/review/"+id);
+  }
+  if(current.transcription.errors.length || (current.transcription.warnings.length && !exceptions)){
+   await load();await openReview(id);
+   throw Error("表示された確認事項を確認してください。修正済みの内容は保存されています。");
+  }
+  await api("/api/confirm-transcription",{id,invoice:current.current,revision:current.transcription.revision,actor,note,source_checked:checked,exceptions_checked:exceptions});
+ }
  await load();await openReview(id);await downloadCSV();
- }catch(e){message(e.message);b.disabled=false}};
+ }catch(e){message(e.message)}finally{b.disabled=!current?.transcription}};
+
 async function downloadCSV(){try{
  if(JSON.stringify(invoice())!==JSON.stringify(current.current))throw Error("編集内容を保存して再確認してください。");
  const data=await api("/api/export-transcription",{id:current.id,revision:current.transcription.revision});

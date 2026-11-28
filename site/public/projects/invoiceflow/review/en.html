@@ -9,18 +9,18 @@ input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-wid
 </style>
 <header><div><h1>Invoice Review</h1><small>Review the source and export CSV</small> · <a style="color:inherit" href="../">Project overview</a></div></header>
 <main><div id="message" role="status"></div>
-<section><h2>Review the source and export CSV</h2><p>Open an invoice and compare the source with the fields. Save any corrections, then confirm and export CSV. This does not approve or execute payment.</p>
+<section><h2>Review the source and export CSV</h2><p>Open an invoice, compare the source with the fields and correct any errors. Then select Confirm and export CSV. This does not approve or execute payment.</p>
 <p>Review 15 invoices. Of the eight public samples, the latest five use saved Qwen output and recorded corrections; the earlier three are manual transcriptions. Unverified fields still need review. You can confirm and export a transcription without a PO. PO matching and payment approval are separate steps.<a href="./public-samples.json">Sources and licenses</a></p><p class="muted">UC12 is reconstructed from reported model output. This page does not run AI extraction or send to Google Sheets. Corrections stay in this tab and reset on reload or language change.</p><p><a href="./sample-7.pdf" target="_blank" rel="noopener">UC12 source PDF</a> · <a href="./sample-7-source.json">Source and sample provenance</a></p><p class="muted">Changes stay in this browser tab. Reloading or switching languages resets the sample data.</p>
 <div hidden><select id="answer"></select><select id="po"></select>
 <input id="comma" type="checkbox"><button id="ingest" disabled>Import</button></div></section>
 <section><h2>Invoice queue</h2><div class="scroll"><table><thead><tr><th>Invoice number</th><th>Supplier</th><th>Invoice total (incl. tax)</th><th>Status</th><th></th></tr></thead><tbody id="queue"></tbody></table></div></section>
 <div id="detail" hidden>
-<section class="review-summary" tabindex="-1" id="summary"><h2 id="summary-title">Review status</h2><div id="workflow-states"></div></section><div class="split"><section class="pdf-panel"><details open><summary>View source document</summary><p id="pdfnote" class="muted"></p><iframe class="pdf" title="Source invoice" id="pdf"></iframe><img id="source-image" alt="Source invoice" style="max-width:100%;height:auto" hidden></details></section>
-<div><section><h2 id="title">Review the source and transcription</h2><p class="muted">Compare the source with the fields below. Save any corrections, then confirm and export CSV.</p><div id="fields" class="fields"></div>
+<section class="review-summary" tabindex="-1" id="summary"><h2 id="summary-title">Review status</h2><div id="workflow-states"></div></section><div class="split"><section class="pdf-panel"><p id="pdfnote" class="muted" hidden></p><iframe class="pdf" title="Source invoice" id="pdf"></iframe><img id="source-image" alt="Source invoice" style="max-width:100%;height:auto" hidden></section>
+<div><section><h2 id="title">Review the source and transcription</h2><p class="muted">Compare the source with the fields, correct any errors, then select Confirm and export CSV.</p><div id="fields" class="fields"></div>
 <section id="structure" hidden><h3>Original extracted line structure</h3><p>Missing extracted values are shown as —.</p><div id="structure-table" class="scroll"></div></section><h3>Invoice lines</h3><div class="scroll"><table><thead><tr><th>Line ID</th><th>Item name</th><th>Quantity</th><th>Unit price (excl. tax)</th><th>Line amount (excl. tax)</th></tr></thead><tbody id="lines"></tbody></table></div>
-<section id="transcription-panel"><h3>Confirm and export the transcription</h3><p>Check that the transcription matches the source. This is not payment approval or tax validation. Leave unprinted values missing rather than guessing.</p><div id="transcription-checks"></div><label>Reviewer<input id="actor" autocomplete="name"></label><label>Review and correction notes<textarea id="note" placeholder="What you checked, reasons for corrections, and remaining limitations"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> I compared the saved transcription with the source document</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> I checked the warnings and recorded any necessary details in the notes.</label><div class="toolbar"><button id="save-draft">Save corrections</button><button class="primary" id="confirm-transcription">Confirm and export CSV</button></div><p class="muted">After editing, save and confirm again. CSV includes review states. This is separate from the existing Google Sheets delivery of matching-approved records.</p></section></section><details><summary>Original extraction, normalization, corrections and approvals</summary><pre id="history"></pre></details></div></div></div>
+<section id="transcription-panel"><h3>Confirm and export the transcription</h3><p>Check that the transcription matches the source. This is not payment approval or tax validation. Leave unprinted values missing rather than guessing.</p><div id="transcription-checks"></div><label>Reviewer<input id="actor" autocomplete="name"></label><label>Review and correction notes<textarea id="note" placeholder="What you checked, reasons for corrections, and remaining limitations"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> I compared the input with the source document</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> I checked the warnings and recorded any necessary details in the notes.</label><div class="toolbar"><button class="primary" id="confirm-transcription">Confirm and export CSV</button></div><p class="muted">Any changes are saved in the history, your confirmation is recorded, and CSV is exported.</p></section></section><details><summary>Original extraction, normalization, corrections and approvals</summary><pre id="history"></pre></details></div></div></div>
 </main>
-<script src="./review-client.js?v=simple-review-1"></script>
+<script src="./review-client.js?v=single-action-1"></script>
 <script>
 const token="__TOKEN__", $=id=>document.getElementById(id);
 const labels={invoice_number:"Invoice number",issue_date:"Issue date",supplier:"Supplier",currency:"Currency",po_number:"Purchase order number",gross_total:"Invoice total (incl. tax)"};
@@ -46,20 +46,19 @@ function sourceLines(){return Array.isArray(current.current.lines)?current.curre
 function invoice(){const obj=structuredClone(current.current);for(const k of Object.keys(labels)){const v=$("f-"+k).value;obj[k]=v===""?null:v}obj.lines=[...$("lines").children].map(tr=>{const source=sourceLines()[Number(tr.dataset.index)];const line=source&&typeof source==="object"&&!Array.isArray(source)?structuredClone(source):{};for(const input of tr.querySelectorAll("input"))line[input.dataset.key]=input.value===""?null:input.value;return line});return obj}
 async function openReview(id){if(current?.id!==id)$("note").value="";current=await api("/api/review/"+id);$("detail").hidden=false;$("title").textContent="Invoice "+(current.current.invoice_number??current.current.supplier);$("fields").replaceChildren();for(const [k,label]of Object.entries(labels)){const box=el("label",label),input=el("input");input.id="f-"+k;input.value=current.current[k]??"";input.disabled=current.status==="registered";box.append(input);$("fields").append(box)}
 showStructure();showPublicSource(current.sample_source);showTranscription();
-$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.setAttribute("aria-label",`Line ${index+1}, ${({line_id:"line ID",item:"item name",quantity:"quantity",unit_price:"unit price (excl. tax)",line_total:"line amount (excl. tax)"})[k]}`);input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);if(k==="unit_price"){input.placeholder="Missing (null)";const clear=el("button","Mark as missing");clear.type="button";clear.setAttribute("aria-label",`Mark line ${index+1} unit price (excl. tax) as missing`);clear.disabled=current.status==="registered";clear.onclick=()=>{input.value="";message("Unit price (excl. tax) marked as missing. Enter a reason and save the correction.")};td.append(clear)}tr.append(td)}$("lines").append(tr)});
+$("lines").replaceChildren();sourceLines().forEach((line,index)=>{const tr=el("tr");tr.dataset.index=index;for(const k of ["line_id","item","quantity","unit_price","line_total"]){const td=el("td"),input=el("input");input.dataset.key=k;input.setAttribute("aria-label",`Line ${index+1}, ${({line_id:"line ID",item:"item name",quantity:"quantity",unit_price:"unit price (excl. tax)",line_total:"line amount (excl. tax)"})[k]}`);input.value=line?.[k]??"";input.disabled=current.status==="registered";td.append(input);tr.append(td)}$("lines").append(tr)});
 const sampleURL=current.sample_source?"./"+current.sample_source.file:window.invoiceReviewPDF?.(id);
 const sourceURL=sampleURL??(current.document_available?"/source/"+id:current.pdf_available?"/pdf/"+id:null);
 const isImage=current.sample_source?.media_type?.startsWith("image/") || (!sampleURL && current.document_type?.startsWith("image/"));
 $("pdf").hidden=!sourceURL || isImage;$("pdf").src=sourceURL && !isImage?sourceURL:"about:blank";
 $("source-image").hidden=!sourceURL || !isImage;
 if(sourceURL && isImage)$("source-image").src=sourceURL;else $("source-image").removeAttribute("src");
-$("pdfnote").textContent=sampleURL?"Sample source document":sourceURL?(current.document_name??current.pdf_name):"Source is missing or has changed since it was saved.";
-$("save-draft").disabled=current.status==="registered";$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2)}
+$("pdfnote").hidden=!!sourceURL;$("pdfnote").textContent=sourceURL?"":"Source is missing or has changed since it was saved.";
+$("history").textContent=JSON.stringify({raw:current.raw,normalization:current.normalization,events:current.events},null,2)}
 async function load(){const [rows,files]=await Promise.all([api("/api/reviews"),api("/api/files")]);$("queue").replaceChildren();for(const r of rows){const tr=el("tr");for(const v of [(r.invoice.invoice_number??"Not printed"),r.invoice.supplier,r.invoice.gross_total+" "+(r.invoice.currency??"Currency not printed"),(r.transcription?.status==="confirmed"?"Transcription confirmed":"Transcription unconfirmed")])tr.append(el("td",v));const td=el("td"),b=el("button","Open");b.onclick=async()=>{try{await openReview(r.id);$("summary").focus();$("summary").scrollIntoView({block:"start"})}catch(e){message(e.message)}};td.append(b);tr.append(td);$("queue").append(tr)}if(!rows.length)$("queue").append(el("tr","No invoices to review."));
 for(const [id,values]of [["answer",files.answers],["po",files.pos]]){const selected=$(id).value;$(id).replaceChildren();if(id==="po"){const empty=el("option","No purchase order (transcription review only)");empty.value="";$(id).append(empty)}for(const value of values){const o=el("option",value);o.value=value;$(id).append(o)}if(values.includes(selected))$(id).value=selected}
 }
 $("ingest").onclick=async()=>{try{const r=await api("/api/ingest",{answer:$("answer").value,po:$("po").value,comma:$("comma").checked});await load();await openReview(r.id);message(r.reused?"Opened the existing review.":"Imported the extraction.")}catch(e){message(e.message)}};
-$("save-draft").onclick=async()=>{const b=$("save-draft");b.disabled=true;try{const id=current.id;const r=await api("/api/save-draft",{id,invoice:invoice(),expected_current:current.current,actor:$("actor").value,note:$("note").value});await load();await openReview(id);message(r.unchanged?"No changes to save.":"Correction and history saved. No approval or ledger entry was created.")}catch(e){message(e.message)}finally{b.disabled=false}};
 
 function transcriptionCheck(text){const terms={"required for export": "required for export", "not recorded; verify against source": "not recorded; verify against source", "use YYYY-MM-DD": "use YYYY-MM-DD", "use a three-letter code or leave missing": "use a three-letter code or leave missing", "not recorded": "not recorded", "invalid decimal": "invalid decimal", "quantity × unit price differs from line amount; verify discounts, charges and price basis": "quantity × unit price differs from line amount; verify discounts, charges and price basis", "no line items recorded": "no line items recorded", "structured rows require manual verification; do not sum parent and child rows together": "structured rows require manual verification; do not sum parent and child rows together", "possible duplicate review IDs": "possible duplicate review IDs"};for(const [key,value] of Object.entries(terms))text=text.replace(key,value);return text}
 function showTranscription(){
@@ -76,18 +75,33 @@ function showTranscription(){
  $("source-checked").checked=false;$("exceptions-checked").checked=false;$("exceptions-checked").parentElement.hidden=!t.warnings.length;
 
 
- $("confirm-transcription").disabled=t.errors.length>0;
+ $("confirm-transcription").disabled=false;
 }
 function markUnsaved(){
- $("source-checked").checked=false;$("confirm-transcription").disabled=true;
+ $("source-checked").checked=false;$("confirm-transcription").disabled=!current?.transcription;
 }
 $("fields").addEventListener("input",markUnsaved);$("lines").addEventListener("input",markUnsaved);
 $("lines").addEventListener("click",e=>{if(e.target.tagName==="BUTTON")markUnsaved()});
 $("confirm-transcription").onclick=async()=>{const b=$("confirm-transcription");b.disabled=true;try{
- const id=current.id;
- if(current.transcription.status!=="confirmed")await api("/api/confirm-transcription",{id,invoice:invoice(),revision:current.transcription.revision,actor:$("actor").value,note:$("note").value,source_checked:$("source-checked").checked,exceptions_checked:$("exceptions-checked").checked});
+ const id=current.id, edited=invoice(), actor=$("actor").value.trim(), note=$("note").value.trim();
+ const checked=$("source-checked").checked, exceptions=$("exceptions-checked").checked;
+ const changed=JSON.stringify(edited)!==JSON.stringify(current.current);
+ if(changed || current.transcription.status!=="confirmed"){
+  if(!checked)throw Error("Compare the input with the source and tick the confirmation box.");
+  if(!actor || !note)throw Error("Enter the reviewer and notes.");
+  if(changed){
+   await api("/api/save-draft",{id,invoice:edited,expected_current:current.current,actor,note});
+   current=await api("/api/review/"+id);
+  }
+  if(current.transcription.errors.length || (current.transcription.warnings.length && !exceptions)){
+   await load();await openReview(id);
+   throw Error("Check the displayed review items. Any corrections have been saved.");
+  }
+  await api("/api/confirm-transcription",{id,invoice:current.current,revision:current.transcription.revision,actor,note,source_checked:checked,exceptions_checked:exceptions});
+ }
  await load();await openReview(id);await downloadCSV();
- }catch(e){message(e.message);b.disabled=false}};
+ }catch(e){message(e.message)}finally{b.disabled=!current?.transcription}};
+
 async function downloadCSV(){try{
  if(JSON.stringify(invoice())!==JSON.stringify(current.current))throw Error("Save your edits and confirm again.");
  const data=await api("/api/export-transcription",{id:current.id,revision:current.transcription.revision});

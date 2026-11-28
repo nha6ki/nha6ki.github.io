@@ -27,7 +27,7 @@ InvoiceFlow helps a reviewer verify invoice data before export and, when purchas
 
 ## Review and export
 
-Open an invoice and compare its source with the extracted fields. Use **Save corrections** when needed, enter the reviewer and notes, and select **Confirm and export CSV**. The source is open by default. The review screen no longer includes PO recheck, matching approval or receipt-registration controls. The matching engine described below remains available in the backend and CLI; CSV export does not approve payment.
+Open an invoice and compare its source with the extracted fields. Correct any errors, enter the reviewer and notes, and select **Confirm and export CSV**. This single action saves any changes, records the confirmation and downloads CSV. The source is open by default. The review screen no longer includes PO recheck, matching approval or receipt-registration controls. The matching engine described below remains available in the backend and CLI; CSV export does not approve payment.
 
 ## From PDF to the invoice register
 

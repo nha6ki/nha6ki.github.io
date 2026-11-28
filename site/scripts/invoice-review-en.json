@@ -192,5 +192,12 @@
   "表示された注意点を確認し、必要な内容をメモに記録しました": "I checked the warnings and recorded any necessary details in the notes.",
   "請求書を開き、原本と入力欄を比較します。誤りがあれば「修正を保存」、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。": "Open an invoice and compare the source with the fields. Save any corrections, then confirm and export CSV. This does not approve or execute payment.",
   "修正を保存": "Save corrections",
-  "空欄の抽出値は「—」で表示します。": "Missing extracted values are shown as —."
+  "空欄の抽出値は「—」で表示します。": "Missing extracted values are shown as —.",
+  "原本と入力内容を比較しました": "I compared the input with the source document",
+  "原本と入力欄を比較し、誤りを直して「確認してCSV出力」を押してください。": "Compare the source with the fields, correct any errors, then select Confirm and export CSV.",
+  "変更があれば修正履歴を保存し、確認を記録してCSVを出力します。": "Any changes are saved in the history, your confirmation is recorded, and CSV is exported.",
+  "原本と入力内容を比較してチェックを入れてください。": "Compare the input with the source and tick the confirmation box.",
+  "確認者とメモを入力してください。": "Enter the reviewer and notes.",
+  "表示された確認事項を確認してください。修正済みの内容は保存されています。": "Check the displayed review items. Any corrections have been saved.",
+  "請求書を開き、原本と入力欄を比較します。誤りを直し、確認が終わったら「確認してCSV出力」を押してください。支払承認・送金は行いません。": "Open an invoice, compare the source with the fields and correct any errors. Then select Confirm and export CSV. This does not approve or execute payment."
 }
