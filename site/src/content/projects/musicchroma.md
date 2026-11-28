@@ -11,7 +11,7 @@ technologies:
   - Canvas
   - GitHub Pages
 order: 7
-featured: false
+featured: true
 image: "/images/projects/musicchroma.webp"
 imageAlt: "MusicChroma’s Experience view at 2:30 in Der Lindenbaum, showing the background gradient and full-song valence and arousal curves."
 links:
