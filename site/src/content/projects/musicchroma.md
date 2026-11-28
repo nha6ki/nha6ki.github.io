@@ -12,8 +12,8 @@ technologies:
   - GitHub Pages
 order: 7
 featured: false
-image: "/images/projects/musicchroma.svg"
-imageAlt: "Illustration of a blue-to-orange gradient with two curves representing estimated valence and arousal."
+image: "/images/projects/musicchroma.webp"
+imageAlt: "MusicChroma’s Experience view at 2:30 in Der Lindenbaum, showing the background gradient and full-song valence and arousal curves."
 links:
   - label: "Live Demo"
     url: "https://nha6ki.github.io/MusicChroma/"
@@ -31,7 +31,7 @@ The background changes with two estimated dimensions: **valence**, from unpleasa
 
 In **Experience**, a full-screen gradient accompanies playback. Two fixed curves show the full song's estimated valence and arousal; selecting a position on the curves seeks the audio. In **Analysis**, the same player accompanies time-series plots, a two-dimensional color map, and an explanation of the data and method. Both views share playback position and volume.
 
-The two curves represent emotion estimates, not audio amplitude. The cover illustration is a schematic of the visual design, not a plot of the recording's actual estimates.
+The two curves represent emotion estimates, not audio amplitude.
 
 ## From recording to color
 
