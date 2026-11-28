@@ -427,8 +427,16 @@
       "sha256": "3a7c597dfe54b35c955afed2f8f37a8562fe61feefc3c9629e224401b3e6b4e8",
       "license": "MIT",
       "license_file": "sample-11-LICENSE.txt",
-      "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-      "notes": "Negative discount is a separate printed row. Only line subtotals are printed, so unit prices remain blank. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs."
+      "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+      "notes": "Negative discount is a separate printed row. Only line subtotals are printed, so unit prices remain blank. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+      "data_kind": "saved_model_output",
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "3a7c597dfe54b35c955afed2f8f37a8562fe61feefc3c9629e224401b3e6b4e8",
+        "page_count": 1,
+        "elapsed_seconds": 11.44
+      }
     },
     {
       "fixture": "fixtures/public-layouts/sample-12.json",
@@ -442,9 +450,17 @@
       "sha256": "56064ddaf52263d6f1e11d2302fb2b6d36c4d1fcb7e1d5db6f5d68ad527740ec",
       "license": "Apache-2.0",
       "license_file": "sample-12-LICENSE.txt",
-      "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
+      "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
       "notes": "The reference testref is not labelled an invoice number. French date 02/03/2021 is interpreted as 2021-03-02. Line totals use the printed Total no tax column BEFORE discounts. The PDF also has percentage/fixed discounts and tax amounts, which this review model does not calculate. Printed totals are retained, not reconciled. Sequential review row IDs are assigned where the source has no numeric row IDs.",
-      "notice_file": "sample-12-NOTICE.txt"
+      "notice_file": "sample-12-NOTICE.txt",
+      "data_kind": "saved_model_output",
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "error",
+        "sha256": "56064ddaf52263d6f1e11d2302fb2b6d36c4d1fcb7e1d5db6f5d68ad527740ec",
+        "page_count": 1,
+        "elapsed_seconds": 20.0
+      }
     },
     {
       "fixture": "fixtures/public-layouts/sample-13.json",
@@ -458,8 +474,16 @@
       "sha256": "d5b6e2c6d17a79126d2a96ba8108e586715fa01f957bfbbe331eb488a925068d",
       "license": "MIT",
       "license_file": "sample-13-LICENSE.txt",
-      "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-      "notes": "No currency is printed; currency remains blank. Project reference ZI-2812-F is not treated as a PO. Quantities are hours. The printed VAT is 14%; this sample is not tax guidance. Sequential review row IDs are assigned where the source has no numeric row IDs."
+      "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+      "notes": "No currency is printed; currency remains blank. Project reference ZI-2812-F is not treated as a PO. Quantities are hours. The printed VAT is 14%; this sample is not tax guidance. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+      "data_kind": "saved_model_output",
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "d5b6e2c6d17a79126d2a96ba8108e586715fa01f957bfbbe331eb488a925068d",
+        "page_count": 1,
+        "elapsed_seconds": 12.27
+      }
     },
     {
       "fixture": "fixtures/public-layouts/sample-14.json",
@@ -473,8 +497,16 @@
       "sha256": "f014ddfa83dd456ca89643fe8f3ca6579e32f68839970a408fd85fffe343afe8",
       "license": "MIT",
       "license_file": "sample-14-LICENSE.txt",
-      "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-      "notes": "The PDF explicitly uses fictitious names. The dollar symbol alone does not identify a currency, so currency remains blank. A PO number is printed, but no purchase order document is supplied. Parts and tax notes belong to the two service rows; they are not extra invoice lines. The summary prints tax 0%, independently of the line notes. Sequential review row IDs are assigned where the source has no numeric row IDs."
+      "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+      "notes": "The PDF explicitly uses fictitious names. The dollar symbol alone does not identify a currency, so currency remains blank. A PO number is printed, but no purchase order document is supplied. Parts and tax notes belong to the two service rows; they are not extra invoice lines. The summary prints tax 0%, independently of the line notes. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+      "data_kind": "saved_model_output",
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "f014ddfa83dd456ca89643fe8f3ca6579e32f68839970a408fd85fffe343afe8",
+        "page_count": 1,
+        "elapsed_seconds": 9.97
+      }
     },
     {
       "fixture": "fixtures/public-layouts/sample-15.json",
@@ -488,8 +520,16 @@
       "sha256": "0dc290329d39b3855d9893c1623074282d18aeb66fc30506f5f51c19cb2d7f2b",
       "license": "MIT",
       "license_file": "sample-15-LICENSE.txt",
-      "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-      "notes": "USD is inferred from dollar symbols and US addresses. CUSTREF123 is a customer reference, not a PO. Section headings and subtotals are not invoice lines. Olive Oil has a 10% discount: unit price 1.00 and line amount 0.90. Preserve these printed amounts without forcing quantity × unit price to match. Sequential review row IDs are assigned where the source has no numeric row IDs."
+      "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+      "notes": "USD is inferred from dollar symbols and US addresses. CUSTREF123 is a customer reference, not a PO. Section headings and subtotals are not invoice lines. Olive Oil has a 10% discount: unit price 1.00 and line amount 0.90. Preserve these printed amounts without forcing quantity × unit price to match. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+      "data_kind": "saved_model_output",
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "0dc290329d39b3855d9893c1623074282d18aeb66fc30506f5f51c19cb2d7f2b",
+        "page_count": 1,
+        "elapsed_seconds": 17.5
+      }
     }
   ],
   "fixtures/public-layouts/sample-11.json": {
@@ -498,28 +538,34 @@
     "supplier": "Big Corp",
     "currency": "EUR",
     "po_number": null,
-    "gross_total": "51.60",
+    "gross_total": "51.6",
     "lines": [
       {
         "line_id": "1",
         "item": "Nike Air Max",
+        "description": null,
         "quantity": "1",
-        "unit_price": null,
-        "line_total": "53.00"
+        "unit_price": "53",
+        "line_total": "53",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "2",
         "item": "Discount",
+        "description": null,
         "quantity": "1",
-        "unit_price": null,
-        "line_total": "-10.00"
+        "unit_price": "-10",
+        "line_total": "-10",
+        "line_type": null,
+        "parent_line_id": null
       }
     ]
   },
   "fixtures/public-layouts/sample-12.json": {
-    "invoice_number": null,
+    "invoice_number": "testref",
     "issue_date": "2021-03-02",
-    "supplier": "Test Company",
+    "supplier_legal_name": "Test Company",
     "currency": "EUR",
     "po_number": null,
     "gross_total": "863107.34",
@@ -527,96 +573,122 @@
       {
         "line_id": "1",
         "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+        "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
         "quantity": "2",
         "unit_price": "99876.89",
-        "line_total": "199753.78"
+        "line_total": "239704.54",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "2",
         "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+        "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
         "quantity": "2",
         "unit_price": "99876.89",
-        "line_total": "199753.78"
+        "line_total": "239704.54",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "3",
         "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+        "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
         "quantity": "2",
         "unit_price": "99876.89",
-        "line_total": "199753.78"
+        "line_total": "239704.54",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "4",
         "item": "Test",
+        "description": null,
         "quantity": "2",
         "unit_price": "99876.89",
-        "line_total": "199753.78"
+        "line_total": "139916.65",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "5",
         "item": "Test",
+        "description": null,
         "quantity": "2",
         "unit_price": "3576.89",
-        "line_total": "7153.78"
+        "line_total": "3934.58",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "6",
         "item": "Test",
+        "description": null,
         "quantity": "2",
         "unit_price": "889.89",
-        "line_total": "1779.78"
+        "line_total": "1699.62",
+        "line_type": null,
+        "parent_line_id": null
       }
-    ],
-    "document_reference": "testref"
+    ]
   },
   "fixtures/public-layouts/sample-13.json": {
     "invoice_number": "UZH-ZI-5",
     "issue_date": "2023-06-30",
     "supplier": "famoser GmbH",
-    "currency": null,
+    "currency": "CHF",
     "po_number": null,
-    "gross_total": "8390.40",
+    "gross_total": "8'390.40",
     "lines": [
       {
         "line_id": "1",
-        "item": "Concept work: Requirements engineering, UX concept, PoC",
-        "quantity": "12",
+        "item": "Concept work",
+        "description": "Requirements engineering, UX concept, PoC",
+        "quantity": "12 h",
         "unit_price": "160.00",
-        "line_total": "1920.00"
+        "line_total": "1'920.00",
+        "line_type": null,
+        "parent_line_id": null
       },
       {
         "line_id": "2",
         "item": "Implementation",
-        "quantity": "34",
+        "description": null,
+        "quantity": "34 h",
         "unit_price": "160.00",
-        "line_total": "5440.00"
+        "line_total": "5'440.00",
+        "line_type": null,
+        "parent_line_id": null
       }
-    ],
-    "project_reference": "ZI-2812-F"
+    ]
   },
   "fixtures/public-layouts/sample-14.json": {
     "invoice_number": "invoice_number_1",
     "issue_date": "2022-01-01",
     "supplier": "Sammy Maystone",
-    "currency": null,
+    "currency": "USD",
     "po_number": "po_number_123",
     "gross_total": "127.50",
     "lines": [
       {
-        "line_id": "1",
+        "line_id": "Service A",
         "item": "Service A",
+        "description": "Repair\nNotes: Replaced capacitor\nParts: 1 x cap_a\nTax: 0.2%",
         "quantity": "12",
         "unit_price": "10.00",
         "line_total": "120.00",
-        "description": "Repair; Notes: Replaced capacitor; Parts: 1 x cap_a; Tax: 0.2%"
+        "line_type": "DETAIL",
+        "parent_line_id": null
       },
       {
-        "line_id": "2",
+        "line_id": "Service B",
         "item": "Service B",
+        "description": "Cleaning\nNotes: Removed debris from case\nParts: 2 x shop supplies\nTax: 0.4%",
         "quantity": "5",
         "unit_price": "1.50",
         "line_total": "7.50",
-        "description": "Cleaning; Notes: Removed debris from case; Parts: 2 x shop supplies; Tax: 0.4%"
+        "line_type": "DETAIL",
+        "parent_line_id": null
       }
     ]
   },
@@ -625,40 +697,953 @@
     "issue_date": "2023-03-20",
     "supplier": "Azure Interior",
     "currency": "USD",
-    "po_number": null,
+    "po_number": "CUSTREF123",
     "gross_total": "279.84",
     "lines": [
       {
-        "line_id": "1",
-        "item": "[17589684] Beeswax XL",
-        "quantity": "1",
+        "line_id": "--- Non Food ---",
+        "item": null,
+        "description": null,
+        "quantity": null,
+        "unit_price": null,
+        "line_total": null,
+        "line_type": "GROUP",
+        "parent_line_id": null
+      },
+      {
+        "line_id": "[17589684] Beeswax XL",
+        "item": "Beeswax XL",
+        "description": "Acme beeswax",
+        "quantity": "1.00 kg",
         "unit_price": "42.00",
         "line_total": "42.00",
-        "description": "Acme beeswax"
+        "line_type": "DETAIL",
+        "parent_line_id": null
       },
       {
-        "line_id": "2",
-        "item": "[FURN_7777] Office Chair",
-        "quantity": "1",
+        "line_id": "[FURN_7777] Office Chair",
+        "item": "Office Chair",
+        "description": null,
+        "quantity": "1.00 Units",
         "unit_price": "70.00",
-        "line_total": "70.00"
+        "line_total": "70.00",
+        "line_type": "DETAIL",
+        "parent_line_id": null
       },
       {
-        "line_id": "3",
-        "item": "*987123* Olive Oil",
-        "quantity": "1",
+        "line_id": "--- Food Products ---",
+        "item": null,
+        "description": null,
+        "quantity": null,
+        "unit_price": null,
+        "line_total": null,
+        "line_type": "GROUP",
+        "parent_line_id": null
+      },
+      {
+        "line_id": "*987123* Olive Oil",
+        "item": "Olive Oil",
+        "description": "Our Olive Oil is delivered in a re-usable glass container",
+        "quantity": "1.00 L",
         "unit_price": "1.00",
         "line_total": "0.90",
-        "description": "Our Olive Oil is delivered in a re-usable glass container"
+        "line_type": "DETAIL",
+        "parent_line_id": null
       },
       {
-        "line_id": "4",
-        "item": "[LUX_TRF] Luxury Truffles",
-        "quantity": "15",
+        "line_id": "[LUX_TRF] Luxury Truffles",
+        "item": "Luxury Truffles",
+        "description": null,
+        "quantity": "15.00 g",
         "unit_price": "10.00",
-        "line_total": "150.00"
+        "line_total": "150.00",
+        "line_type": "DETAIL",
+        "parent_line_id": null
       }
-    ],
-    "customer_reference": "CUSTREF123"
+    ]
+  },
+  "fixtures/public-layouts/model-reviews.json": {
+    "sample-11.pdf": {
+      "raw": {
+        "invoice_number": "1",
+        "issue_date": "2021-10-22",
+        "supplier": "Big Corp",
+        "currency": "EUR",
+        "po_number": null,
+        "gross_total": "51.6",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Nike Air Max",
+            "description": null,
+            "quantity": "1",
+            "unit_price": "53",
+            "line_total": "53",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "2",
+            "item": "Discount",
+            "description": null,
+            "quantity": "1",
+            "unit_price": "-10",
+            "line_total": "-10",
+            "line_type": null,
+            "parent_line_id": null
+          }
+        ]
+      },
+      "current": {
+        "invoice_number": "1",
+        "issue_date": "2021-10-22",
+        "supplier": "Big Corp",
+        "currency": "EUR",
+        "po_number": null,
+        "gross_total": "51.6",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Nike Air Max",
+            "description": null,
+            "quantity": "1",
+            "unit_price": "53",
+            "line_total": "53",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "2",
+            "item": "Discount",
+            "description": null,
+            "quantity": "1",
+            "unit_price": "-10",
+            "line_total": "-10",
+            "line_type": null,
+            "parent_line_id": null
+          }
+        ]
+      },
+      "history": [],
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "3a7c597dfe54b35c955afed2f8f37a8562fe61feefc3c9629e224401b3e6b4e8",
+        "page_count": 1,
+        "elapsed_seconds": 11.44
+      }
+    },
+    "sample-12.pdf": {
+      "raw": {
+        "invoice_number": "testref",
+        "issue_date": "2021-03-02",
+        "supplier_legal_name": "Test Company",
+        "currency": "EUR",
+        "po_number": null,
+        "gross_total": "863107.34",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "2",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "3",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "4",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "139916.65",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "5",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "3576.89",
+            "line_total": "3934.58",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "6",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "889.89",
+            "line_total": "1699.62",
+            "line_type": null,
+            "parent_line_id": null
+          }
+        ]
+      },
+      "current": {
+        "invoice_number": "testref",
+        "issue_date": "2021-03-02",
+        "supplier_legal_name": "Test Company",
+        "currency": "EUR",
+        "po_number": null,
+        "gross_total": "863107.34",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "2",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "3",
+            "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+            "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "239704.54",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "4",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "99876.89",
+            "line_total": "139916.65",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "5",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "3576.89",
+            "line_total": "3934.58",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "6",
+            "item": "Test",
+            "description": null,
+            "quantity": "2",
+            "unit_price": "889.89",
+            "line_total": "1699.62",
+            "line_type": null,
+            "parent_line_id": null
+          }
+        ],
+        "supplier": "Test Company"
+      },
+      "history": [
+        {
+          "actor": "system:schema-alias",
+          "note": "Copied supplier_legal_name to absent supplier. Original key retained; not a source verification or approval.",
+          "created": "2026-11-28T01:39:09.775035+00:00",
+          "before": {
+            "invoice_number": "testref",
+            "issue_date": "2021-03-02",
+            "supplier_legal_name": "Test Company",
+            "currency": "EUR",
+            "po_number": null,
+            "gross_total": "863107.34",
+            "lines": [
+              {
+                "line_id": "1",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "2",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "3",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "4",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "139916.65",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "5",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "3576.89",
+                "line_total": "3934.58",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "6",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "889.89",
+                "line_total": "1699.62",
+                "line_type": null,
+                "parent_line_id": null
+              }
+            ]
+          },
+          "after": {
+            "invoice_number": "testref",
+            "issue_date": "2021-03-02",
+            "supplier_legal_name": "Test Company",
+            "currency": "EUR",
+            "po_number": null,
+            "gross_total": "863107.34",
+            "lines": [
+              {
+                "line_id": "1",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "2",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "3",
+                "item": "Cupcake ipsum dolor sit amet bonbon, coucou bonbon lala jojo, mama titi toto",
+                "description": "Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon, Cupcake ipsum dolor sit amet bonbon",
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "239704.54",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "4",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "99876.89",
+                "line_total": "139916.65",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "5",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "3576.89",
+                "line_total": "3934.58",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "6",
+                "item": "Test",
+                "description": null,
+                "quantity": "2",
+                "unit_price": "889.89",
+                "line_total": "1699.62",
+                "line_type": null,
+                "parent_line_id": null
+              }
+            ],
+            "supplier": "Test Company"
+          }
+        }
+      ],
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "error",
+        "sha256": "56064ddaf52263d6f1e11d2302fb2b6d36c4d1fcb7e1d5db6f5d68ad527740ec",
+        "page_count": 1,
+        "elapsed_seconds": 20.0
+      }
+    },
+    "sample-13.pdf": {
+      "raw": {
+        "invoice_number": "UZH-ZI-5",
+        "issue_date": "2023-06-30",
+        "supplier": "famoser GmbH",
+        "currency": "CHF",
+        "po_number": null,
+        "gross_total": "8'390.40",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Concept work",
+            "description": "Requirements engineering, UX concept, PoC",
+            "quantity": "12 h",
+            "unit_price": "160.00",
+            "line_total": "1'920.00",
+            "line_type": null,
+            "parent_line_id": null
+          },
+          {
+            "line_id": "2",
+            "item": "Implementation",
+            "description": null,
+            "quantity": "34 h",
+            "unit_price": "160.00",
+            "line_total": "5'440.00",
+            "line_type": null,
+            "parent_line_id": null
+          }
+        ]
+      },
+      "current": {
+        "invoice_number": "UZH-ZI-5",
+        "issue_date": "2023-06-30",
+        "supplier": "famoser GmbH",
+        "currency": "CHF",
+        "po_number": null,
+        "gross_total": "8390.40",
+        "lines": [
+          {
+            "line_id": "1",
+            "item": "Concept work",
+            "description": "Requirements engineering, UX concept, PoC",
+            "quantity": "12",
+            "unit_price": "160.00",
+            "line_total": "1920.00",
+            "line_type": null,
+            "parent_line_id": null,
+            "unit": "h"
+          },
+          {
+            "line_id": "2",
+            "item": "Implementation",
+            "description": null,
+            "quantity": "34",
+            "unit_price": "160.00",
+            "line_total": "5440.00",
+            "line_type": null,
+            "parent_line_id": null,
+            "unit": "h"
+          }
+        ]
+      },
+      "history": [
+        {
+          "actor": "system:preparation",
+          "note": "Mechanical formatting only; original source and preparation.json retained. Not human approval.",
+          "created": "2026-11-28T01:39:09.783318+00:00",
+          "before": {
+            "invoice_number": "UZH-ZI-5",
+            "issue_date": "2023-06-30",
+            "supplier": "famoser GmbH",
+            "currency": "CHF",
+            "po_number": null,
+            "gross_total": "8'390.40",
+            "lines": [
+              {
+                "line_id": "1",
+                "item": "Concept work",
+                "description": "Requirements engineering, UX concept, PoC",
+                "quantity": "12 h",
+                "unit_price": "160.00",
+                "line_total": "1'920.00",
+                "line_type": null,
+                "parent_line_id": null
+              },
+              {
+                "line_id": "2",
+                "item": "Implementation",
+                "description": null,
+                "quantity": "34 h",
+                "unit_price": "160.00",
+                "line_total": "5'440.00",
+                "line_type": null,
+                "parent_line_id": null
+              }
+            ]
+          },
+          "after": {
+            "invoice_number": "UZH-ZI-5",
+            "issue_date": "2023-06-30",
+            "supplier": "famoser GmbH",
+            "currency": "CHF",
+            "po_number": null,
+            "gross_total": "8390.40",
+            "lines": [
+              {
+                "line_id": "1",
+                "item": "Concept work",
+                "description": "Requirements engineering, UX concept, PoC",
+                "quantity": "12",
+                "unit_price": "160.00",
+                "line_total": "1920.00",
+                "line_type": null,
+                "parent_line_id": null,
+                "unit": "h"
+              },
+              {
+                "line_id": "2",
+                "item": "Implementation",
+                "description": null,
+                "quantity": "34",
+                "unit_price": "160.00",
+                "line_total": "5440.00",
+                "line_type": null,
+                "parent_line_id": null,
+                "unit": "h"
+              }
+            ]
+          }
+        }
+      ],
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "d5b6e2c6d17a79126d2a96ba8108e586715fa01f957bfbbe331eb488a925068d",
+        "page_count": 1,
+        "elapsed_seconds": 12.27
+      }
+    },
+    "sample-14.pdf": {
+      "raw": {
+        "invoice_number": "invoice_number_1",
+        "issue_date": "2022-01-01",
+        "supplier": "Sammy Maystone",
+        "currency": "USD",
+        "po_number": "po_number_123",
+        "gross_total": "127.50",
+        "lines": [
+          {
+            "line_id": "Service A",
+            "item": "Service A",
+            "description": "Repair\nNotes: Replaced capacitor\nParts: 1 x cap_a\nTax: 0.2%",
+            "quantity": "12",
+            "unit_price": "10.00",
+            "line_total": "120.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "Service B",
+            "item": "Service B",
+            "description": "Cleaning\nNotes: Removed debris from case\nParts: 2 x shop supplies\nTax: 0.4%",
+            "quantity": "5",
+            "unit_price": "1.50",
+            "line_total": "7.50",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          }
+        ]
+      },
+      "current": {
+        "invoice_number": "invoice_number_1",
+        "issue_date": "2022-01-01",
+        "supplier": "Sammy Maystone",
+        "currency": "USD",
+        "po_number": "po_number_123",
+        "gross_total": "127.50",
+        "lines": [
+          {
+            "line_id": "Service A",
+            "item": "Service A",
+            "description": "Repair\nNotes: Replaced capacitor\nParts: 1 x cap_a\nTax: 0.2%",
+            "quantity": "12",
+            "unit_price": "10.00",
+            "line_total": "120.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "Service B",
+            "item": "Service B",
+            "description": "Cleaning\nNotes: Removed debris from case\nParts: 2 x shop supplies\nTax: 0.4%",
+            "quantity": "5",
+            "unit_price": "1.50",
+            "line_total": "7.50",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          }
+        ]
+      },
+      "history": [],
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "f014ddfa83dd456ca89643fe8f3ca6579e32f68839970a408fd85fffe343afe8",
+        "page_count": 1,
+        "elapsed_seconds": 9.97
+      }
+    },
+    "sample-15.pdf": {
+      "raw": {
+        "invoice_number": "INV/2023/03/0008",
+        "issue_date": "2023-03-20",
+        "supplier": "Azure Interior",
+        "currency": "USD",
+        "po_number": "CUSTREF123",
+        "gross_total": "279.84",
+        "lines": [
+          {
+            "line_id": "--- Non Food ---",
+            "item": null,
+            "description": null,
+            "quantity": null,
+            "unit_price": null,
+            "line_total": null,
+            "line_type": "GROUP",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "[17589684] Beeswax XL",
+            "item": "Beeswax XL",
+            "description": "Acme beeswax",
+            "quantity": "1.00 kg",
+            "unit_price": "42.00",
+            "line_total": "42.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "[FURN_7777] Office Chair",
+            "item": "Office Chair",
+            "description": null,
+            "quantity": "1.00 Units",
+            "unit_price": "70.00",
+            "line_total": "70.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "--- Food Products ---",
+            "item": null,
+            "description": null,
+            "quantity": null,
+            "unit_price": null,
+            "line_total": null,
+            "line_type": "GROUP",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "*987123* Olive Oil",
+            "item": "Olive Oil",
+            "description": "Our Olive Oil is delivered in a re-usable glass container",
+            "quantity": "1.00 L",
+            "unit_price": "1.00",
+            "line_total": "0.90",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "[LUX_TRF] Luxury Truffles",
+            "item": "Luxury Truffles",
+            "description": null,
+            "quantity": "15.00 g",
+            "unit_price": "10.00",
+            "line_total": "150.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null
+          }
+        ]
+      },
+      "current": {
+        "invoice_number": "INV/2023/03/0008",
+        "issue_date": "2023-03-20",
+        "supplier": "Azure Interior",
+        "currency": "USD",
+        "po_number": "CUSTREF123",
+        "gross_total": "279.84",
+        "lines": [
+          {
+            "line_id": "--- Non Food ---",
+            "item": null,
+            "description": null,
+            "quantity": null,
+            "unit_price": null,
+            "line_total": null,
+            "line_type": "GROUP",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "[17589684] Beeswax XL",
+            "item": "Beeswax XL",
+            "description": "Acme beeswax",
+            "quantity": "1.00",
+            "unit_price": "42.00",
+            "line_total": "42.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null,
+            "unit": "kg"
+          },
+          {
+            "line_id": "[FURN_7777] Office Chair",
+            "item": "Office Chair",
+            "description": null,
+            "quantity": "1.00",
+            "unit_price": "70.00",
+            "line_total": "70.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null,
+            "unit": "Units"
+          },
+          {
+            "line_id": "--- Food Products ---",
+            "item": null,
+            "description": null,
+            "quantity": null,
+            "unit_price": null,
+            "line_total": null,
+            "line_type": "GROUP",
+            "parent_line_id": null
+          },
+          {
+            "line_id": "*987123* Olive Oil",
+            "item": "Olive Oil",
+            "description": "Our Olive Oil is delivered in a re-usable glass container",
+            "quantity": "1.00",
+            "unit_price": "1.00",
+            "line_total": "0.90",
+            "line_type": "DETAIL",
+            "parent_line_id": null,
+            "unit": "L"
+          },
+          {
+            "line_id": "[LUX_TRF] Luxury Truffles",
+            "item": "Luxury Truffles",
+            "description": null,
+            "quantity": "15.00",
+            "unit_price": "10.00",
+            "line_total": "150.00",
+            "line_type": "DETAIL",
+            "parent_line_id": null,
+            "unit": "g"
+          }
+        ]
+      },
+      "history": [
+        {
+          "actor": "system:preparation",
+          "note": "Mechanical formatting only; original source and preparation.json retained. Not human approval.",
+          "created": "2026-11-28T01:39:09.796663+00:00",
+          "before": {
+            "invoice_number": "INV/2023/03/0008",
+            "issue_date": "2023-03-20",
+            "supplier": "Azure Interior",
+            "currency": "USD",
+            "po_number": "CUSTREF123",
+            "gross_total": "279.84",
+            "lines": [
+              {
+                "line_id": "--- Non Food ---",
+                "item": null,
+                "description": null,
+                "quantity": null,
+                "unit_price": null,
+                "line_total": null,
+                "line_type": "GROUP",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "[17589684] Beeswax XL",
+                "item": "Beeswax XL",
+                "description": "Acme beeswax",
+                "quantity": "1.00 kg",
+                "unit_price": "42.00",
+                "line_total": "42.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "[FURN_7777] Office Chair",
+                "item": "Office Chair",
+                "description": null,
+                "quantity": "1.00 Units",
+                "unit_price": "70.00",
+                "line_total": "70.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "--- Food Products ---",
+                "item": null,
+                "description": null,
+                "quantity": null,
+                "unit_price": null,
+                "line_total": null,
+                "line_type": "GROUP",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "*987123* Olive Oil",
+                "item": "Olive Oil",
+                "description": "Our Olive Oil is delivered in a re-usable glass container",
+                "quantity": "1.00 L",
+                "unit_price": "1.00",
+                "line_total": "0.90",
+                "line_type": "DETAIL",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "[LUX_TRF] Luxury Truffles",
+                "item": "Luxury Truffles",
+                "description": null,
+                "quantity": "15.00 g",
+                "unit_price": "10.00",
+                "line_total": "150.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null
+              }
+            ]
+          },
+          "after": {
+            "invoice_number": "INV/2023/03/0008",
+            "issue_date": "2023-03-20",
+            "supplier": "Azure Interior",
+            "currency": "USD",
+            "po_number": "CUSTREF123",
+            "gross_total": "279.84",
+            "lines": [
+              {
+                "line_id": "--- Non Food ---",
+                "item": null,
+                "description": null,
+                "quantity": null,
+                "unit_price": null,
+                "line_total": null,
+                "line_type": "GROUP",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "[17589684] Beeswax XL",
+                "item": "Beeswax XL",
+                "description": "Acme beeswax",
+                "quantity": "1.00",
+                "unit_price": "42.00",
+                "line_total": "42.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null,
+                "unit": "kg"
+              },
+              {
+                "line_id": "[FURN_7777] Office Chair",
+                "item": "Office Chair",
+                "description": null,
+                "quantity": "1.00",
+                "unit_price": "70.00",
+                "line_total": "70.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null,
+                "unit": "Units"
+              },
+              {
+                "line_id": "--- Food Products ---",
+                "item": null,
+                "description": null,
+                "quantity": null,
+                "unit_price": null,
+                "line_total": null,
+                "line_type": "GROUP",
+                "parent_line_id": null
+              },
+              {
+                "line_id": "*987123* Olive Oil",
+                "item": "Olive Oil",
+                "description": "Our Olive Oil is delivered in a re-usable glass container",
+                "quantity": "1.00",
+                "unit_price": "1.00",
+                "line_total": "0.90",
+                "line_type": "DETAIL",
+                "parent_line_id": null,
+                "unit": "L"
+              },
+              {
+                "line_id": "[LUX_TRF] Luxury Truffles",
+                "item": "Luxury Truffles",
+                "description": null,
+                "quantity": "15.00",
+                "unit_price": "10.00",
+                "line_total": "150.00",
+                "line_type": "DETAIL",
+                "parent_line_id": null,
+                "unit": "g"
+              }
+            ]
+          }
+        }
+      ],
+      "extraction": {
+        "model": "qwen3.5:9b-q8_0",
+        "status": "extracted",
+        "sha256": "0dc290329d39b3855d9893c1623074282d18aeb66fc30506f5f51c19cb2d7f2b",
+        "page_count": 1,
+        "elapsed_seconds": 17.5
+      }
+    }
   }
 }

@@ -48,7 +48,7 @@ def main():
     page = page.replace('"請求書 "+current.current.invoice_number', '"請求書 "+(current.current.invoice_number??current.current.supplier)')
     page = page.replace('r.invoice.gross_total+" "+r.invoice.currency', 'r.invoice.gross_total+" "+(r.invoice.currency??"通貨未記載")')
     page = page.replace('showStructure();', 'showStructure();showPublicSource(current.sample_source);')
-    page = page.replace('<p class="muted">UC12は', '<p>公開元の異なるレイアウトのサンプル8件を収録しています。原本から手作業で転記した確認用データです。AI抽出結果ではなく、発注書がないため承認できません。合計15件を確認できます。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
+    page = page.replace('<p class="muted">UC12は', '<p>合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。対応する発注書がないため承認できません。<a href="./public-samples.json">出典・ライセンス情報</a></p><p class="muted">UC12は')
     page = page.replace("編集内容は承認時に保存されます。発注値は取り込み時点の記録です。", "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。")
     generated["index.html"] = page.encode()
     generated["en.html"] = english_page(generated["index.html"].decode()).encode()

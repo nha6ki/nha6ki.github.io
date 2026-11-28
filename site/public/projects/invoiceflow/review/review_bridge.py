@@ -36,6 +36,17 @@ flow.ingest(db, Path("fixtures/correction/UC12.json"), {"matching": "review_only
 PUBLIC_SOURCES = {}
 for source in FIXTURES["fixtures/public-layouts/sources.json"]:
     result = flow.ingest(db, Path(source["fixture"]), {"matching": "review_only", "lines": []}, False)
+
+    saved = FIXTURES.get("fixtures/public-layouts/model-reviews.json", {}).get(source["file"])
+    if saved:
+        for event in saved["history"]:
+            flow.save_draft(db, result["id"], event["actor"],
+                "Imported local correction (" + event["created"] + "): " + event["note"],
+                event["after"], event["before"])
+        row = db.execute("SELECT normalized FROM reviews WHERE id=?", (result["id"],)).fetchone()
+        if json.loads(row["normalized"]) != saved["current"]:
+            raise ValueError("Imported correction history mismatch")
+
     PUBLIC_SOURCES[result["id"]] = source
 
 

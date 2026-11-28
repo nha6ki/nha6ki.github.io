@@ -19,7 +19,7 @@ def check(page, english=False):
     expect(page.locator("#queue tr")).to_have_count(15, timeout=60_000)
     for supplier, number, media in [('Joe Shmoe', 8, 'pdf'), ('Sparksuite, Inc.', 9, 'pdf'), ('NI57721', 10, 'png'), ('Big Corp',11,'pdf'), ('Test Company',12,'pdf'), ('famoser GmbH',13,'pdf'), ('Sammy Maystone',14,'pdf'), ('Azure Interior',15,'pdf')]:
         page.locator('#queue tr').filter(has_text=supplier).get_by_role('button').click()
-        expect(page.locator('#public-source-info')).to_contain_text('manually transcribed' if english else '手作業')
+        expect(page.locator('#public-source-info')).to_contain_text(('Saved Qwen' if number >= 11 else 'manually transcribed') if english else ('Qwen' if number >= 11 else '手作業'))
         expect(page.locator('#issues')).to_contain_text('No purchase order' if english else '発注')
         original = page.locator('#source-image' if media == 'png' else '#pdf')
         expect(original).to_have_attribute('src', f'./sample-{number}.{media}')

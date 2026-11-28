@@ -56,8 +56,16 @@
     "sha256": "3a7c597dfe54b35c955afed2f8f37a8562fe61feefc3c9629e224401b3e6b4e8",
     "license": "MIT",
     "license_file": "sample-11-LICENSE.txt",
-    "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-    "notes": "Negative discount is a separate printed row. Only line subtotals are printed, so unit prices remain blank. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs."
+    "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+    "notes": "Negative discount is a separate printed row. Only line subtotals are printed, so unit prices remain blank. Date 22/10/21 is interpreted as 2021-10-22. Paid is the source label, not approval in this app. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+    "data_kind": "saved_model_output",
+    "extraction": {
+      "model": "qwen3.5:9b-q8_0",
+      "status": "extracted",
+      "sha256": "3a7c597dfe54b35c955afed2f8f37a8562fe61feefc3c9629e224401b3e6b4e8",
+      "page_count": 1,
+      "elapsed_seconds": 11.44
+    }
   },
   {
     "fixture": "fixtures/public-layouts/sample-12.json",
@@ -71,9 +79,17 @@
     "sha256": "56064ddaf52263d6f1e11d2302fb2b6d36c4d1fcb7e1d5db6f5d68ad527740ec",
     "license": "Apache-2.0",
     "license_file": "sample-12-LICENSE.txt",
-    "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
+    "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
     "notes": "The reference testref is not labelled an invoice number. French date 02/03/2021 is interpreted as 2021-03-02. Line totals use the printed Total no tax column BEFORE discounts. The PDF also has percentage/fixed discounts and tax amounts, which this review model does not calculate. Printed totals are retained, not reconciled. Sequential review row IDs are assigned where the source has no numeric row IDs.",
-    "notice_file": "sample-12-NOTICE.txt"
+    "notice_file": "sample-12-NOTICE.txt",
+    "data_kind": "saved_model_output",
+    "extraction": {
+      "model": "qwen3.5:9b-q8_0",
+      "status": "error",
+      "sha256": "56064ddaf52263d6f1e11d2302fb2b6d36c4d1fcb7e1d5db6f5d68ad527740ec",
+      "page_count": 1,
+      "elapsed_seconds": 20.0
+    }
   },
   {
     "fixture": "fixtures/public-layouts/sample-13.json",
@@ -87,8 +103,16 @@
     "sha256": "d5b6e2c6d17a79126d2a96ba8108e586715fa01f957bfbbe331eb488a925068d",
     "license": "MIT",
     "license_file": "sample-13-LICENSE.txt",
-    "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-    "notes": "No currency is printed; currency remains blank. Project reference ZI-2812-F is not treated as a PO. Quantities are hours. The printed VAT is 14%; this sample is not tax guidance. Sequential review row IDs are assigned where the source has no numeric row IDs."
+    "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+    "notes": "No currency is printed; currency remains blank. Project reference ZI-2812-F is not treated as a PO. Quantities are hours. The printed VAT is 14%; this sample is not tax guidance. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+    "data_kind": "saved_model_output",
+    "extraction": {
+      "model": "qwen3.5:9b-q8_0",
+      "status": "extracted",
+      "sha256": "d5b6e2c6d17a79126d2a96ba8108e586715fa01f957bfbbe331eb488a925068d",
+      "page_count": 1,
+      "elapsed_seconds": 12.27
+    }
   },
   {
     "fixture": "fixtures/public-layouts/sample-14.json",
@@ -102,8 +126,16 @@
     "sha256": "f014ddfa83dd456ca89643fe8f3ca6579e32f68839970a408fd85fffe343afe8",
     "license": "MIT",
     "license_file": "sample-14-LICENSE.txt",
-    "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-    "notes": "The PDF explicitly uses fictitious names. The dollar symbol alone does not identify a currency, so currency remains blank. A PO number is printed, but no purchase order document is supplied. Parts and tax notes belong to the two service rows; they are not extra invoice lines. The summary prints tax 0%, independently of the line notes. Sequential review row IDs are assigned where the source has no numeric row IDs."
+    "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+    "notes": "The PDF explicitly uses fictitious names. The dollar symbol alone does not identify a currency, so currency remains blank. A PO number is printed, but no purchase order document is supplied. Parts and tax notes belong to the two service rows; they are not extra invoice lines. The summary prints tax 0%, independently of the line notes. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+    "data_kind": "saved_model_output",
+    "extraction": {
+      "model": "qwen3.5:9b-q8_0",
+      "status": "extracted",
+      "sha256": "f014ddfa83dd456ca89643fe8f3ca6579e32f68839970a408fd85fffe343afe8",
+      "page_count": 1,
+      "elapsed_seconds": 9.97
+    }
   },
   {
     "fixture": "fixtures/public-layouts/sample-15.json",
@@ -117,7 +149,15 @@
     "sha256": "0dc290329d39b3855d9893c1623074282d18aeb66fc30506f5f51c19cb2d7f2b",
     "license": "MIT",
     "license_file": "sample-15-LICENSE.txt",
-    "provenance": "Manual transcription of a published sample; not AI output or a verified commercial transaction.",
-    "notes": "USD is inferred from dollar symbols and US addresses. CUSTREF123 is a customer reference, not a PO. Section headings and subtotals are not invoice lines. Olive Oil has a 10% discount: unit price 1.00 and line amount 0.90. Preserve these printed amounts without forcing quantity × unit price to match. Sequential review row IDs are assigned where the source has no numeric row IDs."
+    "provenance": "Saved local Qwen output; corrections replayed from the isolated review database. Not approved.",
+    "notes": "USD is inferred from dollar symbols and US addresses. CUSTREF123 is a customer reference, not a PO. Section headings and subtotals are not invoice lines. Olive Oil has a 10% discount: unit price 1.00 and line amount 0.90. Preserve these printed amounts without forcing quantity × unit price to match. Sequential review row IDs are assigned where the source has no numeric row IDs.",
+    "data_kind": "saved_model_output",
+    "extraction": {
+      "model": "qwen3.5:9b-q8_0",
+      "status": "extracted",
+      "sha256": "0dc290329d39b3855d9893c1623074282d18aeb66fc30506f5f51c19cb2d7f2b",
+      "page_count": 1,
+      "elapsed_seconds": 17.5
+    }
   }
 ]

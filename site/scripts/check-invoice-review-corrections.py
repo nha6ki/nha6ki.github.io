@@ -53,10 +53,10 @@ with tempfile.TemporaryDirectory() as directory:
         ident = next(i for i, value in bridge['PUBLIC_SOURCES'].items() if value == source)
         detail = request(f'/api/review/{ident}', None)
         assert detail['sample_source'] == source
-        assert detail['current']['po_number'] == ('po_number_123' if source['file'] == 'sample-14.pdf' else None)
-        if source['file'] in ('sample-13.pdf', 'sample-14.pdf'): assert detail['current']['currency'] is None
-        if source['file'] == 'sample-11.pdf': assert detail['current']['lines'][1]['line_total'] == '-10.00'
-        if source['file'] == 'sample-15.pdf': assert len(detail['current']['lines']) == 4
+        assert detail['current'] == bridge['FIXTURES']['fixtures/public-layouts/model-reviews.json'][source['file']]['current'] if source.get('data_kind') == 'saved_model_output' else detail['current']['po_number'] is None
+        if not source.get('data_kind') and source['file'] in ('sample-13.pdf', 'sample-14.pdf'): assert detail['current']['currency'] is None
+        if source['file'] == 'sample-11.pdf': assert float(detail['current']['lines'][1]['line_total']) == -10
+        if source['file'] == 'sample-15.pdf': assert len(detail['current']['lines']) == (6 if source.get('data_kind') else 4)
         assert detail['status'] == 'needs_review'
         result = request('/api/approve', dict(id=ident, invoice=detail['current'], actor='Tester', note='Source reviewed'))
         assert result['status'] == 'needs_review'

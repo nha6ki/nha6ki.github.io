@@ -121,7 +121,7 @@
   "編集値で照合しました。変更を残すには「修正を保存」を押してください。": "Checked the edited values. Select “Save correction” to keep them.",
   "変更はありません。": "No changes to save.",
   "修正と履歴を保存しました。承認・台帳登録は行っていません。": "Correction and history saved. No approval or ledger entry was created.",
-  "公開元の異なるレイアウトのサンプル8件を収録しています。原本から手作業で転記した確認用データです。AI抽出結果ではなく、発注書がないため承認できません。合計15件を確認できます。": "The fifteen-invoice queue includes eight published samples with different layouts. These are manually transcribed review data, not AI extraction results. Approval remains blocked because no purchase order documents are supplied.",
+  "合計15件の請求書を確認できます。公開サンプル8件のうち、追加5件は保存済みQwen出力と修正履歴、先の3件は原本からの手作業による転記です。未確認項目は要確認のままです。対応する発注書がないため承認できません。": "Explore fifteen invoices. Of the eight published samples, the latest five use saved Qwen output and recorded corrections; the earlier three are manually transcribed. Unverified fields remain under review. Approval is blocked because no matching purchase orders are supplied.",
   "出典・ライセンス情報": "Sources and licenses",
   "未記載": "Not printed",
   "修正は保存ボタンで記録します。承認は別操作です。発注値は取り込み時点の記録です。": "Save corrections with the save button. Approval is a separate action. Purchase order values reflect the order at import.",
