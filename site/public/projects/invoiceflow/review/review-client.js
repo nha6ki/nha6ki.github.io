@@ -75,7 +75,8 @@ window.showPublicSource = source => {
   text.textContent = en ? "Public template sample · manually transcribed, not AI output. No purchase order is supplied; approval remains blocked." : "公開元のテンプレートサンプルです。データは原本からの手作業による転記で、AI抽出結果ではありません。発注書がないため承認できません。";
   box.append(heading, text);
   const notes = document.createElement("p"); notes.textContent = source.notes; box.append(notes);
-  for (const [label, href] of [[en?"Open original":"原本を開く", "./"+source.file], [en?"Source":"公開元",source.repository], ["MIT license", "./"+source.license_file]]) {
+  if(source.notice_file){const a=document.createElement("a");a.textContent="NOTICE";a.href="./"+source.notice_file;a.target="_blank";a.rel="noopener";box.append(a," · ");}
+  for (const [label, href] of [[en?"Open original":"原本を開く", "./"+source.file], [en?"Source":"公開元",source.repository], [source.license+" license", "./"+source.license_file]]) {
     const a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener";box.append(a, " · ");
   }
 };
