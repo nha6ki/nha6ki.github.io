@@ -31,8 +31,6 @@ InvoiceFlow brings invoice extraction, human review and spreadsheet delivery tog
 
 The demo contains 15 sample invoices in several layouts. Select a document, compare the editable fields and line items with the original, and correct any differences. Enter a reviewer name and a note, check the original against the input, then select **Confirm and export CSV**.
 
-<div class="invoice-figure" style="--figure-width:1000px"><a href="/images/projects/invoiceflow/review-current.png"><img src="/images/projects/invoiceflow/review-current.png" alt="Invoice Review showing the sample invoice list." width="1440" height="900" loading="lazy"></a></div>
-
 Try **Big Corp** to review a discount line, or **Azure Interior** for grouped products and quantities with units. **NI57721** provides a Japanese invoice image. Source and license details are available beside each document.
 
 The demo uses saved sample data. Edits and confirmations stay in the current browser tab and reset on reload. The Google Sheets panel shows saved delivery history; sending is available in the local installation.
