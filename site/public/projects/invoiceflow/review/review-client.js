@@ -58,29 +58,39 @@
   });
 })();
 
-// Public source metadata is shown separately from editable invoice fields.
+// Show one concise origin label; retain source notices in expandable details.
 window.showPublicSource = source => {
   let box = document.getElementById("public-source-info");
   if (!box) {
     box = document.createElement("aside");
     box.id = "public-source-info";
-    box.style.cssText = "padding:1rem;border:1px solid #cbd5e1;margin:1rem 0;overflow-wrap:anywhere";
+    box.style.cssText = "margin:0.75rem 0;overflow-wrap:anywhere";
     document.getElementById("fields").before(box);
   }
-  box.replaceChildren(); box.hidden = !source;
-  if (!source) return;
+  box.replaceChildren(); box.hidden = false;
   const en = document.documentElement.lang === "en";
-  const heading = document.createElement("strong"); heading.textContent = source.title;
-  const text = document.createElement("p");
-  text.textContent = source.data_kind === "saved_model_output"
-    ? (en ? "Saved Qwen model output with recorded corrections. Unverified fields remain under review; no approval is implied."
-          : "保存済みのQwen出力と修正履歴です。未確認の項目は要確認のままで、承認済みではありません。")
-    : (en ? "Public template sample · manually transcribed, not AI output. No PO is supplied. Transcription confirmation and CSV export are available; PO matching remains unavailable."
-          : "公開元のテンプレートサンプルです。データは原本からの手作業による転記で、AI抽出結果ではありません。発注書はありません。転記確認とCSV出力は可能ですが、発注照合は未実施です。");
-  box.append(heading, text);
-  const notes = document.createElement("p"); notes.textContent = source.notes; box.append(notes);
-  if(source.notice_file){const a=document.createElement("a");a.textContent="NOTICE";a.href="./"+source.notice_file;a.target="_blank";a.rel="noopener";box.append(a," · ");}
-  for (const [label, href] of [[en?"Open original":"原本を開く", "./"+source.file], [en?"Source":"公開元",source.repository], [source.license+" license", "./"+source.license_file]]) {
-    const a=document.createElement("a");a.textContent=label;a.href=href;a.target="_blank";a.rel="noopener";box.append(a, " · ");
+  const label = document.createElement("strong");
+  label.textContent = source?.data_kind === "saved_model_output"
+    ? (en ? "Origin: Qwen extraction" : "元データ：Qwen抽出")
+    : source
+      ? (en ? "Origin: manual transcription" : "元データ：手作業で転記")
+      : (en ? "Origin: prepared demo data" : "元データ：デモ用データ");
+  box.append(label);
+  if (!source) return;
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+  summary.textContent = en ? "Source details" : "出典・詳細";
+  details.append(summary);
+  const title = document.createElement("p"); title.textContent = source.title;
+  const notes = document.createElement("p"); notes.textContent = source.notes;
+  details.append(title, notes);
+  const links = [[en?"Open original":"原本を開く", "./"+source.file],
+    [en?"Source":"公開元",source.repository],
+    [source.license+" license", "./"+source.license_file]];
+  if(source.notice_file) links.push(["NOTICE", "./"+source.notice_file]);
+  for (const [label, href] of links) {
+    const a=document.createElement("a");a.textContent=label;a.href=href;
+    a.target="_blank";a.rel="noopener";details.append(a, " · ");
   }
+  box.append(details);
 };
