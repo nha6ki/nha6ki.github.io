@@ -30,7 +30,7 @@
     }
     if (!worker) {
       try {
-        worker = new Worker(new URL("./review-worker.mjs", document.baseURI), { type: "module" });
+        worker = new Worker(new URL("./review-worker.mjs?v=review-stages-2", document.baseURI), { type: "module" });
       } catch {
         stop();
         reject(Error(loadError));

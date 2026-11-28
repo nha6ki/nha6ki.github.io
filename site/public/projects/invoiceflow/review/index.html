@@ -27,7 +27,7 @@ input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-wid
 <div id="approval"><label id="gross-confirmation" hidden>原本の請求総額（税込）（税額は自動照合しません）<input id="confirmed-gross-total" inputmode="decimal" placeholder="原本の金額を小数点「.」で入力"></label><label>修正・照合の確認者<input id="actor" placeholder="確認者名"></label><label>確認・修正理由<textarea id="note" placeholder="原本を確認した内容や修正理由を記入"></textarea></label><div class="toolbar"><button id="save-draft">修正を保存（承認しない）</button><button id="validate">照合し直す</button><button class="primary" id="approve">照合を承認して登録</button></div></div><p id="registered" class="badge" hidden>照合承認済みです（支払承認ではありません）</p>
 <section id="transcription-panel"><h3>転記確認と出力</h3><p>原本と転記内容が一致することを確認します。支払承認や税務上の判断は行いません。未記載の値を推測で埋める必要はありません。</p><div id="transcription-checks"></div><label>転記確認者<input id="transcription-actor"></label><label>確認理由<textarea id="transcription-note"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> 原本と保存済みの転記内容を比較しました</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> 未記載・値引き・階層明細・重複候補を確認し、残る制約を確認理由に記録しました</label><div class="toolbar"><button id="confirm-transcription">転記内容を確認済みにする</button><button id="export-transcription" disabled>確認済みCSVをダウンロード</button></div><p class="muted">編集後は修正を保存してから再確認してください。CSVには確認状態を含めます。Google Sheetsへの既存の照合承認済みデータ送信とは別操作です。</p></section></section><details><summary>元の抽出値・正規化・修正・承認履歴</summary><pre id="history"></pre></details></div></div></div>
 <section><h2>照合承認済み台帳</h2><div id="ledger" class="scroll"></div></section></main>
-<script src="./review-client.js"></script>
+<script src="./review-client.js?v=review-stages-2"></script>
 <script>
 const token="__TOKEN__", $=id=>document.getElementById(id);
 const labels={invoice_number:"請求書番号",issue_date:"発行日",supplier:"仕入先",currency:"通貨",po_number:"発注番号",gross_total:"請求総額（税込）"};
@@ -104,6 +104,12 @@ $("approve").onclick=async()=>{const b=$("approve");b.disabled=true;try{const r=
 function transcriptionCheck(text){const terms={"required for export": "出力に必要な項目です", "not recorded; verify against source": "未記載です。原本を確認してください", "use YYYY-MM-DD": "日付はYYYY-MM-DDで入力してください", "use a three-letter code or leave missing": "通貨は英字3文字、または未記載にしてください", "not recorded": "未記載です", "invalid decimal": "小数点を使った数値に直してください", "quantity × unit price differs from line amount; verify discounts, charges and price basis": "数量×単価（税抜）と明細金額（税抜）が異なります。値引き・加算・単価（税抜）の基準数量を原本で確認してください", "no line items recorded": "明細が記録されていません", "structured rows require manual verification; do not sum parent and child rows together": "階層明細は手動で確認してください。親行と子行を二重に合計しないでください", "possible duplicate review IDs": "重複候補の記録ID"};for(const [key,value] of Object.entries(terms))text=text.replace(key,value);return text}
 function showTranscription(){
  const t=current.transcription;
+ if(!t){
+  $("workflow-states").replaceChildren();
+  $("transcription-checks").replaceChildren(el("p","確認データを読み込めません。ページを再読み込みしてください。原本は確認できます。"));
+  $("export-transcription").disabled=true;$("confirm-transcription").disabled=true;
+  return;
+ }
  $("workflow-states").replaceChildren(table(["工程","状態"],[
  ["転記確認",t.status==="confirmed"?"確認済み":"未確認"],
  ["発注照合",({unavailable:"未実施（発注台帳なし）",registered:"照合承認済み",matched:"一致（承認待ち）",issues:"不一致・要確認"})[t.matching]],

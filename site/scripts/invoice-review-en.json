@@ -181,5 +181,6 @@
   "発注照合未実施": "PO matching not performed",
   "4つのレビュー操作を試す": "Try four review tasks",
   "転記内容を確認してCSV出力": "Confirm a transcription and export CSV",
-  "原本と保存済みの転記内容を比較し、確認者と理由を記録します。発注台帳がなくても確認済みCSVを出力できます。": "Compare the saved transcription with the source and record a reviewer and reason. Confirmed CSV export does not require a purchase order."
+  "原本と保存済みの転記内容を比較し、確認者と理由を記録します。発注台帳がなくても確認済みCSVを出力できます。": "Compare the saved transcription with the source and record a reviewer and reason. Confirmed CSV export does not require a purchase order.",
+  "確認データを読み込めません。ページを再読み込みしてください。原本は確認できます。": "Review status could not be loaded. Reload this page. The source document is still available."
 }

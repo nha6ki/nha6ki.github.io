@@ -3,7 +3,7 @@ const files = ["review_flow.py", "three_way.py", "transcription.py", "review_ui.
 
 const engine = (async () => {
   const reads = Promise.all(files.map(async file => {
-    const response = await fetch(new URL(file, import.meta.url));
+    const response = await fetch(new URL(file + "?v=review-stages-2", import.meta.url), { cache: "no-store" });
     if (!response.ok) throw Error("Missing review asset");
     return [file, await response.text()];
   }));

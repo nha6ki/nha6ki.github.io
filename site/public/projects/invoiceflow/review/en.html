@@ -27,7 +27,7 @@ input{width:100%}label{display:block;font-size:13px;color:#526963}select{max-wid
 <div id="approval"><label id="gross-confirmation" hidden>Invoice total (incl. tax) on the source invoice (verify tax manually)<input id="confirmed-gross-total" inputmode="decimal" placeholder="Enter the source total using a decimal point"></label><label>Correction / matching reviewer<input id="actor" placeholder="Reviewer name"></label><label>Reason for approval or correction<textarea id="note" placeholder="Describe what you checked or why you changed a value"></textarea></label><div class="toolbar"><button id="save-draft">Save correction (no approval)</button><button id="validate">Recheck</button><button class="primary" id="approve">Approve matching and register</button></div></div><p id="registered" class="badge" hidden>Matching approved and registered (not payment approval)</p>
 <section id="transcription-panel"><h3>Confirm and export the transcription</h3><p>Check that the transcription matches the source. This is not payment approval or tax validation. Leave unprinted values missing rather than guessing.</p><div id="transcription-checks"></div><label>Transcription reviewer<input id="transcription-actor"></label><label>Reason for confirmation<textarea id="transcription-note"></textarea></label><label><input type="checkbox" id="source-checked" style="width:auto"> I compared the saved transcription with the source document</label><label><input type="checkbox" id="exceptions-checked" style="width:auto"> I reviewed missing values, discounts, structured lines and possible duplicates, and recorded remaining limitations in the reason</label><div class="toolbar"><button id="confirm-transcription">Confirm transcription</button><button id="export-transcription" disabled>Download confirmed CSV</button></div><p class="muted">After editing, save and confirm again. CSV includes review states. This is separate from the existing Google Sheets delivery of matching-approved records.</p></section></section><details><summary>Original extraction, normalization, corrections and approvals</summary><pre id="history"></pre></details></div></div></div>
 <section><h2>Matching-approved ledger</h2><div id="ledger" class="scroll"></div></section></main>
-<script src="./review-client.js"></script>
+<script src="./review-client.js?v=review-stages-2"></script>
 <script>
 const token="__TOKEN__", $=id=>document.getElementById(id);
 const labels={invoice_number:"Invoice number",issue_date:"Issue date",supplier:"Supplier",currency:"Currency",po_number:"Purchase order number",gross_total:"Invoice total (incl. tax)"};
@@ -104,6 +104,12 @@ $("approve").onclick=async()=>{const b=$("approve");b.disabled=true;try{const r=
 function transcriptionCheck(text){const terms={"required for export": "required for export", "not recorded; verify against source": "not recorded; verify against source", "use YYYY-MM-DD": "use YYYY-MM-DD", "use a three-letter code or leave missing": "use a three-letter code or leave missing", "not recorded": "not recorded", "invalid decimal": "invalid decimal", "quantity × unit price differs from line amount; verify discounts, charges and price basis": "quantity × unit price differs from line amount; verify discounts, charges and price basis", "no line items recorded": "no line items recorded", "structured rows require manual verification; do not sum parent and child rows together": "structured rows require manual verification; do not sum parent and child rows together", "possible duplicate review IDs": "possible duplicate review IDs"};for(const [key,value] of Object.entries(terms))text=text.replace(key,value);return text}
 function showTranscription(){
  const t=current.transcription;
+ if(!t){
+  $("workflow-states").replaceChildren();
+  $("transcription-checks").replaceChildren(el("p","Review status could not be loaded. Reload this page. The source document is still available."));
+  $("export-transcription").disabled=true;$("confirm-transcription").disabled=true;
+  return;
+ }
  $("workflow-states").replaceChildren(table(["Step","Status"],[
  ["Transcription review",t.status==="confirmed"?"Confirmed":"Unconfirmed"],
  ["PO matching",({unavailable:"Not performed (no PO)",registered:"Matching approved",matched:"Matched (awaiting approval)",issues:"Mismatch / needs review"})[t.matching]],
